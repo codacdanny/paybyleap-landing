@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { figma } from "../assets/figma";
+import { LandingInset } from "./LandingInset";
 import { Button } from "./Button";
 
 const cards = [
@@ -37,22 +38,22 @@ export function AdditionalServicesSection() {
   };
 
   return (
-    <section className="bg-off-white py-16 md:py-24">
-      <div className="mx-auto max-w-[1200px] px-4 md:px-6 lg:px-8">
-        <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
+    <section className="bg-[#fbf7fb] py-12 md:py-16 lg:py-24">
+      <LandingInset>
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
           <div className="max-w-[708px]">
-            <h2 className="text-[28px] font-semibold leading-tight text-grey-100 md:text-[36px] md:leading-[56px]">
+            <h2 className="text-[24px] font-semibold leading-8 text-grey-100 min-[1440px]:text-[36px] min-[1440px]:leading-[56px]">
               Additional Services Available in the App
             </h2>
-            <Button className="mt-8 h-[58px] min-w-[190px] border-2 border-secondary bg-primary px-4 text-[18px] font-medium">
+            <Button className="mt-6 h-12 min-h-[48px] w-[190px] border-2 border-secondary bg-primary px-4 text-[18px] font-medium min-[1440px]:mt-[23px] min-[1440px]:h-[58px]">
               Download the app
             </Button>
           </div>
-          <div className="flex shrink-0 items-center gap-0 md:gap-2">
+          <div className="hidden shrink-0 items-center gap-0 lg:flex md:gap-2">
             <button
               type="button"
               onClick={() => scrollBy(-1)}
-              className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full transition hover:bg-grey-10 md:h-[72px] md:w-[72px] lg:h-[100px] lg:w-[100px]"
+              className="flex size-[72px] shrink-0 items-center justify-center rounded-full transition hover:bg-grey-10/80 min-[1440px]:size-[100px]"
               aria-label="Previous services"
             >
               <img
@@ -64,7 +65,7 @@ export function AdditionalServicesSection() {
             <button
               type="button"
               onClick={() => scrollBy(1)}
-              className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full transition hover:bg-grey-10 md:h-[72px] md:w-[72px] lg:h-[100px] lg:w-[100px]"
+              className="flex size-[72px] shrink-0 items-center justify-center rounded-full transition hover:bg-grey-10/80 min-[1440px]:size-[100px]"
               aria-label="Next services"
             >
               <img
@@ -78,12 +79,12 @@ export function AdditionalServicesSection() {
 
         <div
           ref={scrollerRef}
-          className="scrollbar-hide mt-12 flex snap-x snap-mandatory gap-8 overflow-x-auto pb-4 md:mt-10"
+          className="scrollbar-hide mt-8 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 min-[1440px]:mt-14 min-[1440px]:gap-10"
         >
           {cards.map((c) => (
             <article
               key={c.title}
-              className="relative h-[420px] w-[min(85vw,555px)] shrink-0 snap-center overflow-hidden rounded-2xl md:h-[480px] lg:h-[575px]"
+              className="relative h-[619px] w-[min(90vw,324px)] shrink-0 snap-center overflow-hidden rounded-lg md:h-[480px] md:w-[min(85vw,555px)] md:rounded-2xl min-[1440px]:h-[575px] min-[1440px]:rounded-[16px]"
             >
               <img
                 src={c.image}
@@ -91,21 +92,48 @@ export function AdditionalServicesSection() {
                 className="absolute inset-0 h-full w-full object-cover"
               />
               <div
-                className="absolute inset-0 rounded-2xl"
+                className="absolute inset-0 rounded-2xl min-[1440px]:rounded-[16px]"
                 style={{ backgroundImage: c.gradient }}
               />
-              <div className="absolute inset-x-0 bottom-0 p-6 md:p-7">
-                <h3 className="text-heading-5 text-white md:text-[32px] md:leading-10">
+              <div className="absolute inset-x-0 bottom-0 p-4 min-[1440px]:p-7 min-[1440px]:px-7 min-[1440px]:pb-9 md:p-7">
+                <h3 className="text-[24px] font-semibold leading-7 text-white min-[1440px]:text-[32px] min-[1440px]:leading-10">
                   {c.title}
                 </h3>
-                <p className="mt-2 max-w-[489px] text-body-3 text-white md:text-[18px] md:leading-7">
+                <p className="mt-2 max-w-[270px] text-[16px] leading-6 text-white min-[1440px]:mt-3 min-[1440px]:max-w-[489px] min-[1440px]:text-[18px] min-[1440px]:leading-7">
                   {c.body}
                 </p>
               </div>
             </article>
           ))}
         </div>
-      </div>
+
+        <div className="mt-8 flex justify-center gap-2 lg:hidden">
+          <button
+            type="button"
+            onClick={() => scrollBy(-1)}
+            className="flex size-[100px] shrink-0 items-center justify-center"
+            aria-label="Previous services"
+          >
+            <img
+              src={figma.carouselArrowLeft}
+              alt=""
+              className="h-full w-full object-contain"
+            />
+          </button>
+          <button
+            type="button"
+            onClick={() => scrollBy(1)}
+            className="flex size-[100px] shrink-0 items-center justify-center"
+            aria-label="Next services"
+          >
+            <img
+              src={figma.carouselArrowRight}
+              alt=""
+              className="h-full w-full object-contain"
+            />
+          </button>
+        </div>
+      </LandingInset>
     </section>
   );
 }

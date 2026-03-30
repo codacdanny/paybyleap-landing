@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { figma } from "../assets/figma";
+import { LandingInset } from "./LandingInset";
 
 const testimonials = [
   {
@@ -67,6 +68,59 @@ const testimonials = [
   },
 ];
 
+type Testimonial = (typeof testimonials)[number];
+
+function TestimonialCard({
+  t,
+  variant,
+}: {
+  t: Testimonial;
+  variant: "stack" | "carousel";
+}) {
+  return (
+    <article
+      className={
+        variant === "stack"
+          ? "relative min-h-[280px] w-full overflow-hidden rounded-2xl bg-[#EFD8D8] p-5 text-grey-100 min-[1440px]:rounded-[16px]"
+          : "relative min-h-[432px] w-[min(90vw,604px)] shrink-0 overflow-hidden rounded-2xl bg-[#EFD8D8] p-6 text-grey-100 md:p-8 min-[1440px]:rounded-[16px]"
+      }
+    >
+      <div className="flex gap-4 md:gap-6">
+        <img
+          src={t.avatar}
+          alt=""
+          className="size-20 shrink-0 rounded-full object-cover md:size-24 min-[1440px]:size-32"
+        />
+        <div className="min-w-0 flex-1 pt-1 md:pt-2">
+          <div className="h-1 w-16 rounded-full bg-black md:w-20" />
+          <h3 className="mt-3 text-[20px] font-semibold leading-7 md:mt-4 md:text-[32px] md:leading-10">
+            {t.name}
+          </h3>
+          <p className="mt-1 text-[14px] leading-5 text-grey-100 md:text-[18px]">
+            {t.role}
+          </p>
+        </div>
+      </div>
+      <div
+        className={
+          variant === "stack"
+            ? "relative mt-6 min-h-[100px] text-[14px] leading-6"
+            : "relative mt-8 min-h-[120px] text-body-3 min-[1440px]:mt-6 min-[1440px]:text-[20px] min-[1440px]:leading-7"
+        }
+      >
+        <p className="text-grey-100">{t.quote}</p>
+        <img
+          src={figma.testimonialQuoteMark}
+          alt=""
+          className={`pointer-events-none absolute bottom-0 right-0 opacity-90 min-[1440px]:size-[140px] ${
+            variant === "stack" ? "size-16" : "size-24"
+          }`}
+        />
+      </div>
+    </article>
+  );
+}
+
 export function TestimonialsSection() {
   const scrollerRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
@@ -80,54 +134,32 @@ export function TestimonialsSection() {
   };
 
   return (
-    <section className="bg-primary-dark py-20 text-white md:py-28">
-      <div className="mx-auto max-w-[1440px] px-4 md:px-6 lg:px-8">
-        <p className="text-center text-[18px] font-medium">
+    <section className="bg-primary-dark py-14 text-white md:py-20 lg:py-28">
+      <LandingInset>
+        <p className="text-center text-[14px] font-medium leading-5 tracking-wide md:text-[18px] md:leading-6">
           GLOBAL FEEDBACK: REAL STORIES FROM USERS
         </p>
-        <h2 className="mx-auto mt-6 max-w-[708px] text-center text-heading-3 md:text-[48px] md:leading-[56px]">
+        <h2 className="mx-auto mt-4 max-w-[330px] text-center text-[24px] font-semibold leading-8 md:mt-6 md:max-w-[708px] md:text-[36px] md:leading-[44px] min-[1440px]:mt-10 min-[1440px]:text-[48px] min-[1440px]:leading-[56px]">
           See what our customers says about our platform
         </h2>
+
+        <div className="mx-auto mt-10 flex max-w-[330px] flex-col gap-4 lg:hidden">
+          {testimonials.map((t) => (
+            <TestimonialCard key={`stack-${t.name}`} t={t} variant="stack" />
+          ))}
+        </div>
 
         <div
           ref={scrollerRef}
           onScroll={onScroll}
-          className="scrollbar-hide mt-16 flex gap-8 overflow-x-auto pb-4 md:mt-20"
+          className="scrollbar-hide mt-16 hidden gap-8 overflow-x-auto pb-4 lg:flex min-[1440px]:mt-[120px] min-[1440px]:gap-8"
         >
           {testimonials.map((t) => (
-            <article
-              key={t.name}
-              className="relative w-[min(90vw,604px)] shrink-0 overflow-hidden rounded-2xl bg-[#EFD8D8] p-6 text-grey-100 md:p-8"
-            >
-              <div className="flex gap-6">
-                <img
-                  src={t.avatar}
-                  alt=""
-                  className="h-24 w-24 shrink-0 rounded-full object-cover md:h-32 md:w-32"
-                />
-                <div className="min-w-0 flex-1 pt-2">
-                  <div className="h-1 w-20 rounded-full bg-black" />
-                  <h3 className="mt-4 text-heading-5 md:text-[32px] md:leading-10">
-                    {t.name}
-                  </h3>
-                  <p className="mt-1 text-body-3 text-grey-100 md:text-[18px]">
-                    {t.role}
-                  </p>
-                </div>
-              </div>
-              <div className="relative mt-8 min-h-[120px] text-body-3 md:text-[20px] md:leading-7">
-                <p className="text-grey-100">{t.quote}</p>
-                <img
-                  src={figma.testimonialQuoteMark}
-                  alt=""
-                  className="pointer-events-none absolute bottom-0 right-0 h-24 w-24 opacity-90 md:h-[140px] md:w-[140px]"
-                />
-              </div>
-            </article>
+            <TestimonialCard key={`carousel-${t.name}`} t={t} variant="carousel" />
           ))}
         </div>
 
-        <div className="mt-12 flex justify-center gap-1.5">
+        <div className="mt-12 hidden justify-center gap-[5px] lg:flex min-[1440px]:mt-20">
           {testimonials.map((_, i) => (
             <button
               key={i}
@@ -145,7 +177,7 @@ export function TestimonialsSection() {
             />
           ))}
         </div>
-      </div>
+      </LandingInset>
     </section>
   );
 }
