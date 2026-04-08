@@ -3,37 +3,62 @@ import { figma } from "../assets/figma";
 import { LandingInset } from "./LandingInset";
 import { Button } from "./Button";
 
-const navLinks = ["Products", "Company", "Support", "Legal"];
+const navLinks = [
+  { label: "Products", href: "#products", desktopWidth: "w-[82px]" },
+  { label: "Company", href: "#company", desktopWidth: "w-[73px]" },
+  { label: "Support", href: "#support", desktopWidth: "w-[125px]" },
+  { label: "Legal", href: "#legal", desktopWidth: "w-[78px]" },
+] as const;
+const topOptions = [
+  { id: "individual", label: "For Individual", comingSoon: false },
+  { id: "business", label: "For Business", comingSoon: true },
+  { id: "banks-fintechs", label: "For Banks & Fintechs", comingSoon: true },
+] as const;
+type TopOptionId = (typeof topOptions)[number]["id"];
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeTopOption, setActiveTopOption] = useState<TopOptionId>("individual");
 
   return (
     <header className="sticky top-0 z-50">
       <div className="border-b border-primary/10 bg-[#FFF0E3]">
         <LandingInset>
           <div className="mx-auto flex max-w-[1121px] flex-wrap items-center justify-between gap-x-2 gap-y-2 py-2.5 xl:py-[15px]">
-            <div className="flex max-w-[calc(100%-4rem)] flex-wrap items-center gap-x-2 gap-y-2 text-[12px] font-medium leading-4 xl:gap-x-[21px] xl:text-[16px] xl:leading-6">
-              <a
-                href="#individual"
-                className="border-b-2 border-primary px-1 py-0.5 font-medium text-grey-100 xl:border-b-[3px] xl:py-1"
-              >
-                For Individual
-              </a>
-              <span className="flex items-center gap-0.5 text-grey-70">
-                For Business
-                <span className="rounded-2xl bg-[#fbe6b0] px-[15px] py-[9px] text-[5px] font-normal leading-tight text-grey-100 xl:bg-secondary">
-                  Coming Soon
-                </span>
-              </span>
-              <span className="flex items-center gap-0.5 text-grey-70">
-                For Banks &amp; Fintechs
-                <span className="rounded-2xl bg-[#fbe6b0] px-[15px] py-[9px] text-[5px] font-normal leading-tight text-grey-100 xl:bg-secondary">
-                  Coming Soon
-                </span>
-              </span>
+            <div
+              className="flex max-w-[calc(100%-4rem)] flex-wrap items-center gap-x-2 gap-y-2 text-[12px] font-medium leading-4 xl:gap-x-[21px] xl:text-[16px] xl:leading-6"
+              role="tablist"
+              aria-label="Audience options"
+            >
+              {topOptions.map((option) => {
+                const isActive = activeTopOption === option.id;
+
+                return (
+                  <button
+                    key={option.id}
+                    type="button"
+                    role="tab"
+                    aria-selected={isActive}
+                    onClick={() => setActiveTopOption(option.id)}
+                    className={`flex items-center gap-0.5 px-1 py-0.5 xl:py-1 ${
+                      isActive
+                        ? "border-b-2 border-primary text-grey-100 xl:border-b-[3px]"
+                        : "border-b-2 border-transparent text-grey-70 xl:border-b-[3px]"
+                    }`}
+                  >
+                    <span className={isActive ? "text-button-lg text-grey-100" : ""}>
+                      {option.label}
+                    </span>
+                    {option.comingSoon ? (
+                      <span className="rounded-2xl bg-[#fbe6b0] px-[6px] py-[4px] text-[10px] font-normal leading-tight text-grey-100 xl:bg-secondary">
+                        Coming Soon
+                      </span>
+                    ) : null}
+                  </button>
+                );
+              })}
             </div>
-            <button
+            {/* <button
               type="button"
               className="flex shrink-0 items-center gap-0.5 text-[12px] font-medium leading-4 text-grey-100 xl:text-[18px] xl:leading-7"
             >
@@ -58,14 +83,14 @@ export function Header() {
                 alt=""
                 className="hidden h-5 w-5 rotate-180 xl:block"
               />
-            </button>
+            </button> */}
           </div>
         </LandingInset>
       </div>
 
       <div className="border-b border-grey-10 bg-white shadow-[0px_4px_24px_rgba(0,0,0,0.05)]">
         <LandingInset>
-          <div className="flex items-center justify-between py-4 lg:mx-auto lg:w-full lg:max-w-[1122px] lg:justify-center lg:gap-[116px] lg:py-6">
+          <div className="flex items-center justify-between py-4 lg:mx-auto lg:h-[76px] lg:w-full lg:max-w-[1122px] lg:justify-center lg:gap-[116px] lg:py-0">
             <a href="#" className="shrink-0">
               <img
                 src={figma.mobileLogo}
@@ -73,7 +98,7 @@ export function Header() {
                 className="h-6 w-[99px] object-contain object-left lg:hidden"
               />
               <img
-                src={figma.logo}
+                src="/logo/logo.png"
                 alt="PayByLeap"
                 className="hidden h-10 w-[152px] object-contain object-left lg:block"
               />
@@ -90,27 +115,30 @@ export function Header() {
             </button>
 
             <nav className="hidden lg:flex lg:w-[435px] lg:flex-none lg:justify-center lg:gap-2.5">
-              {navLinks.map((label) => (
+              {navLinks.map((item) => (
                 <a
-                  key={label}
-                  href={`#${label.toLowerCase()}`}
-                  className="flex h-10 items-center justify-center p-2.5 text-[18px] font-medium leading-6 text-grey-90 hover:text-primary"
+                  key={item.label}
+                  href={item.href}
+                  className={`flex h-10 items-center justify-center p-2.5 text-[18px] font-medium leading-6 text-grey-90 hover:text-primary ${item.desktopWidth}`}
                 >
-                  {label}
+                  {item.label}
                 </a>
               ))}
             </nav>
 
             <div className="hidden shrink-0 items-center gap-2 lg:flex">
-              <Button
-                variant="outline"
-                className="h-12 w-[110px] border-primary !bg-white px-2 text-[18px] font-medium !text-grey-90 hover:!bg-grey-10/80 hover:!text-grey-90"
+              <button
+                type="button"
+                className="flex h-12 w-[110px] items-center justify-center rounded-[8px] border border-primary bg-white px-2 py-4 text-[18px] font-medium leading-6 text-grey-90 transition-colors hover:bg-grey-10/80"
               >
                 Book a call
-              </Button>
-              <Button variant="primaryDark" className="w-[190px]">
+              </button>
+              <button
+                type="button"
+                className="flex h-12 w-[190px] items-center justify-center rounded-[8px] border border-primary-dark bg-primary-dark px-2 py-4 text-[18px] font-medium leading-6 text-white transition-colors hover:border-primary hover:bg-primary"
+              >
                 Download the app
-              </Button>
+              </button>
             </div>
           </div>
         </LandingInset>
@@ -126,14 +154,14 @@ export function Header() {
           />
           <div className="absolute right-0 top-0 flex h-full w-[min(100%,320px)] flex-col gap-6 bg-white px-6 py-8 shadow-xl">
             <nav className="flex flex-col gap-4">
-              {navLinks.map((label) => (
+              {navLinks.map((item) => (
                 <a
-                  key={label}
-                  href={`#${label.toLowerCase()}`}
+                  key={item.label}
+                  href={item.href}
                   className="text-[18px] font-medium text-grey-100"
                   onClick={() => setMenuOpen(false)}
                 >
-                  {label}
+                  {item.label}
                 </a>
               ))}
             </nav>
