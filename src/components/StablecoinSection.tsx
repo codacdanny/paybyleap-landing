@@ -146,21 +146,16 @@ export function StablecoinSection() {
       <LandingInset>
         <div className="mx-auto max-w-[1120px]">
           <div className="flex flex-col items-center text-center">
-            <div className="inline-flex h-7 items-center gap-0.5 rounded-2xl border border-primary/50 bg-[#fff0e3] px-2 py-1 text-[14px] leading-5 text-primary min-[1440px]:h-auto min-[1440px]:gap-2 min-[1440px]:text-[16px] min-[1440px]:leading-6">
+            <div className="inline-flex h-7 items-center gap-1 rounded-[999px] border border-primary/50 bg-[#fff0e3] px-2 py-1 text-[14px] leading-5 text-primary min-[1440px]:h-10 min-[1440px]:gap-2 min-[1440px]:px-3 min-[1440px]:text-[16px] min-[1440px]:leading-6">
               <img
-                src={figma.ionPlanetMobile}
+                src="/images/smarterlogo.svg"
                 alt=""
-                className="size-4 min-[1440px]:hidden"
-              />
-              <img
-                src={figma.ionPlanet}
-                alt=""
-                className="hidden size-4 min-[1440px]:block"
+                className=" shrink-0 min-[1440px]:size-[18px]"
               />
               Smarter finance for you
             </div>
             <h2 className="mt-6 max-w-[313px] text-[20px] font-semibold leading-7 text-grey-100 min-[1440px]:max-w-[595px] min-[1440px]:text-[48px] min-[1440px]:leading-[56px]">
-              Global Payments Powered by Stablecoins
+              Global Payments <br /> Powered by Stablecoins
             </h2>
           </div>
 
@@ -180,7 +175,7 @@ export function StablecoinSection() {
                 <img
                   src={figma.exploreArrow}
                   alt=""
-                  className="size-6 rotate-90"
+                  className="size-6"
                 />
               </a>
               <div className="lg:hidden">

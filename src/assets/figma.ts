@@ -77,9 +77,9 @@ export const figma = {
   flagCa3: "https://www.figma.com/api/mcp/asset/70b6e549-70d8-47e7-a138-9716ed40f22f",
   euMask2: "https://www.figma.com/api/mcp/asset/09fa5117-f4c5-4183-a68d-a23e8a0ce6c8",
   euFlag2: "https://www.figma.com/api/mcp/asset/76c0505d-f7e3-4f3c-87af-128fd8f06a35",
-  copyIcon: "https://www.figma.com/api/mcp/asset/e39afb3b-7f81-4622-85ef-530c7cba6d1f",
+  copyIcon: "/public/images/copy.svg",
   exploreArrow:
-    "https://www.figma.com/api/mcp/asset/39ed18e7-644c-4ddb-bfef-bd20ec41b596",
+    "/public/images/arrow-right.svg",
   ionPlanet: "https://www.figma.com/api/mcp/asset/ec906395-9030-438d-91e6-fe345caee41b",
   star: "https://www.figma.com/api/mcp/asset/8c4f375e-0d7b-45f3-8786-fde93e90da13",
   icApple: "https://www.figma.com/api/mcp/asset/81a3bad0-39e5-4cb7-82fe-b545dd168943",
