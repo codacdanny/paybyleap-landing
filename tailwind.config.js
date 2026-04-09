@@ -37,6 +37,7 @@ export default {
       transparent: "transparent",
     },
     fontFamily: {
+      nohemi: ["Nohemi", "'League Spartan'", "sans-serif"],
       spartan: "'League Spartan', sans-serif",
     },
     extend: {
