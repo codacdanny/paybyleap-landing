@@ -67,12 +67,12 @@ export const figma = {
     "https://www.figma.com/api/mcp/asset/e6706891-ae29-449a-ace0-dfdf9b36e83c",
   arrowCircle:
     "https://www.figma.com/api/mcp/asset/6c7c745c-bbfe-4fb8-9e69-1ddefb213299",
-  flagCa2: "https://www.figma.com/api/mcp/asset/bcdb6bd2-f463-49c1-b5ce-61752b4121a3",
-  flagNg2: "https://www.figma.com/api/mcp/asset/10abd99d-7fed-4b10-9dd8-b4be1465e969",
-  flagUs2: "https://www.figma.com/api/mcp/asset/0e0ddf5f-114f-4fc3-9d8b-eae3ba6ec5e6",
-  flagUk2: "https://www.figma.com/api/mcp/asset/92cf10e4-0e0e-45f2-abad-5daa8865c586",
+  flagCa2: "/public/images/flagCa2.svg",
+  flagNg2: "/public/images/flagNg2.svg",
+  flagUs2: "/public/images/flagUs2.svg",
+  flagUk2: "/public/images/flagUk2.svg",
   transferArrow:
-    "https://www.figma.com/api/mcp/asset/919f0186-e769-42f9-b56a-184eb7a7c6c8",
+    "/public/images/transferArrow.svg",
   flagUs3: "https://www.figma.com/api/mcp/asset/495f615c-3582-447c-9e2a-d5aa8fd02949",
   flagCa3: "https://www.figma.com/api/mcp/asset/70b6e549-70d8-47e7-a138-9716ed40f22f",
   euMask2: "https://www.figma.com/api/mcp/asset/09fa5117-f4c5-4183-a68d-a23e8a0ce6c8",

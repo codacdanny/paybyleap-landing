@@ -3,65 +3,37 @@ import { LandingInset } from "./LandingInset";
 
 export function MoneyTransferSection() {
   return (
-    <section className="bg-off-white py-10 md:py-16 lg:py-24">
+    <section className="bg-off-white">
       <LandingInset>
         <div className="mx-auto max-w-[1120px]">
-          <div className="relative min-h-[464px] overflow-hidden rounded-2xl bg-[#1a1a1a] text-white min-[1440px]:h-[329px] min-[1440px]:rounded-[16px]">
-            <div className="relative grid items-end gap-4 lg:grid-cols-[1fr_minmax(280px,409px)] lg:gap-0 min-[1440px]:min-h-[329px]">
-              <div className="z-[2] max-w-lg px-4 pb-6 pt-8 md:px-8 md:pb-10 md:pt-10 lg:px-12 lg:pb-12 lg:pt-14 min-[1440px]:px-[31px] min-[1440px]:pb-0 min-[1440px]:pt-[70px]">
-                <h2 className="text-[20px] font-semibold leading-7 text-white min-[1440px]:text-[32px] min-[1440px]:leading-10">
+          <div className="relative max-h-[464px] overflow-hidden rounded-2xl bg-[#1a1a1a] text-white min-[1440px]:h-[329px] min-[1440px]:rounded-[16px]">
+            <div className="relative grid items-start gap-4 lg:grid-cols-[1fr_minmax(280px,409px)] lg:gap-0 min-[1440px]:min-h-[329px]">
+              <div className="z-[2] max-w-lg px-4 pb-6 pt-8 md:px-8 md:pb-10 md:pt-10 lg:px-12 lg:pb-12 lg:pt-14 min-[1440px]:max-w-[530px] min-[1440px]:px-[31px] min-[1440px]:pb-0 min-[1440px]:pt-[70px]">
+                <h2 className="font-nohemi text-[20px] font-semibold leading-7 text-white min-[1440px]:text-[32px] min-[1440px]:leading-10">
                   Global Money Transfer
                 </h2>
                 <p className="mt-3 text-[14px] leading-[22px] text-white/95 min-[1440px]:text-[20px] min-[1440px]:leading-7">
-                  Send and receive money worldwide
+                  Send and receive money worldwide.
                 </p>
                 <a
                   href="#transfer"
-                  className="mt-8 inline-flex h-10 items-center gap-2 rounded-2xl px-2 text-[18px] font-medium text-secondary"
+                  className="mt-8 inline-flex h-10 items-center gap-2 rounded-2xl px-2 text-[18px] font-medium text-secondary min-[1440px]:mt-[34px]"
                 >
-                  Transfer now
+                  Transfer Now
                   <img
                     src={figma.transferArrow}
                     alt=""
-                    className="size-6 rotate-90"
+                    className="size-6"
                   />
                 </a>
               </div>
 
-              <div className="relative min-h-[280px] lg:min-h-[329px] min-[1440px]:min-h-0">
-                <img
-                  src={figma.flagCa2}
-                  alt=""
-                  className="absolute left-[8%] top-[28%] z-[3] size-6 object-contain"
-                />
-                <img
-                  src={figma.flagNg2}
-                  alt=""
-                  className="absolute right-[18%] top-[8%] z-[3] size-6 object-contain"
-                />
-                <img
-                  src={figma.flagUs2}
-                  alt=""
-                  className="absolute bottom-[32%] left-[6%] z-[3] size-6 object-contain"
-                />
-                <div className="absolute bottom-[28%] right-[10%] z-[3] size-6 overflow-hidden rounded-full blur-[2px]">
-                  <img
-                    src={figma.euFlag}
-                    alt=""
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-                <img
-                  src={figma.flagUk2}
-                  alt=""
-                  className="absolute right-[8%] top-[12%] z-[3] size-6 object-contain"
-                />
-
-                <div className="relative mx-auto h-[232px] w-full max-w-[270px] overflow-hidden rounded-t-lg lg:mx-0 lg:ml-auto lg:h-[352px] lg:max-w-[409px] lg:rounded-none lg:absolute lg:bottom-0 lg:right-0">
+              <div className="relative min-h-[280px] lg:min-h-[329px] min-[1440px]:min-h-[329px]">
+                <div className="relative mx-auto h-[232px] w-full max-w-[270px] overflow-hidden rounded-t-lg lg:mx-0 lg:ml-auto lg:h-[352px] lg:max-w-[409px] lg:rounded-none lg:absolute lg:bottom-0 lg:right-0 min-[1440px]:h-[329px] min-[1440px]:w-[409px] min-[1440px]:max-w-none">
                   <img
                     src={figma.femalePhoneMockup}
                     alt="Person using PayByLeap on a phone"
-                    className="h-full w-full object-cover object-top"
+                    className="h-full w-full object-cover object-[center_12%]"
                   />
                   <div
                     className="absolute inset-0 bg-gradient-to-b from-[#1a1a1a] to-transparent to-[30%] lg:hidden"
@@ -70,11 +42,47 @@ export function MoneyTransferSection() {
                 </div>
               </div>
             </div>
+
+            {/* Floating country flags — positioned relative to the whole card */}
+            <img
+              src={figma.flagNg2}
+              alt=""
+              className="absolute z-[4] hidden size-7 object-contain min-[1440px]:block"
+              style={{ top: 42, right: 356 }}
+            />
+            <img
+              src={figma.flagUk2}
+              alt=""
+              className="absolute z-[4] hidden size-7 object-contain min-[1440px]:block"
+              style={{ top: 42, right: 64 }}
+            />
+            <img
+              src={figma.flagCa2}
+              alt=""
+              className="absolute z-[4] hidden size-7 object-contain min-[1440px]:block"
+              style={{ top: 144, right: 420 }}
+            />
+            <img
+              src={figma.flagUs2}
+              alt=""
+              className="absolute z-[4] hidden size-7 object-contain min-[1440px]:block"
+              style={{ bottom: 48, right: 390 }}
+            />
+            <div
+              className="absolute z-[4] hidden size-7 overflow-hidden rounded-full min-[1440px]:block"
+              style={{ bottom: 54, right: 86 }}
+            >
+              <img
+                src={figma.euFlag}
+                alt=""
+                className="h-full w-full object-cover"
+              />
+            </div>
           </div>
 
           <div className="mt-6 grid gap-6 min-[1440px]:mt-[27px] min-[1440px]:grid-cols-2 min-[1440px]:gap-[27px]">
             <article className="flex min-h-[464px] flex-col overflow-hidden rounded-2xl bg-[#fdf2d8] p-4 md:p-8 lg:p-10 min-[1440px]:min-h-[587px] min-[1440px]:rounded-[16px]">
-              <h3 className="text-[20px] font-semibold leading-7 text-grey-100 min-[1440px]:text-[32px] min-[1440px]:leading-10">
+              <h3 className="font-nohemi text-[20px] font-semibold leading-7 text-grey-100 min-[1440px]:text-[32px] min-[1440px]:leading-10">
                 Send/Receive Crypto
               </h3>
               <p className="mt-2 text-[14px] leading-[22px] text-grey-80 min-[1440px]:text-[20px] min-[1440px]:leading-7">
@@ -91,17 +99,17 @@ export function MoneyTransferSection() {
                   className="size-6 rotate-90"
                 />
               </a>
-              <div className="relative mt-8 flex min-h-[200px] w-full flex-1 items-end justify-center">
+              <div className="relative mt-8 flex min-h-[200px] w-full flex-1 items-end justify-center min-[1440px]:mt-10">
                 <img
                   src={figma.cryptoGraphic}
                   alt=""
-                  className="h-auto w-full max-w-[500px] object-contain"
+                  className="h-auto w-full max-w-[500px] object-contain min-[1440px]:max-w-[524px]"
                 />
               </div>
             </article>
 
             <article className="relative flex min-h-[464px] flex-col overflow-hidden rounded-2xl bg-[#fff4f4] p-4 md:p-8 lg:p-10 min-[1440px]:min-h-[587px] min-[1440px]:rounded-[16px]">
-              <h3 className="text-[20px] font-semibold leading-7 text-grey-100 min-[1440px]:text-[32px] min-[1440px]:leading-10">
+              <h3 className="font-nohemi text-[20px] font-semibold leading-7 text-grey-100 min-[1440px]:text-[32px] min-[1440px]:leading-10">
                 International Fees Payment
               </h3>
               <p className="mt-2 text-[14px] leading-[22px] text-grey-80 min-[1440px]:text-[20px] min-[1440px]:leading-7">
@@ -126,11 +134,11 @@ export function MoneyTransferSection() {
                     className="h-auto w-full max-w-[335px] object-contain"
                   />
                 </div>
-                <div className="pointer-events-none absolute -right-8 top-0 hidden opacity-90 lg:block">
+                <div className="pointer-events-none absolute -right-8 top-0 hidden opacity-90 lg:block min-[1440px]:-right-3 min-[1440px]:top-2">
                   <img
                     src={figma.feesPolygon}
                     alt=""
-                    className="h-48 w-48 rotate-[21deg] object-contain"
+                    className="h-48 w-48 rotate-[21deg] object-contain min-[1440px]:h-[212px] min-[1440px]:w-[212px]"
                   />
                 </div>
                 <div className="relative z-[1] hidden rounded-2xl border-[3px] border-grey-100 bg-white p-5 shadow-[0px_4px_30px_rgba(0,0,0,0.07)] lg:block">
