@@ -80,53 +80,56 @@ export function MoneyTransferSection() {
             </div>
           </div>
 
-          <div className="mt-6 grid gap-6 min-[1440px]:mt-[27px] min-[1440px]:grid-cols-2 min-[1440px]:gap-[27px]">
-            <article className="flex min-h-[464px] flex-col overflow-hidden rounded-2xl bg-[#fdf2d8] p-4 md:p-8 lg:p-10 min-[1440px]:min-h-[587px] min-[1440px]:rounded-[16px]">
+          <div className="mt-6 grid gap-6 min-[1440px]:mt-[27px] min-[1440px]:grid-cols-[minmax(0,545px)_minmax(0,548px)] min-[1440px]:gap-[27px]">
+            {/* ── Send/Receive Crypto ── */}
+            <article className="flex max-h-[464px] flex-col overflow-hidden rounded-2xl bg-[#fdf2d8] p-4 md:p-8 min-[1440px]:min-h-[587px] min-[1440px]:rounded-[16px] min-[1440px]:p-[22px]">
               <h3 className="font-nohemi text-[20px] font-semibold leading-7 text-grey-100 min-[1440px]:text-[32px] min-[1440px]:leading-10">
                 Send/Receive Crypto
               </h3>
-              <p className="mt-2 text-[14px] leading-[22px] text-grey-80 min-[1440px]:text-[20px] min-[1440px]:leading-7">
+              <p className="mt-2 text-[14px] leading-[22px] text-grey-80 min-[1440px]:mt-3 min-[1440px]:text-[20px] min-[1440px]:leading-7">
                 Buy, sell, or transfer crypto easily
               </p>
               <a
                 href="#crypto"
-                className="mt-6 inline-flex h-10 items-center gap-2 rounded-2xl px-2 text-[18px] font-semibold text-primary"
+                className="mt-4 inline-flex h-10 items-center gap-2 px-2 text-[18px] font-medium text-primary min-[1440px]:mt-6"
               >
                 Explore Crypto
                 <img
-                  src={figma.arrowCircle}
+                  src={figma.exploreArrow}
                   alt=""
-                  className="size-6 rotate-90"
+                  className="size-6"
                 />
               </a>
-              <div className="relative mt-8 flex min-h-[200px] w-full flex-1 items-end justify-center min-[1440px]:mt-10">
+              <div className="relative mt-6 flex w-full flex-1 items-end justify-center overflow-hidden min-[1440px]:mt-8 min-[1440px]:-mx-[22px] min-[1440px]:mb-0 min-[1440px]:w-[calc(100%+44px)]">
                 <img
                   src={figma.cryptoGraphic}
                   alt=""
-                  className="h-auto w-full max-w-[500px] object-contain min-[1440px]:max-w-[524px]"
+                  className="h-auto w-full object-contain"
                 />
               </div>
             </article>
 
-            <article className="relative flex min-h-[464px] flex-col overflow-hidden rounded-2xl bg-[#fff4f4] p-4 md:p-8 lg:p-10 min-[1440px]:min-h-[587px] min-[1440px]:rounded-[16px]">
+            {/* ── International Fees Payments ── */}
+            <article className="relative flex max-h-[464px] flex-col overflow-hidden rounded-2xl bg-[#fff4f4] p-4 md:p-8 min-[1440px]:min-h-[587px] min-[1440px]:rounded-[16px] min-[1440px]:p-[22px]">
               <h3 className="font-nohemi text-[20px] font-semibold leading-7 text-grey-100 min-[1440px]:text-[32px] min-[1440px]:leading-10">
-                International Fees Payment
+                International Fees Payments
               </h3>
-              <p className="mt-2 text-[14px] leading-[22px] text-grey-80 min-[1440px]:text-[20px] min-[1440px]:leading-7">
-                Pay tuition, WES and global fees seamlessly
+              <p className="mt-2 text-[14px] leading-[22px] text-grey-80 min-[1440px]:mt-3 min-[1440px]:text-[20px] min-[1440px]:leading-7">
+                Pay tuition, WES, and global fees seamlessly.
               </p>
               <a
                 href="#fees"
-                className="mt-6 inline-flex h-10 items-center gap-2 rounded-2xl px-2 text-[18px] font-semibold text-primary"
+                className="mt-4 inline-flex h-10 items-center gap-2 px-2 text-[18px] font-medium text-primary min-[1440px]:mt-6"
               >
                 Pay Fees
                 <img
-                  src={figma.arrowCircle}
+                  src={figma.exploreArrow}
                   alt=""
-                  className="size-6 rotate-90"
+                  className="size-6"
                 />
               </a>
-              <div className="relative mt-6 min-h-[200px] flex-1 min-[1440px]:mt-8 min-[1440px]:min-h-[240px]">
+              <div className="relative mt-6 flex-1 min-[1440px]:mt-8">
+                {/* Mobile visual */}
                 <div className="relative z-[1] lg:hidden">
                   <img
                     src={figma.feeIllustrationMobile}
@@ -134,40 +137,19 @@ export function MoneyTransferSection() {
                     className="h-auto w-full max-w-[335px] object-contain"
                   />
                 </div>
-                <div className="pointer-events-none absolute -right-8 top-0 hidden opacity-90 lg:block min-[1440px]:-right-3 min-[1440px]:top-2">
+                {/* Desktop: polygon bg + card image as one unit */}
+                <div className="relative mx-auto hidden max-w-[504px] lg:block">
                   <img
                     src={figma.feesPolygon}
                     alt=""
-                    className="h-48 w-48 rotate-[21deg] object-contain min-[1440px]:h-[212px] min-[1440px]:w-[212px]"
+                    className="pointer-events-none absolute -right-[60px] top-[10px] z-0  rotate-[300deg] object-contain"
                   />
-                </div>
-                <div className="relative z-[1] hidden rounded-2xl border-[3px] border-grey-100 bg-white p-5 shadow-[0px_4px_30px_rgba(0,0,0,0.07)] lg:block">
-                  <div className="flex items-start gap-3 border-b border-grey-10 pb-4">
-                    <div className="relative h-10 w-7 shrink-0 overflow-hidden">
-                      <img
-                        src={figma.saintLouisCrest}
-                        alt=""
-                        className="h-full w-full object-contain object-left-top"
-                      />
-                    </div>
-                    <p className="text-body-3 text-grey-100">
-                      Saint Louis University, Missouri
-                    </p>
+                  <div className="relative z-[1] overflow-hidden rounded-[16px] ">
                     <img
-                      src={figma.flagUsFees}
+                      src="/images/international-payment.png"
                       alt=""
-                      className="ml-auto size-10 rounded-full object-cover"
+                      className="block h-auto w-full"
                     />
-                  </div>
-                  <div className="mt-4 space-y-4">
-                    {["Student email", "Student legal name", "Portal link"].map(
-                      (label) => (
-                        <div key={label}>
-                          <p className="text-[12px] text-grey-100">{label}</p>
-                          <div className="mt-1 h-2.5 rounded bg-grey-10" />
-                        </div>
-                      )
-                    )}
                   </div>
                 </div>
               </div>

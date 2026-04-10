@@ -25,7 +25,7 @@ export const figma = {
   foreignAccountsGlobe:
     "https://www.figma.com/api/mcp/asset/ea941d5b-dd9f-4084-8b76-2b2b598aae18",
   saintLouisCrest:
-    "https://www.figma.com/api/mcp/asset/bb72f39e-37e4-4dfd-817a-50ae8e7eec85",
+    "/public/images/international-payment.png",
   benefitsBgPattern:
     "https://www.figma.com/api/mcp/asset/4ec5e457-3cbc-4652-9d3f-eb2c055c4bbe",
   benefitsHandScene:
@@ -44,8 +44,8 @@ export const figma = {
   serviceInvoice:
     "https://www.figma.com/api/mcp/asset/9a440c36-08a7-4045-b4b9-bd734eb9b85e",
   cryptoGraphic:
-    "https://www.figma.com/api/mcp/asset/0f617b3d-b163-412e-b1fa-6e6d974241de",
-  feesPolygon: "https://www.figma.com/api/mcp/asset/da0e63c1-d130-420c-a831-94a0f59a2f99",
+    "/public/images/cryptimg.svg",
+  feesPolygon: "/public/images/Polygonbg.svg",
   visa: "https://www.figma.com/api/mcp/asset/8533d6c7-e80c-4597-b5e4-fce53b10b795",
   /** Stacked cards texture (CAD/NGN) */
   cardTexture:
