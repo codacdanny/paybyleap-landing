@@ -154,4 +154,7 @@ export const figma = {
     "https://www.figma.com/api/mcp/asset/cd7b8eb1-3152-42fe-b5d7-69306dec127d",
   starMobile:
     "https://www.figma.com/api/mcp/asset/60aed023-10cf-4de5-93ee-8c06fe8b4374",
+  /** Cream cutout shape at bottom of "Get the mobile app" section */
+  mobileAppCutout:
+    "https://www.figma.com/api/mcp/asset/8412d515-8c22-4fc1-a39b-56b107630143",
 } as const;
