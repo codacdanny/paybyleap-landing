@@ -101,7 +101,7 @@ export const figma = {
   testimonialAvatar4:
     "https://www.figma.com/api/mcp/asset/f36f512f-048d-4954-9a49-1298e5654134",
   testimonialQuoteMark:
-    "https://www.figma.com/api/mcp/asset/ab5c9a83-64e2-40a4-a9a0-c18fcf3c135d",
+    "/public/images/testimonialQuoteMark.svg",
 
   footerDividerLine:
     "https://www.figma.com/api/mcp/asset/4f68c4f5-ccaa-4898-b907-c7a9a15b80be",
@@ -110,14 +110,14 @@ export const figma = {
   footerGooglePlayWhite:
     "https://www.figma.com/api/mcp/asset/910d114f-bb37-4d01-9380-ae873d421e8f",
   socialInstagram:
-    "https://www.figma.com/api/mcp/asset/e43e083c-b7e4-4cdb-936e-2ea22b7a786a",
+    "/public/images/fe_instagram.svg",
   socialFacebook:
-    "https://www.figma.com/api/mcp/asset/afbe5b05-1cac-4d31-a82d-d6f4b85efcac",
+    "/public/images/fe_fb.svg",
   socialLinkedin:
-    "https://www.figma.com/api/mcp/asset/99a3da06-78b3-4c25-b7a9-e5f7ae38e0d0",
+    "/public/images/fe_linkedin.svg",
   socialYoutube:
-    "https://www.figma.com/api/mcp/asset/07ba850d-3918-485b-bcaf-293ad4987a26",
-  socialX: "https://www.figma.com/api/mcp/asset/c92d1aad-ad83-4df6-814d-4845f999e132",
+    "/public/images/youtube.svg",
+  socialX: "/public/images/x.svg",
 
   /** Mobile landing — Figma node 4446:27946 (~390px) */
   mobileLogo: "https://www.figma.com/api/mcp/asset/91a936d6-7ced-404b-92d5-0accac13b22e",

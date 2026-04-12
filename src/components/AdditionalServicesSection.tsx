@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState, useCallback, useEffect } from "react";
 import { figma } from "../assets/figma";
 import { LandingInset } from "./LandingInset";
 import { Button } from "./Button";
@@ -29,6 +29,27 @@ const cards = [
 
 export function AdditionalServicesSection() {
   const scrollerRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const updateScrollState = useCallback(() => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    setCanScrollLeft(el.scrollLeft > 1);
+    setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 1);
+  }, []);
+
+  useEffect(() => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    updateScrollState();
+    el.addEventListener("scroll", updateScrollState, { passive: true });
+    window.addEventListener("resize", updateScrollState);
+    return () => {
+      el.removeEventListener("scroll", updateScrollState);
+      window.removeEventListener("resize", updateScrollState);
+    };
+  }, [updateScrollState]);
 
   const scrollBy = (dir: -1 | 1) => {
     const el = scrollerRef.current;
@@ -37,41 +58,53 @@ export function AdditionalServicesSection() {
     el.scrollBy({ left: dir * w, behavior: "smooth" });
   };
 
+  const leftSrc = canScrollLeft
+    ? "/images/nav-arrow-right.svg"
+    : "/images/nav-arrow-left.svg";
+  const leftRotate = canScrollLeft ? "rotate-180" : "";
+
+  const rightSrc = canScrollRight
+    ? "/images/nav-arrow-right.svg"
+    : "/images/nav-arrow-left.svg";
+  const rightRotate = canScrollRight ? "" : "rotate-180";
+
   return (
     <section className="bg-[#fbf7fb] py-12 md:py-16 lg:py-24">
       <LandingInset>
         <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
           <div className="max-w-[708px]">
-            <h2 className="text-[24px] font-semibold leading-8 text-grey-100 min-[1440px]:text-[36px] min-[1440px]:leading-[56px]">
+            <h2 className="font-nohemi text-[24px] font-semibold leading-8 text-grey-100 min-[1440px]:text-[36px] min-[1440px]:font-medium min-[1440px]:leading-[56px]">
               Additional Services Available in the App
             </h2>
             <Button className="mt-6 h-12 min-h-[48px] w-[190px] border-2 border-secondary bg-primary px-4 text-[18px] font-medium min-[1440px]:mt-[23px] min-[1440px]:h-[58px]">
               Download the app
             </Button>
           </div>
-          <div className="hidden shrink-0 items-center gap-0 lg:flex md:gap-2">
+          <div className="hidden shrink-0 items-center lg:flex">
             <button
               type="button"
               onClick={() => scrollBy(-1)}
-              className="flex size-[72px] shrink-0 items-center justify-center rounded-full transition hover:bg-grey-10/80 min-[1440px]:size-[100px]"
+              disabled={!canScrollLeft}
+              className="flex size-[72px] shrink-0 items-center justify-center disabled:cursor-default min-[1440px]:size-[100px]"
               aria-label="Previous services"
             >
               <img
-                src={figma.carouselArrowLeft}
+                src={leftSrc}
                 alt=""
-                className="h-full w-full object-contain"
+                className={`size-full object-contain ${leftRotate}`}
               />
             </button>
             <button
               type="button"
               onClick={() => scrollBy(1)}
-              className="flex size-[72px] shrink-0 items-center justify-center rounded-full transition hover:bg-grey-10/80 min-[1440px]:size-[100px]"
+              disabled={!canScrollRight}
+              className="flex size-[72px] shrink-0 items-center justify-center disabled:cursor-default min-[1440px]:size-[100px]"
               aria-label="Next services"
             >
               <img
-                src={figma.carouselArrowRight}
+                src={rightSrc}
                 alt=""
-                className="h-full w-full object-contain"
+                className={`size-full object-contain ${rightRotate}`}
               />
             </button>
           </div>
@@ -95,7 +128,7 @@ export function AdditionalServicesSection() {
                 className="absolute inset-0 rounded-2xl min-[1440px]:rounded-[16px]"
                 style={{ backgroundImage: c.gradient }}
               />
-              <div className="absolute inset-x-0 bottom-0 p-4 min-[1440px]:p-7 min-[1440px]:px-7 min-[1440px]:pb-9 md:p-7">
+              <div className="absolute inset-x-0 bottom-0 p-4 md:p-7 min-[1440px]:px-7 min-[1440px]:pb-9">
                 <h3 className="text-[24px] font-semibold leading-7 text-white min-[1440px]:text-[32px] min-[1440px]:leading-10">
                   {c.title}
                 </h3>
@@ -107,29 +140,32 @@ export function AdditionalServicesSection() {
           ))}
         </div>
 
-        <div className="mt-8 flex justify-center gap-2 lg:hidden">
+        {/* Mobile arrows */}
+        <div className="mt-8 flex justify-center lg:hidden">
           <button
             type="button"
             onClick={() => scrollBy(-1)}
-            className="flex size-[100px] shrink-0 items-center justify-center"
+            disabled={!canScrollLeft}
+            className="flex size-[100px] shrink-0 items-center justify-center disabled:cursor-default"
             aria-label="Previous services"
           >
             <img
-              src={figma.carouselArrowLeft}
+              src={leftSrc}
               alt=""
-              className="h-full w-full object-contain"
+              className={`size-full object-contain ${leftRotate}`}
             />
           </button>
           <button
             type="button"
             onClick={() => scrollBy(1)}
-            className="flex size-[100px] shrink-0 items-center justify-center"
+            disabled={!canScrollRight}
+            className="flex size-[100px] shrink-0 items-center justify-center disabled:cursor-default"
             aria-label="Next services"
           >
             <img
-              src={figma.carouselArrowRight}
+              src={rightSrc}
               alt=""
-              className="h-full w-full object-contain"
+              className={`size-full object-contain ${rightRotate}`}
             />
           </button>
         </div>
