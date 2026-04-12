@@ -81,7 +81,7 @@ export const figma = {
   exploreArrow:
     "/public/images/arrow-right.svg",
   ionPlanet: "https://www.figma.com/api/mcp/asset/ec906395-9030-438d-91e6-fe345caee41b",
-  star: "https://www.figma.com/api/mcp/asset/8c4f375e-0d7b-45f3-8786-fde93e90da13",
+  star: "/public/images/Star.svg",
   icApple: "https://www.figma.com/api/mcp/asset/81a3bad0-39e5-4cb7-82fe-b545dd168943",
   learnArrow:
     "https://www.figma.com/api/mcp/asset/e6706891-ae29-449a-ace0-dfdf9b36e83c",
@@ -153,7 +153,7 @@ export const figma = {
   ionPlanetMobile:
     "https://www.figma.com/api/mcp/asset/cd7b8eb1-3152-42fe-b5d7-69306dec127d",
   starMobile:
-    "https://www.figma.com/api/mcp/asset/60aed023-10cf-4de5-93ee-8c06fe8b4374",
+    "/public/images/Star.svg",
   /** Cream cutout shape at bottom of "Get the mobile app" section */
   mobileAppCutout:
     "https://www.figma.com/api/mcp/asset/8412d515-8c22-4fc1-a39b-56b107630143",
