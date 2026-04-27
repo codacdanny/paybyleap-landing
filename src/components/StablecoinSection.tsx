@@ -38,7 +38,7 @@ function StackedCardsVisualDesktop() {
  
   return (
     <div className="relative mx-auto mt-24 h-[300px] w-full max-w-[369px] md:h-[368px]">
-      <img src={'/public/images/cards.png'} alt="" className="w-full h-auto object-cover" />
+      <img src={"/images/cards.png"} alt="" className="w-full h-auto object-cover" />
     </div>
   );
 }

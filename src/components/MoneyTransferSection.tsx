@@ -48,29 +48,29 @@ export function MoneyTransferSection() {
               src={figma.flagNg2}
               alt=""
               className="absolute z-[4] hidden size-7 object-contain min-[1440px]:block"
-              style={{ top: 42, right: 356 }}
+              style={{ top: 42, right: 386 }}
             />
             <img
               src={figma.flagUk2}
               alt=""
               className="absolute z-[4] hidden size-7 object-contain min-[1440px]:block"
-              style={{ top: 42, right: 64 }}
+              style={{ top: 42, right: 34 }}
             />
             <img
               src={figma.flagCa2}
               alt=""
               className="absolute z-[4] hidden size-7 object-contain min-[1440px]:block"
-              style={{ top: 144, right: 420 }}
+              style={{ top: 144, right: 460 }}
             />
             <img
               src={figma.flagUs2}
               alt=""
               className="absolute z-[4] hidden size-7 object-contain min-[1440px]:block"
-              style={{ bottom: 48, right: 390 }}
+              style={{ bottom: 48, right: 420 }}
             />
             <div
               className="absolute z-[4] hidden size-7 overflow-hidden rounded-full min-[1440px]:block"
-              style={{ bottom: 54, right: 86 }}
+              style={{ bottom: 54, right: 36 }}
             >
               <img
                 src={figma.euFlag}

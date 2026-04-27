@@ -78,7 +78,7 @@ export function MobileAppHero() {
         <img
           src={figma.mobileAppCutout}
           alt=""
-          className="pointer-events-none absolute -bottom-[2px] -left-[67px] hidden h-[125px] w-[744px] lg:block"
+          className="pointer-events-none absolute -bottom-px left-0 hidden h-auto w-[520px] lg:block"
         />
       </div>
     </section>

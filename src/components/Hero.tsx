@@ -72,14 +72,14 @@ function HeroIllustration() {
             <img
               src={figma.iphoneAirMockup}
               alt="PayByLeap app on iPhone"
-              className="absolute inset-0 z-[1] h-full w-full object-cover drop-shadow-card"
+              className="absolute  object-cover drop-shadow-card"
             />
 
             <div className="absolute left-[183px] top-[300px] z-[2] h-[195px] w-[293px]">
               <div className="relative h-[195px] overflow-hidden rounded-[9.134px] bg-primary shadow-[0px_9px_4px_rgba(154,0,0,0.05)]">
       
               <img
-                  src={'/public/images/USD Card.png'}
+                  src={"/images/USD Card.png"}
                   alt=""
                   className="pointer-events-none absolute left-[3px] top-[-2px] h-[184px] w-[287px] max-w-none object-cover"
                 />

@@ -197,7 +197,7 @@ export function BenefitsPhoneSection() {
               href="#"
               className="inline-flex h-16 w-full min-w-0 items-center justify-center gap-1 rounded-lg bg-[#000] px-4 text-white min-[1440px]:w-[201px]"
             >
-              <img src={'/public/images/applelogo.svg'} alt="" className="size-8" />
+              <img src={"/images/applelogo.svg"} alt="" className="size-8" />
               <span className="text-left leading-tight">
                 <span className="block text-[14px] font-normal">
                   Download app on

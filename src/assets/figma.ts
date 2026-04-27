@@ -9,7 +9,7 @@ export const figma = {
   heroDecor: "https://www.figma.com/api/mcp/asset/c237f278-a310-4696-aa60-d10bb25cf81a",
   /** Desktop phone — Figma 4446:27345 */
   iphoneAirMockup:
-    "https://www.figma.com/api/mcp/asset/5d00c5fe-bda8-4a9b-aa07-ee9578ec52bf",
+    "/images/iphone-mock.png",
   cardWatermark:
     "https://www.figma.com/api/mcp/asset/88b81277-921d-4c27-a0c1-58d388fb690b",
   chipDetail: "https://www.figma.com/api/mcp/asset/007b58d6-0df8-4502-8ec9-0db2b350c5e7",
@@ -21,11 +21,11 @@ export const figma = {
   globeGridEarth:
     "https://www.figma.com/api/mcp/asset/ec906395-9030-438d-91e6-fe345caee41b",
   femalePhoneMockup:
-    "https://www.figma.com/api/mcp/asset/73d84fee-be71-4057-9557-f80e17c14f26",
+    "/images/portrait.png",
   foreignAccountsGlobe:
     "https://www.figma.com/api/mcp/asset/ea941d5b-dd9f-4084-8b76-2b2b598aae18",
   saintLouisCrest:
-    "/public/images/international-payment.png",
+    "/images/international-payment.png",
   benefitsBgPattern:
     "https://www.figma.com/api/mcp/asset/4ec5e457-3cbc-4652-9d3f-eb2c055c4bbe",
   benefitsHandScene:
@@ -35,7 +35,7 @@ export const figma = {
   googlePlayIcon: "https://www.figma.com/api/mcp/asset/910d114f-bb37-4d01-9380-ae873d421e8f",
   /** Dark “Get the mobile app” hero photo */
   mobileAppHeroPhoto:
-    "https://www.figma.com/api/mcp/asset/f6426874-84da-455d-8c49-b593fe4213d7",
+    "/public/images/femalebg.png",
   /** Carousel / card — café scene */
   serviceBillPayments:
     "https://www.figma.com/api/mcp/asset/d222446b-a4da-4665-984c-f81fd964a077",
@@ -44,8 +44,8 @@ export const figma = {
   serviceInvoice:
     "https://www.figma.com/api/mcp/asset/9a440c36-08a7-4045-b4b9-bd734eb9b85e",
   cryptoGraphic:
-    "/public/images/cryptimg.svg",
-  feesPolygon: "/public/images/Polygonbg.svg",
+    "/images/cryptimg.svg",
+  feesPolygon: "/images/Polygonbg.svg",
   visa: "https://www.figma.com/api/mcp/asset/8533d6c7-e80c-4597-b5e4-fce53b10b795",
   /** Stacked cards texture (CAD/NGN) */
   cardTexture:
@@ -54,34 +54,34 @@ export const figma = {
   cardTextureFront:
     "https://www.figma.com/api/mcp/asset/f95974f6-0b88-48b3-8c52-3e2b68be4c7b",
   chipEllipse: "https://www.figma.com/api/mcp/asset/0251b2f8-b19f-44b6-9b02-4777ffad0e92",
-  flagNg: "/public/images/nigeria-flag.png",
-  flagUs: "/public/images/us-flag.png",
-  flagCa: "/public/images/cad-flag.png",
-  euMask: "/public/images/eur-flag.png",
-  euFlag: "/public/images/eur-flag.png",
-  flagUk: "/public/images/pounds-flag.png",
-  flagCn: "/public/images/yen-flag.png",
-  usdc: "/public/images/crypto-flag.png",
-  usdt: "/public/images/crypto-flag.png",
+  flagNg: "/images/nigeria-flag.png",
+  flagUs: "/images/us-flag.png",
+  flagCa: "/images/cad-flag.png",
+  euMask: "/images/eur-flag.png",
+  euFlag: "/images/eur-flag.png",
+  flagUk: "/images/pounds-flag.png",
+  flagCn: "/images/yen-flag.png",
+  usdc: "/images/crypto-flag.png",
+  usdt: "/images/crypto-flag.png",
   riArrowUp:
     "https://www.figma.com/api/mcp/asset/e6706891-ae29-449a-ace0-dfdf9b36e83c",
   arrowCircle:
     "https://www.figma.com/api/mcp/asset/6c7c745c-bbfe-4fb8-9e69-1ddefb213299",
-  flagCa2: "/public/images/flagCa2.svg",
-  flagNg2: "/public/images/flagNg2.svg",
-  flagUs2: "/public/images/flagUs2.svg",
-  flagUk2: "/public/images/flagUk2.svg",
+  flagCa2: "/images/flagCa2.svg",
+  flagNg2: "/images/flagNg2.svg",
+  flagUs2: "/images/flagUs2.svg",
+  flagUk2: "/images/flagUk2.svg",
   transferArrow:
-    "/public/images/transferArrow.svg",
+    "/images/transferArrow.svg",
   flagUs3: "https://www.figma.com/api/mcp/asset/495f615c-3582-447c-9e2a-d5aa8fd02949",
   flagCa3: "https://www.figma.com/api/mcp/asset/70b6e549-70d8-47e7-a138-9716ed40f22f",
   euMask2: "https://www.figma.com/api/mcp/asset/09fa5117-f4c5-4183-a68d-a23e8a0ce6c8",
   euFlag2: "https://www.figma.com/api/mcp/asset/76c0505d-f7e3-4f3c-87af-128fd8f06a35",
-  copyIcon: "/public/images/copy.svg",
+  copyIcon: "/images/copy.svg",
   exploreArrow:
-    "/public/images/arrow-right.svg",
+    "/images/arrow-right.svg",
   ionPlanet: "https://www.figma.com/api/mcp/asset/ec906395-9030-438d-91e6-fe345caee41b",
-  star: "/public/images/Star.svg",
+  star: "/images/Star.svg",
   icApple: "https://www.figma.com/api/mcp/asset/81a3bad0-39e5-4cb7-82fe-b545dd168943",
   learnArrow:
     "https://www.figma.com/api/mcp/asset/e6706891-ae29-449a-ace0-dfdf9b36e83c",
@@ -101,7 +101,7 @@ export const figma = {
   testimonialAvatar4:
     "https://www.figma.com/api/mcp/asset/f36f512f-048d-4954-9a49-1298e5654134",
   testimonialQuoteMark:
-    "/public/images/testimonialQuoteMark.svg",
+    "/images/testimonialQuoteMark.svg",
 
   footerDividerLine:
     "https://www.figma.com/api/mcp/asset/4f68c4f5-ccaa-4898-b907-c7a9a15b80be",
@@ -110,14 +110,14 @@ export const figma = {
   footerGooglePlayWhite:
     "https://www.figma.com/api/mcp/asset/910d114f-bb37-4d01-9380-ae873d421e8f",
   socialInstagram:
-    "/public/images/fe_instagram.svg",
+    "/images/fe_instagram.svg",
   socialFacebook:
-    "/public/images/fe_fb.svg",
+    "/images/fe_fb.svg",
   socialLinkedin:
-    "/public/images/fe_linkedin.svg",
+    "/images/fe_linkedin.svg",
   socialYoutube:
-    "/public/images/youtube.svg",
-  socialX: "/public/images/x.svg",
+    "/images/youtube.svg",
+  socialX: "/images/x.svg",
 
   /** Mobile landing — Figma node 4446:27946 (~390px) */
   mobileLogo: "https://www.figma.com/api/mcp/asset/91a936d6-7ced-404b-92d5-0accac13b22e",
@@ -153,8 +153,54 @@ export const figma = {
   ionPlanetMobile:
     "https://www.figma.com/api/mcp/asset/cd7b8eb1-3152-42fe-b5d7-69306dec127d",
   starMobile:
-    "/public/images/Star.svg",
+    "/images/Star.svg",
   /** Cream cutout shape at bottom of "Get the mobile app" section */
   mobileAppCutout:
     "https://www.figma.com/api/mcp/asset/8412d515-8c22-4fc1-a39b-56b107630143",
+
+  /** Foreign Accounts page — Figma node 4549:35945 */
+  faHeroMan:
+    "https://www.figma.com/api/mcp/asset/d468397c-b391-4c49-b63b-606786dd63f5",
+  faHeroSmallIllustration:
+    "https://www.figma.com/api/mcp/asset/35c1589f-e479-4ba8-bb29-588acfa7b18f",
+  faGlobe:
+    "https://www.figma.com/api/mcp/asset/c9211864-6e6f-4550-8562-8a15845a4ee4",
+  faOrganic:
+    "https://www.figma.com/api/mcp/asset/e77bfd54-c7cf-4869-a4ff-78b214eaa7a8",
+  faStar2:
+    "https://www.figma.com/api/mcp/asset/e2220709-d775-4dd5-b7cb-b40ee0fccbc5",
+  faStar3:
+    "https://www.figma.com/api/mcp/asset/f88df94a-4de7-4d9b-a030-c024f03abce5",
+  faStar4:
+    "https://www.figma.com/api/mcp/asset/667977a8-fafb-40cb-adea-c85e48571f69",
+  faStar1:
+    "https://www.figma.com/api/mcp/asset/c9226b02-4b04-41a5-a171-5d59b5b512a5",
+  faVector284:
+    "https://www.figma.com/api/mcp/asset/4ad47ef7-4cd2-497f-9160-bb5d6e879bc3",
+  faImage26:
+    "https://www.figma.com/api/mcp/asset/777b97ac-3db5-483b-94ca-9edde18ac153",
+  faImage27:
+    "https://www.figma.com/api/mcp/asset/2916cd6b-ada0-462f-859d-c80140da9447",
+  faImage28:
+    "https://www.figma.com/api/mcp/asset/ec193eea-b2cd-4e19-8d20-30e7df67dbae",
+  faHandPhone:
+    "https://www.figma.com/api/mcp/asset/b1008bb4-d328-460a-aa14-8031412cf4fb",
+  faPhoneMockup:
+    "https://www.figma.com/api/mcp/asset/3a55eb39-fb68-48b6-a475-29cb783c0057",
+  faVector262:
+    "https://www.figma.com/api/mcp/asset/7455e222-282e-4e39-b37f-d61822e051fc",
+  faSealCheck:
+    "https://www.figma.com/api/mcp/asset/9f58bc14-c871-4d20-98a5-8021d6a4e87a",
+  faMaskGroup:
+    "https://www.figma.com/api/mcp/asset/03fee323-65c3-4dde-8706-5e0d9ffa907c",
+  faMoneyWings:
+    "https://www.figma.com/api/mcp/asset/cfe3c22b-150c-427c-87bb-caa833eeebe8",
+  faExchangeIcon:
+    "https://www.figma.com/api/mcp/asset/b286a962-881b-4368-b56a-4c4e69045bd1",
+  faSafetyIcon:
+    "https://www.figma.com/api/mcp/asset/9c2046d7-d56e-4567-88f2-245b25ac5e8c",
+  faNotificationIcon:
+    "https://www.figma.com/api/mcp/asset/d0f64688-eb00-4726-acb4-d3c1428e5563",
+  faQuoteMark:
+    "https://www.figma.com/api/mcp/asset/42b303a2-0072-4c94-9da1-743eeabc716f",
 } as const;

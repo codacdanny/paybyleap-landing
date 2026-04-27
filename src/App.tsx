@@ -1,27 +1,31 @@
-import { AdditionalServicesSection } from "./components/AdditionalServicesSection";
-import { BenefitsPhoneSection } from "./components/BenefitsPhoneSection";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { Header } from "./components/Header";
-import { Hero } from "./components/Hero";
-import { MobileAppHero } from "./components/MobileAppHero";
-import { MoneyTransferSection } from "./components/MoneyTransferSection";
 import { SiteFooter } from "./components/SiteFooter";
-import { StablecoinSection } from "./components/StablecoinSection";
-import { TestimonialsSection } from "./components/TestimonialsSection";
+import { LandingPage } from "./pages/LandingPage";
+import { ForeignAccountsPage } from "./pages/ForeignAccountsPage";
+
+const foreignAccountsFooterHeading = (
+  <>
+    Start Receiving Your{" "}
+    <span className="text-secondary">Foreign</span>{" "}
+    <span className="text-secondary">Payments</span> With Ease
+  </>
+);
 
 export default function App() {
+  const { pathname } = useLocation();
+  const isForeignAccounts = pathname === "/foreign-accounts";
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <main>
-        <Hero />
-        <StablecoinSection />
-        <MoneyTransferSection />
-        <MobileAppHero />
-        <BenefitsPhoneSection />
-        <AdditionalServicesSection />
-        <TestimonialsSection />
-      </main>
-      <SiteFooter />
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/foreign-accounts" element={<ForeignAccountsPage />} />
+      </Routes>
+      <SiteFooter
+        heading={isForeignAccounts ? foreignAccountsFooterHeading : undefined}
+      />
     </div>
   );
 }

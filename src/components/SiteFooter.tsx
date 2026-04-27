@@ -1,3 +1,4 @@
+import { type ReactNode } from "react";
 import { figma } from "../assets/figma";
 import { LandingInset } from "./LandingInset";
 
@@ -63,18 +64,28 @@ function LinkColumn({
   );
 }
 
-export function SiteFooter() {
+const defaultHeading = (
+  <>
+    Experience Seamless{" "}
+    <span className="text-secondary">
+      <span className="lg:hidden">Global Payment</span>
+      <span className="hidden lg:inline">Global Payments</span>
+    </span>{" "}
+    Today
+  </>
+);
+
+interface SiteFooterProps {
+  heading?: ReactNode;
+}
+
+export function SiteFooter({ heading = defaultHeading }: SiteFooterProps) {
   return (
     <footer className="bg-grey-100 text-white">
       <LandingInset className="pb-10 pt-12 md:pb-16 md:pt-16 lg:pb-16 lg:pt-20 min-[1440px]:pb-[60px] min-[1440px]:pt-[80px]">
         {/* Heading */}
         <h2 className="mx-auto max-w-[330px] text-center font-nohemi text-[32px] font-semibold leading-10 text-white md:max-w-[800px] md:text-[40px] md:leading-[48px] min-[1440px]:max-w-[764px] min-[1440px]:text-[56px] min-[1440px]:leading-[72px]">
-          Experience Seamless{" "}
-          <span className="text-secondary">
-            <span className="lg:hidden">Global Payment</span>
-            <span className="hidden lg:inline">Global Payments</span>
-          </span>{" "}
-          Today
+          {heading}
         </h2>
 
         {/* Store buttons */}
