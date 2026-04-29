@@ -63,39 +63,39 @@ export function BenefitsPhoneSection() {
               />
             </div>
             {/* Phone mockup */}
-            <div className="absolute left-[123px] top-[106px] flex h-[615px] w-[338px] items-center justify-center">
-              <div className="-rotate-[5deg]">
+            <div className="absolute left-[123px] top-[106px] flex  items-center justify-center">
+              <div className=" bg-transparent">
                 <img
                   src={figma.iphone17Mockup}
                   alt="PayByLeap on iPhone"
-                  className="h-[591px] w-[287px] drop-shadow-2xl"
+                  className="object-cover drop-shadow-2xl"
                 />
               </div>
             </div>
           </div>
 
           {/* Tags — left column (positions from Figma frame) */}
-          <div className="absolute z-[1]" style={{ left: 160, top: 200 }}>
+          <div className="absolute z-[1]" style={{ left: 277, top: 270 }}>
             <Tag>
               <span className="font-bold text-primary">64+</span> COUNTRIES
               GLOBALLY
             </Tag>
           </div>
-          <div className="absolute z-[1]" style={{ left: 126, top: 428 }}>
+          <div className="absolute z-[1]" style={{ left: 236, top: 428 }}>
             <Tag>VIRTUAL &amp; PHYSICAL CARD</Tag>
           </div>
-          <div className="absolute z-[1]" style={{ left: 117, top: 666 }}>
+          <div className="absolute z-[1]" style={{ left: 197, top: 626 }}>
             <Tag>GLOBAL PAYMENTS IN MINUTE</Tag>
           </div>
 
           {/* Tags — right column */}
-          <div className="absolute z-[1]" style={{ left: 905, top: 128 }}>
+          <div className="absolute z-[1]" style={{ left: 900, top: 180 }}>
             <Tag>STABLECOIN SUPPORT</Tag>
           </div>
-          <div className="absolute z-[1]" style={{ left: 940, top: 404 }}>
+          <div className="absolute z-[1]" style={{ left: 955, top: 404 }}>
             <Tag>GLOBAL INVOICING</Tag>
           </div>
-          <div className="absolute z-[1]" style={{ left: 961, top: 614 }}>
+          <div className="absolute z-[1]" style={{ left: 961, top: 564 }}>
             <Tag>
               <span className="font-bold text-primary">100%</span> SECURED
               ACCOUNT

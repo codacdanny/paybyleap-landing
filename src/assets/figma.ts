@@ -31,7 +31,7 @@ export const figma = {
   benefitsHandScene:
     "https://www.figma.com/api/mcp/asset/6be6123c-4919-4abc-9a4c-dc2a22f1ead2",
   iphone17Mockup:
-    "https://www.figma.com/api/mcp/asset/db020d7d-faff-4384-ae6b-e002826dc775",
+    "/public/images/benefitsphone.png",
   googlePlayIcon: "https://www.figma.com/api/mcp/asset/910d114f-bb37-4d01-9380-ae873d421e8f",
   /** Dark “Get the mobile app” hero photo */
   mobileAppHeroPhoto:
