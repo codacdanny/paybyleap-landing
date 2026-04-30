@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import { figma } from "../assets/figma";
+import { ROUTES } from "../routes/paths";
 import { LandingInset } from "./LandingInset";
 
 function ForeignAccountsVisual() {
@@ -82,8 +84,8 @@ export function StablecoinSection() {
               <p className="mt-2 text-[14px] leading-[22px] text-grey-80 min-[1440px]:text-[20px] min-[1440px]:leading-7">
                 Open Global accounts for international payments.
               </p>
-              <a
-                href="#foreign"
+              <Link
+                to={ROUTES.FOREIGN_ACCOUNTS}
                 className="mt-4 inline-flex h-10 items-center gap-2 rounded-2xl px-2 text-[18px] font-medium text-primary min-[1440px]:mt-6"
               >
                 Explore
@@ -92,7 +94,7 @@ export function StablecoinSection() {
                   alt=""
                   className="size-6"
                 />
-              </a>
+              </Link>
               <div className="lg:hidden">
                 <ForeignAccountsVisualMobile />
               </div>
