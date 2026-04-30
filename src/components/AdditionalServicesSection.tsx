@@ -6,7 +6,7 @@ import { Button } from "./Button";
 const cards = [
   {
     title: "Bill Payments",
-    body: "Bill Payments enable users to conveniently pay for utilities and subscription services across the globe, allowing seamless, secure, and timely transactions",
+    body: " enable users to conveniently pay for utilities and subscription services across the globe, allowing seamless, secure, and timely transactions",
     image: figma.serviceBillPayments,
     gradient:
       "linear-gradient(234deg, rgba(0,0,0,0) 25.5%, rgb(0,0,0) 84.4%)",

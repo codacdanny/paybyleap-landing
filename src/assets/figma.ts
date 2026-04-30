@@ -32,15 +32,15 @@ export const figma = {
     "https://www.figma.com/api/mcp/asset/6be6123c-4919-4abc-9a4c-dc2a22f1ead2",
   iphone17Mockup:
     "/public/images/benefitsphone.png",
-  googlePlayIcon: "https://www.figma.com/api/mcp/asset/910d114f-bb37-4d01-9380-ae873d421e8f",
+  googlePlayIcon: "/public/images/googlplayiconblack.svg",
   /** Dark “Get the mobile app” hero photo */
   mobileAppHeroPhoto:
     "/public/images/femalebg.png",
   /** Carousel / card — café scene */
   serviceBillPayments:
-    "https://www.figma.com/api/mcp/asset/d222446b-a4da-4665-984c-f81fd964a077",
+    "/public/images/billpayment.png",
   serviceExpenses:
-    "https://www.figma.com/api/mcp/asset/a3201236-03bb-4c56-abbe-841a119cba1d",
+    "/public/images/expenses.png",
   serviceInvoice:
     "https://www.figma.com/api/mcp/asset/9a440c36-08a7-4045-b4b9-bd734eb9b85e",
   cryptoGraphic:
@@ -108,7 +108,7 @@ export const figma = {
   footerAppleWhite:
     "https://www.figma.com/api/mcp/asset/57b73e03-f2f1-4424-9393-4cc2d61944a1",
   footerGooglePlayWhite:
-    "https://www.figma.com/api/mcp/asset/910d114f-bb37-4d01-9380-ae873d421e8f",
+    "/public/images/googlplayiconblack.svg",
   socialInstagram:
     "/images/fe_instagram.svg",
   socialFacebook:
