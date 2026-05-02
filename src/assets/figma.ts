@@ -80,7 +80,7 @@ export const figma = {
   copyIcon: "/images/copy.svg",
   exploreArrow:
     "/images/arrow-right.svg",
-  ionPlanet: "https://www.figma.com/api/mcp/asset/ec906395-9030-438d-91e6-fe345caee41b",
+  ionPlanet: "/public/images/globeicon.svg",
   star: "/images/Star.svg",
   icApple: "https://www.figma.com/api/mcp/asset/81a3bad0-39e5-4cb7-82fe-b545dd168943",
   learnArrow:
@@ -164,7 +164,7 @@ export const figma = {
   faHeroSmallIllustration:
     "https://www.figma.com/api/mcp/asset/35c1589f-e479-4ba8-bb29-588acfa7b18f",
   faGlobe:
-    "https://www.figma.com/api/mcp/asset/c9211864-6e6f-4550-8562-8a15845a4ee4",
+    "/public/images/Globebg.svg",
   faOrganic:
     "https://www.figma.com/api/mcp/asset/e77bfd54-c7cf-4869-a4ff-78b214eaa7a8",
   faStar2:
