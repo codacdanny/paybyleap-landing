@@ -1,4 +1,5 @@
 import { useRef, useState, useCallback, useEffect } from "react";
+import { figma } from "../assets/figma";
 import { LandingInset } from "./LandingInset";
 
 const testimonials = [
@@ -146,7 +147,7 @@ function TestimonialCard({
 
       {/* Quote mark — pinned to the exact bottom-right corner, clipped by overflow-hidden */}
       <img
-        src="/images/testimonialQuoteMark.svg"
+        src={figma.testimonialQuoteMark}
         alt=""
         className={`pointer-events-none absolute ${
           isStack

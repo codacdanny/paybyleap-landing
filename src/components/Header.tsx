@@ -58,32 +58,6 @@ export function Header() {
                 );
               })}
             </div>
-            {/* <button
-              type="button"
-              className="flex shrink-0 items-center gap-0.5 text-[12px] font-medium leading-4 text-grey-100 xl:text-[18px] xl:leading-7"
-            >
-              <img
-                src={figma.globeMobile}
-                alt=""
-                className="size-3.5 object-cover xl:hidden"
-              />
-              <img
-                src={figma.globeGridEarth}
-                alt=""
-                className="hidden h-6 w-6 object-cover xl:block"
-              />
-              <span className="w-[18px] text-center xl:w-[27px]">EN</span>
-              <img
-                src={figma.riArrowUpMobile}
-                alt=""
-                className="size-3.5 rotate-180 xl:hidden"
-              />
-              <img
-                src={figma.riArrowUp}
-                alt=""
-                className="hidden h-5 w-5 rotate-180 xl:block"
-              />
-            </button> */}
           </div>
         </LandingInset>
       </div>
@@ -93,14 +67,9 @@ export function Header() {
           <div className="flex items-center justify-between py-4 lg:mx-auto lg:h-[76px] lg:w-full lg:max-w-[1122px] lg:justify-center lg:gap-[116px] lg:py-0">
             <a href="#" className="shrink-0">
               <img
-                src={figma.mobileLogo}
+                src={figma.logoImg}
                 alt="PayByLeap"
-                className="h-6 w-[99px] object-contain object-left lg:hidden"
-              />
-              <img
-                src="/logo/logo.png"
-                alt="PayByLeap"
-                className="hidden h-10 w-[152px] object-contain object-left lg:block"
+                className="h-6 w-[99px] object-contain object-left lg:h-10 lg:w-[152px]"
               />
             </a>
 
@@ -111,7 +80,20 @@ export function Header() {
               aria-label={menuOpen ? "Close menu" : "Open menu"}
               onClick={() => setMenuOpen((o) => !o)}
             >
-              <img src={figma.menuIcon} alt="" className="size-6" />
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" className="size-6">
+                {menuOpen ? (
+                  <>
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </>
+                ) : (
+                  <>
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="18" x2="21" y2="18" />
+                  </>
+                )}
+              </svg>
             </button>
 
             <nav className="hidden lg:flex lg:w-[435px] lg:flex-none lg:justify-center lg:gap-2.5">
