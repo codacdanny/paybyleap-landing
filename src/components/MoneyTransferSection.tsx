@@ -129,16 +129,8 @@ export function MoneyTransferSection() {
                 />
               </a>
               <div className="relative mt-6 flex-1 min-[1440px]:mt-8">
-                {/* Mobile visual */}
-                <div className="relative z-[1] lg:hidden">
-                  <img
-                    src={figma.feeIllustrationMobile}
-                    alt=""
-                    className="h-auto w-full max-w-[335px] object-contain"
-                  />
-                </div>
                 {/* Desktop: polygon bg + card image as one unit */}
-                <div className="relative mx-auto hidden max-w-[504px] lg:block">
+                <div className="relative mx-auto max-w-[504px]">
                   <img
                     src={figma.feesPolygon}
                     alt=""

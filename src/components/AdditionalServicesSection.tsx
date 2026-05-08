@@ -18,13 +18,6 @@ const cards = [
     gradient:
       "linear-gradient(222deg, rgba(0,0,0,0) 25%, rgb(0,0,0) 81.7%)",
   },
-  {
-    title: "Global Invoicing",
-    body: "empowers users to seamlessly create, send, and manage professional invoices in multiple currencies, enabling them to work with international clients effortlessly",
-    image: figma.serviceInvoice,
-    gradient:
-      "linear-gradient(221deg, rgba(0,0,0,0) 29.3%, rgb(0,0,0) 84%)",
-  },
 ];
 
 export function AdditionalServicesSection() {

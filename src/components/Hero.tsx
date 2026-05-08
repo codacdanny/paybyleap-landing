@@ -16,57 +16,7 @@ const walletItems: { code: string; src: string }[] = [
 function HeroIllustration() {
   return (
     <>
-      <div className="relative mx-auto grid w-full max-w-[248px] justify-items-center lg:hidden">
-        <img
-          src={figma.iphoneAirMockupMobile}
-          alt="PayByLeap app on iPhone"
-          className="relative z-[1] h-auto w-full drop-shadow-card"
-        />
-        <div className="absolute bottom-[8%] right-[-4%] z-[2] w-[181px] max-w-[73%] rotate-[-6deg]">
-          <div className="relative h-[121px] overflow-hidden rounded-[9.134px] bg-primary shadow-[0px_9px_4px_rgba(154,0,0,0.05)]">
-            <img
-              src={figma.heroCardOverlayMobile}
-              alt=""
-              className="pointer-events-none absolute left-0 top-0 h-full w-[287px] max-w-none object-cover"
-            />
-            <img
-              src={figma.cardWatermarkMobile}
-              alt=""
-              className="pointer-events-none absolute left-2 top-3 z-[1] h-[21px] w-[96px] -rotate-90 object-cover opacity-10"
-            />
-            <div className="absolute left-[-12px] top-6 z-[2] size-[23px]">
-              <img
-                src={figma.chipEllipseMobile}
-                alt=""
-                className="h-full w-full object-contain"
-              />
-            </div>
-            <div className="relative z-[2] flex h-full flex-col justify-between px-4 pb-2 pt-1 text-[10px] text-white">
-              <div className="flex items-start justify-between gap-1">
-                <span className="w-[84px] font-mono tracking-wide">
-                  **** **** **** 7564
-                </span>
-                <span className="text-[10px] font-bold text-white/50">USD</span>
-              </div>
-              <div className="flex items-end justify-between">
-                <p className="leading-tight">JANET KHLOE</p>
-                <div className="flex items-center gap-1">
-                  <div className="relative h-[13px] w-2 overflow-hidden rounded-[2px]">
-                    <img
-                      src={figma.chipDetailMobile}
-                      alt=""
-                      className="absolute left-1/2 top-1/2 h-[220%] max-w-none -translate-x-1/2 -translate-y-1/2"
-                    />
-                  </div>
-                  <img src={figma.visaMobile} alt="" className="h-4 w-5" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="relative mx-auto hidden w-full max-w-[476px] lg:mr-0 lg:block">
+      <div className="relative mx-auto w-full max-w-[476px] lg:mr-0">
         <div className="relative z-[1] flex justify-center lg:justify-end">
           <div className="relative mt-[-35px] h-[821px] w-[397px]">
             <img

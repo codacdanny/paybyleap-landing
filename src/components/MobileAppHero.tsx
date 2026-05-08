@@ -6,22 +6,6 @@ export function MobileAppHero() {
   return (
     <section className="relative bg-[#1a1a1a] text-white">
       <div className="relative mx-auto grid min-h-[560px] max-w-[1440px] items-stretch lg:h-[668px] lg:min-h-[668px]">
-        {/* Mobile background */}
-        <div className="pointer-events-none absolute inset-0 size-full overflow-hidden lg:hidden">
-          <img
-            src={figma.mobileAppHeroMobile}
-            alt=""
-            className="h-full w-full object-cover object-center"
-          />
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage:
-                "linear-gradient(90.2deg, rgb(26, 26, 26) 0.88%, rgba(26, 26, 26, 0) 17%)",
-            }}
-          />
-        </div>
-
         {/* Desktop background — woman on couch, right-aligned */}
         <div className="pointer-events-none absolute inset-y-0 right-0 hidden overflow-hidden lg:block lg:w-[1071px]">
           <img
@@ -60,26 +44,14 @@ export function MobileAppHero() {
               >
                 Learn how it works
                 <img
-                  src={figma.learnArrowMobile}
-                  alt=""
-                  className="size-6 rotate-90 lg:hidden"
-                />
-                <img
                   src={figma.arrowRightWhite}
                   alt=""
-                  className="hidden size-6 lg:block"
+                  className="size-6"
                 />
               </a>
             </div>
           </div>
         </LandingInset>
-
-        {/* Cream cutout shape at bottom-left */}
-        <img
-          src={figma.mobileAppCutout}
-          alt=""
-          className="pointer-events-none absolute -bottom-px left-0 hidden h-auto w-[520px] lg:block"
-        />
       </div>
     </section>
   );
