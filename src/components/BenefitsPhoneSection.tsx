@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { figma } from "../assets/figma";
+import { figma } from "../data/images/Index";
 import { LandingInset } from "./LandingInset";
 
 function Tag({ children }: { children: ReactNode }) {

@@ -1,5 +1,5 @@
 import { useRef, useState, useCallback, useEffect } from "react";
-import { figma } from "../assets/figma";
+import { figma } from "../data/images/Index";
 import { LandingInset } from "./LandingInset";
 
 const testimonials = [

@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect, useCallback } from "react";
-import { figma } from "../assets/figma";
-import { LandingInset } from "../components/LandingInset";
+import { figma } from "../../data/images/Index";
+import { LandingInset } from "../../components/LandingInset";
 
 /* ------------------------------------------------------------------ */
 /*  DATA                                                               */

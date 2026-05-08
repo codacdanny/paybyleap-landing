@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { figma } from "../assets/figma";
+import { figma } from "../data/images/Index";
 import { ROUTES } from "../routes/paths";
 import { LandingInset } from "./LandingInset";
 

@@ -1,4 +1,4 @@
-import { figma } from "../assets/figma";
+import { figma } from "../data/images/Index";
 import { LandingInset } from "./LandingInset";
 import { Button } from "./Button";
 
