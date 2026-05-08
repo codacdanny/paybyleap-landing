@@ -65,7 +65,7 @@ export function MobileAppHero() {
                   className="size-6 rotate-90 lg:hidden"
                 />
                 <img
-                  src="/images/arrow-right-white.svg"
+                  src={figma.arrowRightWhite}
                   alt=""
                   className="hidden size-6 lg:block"
                 />

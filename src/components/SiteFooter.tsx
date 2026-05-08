@@ -29,9 +29,9 @@ const legalLinks = [
 ];
 
 const social = [
-  { label: "Instagram", href: "https://www.instagram.com/paybyleap/", icon: "/images/fe_instagram.svg" },
-  { label: "Facebook", href: "#", icon: "/images/fe_fb.svg" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/company/paybyleap/", icon: "/images/fe_linkedin.svg" },
+  { label: "Instagram", href: "https://www.instagram.com/paybyleap/", icon: figma.socialInstagram },
+  { label: "Facebook", href: "#", icon: figma.socialFacebook },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/paybyleap/", icon: figma.socialLinkedin },
   { label: "YouTube", href: "#", icon: figma.socialYoutube },
   { label: "X (Twitter)", href: "https://x.com/paybyleap", icon: figma.socialX },
 ];
@@ -95,7 +95,7 @@ export function SiteFooter({ heading = defaultHeading }: SiteFooterProps) {
             className="inline-flex h-16 w-full items-center justify-center gap-1 rounded-lg bg-white px-4 text-grey-100 md:w-[201px]"
           >
             <img
-              src="/images/blackapplelogo.svg"
+              src={figma.blackAppleLogo}
               alt=""
               className="size-10 object-contain"
             />

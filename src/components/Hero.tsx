@@ -79,7 +79,7 @@ function HeroIllustration() {
               <div className="relative h-[195px] overflow-hidden rounded-[9.134px] bg-primary shadow-[0px_9px_4px_rgba(154,0,0,0.05)]">
       
               <img
-                  src={"/images/USD Card.png"}
+                  src={figma.usdCard}
                   alt=""
                   className="pointer-events-none absolute left-[3px] top-[-2px] h-[184px] w-[287px] max-w-none object-cover"
                 />

@@ -146,7 +146,7 @@ export function MoneyTransferSection() {
                   />
                   <div className="relative z-[1] overflow-hidden rounded-[16px] ">
                     <img
-                      src="/images/international-payment.png"
+                      src={figma.saintLouisCrest}
                       alt=""
                       className="block h-auto w-full"
                     />

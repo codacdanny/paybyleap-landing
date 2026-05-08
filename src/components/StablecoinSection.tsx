@@ -15,7 +15,7 @@ function ForeignAccountsVisual() {
       </div>
       <div className="relative z-[1] ml-auto mr-0 mt-14 max-w-[320px] rounded-2xl border border-primary/10 bg-white p-4 shadow-soft md:mt-32 md:p-5 min-[1440px]:absolute min-[1440px]:right-[22px] min-[1440px]:top-[56px] min-[1440px]:mt-[0] min-[1440px]:w-[320px] min-[1440px]:max-w-none min-[1440px]:rounded-[16px] min-[1440px]:border-0 min-[1440px]:bg-transparent min-[1440px]:p-0 min-[1440px]:shadow-none">
         <img
-          src="/images/foreign-image.png"
+          src={figma.foreignImage}
           alt=""
           className="h-auto w-full rounded-2xl min-[1440px]:rounded-[16px]"
         />
@@ -40,7 +40,7 @@ function StackedCardsVisualDesktop() {
  
   return (
     <div className="relative mx-auto mt-24 h-[300px] w-full max-w-[369px] md:h-[368px]">
-      <img src={"/images/cards.png"} alt="" className="w-full h-auto object-cover" />
+      <img src={figma.cardsImage} alt="" className="w-full h-auto object-cover" />
     </div>
   );
 }
@@ -65,7 +65,7 @@ export function StablecoinSection() {
           <div className="flex flex-col items-center text-center">
             <div className="inline-flex h-7 items-center gap-1 rounded-[999px] border border-primary/50 bg-[#fff0e3] px-2 py-1 text-[14px] leading-5 text-primary min-[1440px]:h-10 min-[1440px]:gap-2 min-[1440px]:px-3 min-[1440px]:text-[16px] min-[1440px]:leading-6">
               <img
-                src="/images/smarterlogo.svg"
+                src={figma.smarterLogo}
                 alt=""
                 className=" shrink-0 min-[1440px]:size-[18px]"
               />

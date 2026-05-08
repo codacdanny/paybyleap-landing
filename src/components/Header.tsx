@@ -98,7 +98,7 @@ export function Header() {
                 className="h-6 w-[99px] object-contain object-left lg:hidden"
               />
               <img
-                src="/logo/logo.png"
+                src={figma.logoImg}
                 alt="PayByLeap"
                 className="hidden h-10 w-[152px] object-contain object-left lg:block"
               />

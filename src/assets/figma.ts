@@ -1,3 +1,52 @@
+// Local asset imports
+import iphoneAirMockup from "@/assets/images/iphone-mock.png";
+import femalePhoneMockup from "@/assets/images/portrait.png";
+import saintLouisCrest from "@/assets/images/international-payment.png";
+import iphone17Mockup from "@/assets/images/benefitsphone.png";
+import mobileAppHeroPhoto from "@/assets/images/femalebg.png";
+import serviceBillPayments from "@/assets/images/billpayment.png";
+import serviceExpenses from "@/assets/images/expenses.png";
+import usdCard from "@/assets/images/usd-card.png";
+import globeBg from "@/assets/images/Globebg.svg";
+import feesPolygon from "@/assets/images/Polygonbg.svg";
+import cryptoGraphic from "@/assets/images/cryptimg.svg";
+import smarterLogo from "@/assets/images/smarterlogo.svg";
+import foreignImage from "@/assets/images/foreign-image.png";
+import cardsImage from "@/assets/images/cards.png";
+import star from "@/assets/images/Star.svg";
+
+import arrowRight from "@/assets/icons/arrow-right.svg";
+import arrowRightWhite from "@/assets/icons/arrow-right-white.svg";
+import navArrowLeft from "@/assets/icons/nav-arrow-left.svg";
+import navArrowRight from "@/assets/icons/nav-arrow-right.svg";
+import transferArrow from "@/assets/icons/transferArrow.svg";
+import testimonialQuoteMark from "@/assets/icons/testimonialQuoteMark.svg";
+import globeIcon from "@/assets/icons/globeicon.svg";
+import appleLogo from "@/assets/icons/applelogo.svg";
+import blackAppleLogo from "@/assets/icons/blackapplelogo.svg";
+import googlePlayIcon from "@/assets/icons/googlplayiconblack.svg";
+import copyIcon from "@/assets/icons/copy.svg";
+
+import flagNg from "@/assets/flags/nigeria-flag.png";
+import flagUs from "@/assets/flags/us-flag.png";
+import flagCa from "@/assets/flags/cad-flag.png";
+import flagEur from "@/assets/flags/eur-flag.png";
+import flagUk from "@/assets/flags/pounds-flag.png";
+import flagCn from "@/assets/flags/yen-flag.png";
+import cryptoFlag from "@/assets/flags/crypto-flag.png";
+import flagCa2 from "@/assets/flags/flagCa2.svg";
+import flagNg2 from "@/assets/flags/flagNg2.svg";
+import flagUk2 from "@/assets/flags/flagUk2.svg";
+import flagUs2 from "@/assets/flags/flagUs2.svg";
+
+import socialInstagram from "@/assets/social/fe_instagram.svg";
+import socialFacebook from "@/assets/social/fe_fb.svg";
+import socialLinkedin from "@/assets/social/fe_linkedin.svg";
+import socialYoutube from "@/assets/social/youtube.svg";
+import socialX from "@/assets/social/x.svg";
+
+import logoImg from "@/assets/logo/logo.png";
+
 /**
  * Figma MCP asset URLs (expire ~7 days — download to /public for production).
  * File: PAYBYLEAP-OUTPUT-File, node 4446:27322
@@ -7,81 +56,65 @@ export const figma = {
   logo: "https://www.figma.com/api/mcp/asset/d03b6d46-7a67-4ac1-a5e9-03a13656d6a4",
   /** Hero right decor — Figma 4446:27343 */
   heroDecor: "https://www.figma.com/api/mcp/asset/c237f278-a310-4696-aa60-d10bb25cf81a",
-  /** Desktop phone — Figma 4446:27345 */
-  iphoneAirMockup:
-    "/images/iphone-mock.png",
+  iphoneAirMockup,
   cardWatermark:
     "https://www.figma.com/api/mcp/asset/88b81277-921d-4c27-a0c1-58d388fb690b",
   chipDetail: "https://www.figma.com/api/mcp/asset/007b58d6-0df8-4502-8ec9-0db2b350c5e7",
-  /** Hero USD card decorative overlay */
   heroCardOverlay:
     "https://www.figma.com/api/mcp/asset/becc4abb-e0e7-402f-a39d-2b8dce5bf961",
   chipEllipseAccent:
     "https://www.figma.com/api/mcp/asset/3618f7cc-2202-44a3-a6d2-1fffe61b4dd2",
   globeGridEarth:
     "https://www.figma.com/api/mcp/asset/ec906395-9030-438d-91e6-fe345caee41b",
-  femalePhoneMockup:
-    "/images/portrait.png",
+  femalePhoneMockup,
   foreignAccountsGlobe:
     "https://www.figma.com/api/mcp/asset/ea941d5b-dd9f-4084-8b76-2b2b598aae18",
-  saintLouisCrest:
-    "/images/international-payment.png",
+  saintLouisCrest,
   benefitsBgPattern:
     "https://www.figma.com/api/mcp/asset/4ec5e457-3cbc-4652-9d3f-eb2c055c4bbe",
   benefitsHandScene:
     "https://www.figma.com/api/mcp/asset/6be6123c-4919-4abc-9a4c-dc2a22f1ead2",
-  iphone17Mockup:
-    "/public/images/benefitsphone.png",
-  googlePlayIcon: "/public/images/googlplayiconblack.svg",
-  /** Dark “Get the mobile app” hero photo */
-  mobileAppHeroPhoto:
-    "/public/images/femalebg.png",
-  /** Carousel / card — café scene */
-  serviceBillPayments:
-    "/public/images/billpayment.png",
-  serviceExpenses:
-    "/public/images/expenses.png",
+  iphone17Mockup,
+  googlePlayIcon,
+  mobileAppHeroPhoto,
+  serviceBillPayments,
+  serviceExpenses,
   serviceInvoice:
     "https://www.figma.com/api/mcp/asset/9a440c36-08a7-4045-b4b9-bd734eb9b85e",
-  cryptoGraphic:
-    "/images/cryptimg.svg",
-  feesPolygon: "/images/Polygonbg.svg",
+  cryptoGraphic,
+  feesPolygon,
   visa: "https://www.figma.com/api/mcp/asset/8533d6c7-e80c-4597-b5e4-fce53b10b795",
-  /** Stacked cards texture (CAD/NGN) */
   cardTexture:
     "https://www.figma.com/api/mcp/asset/99038bcc-a301-4e48-82cf-af787033594d",
-  /** USD card top texture */
   cardTextureFront:
     "https://www.figma.com/api/mcp/asset/f95974f6-0b88-48b3-8c52-3e2b68be4c7b",
   chipEllipse: "https://www.figma.com/api/mcp/asset/0251b2f8-b19f-44b6-9b02-4777ffad0e92",
-  flagNg: "/images/nigeria-flag.png",
-  flagUs: "/images/us-flag.png",
-  flagCa: "/images/cad-flag.png",
-  euMask: "/images/eur-flag.png",
-  euFlag: "/images/eur-flag.png",
-  flagUk: "/images/pounds-flag.png",
-  flagCn: "/images/yen-flag.png",
-  usdc: "/images/crypto-flag.png",
-  usdt: "/images/crypto-flag.png",
+  flagNg,
+  flagUs,
+  flagCa,
+  euMask: flagEur,
+  euFlag: flagEur,
+  flagUk,
+  flagCn,
+  usdc: cryptoFlag,
+  usdt: cryptoFlag,
   riArrowUp:
     "https://www.figma.com/api/mcp/asset/e6706891-ae29-449a-ace0-dfdf9b36e83c",
   arrowCircle:
     "https://www.figma.com/api/mcp/asset/6c7c745c-bbfe-4fb8-9e69-1ddefb213299",
-  flagCa2: "/images/flagCa2.svg",
-  flagNg2: "/images/flagNg2.svg",
-  flagUs2: "/images/flagUs2.svg",
-  flagUk2: "/images/flagUk2.svg",
-  transferArrow:
-    "/images/transferArrow.svg",
+  flagCa2,
+  flagNg2,
+  flagUs2,
+  flagUk2,
+  transferArrow,
   flagUs3: "https://www.figma.com/api/mcp/asset/495f615c-3582-447c-9e2a-d5aa8fd02949",
   flagCa3: "https://www.figma.com/api/mcp/asset/70b6e549-70d8-47e7-a138-9716ed40f22f",
   euMask2: "https://www.figma.com/api/mcp/asset/09fa5117-f4c5-4183-a68d-a23e8a0ce6c8",
   euFlag2: "https://www.figma.com/api/mcp/asset/76c0505d-f7e3-4f3c-87af-128fd8f06a35",
-  copyIcon: "/images/copy.svg",
-  exploreArrow:
-    "/images/arrow-right.svg",
-  ionPlanet: "/public/images/globeicon.svg",
-  star: "/images/Star.svg",
+  copyIcon,
+  exploreArrow: arrowRight,
+  ionPlanet: globeIcon,
+  star,
   icApple: "https://www.figma.com/api/mcp/asset/81a3bad0-39e5-4cb7-82fe-b545dd168943",
   learnArrow:
     "https://www.figma.com/api/mcp/asset/e6706891-ae29-449a-ace0-dfdf9b36e83c",
@@ -100,24 +133,18 @@ export const figma = {
     "https://www.figma.com/api/mcp/asset/d5175e2c-9c03-4c7d-b70a-8789f7f8007b",
   testimonialAvatar4:
     "https://www.figma.com/api/mcp/asset/f36f512f-048d-4954-9a49-1298e5654134",
-  testimonialQuoteMark:
-    "/images/testimonialQuoteMark.svg",
+  testimonialQuoteMark,
 
   footerDividerLine:
     "https://www.figma.com/api/mcp/asset/4f68c4f5-ccaa-4898-b907-c7a9a15b80be",
   footerAppleWhite:
     "https://www.figma.com/api/mcp/asset/57b73e03-f2f1-4424-9393-4cc2d61944a1",
-  footerGooglePlayWhite:
-    "/public/images/googlplayiconblack.svg",
-  socialInstagram:
-    "/images/fe_instagram.svg",
-  socialFacebook:
-    "/images/fe_fb.svg",
-  socialLinkedin:
-    "/images/fe_linkedin.svg",
-  socialYoutube:
-    "/images/youtube.svg",
-  socialX: "/images/x.svg",
+  footerGooglePlayWhite: googlePlayIcon,
+  socialInstagram,
+  socialFacebook,
+  socialLinkedin,
+  socialYoutube,
+  socialX,
 
   /** Mobile landing — Figma node 4446:27946 (~390px) */
   mobileLogo: "https://www.figma.com/api/mcp/asset/91a936d6-7ced-404b-92d5-0accac13b22e",
@@ -152,9 +179,7 @@ export const figma = {
     "https://www.figma.com/api/mcp/asset/1c3d0b1d-35a1-4b01-9e72-1f0157f4332e",
   ionPlanetMobile:
     "https://www.figma.com/api/mcp/asset/cd7b8eb1-3152-42fe-b5d7-69306dec127d",
-  starMobile:
-    "/images/Star.svg",
-  /** Cream cutout shape at bottom of "Get the mobile app" section */
+  starMobile: star,
   mobileAppCutout:
     "https://www.figma.com/api/mcp/asset/8412d515-8c22-4fc1-a39b-56b107630143",
 
@@ -163,8 +188,7 @@ export const figma = {
     "https://www.figma.com/api/mcp/asset/d468397c-b391-4c49-b63b-606786dd63f5",
   faHeroSmallIllustration:
     "https://www.figma.com/api/mcp/asset/35c1589f-e479-4ba8-bb29-588acfa7b18f",
-  faGlobe:
-    "/public/images/Globebg.svg",
+  faGlobe: globeBg,
   faOrganic:
     "https://www.figma.com/api/mcp/asset/e77bfd54-c7cf-4869-a4ff-78b214eaa7a8",
   faStar2:
@@ -203,4 +227,16 @@ export const figma = {
     "https://www.figma.com/api/mcp/asset/d0f64688-eb00-4726-acb4-d3c1428e5563",
   faQuoteMark:
     "https://www.figma.com/api/mcp/asset/42b303a2-0072-4c94-9da1-743eeabc716f",
+
+  // Additional local assets
+  usdCard,
+  smarterLogo,
+  foreignImage,
+  cardsImage,
+  arrowRightWhite,
+  navArrowLeft,
+  navArrowRight,
+  appleLogo,
+  blackAppleLogo,
+  logoImg,
 } as const;

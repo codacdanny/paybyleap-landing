@@ -59,13 +59,13 @@ export function AdditionalServicesSection() {
   };
 
   const leftSrc = canScrollLeft
-    ? "/images/nav-arrow-right.svg"
-    : "/images/nav-arrow-left.svg";
+    ? figma.navArrowRight
+    : figma.navArrowLeft;
   const leftRotate = canScrollLeft ? "rotate-180" : "";
 
   const rightSrc = canScrollRight
-    ? "/images/nav-arrow-right.svg"
-    : "/images/nav-arrow-left.svg";
+    ? figma.navArrowRight
+    : figma.navArrowLeft;
   const rightRotate = canScrollRight ? "" : "rotate-180";
 
   return (
