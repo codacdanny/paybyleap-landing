@@ -1,7 +1,7 @@
 import { Outlet, useLocation } from "react-router-dom";
-import { Header } from "../components/Header";
-import { ScrollToTop } from "../components/ScrollToTop";
-import { SiteFooter } from "../components/SiteFooter";
+import { Header } from "./header/Index";
+import { ScrollToTop } from "../components/scroll-to-top/Index";
+import { SiteFooter } from "./footer/Index";
 import { footerHeadingForPath } from "../routes/footerHeadings";
 
 export function RootLayout() {
