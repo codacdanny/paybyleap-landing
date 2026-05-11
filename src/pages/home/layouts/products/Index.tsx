@@ -5,7 +5,7 @@ import { LandingInset } from "@/components/landing-inset/Index";
 
 function ForeignAccountsVisual() {
   return (
-    <div className="relative mt-6 min-h-[320px] overflow-hidden rounded-2xl bg-[#FCF0F1] md:min-h-[380px] min-[1440px]:mt-[43px] min-[1440px]:h-[512px] min-[1440px]:min-h-0 min-[1440px]:overflow-visible min-[1440px]:rounded-none">
+    <div className="relative mt-6 min-h-[320px] overflow-hidden rounded-2xl bg-transparent md:min-h-[380px] min-[1440px]:mt-[43px] min-[1440px]:h-[512px] min-[1440px]:min-h-0 min-[1440px]:overflow-visible min-[1440px]:rounded-none">
       <div className="relative z-[1] ml-auto mr-0 mt-14 max-w-[320px] rounded-2xl border border-primary/10 bg-white p-4 shadow-soft md:mt-32 md:p-5 min-[1440px]:absolute min-[1440px]:right-[22px] min-[1440px]:top-[56px] min-[1440px]:mt-[0] min-[1440px]:w-[320px] min-[1440px]:max-w-none min-[1440px]:rounded-[16px] min-[1440px]:border-0 min-[1440px]:bg-transparent min-[1440px]:p-0 min-[1440px]:shadow-none">
         <img
           src={figma.foreignImage}
@@ -188,25 +188,33 @@ export function ProductsSection() {
             </h2>
           </div>
 
-          <div className="mt-10 grid grid-cols-1 gap-6 min-[1440px]:mt-[56px] min-[1440px]:grid-cols-[minmax(0,545px)_minmax(0,548px)] min-[1440px]:gap-[27px]">
-            <article className="flex min-h-[464px] flex-col overflow-hidden rounded-2xl bg-[#fcf0f1] p-3 min-[1440px]:max-h-[711px] min-[1440px]:rounded-[16px] min-[1440px]:p-[22px] md:p-6 lg:p-8">
-              <h3 className="font-nohemi text-[20px] font-semibold leading-7 text-grey-100 min-[1440px]:text-[32px] min-[1440px]:leading-10">
-                Foreign Accounts
-              </h3>
-              <p className="mt-2 text-[14px] leading-[22px] text-grey-80 min-[1440px]:text-[20px] min-[1440px]:leading-7">
-                Open Global accounts for international payments.
-              </p>
-              <Link
-                to={ROUTES.FOREIGN_ACCOUNTS}
-                className="mt-4 inline-flex h-10 items-center gap-2 rounded-2xl px-2 text-[18px] font-medium text-primary min-[1440px]:mt-6"
-              >
-                Explore
-                <img src={figma.exploreArrow} alt="" className="size-6" />
-              </Link>
-              <ForeignAccountsVisual />
+          <div className="mt-10 grid grid-cols-1 gap-6 min-[1440px]:mt-[56px] min-[1440px]:grid-cols-[545px_545px] min-[1440px]:gap-[27px]">
+            <article className="relative flex min-h-[464px] flex-col overflow-hidden rounded-2xl bg-[#fcf0f1] p-3 min-[1440px]:h-[711px] min-[1440px]:w-[545px] min-[1440px]:max-w-[545px] min-[1440px]:rounded-[16px] min-[1440px]:p-[22px] md:p-6 lg:p-8">
+              <img
+                src={figma.bgGlobe}
+                alt=""
+                aria-hidden
+                className="pointer-events-none absolute bottom-0 left-0 z-0 h-[300px] w-auto max-w-none -translate-x-[40%] translate-y-[12%] object-contain object-left-bottom sm:h-[460px] md:h-[500px] min-[1440px]:h-[552px] min-[1440px]:max-h-[576px] min-[1440px]:-translate-x-[14%] min-[1440px]:translate-y-[16%]"
+              />
+              <div className="relative z-[1] flex min-h-0 flex-1 flex-col">
+                <h3 className="font-nohemi text-[20px] font-semibold leading-7 text-grey-100 min-[1440px]:text-[32px] min-[1440px]:leading-10">
+                  Foreign Accounts
+                </h3>
+                <p className="mt-2 text-[14px] leading-[22px] text-grey-80 min-[1440px]:text-[20px] min-[1440px]:leading-7">
+                  Open Global accounts for international payments.
+                </p>
+                <Link
+                  to={ROUTES.FOREIGN_ACCOUNTS}
+                  className="mt-4 inline-flex h-10 items-center gap-2 rounded-2xl px-2 text-[18px] font-medium text-primary min-[1440px]:mt-6"
+                >
+                  Explore
+                  <img src={figma.exploreArrow} alt="" className="size-6" />
+                </Link>
+                <ForeignAccountsVisual />
+              </div>
             </article>
 
-            <article className="flex min-h-[464px] flex-col overflow-hidden rounded-2xl bg-[#fdf2d8] p-3 min-[1440px]:max-h-[711px] min-[1440px]:rounded-[16px] min-[1440px]:p-[18px] md:p-6 lg:p-8">
+            <article className="flex min-h-[464px] flex-col overflow-hidden rounded-2xl bg-[#fdf2d8] p-3 min-[1440px]:h-[711px] min-[1440px]:w-[545px] min-[1440px]:max-w-[545px] min-[1440px]:rounded-[16px] min-[1440px]:p-[18px] md:p-6 lg:p-8">
               <h3 className="font-nohemi text-[20px] font-semibold leading-7 text-grey-100 min-[1440px]:text-[32px] min-[1440px]:leading-10">
                 Stablecoins Virtual/Physical Cards
               </h3>

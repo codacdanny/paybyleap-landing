@@ -12,6 +12,7 @@ import feesPolygon from "@/assets/images/Polygonbg.svg";
 import cryptoGraphic from "@/assets/images/cryptimg.svg";
 import smarterLogo from "@/assets/images/smarterlogo.svg";
 import foreignImage from "@/assets/images/foreign-image.png";
+import bgGlobe from "@/assets/images/foreign-accounts-globe.svg";
 import cardsImage from "@/assets/images/cards.png";
 import star from "@/assets/images/Star.svg";
 
@@ -60,6 +61,7 @@ export const figma = {
   cryptoGraphic,
   smarterLogo,
   foreignImage,
+  bgGlobe,
   cardsImage,
   star,
   starMobile: star,

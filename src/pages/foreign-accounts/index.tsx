@@ -2,9 +2,6 @@ import { useRef, useState, useEffect, useCallback } from "react";
 import { figma } from "../../data/images/Index";
 import { LandingInset } from "../../components/landing-inset/Index";
 
-/* ------------------------------------------------------------------ */
-/*  DATA                                                               */
-/* ------------------------------------------------------------------ */
 
 const featurePills = [
   { label: "100% DIGITAL SIGNUP", bold: "100%", rest: " DIGITAL SIGNUP" },
