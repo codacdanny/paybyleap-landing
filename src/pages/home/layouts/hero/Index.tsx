@@ -15,29 +15,34 @@ const walletItems: { code: string; src: string }[] = [
 
 function HeroIllustration() {
   return (
-    <>
-      <div className="relative mx-auto w-full max-w-[476px] lg:mr-0">
-        <div className="relative z-[1] flex justify-center lg:justify-end">
-          <div className="relative mt-[-35px] h-[821px] w-[397px]">
-            <img
-              src={figma.iphoneAirMockup}
-              alt="PayByLeap app on iPhone"
-              className="absolute  object-cover drop-shadow-card"
-            />
+    <div className="relative mx-auto w-full max-w-[476px] lg:mr-0">
+      <img
+        src={figma.herobg}
+        alt=""
+        aria-hidden
+        className="pointer-events-none absolute left-0 z-0 w-[120%] max-w-none  select-none object-contain opacity-1"
+      />
 
-            <div className="absolute left-[183px] top-[300px] z-[2] h-[195px] w-[293px]">
-              <div className="relative h-[195px] overflow-hidden rounded-[9.134px] bg-primary shadow-[0px_9px_4px_rgba(154,0,0,0.05)]">
-                <img
-                  src={figma.usdCard}
-                  alt=""
-                  className="pointer-events-none absolute left-[3px] top-[-2px] h-[184px] w-[287px] max-w-none object-cover"
-                />
-              </div>
+      <div className="relative z-[1] flex justify-center lg:justify-end">
+        <div className="relative mt-[-80px] h-[821px] w-[397px]">
+          <img
+            src={figma.iphoneAirMockup}
+            alt="PayByLeap app on iPhone"
+            className="absolute top-0 inset-0 h-full w-full object-contain drop-shadow-card"
+          />
+
+          <div className="absolute left-[183px] top-[495px] z-[2] h-[195px] w-[293px]">
+            <div className="relative h-[195px] overflow-hidden rounded-[9.134px] bg-primary shadow-[0px_9px_4px_rgba(154,0,0,0.05)]">
+              <img
+                src={figma.usdCard}
+                alt=""
+                className="pointer-events-none absolute left-[3px] top-[-2px] h-[184px] w-[287px] max-w-none object-cover"
+              />
             </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
@@ -96,7 +101,7 @@ export function Hero() {
               </div>
             </div>
 
-            <div className="relative flex min-h-[420px] items-start justify-center pb-8 pt-4 md:min-h-[520px] lg:min-h-[821px] lg:justify-end lg:pb-0 lg:pt-[60px]">
+            <div className="relative flex min-h-[420px] items-start justify-center pb-8 pt-4 md:min-h-[520px] lg:min-h-[821px] lg:justify-end lg:pb-0 lg:pt-0">
               <HeroIllustration />
             </div>
           </div>

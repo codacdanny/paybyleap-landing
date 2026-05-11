@@ -31,7 +31,7 @@ function StackedCardsVisualDesktop() {
 
 export function MoneyTransferSection() {
   return (
-    <section className="bg-off-white">
+    <section className="">
       <LandingInset>
         <div className="mx-auto max-w-[1120px]">
           <div className="relative max-h-[464px] overflow-hidden rounded-2xl bg-[#1a1a1a] text-white min-[1440px]:h-[329px] min-[1440px]:rounded-[16px]">

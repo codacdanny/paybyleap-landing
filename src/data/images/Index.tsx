@@ -15,6 +15,7 @@ import foreignImage from "@/assets/images/foreign-image.png";
 import bgGlobe from "@/assets/images/foreign-accounts-globe.svg";
 import cardsImage from "@/assets/images/cards.png";
 import star from "@/assets/images/Star.svg";
+import herobg from "@/assets/images/herobg.svg"
 
 import arrowRight from "@/assets/icons/arrow-right.svg";
 import arrowRightWhite from "@/assets/icons/arrow-right-white.svg";
@@ -65,6 +66,7 @@ export const figma = {
   cardsImage,
   star,
   starMobile: star,
+  herobg,
 
   arrowRightWhite,
   navArrowLeft,
