@@ -175,7 +175,7 @@ export function ProductsSection() {
       <LandingInset>
         <div className="mx-auto max-w-[1120px]">
           <div className="flex flex-col items-center text-center">
-            <div className="inline-flex h-7 items-center gap-1 rounded-[999px] border border-primary/50 bg-[#fff0e3] px-2 py-1 text-[14px] leading-5 text-primary min-[1440px]:h-10 min-[1440px]:gap-2 min-[1440px]:px-3 min-[1440px]:text-[16px] min-[1440px]:leading-6">
+            <div className="inline-flex h-7 items-center gap-1 rounded-[999px] border border-primary/50 bg-primary-light px-2 py-1 text-[14px] leading-5 text-primary min-[1440px]:h-10 min-[1440px]:gap-2 min-[1440px]:px-3 min-[1440px]:text-[16px] min-[1440px]:leading-6">
               <img
                 src={figma.smarterLogo}
                 alt=""

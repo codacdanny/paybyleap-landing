@@ -31,7 +31,7 @@ function HeroIllustration() {
             className="absolute top-0 inset-0 h-full w-full object-contain drop-shadow-card"
           />
 
-          <div className="absolute left-[183px] top-[495px] z-[2] h-[195px] w-[293px]">
+          <div className="absolute left-[183px] top-[375px] z-[2] h-[195px] w-[293px]">
             <div className="relative h-[195px] overflow-hidden rounded-[9.134px] bg-primary shadow-[0px_9px_4px_rgba(154,0,0,0.05)]">
               <img
                 src={figma.usdCard}
@@ -48,9 +48,9 @@ function HeroIllustration() {
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden h-[724px]">
+    <section className="relative overflow-hidden h-[600px]">
       <div
-        className="min-h-0 bg-gradient-to-b from-[rgba(255,244,244,0.1)] from-[24%] via-[#fff4f4] via-[55%] to-[rgba(241,222,226,0.5)] pt-0 lg:min-h-[720px] min-[1440px]:min-h-[799px]"
+        className="min-h-0 bg-gradient-to-b from-[hsla(0,100%,98%,0)] from-[24%] via-[#fff4f4] via-[55%] to-[rgba(241,222,226,0.5)] pt-0 lg:min-h-[720px] min-[1440px]:min-h-[799px]"
         data-name="Hero section"
       >
         <LandingInset className="relative pb-12 pt-8 lg:pb-16 lg:pt-10 min-[1440px]:pb-24 min-[1440px]:pt-[116px]">

@@ -270,7 +270,7 @@ function CTASection() {
 
 function GlobalTransactionsSection() {
   return (
-    <section className="relative overflow-hidden bg-[#FFF0E3] py-16 min-[1440px]:py-[97px]">
+    <section className="relative overflow-hidden bg-primary-light py-16 min-[1440px]:py-[97px]">
       <LandingInset className="relative z-10">
         <div className="grid items-start gap-10 lg:grid-cols-2 min-[1440px]:gap-16">
           {/* Left: feature cards */}

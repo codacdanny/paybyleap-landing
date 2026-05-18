@@ -19,6 +19,7 @@ export default {
       success: "#009A49",
       warning: "#E2B93B",
       "primary-dark": "#6C0505",
+      "primary-light": "#FFF0E3",
       "grey-10": "#E5E5E5",
       "grey-20": "#CCCCCC",
       "grey-30": "#B3B3B3",

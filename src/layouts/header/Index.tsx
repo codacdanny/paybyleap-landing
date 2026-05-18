@@ -23,11 +23,11 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50">
-      <div className="border-b border-primary/10 bg-[#FFF0E3]">
+      <div className="border-b border-primary/10 bg-primary-light">
         <LandingInset>
-          <div className="mx-auto flex max-w-[1121px] flex-wrap items-center justify-between gap-x-2 gap-y-2 py-2.5 xl:py-[15px]">
+          <div className="mx-auto flex max-w-[1438px] flex-wrap items-center justify-between gap-x-2 gap-y-2 pt-[15px]">
             <div
-              className="flex max-w-[calc(100%-4rem)] flex-wrap items-center gap-x-2 gap-y-2 text-[12px] font-medium leading-4 xl:gap-x-[21px] xl:text-[16px] xl:leading-6"
+              className="flex flex-wrap items-center gap-x-2 gap-y-2 text-[12px] font-medium h-[60px] leading-4 xl:gap-x-[21px] xl:text-[16px] xl:leading-6"
               role="tablist"
               aria-label="Audience options"
             >
@@ -41,7 +41,7 @@ export function Header() {
                     role="tab"
                     aria-selected={isActive}
                     onClick={() => setActiveTopOption(option.id)}
-                    className={`flex items-center gap-0.5 px-1 py-0.5 xl:py-1 ${
+                    className={`flex items-center gap-0.5 px-  xl:py-1 ${
                       isActive
                         ? "border-b-2 border-primary text-grey-100 xl:border-b-[3px]"
                         : "border-b-2 border-transparent text-grey-70 xl:border-b-[3px]"
