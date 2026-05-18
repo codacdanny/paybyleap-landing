@@ -1,15 +1,21 @@
 import { type ReactNode } from "react";
+import { Link } from "react-router-dom";
 import { figma } from "../../data/images/Index";
 import { LandingInset } from "../../components/landing-inset/Index";
+import { ROUTES } from "../../routes/paths";
 
 const quickLinks = [
-  { label: "Personal", href: "#" },
-  { label: "Business", href: "#" },
-  { label: "Bank & Fintech", href: "#" },
+  { label: "Foreign Accounts", href: ROUTES.FOREIGN_ACCOUNTS },
+  { label: "Currency Exchange", href: ROUTES.CURRENCY_EXCHANGE },
+  { label: "Virtual Card", href: ROUTES.STABLECOIN_VIRTUAL_CARD },
+  { label: "Global Money Transfer", href: ROUTES.GLOBAL_MONEY_TRANSFER },
+  { label: "Crypto", href: ROUTES.CRYPTO },
+  { label: "Fee Payment", href: ROUTES.INTERNATIONAL_FEE_PAYMENT },
+  { label: "Invoicing", href: ROUTES.INVOICING },
 ];
 
 const companyLinks = [
-  { label: "About Us", href: "#" },
+  { label: "About Us", href: ROUTES.COMPANY },
   { label: "Careers", href: "#" },
   { label: "Blog", href: "#" },
   { label: "The Leap Community", href: "#" },
@@ -63,9 +69,15 @@ function LinkColumn({
       <ul className="mt-4 space-y-2 text-[14px] leading-6 text-white/80 min-[1440px]:mt-6 min-[1440px]:space-y-3 min-[1440px]:text-[18px] min-[1440px]:leading-7">
         {links.map((l) => (
           <li key={l.label}>
-            <a href={l.href} className="transition-colors hover:text-secondary">
-              {l.label}
-            </a>
+            {l.href.startsWith("/") ? (
+              <Link to={l.href} className="transition-colors hover:text-secondary">
+                {l.label}
+              </Link>
+            ) : (
+              <a href={l.href} className="transition-colors hover:text-secondary">
+                {l.label}
+              </a>
+            )}
           </li>
         ))}
       </ul>
