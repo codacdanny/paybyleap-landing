@@ -36,21 +36,21 @@ export function PlatformBenefitsSection() {
             <img
               src={figma.iphone17Mockup}
               alt="PayByLeap on iPhone"
-              className="object-cover drop-shadow-2xl"
+              className="object-cover mix-blend-multiply"
             />
           </div>
 
           {/* Tags — left column */}
-          <div className="absolute z-[1]" style={{ left: 277, top: 270 }}>
+          <div className="absolute z-[1]" style={{ left: 177, top: 270 }}>
             <Tag>
               <span className="font-bold text-primary">64+</span> COUNTRIES
               GLOBALLY
             </Tag>
           </div>
-          <div className="absolute z-[1]" style={{ left: 236, top: 428 }}>
+          <div className="absolute z-[1]" style={{ left: 146, top: 488 }}>
             <Tag>VIRTUAL &amp; PHYSICAL CARD</Tag>
           </div>
-          <div className="absolute z-[1]" style={{ left: 197, top: 626 }}>
+          <div className="absolute z-[1]" style={{ left: 107, top: 726 }}>
             <Tag>GLOBAL PAYMENTS IN MINUTE</Tag>
           </div>
 
@@ -58,10 +58,10 @@ export function PlatformBenefitsSection() {
           <div className="absolute z-[1]" style={{ left: 900, top: 180 }}>
             <Tag>STABLECOIN SUPPORT</Tag>
           </div>
-          <div className="absolute z-[1]" style={{ left: 955, top: 404 }}>
+          <div className="absolute z-[1]" style={{ left: 955, top: 504 }}>
             <Tag>GLOBAL INVOICING</Tag>
           </div>
-          <div className="absolute z-[1]" style={{ left: 961, top: 564 }}>
+          <div className="absolute z-[1]" style={{ left: 961, top: 724 }}>
             <Tag>
               <span className="font-bold text-primary">100%</span> SECURED
               ACCOUNT
@@ -98,7 +98,7 @@ export function PlatformBenefitsSection() {
                 <img
                   src={figma.iphone17Mockup}
                   alt="PayByLeap on iPhone"
-                  className="h-auto w-full drop-shadow-2xl"
+                  className="h-auto w-full mix-blend-multiply"
                 />
               </div>
 
