@@ -209,6 +209,76 @@ export function Header() {
     setOpenDropdown((prev) => (prev === name ? null : name));
   }
 
+  if (pathname === ROUTES.CURRENCY_EXCHANGE) {
+    return (
+      <header ref={headerRef} className="relative z-50 bg-white">
+        <div className="border-b border-primary/10 bg-primary-light">
+          <div className="mx-auto flex h-[70px] w-full items-end px-6 md:px-[143px]">
+            <div
+              className="flex h-full items-end gap-[42px] text-[18px] font-medium leading-none text-grey-70"
+              role="tablist"
+              aria-label="Audience options"
+            >
+              {topOptions.map((option) => {
+                const isActive = activeTopOption === option.id;
+                return (
+                  <button
+                    key={option.id}
+                    type="button"
+                    role="tab"
+                    aria-selected={isActive}
+                    onClick={() => setActiveTopOption(option.id)}
+                    className={`flex h-full items-center gap-[6px] border-b-[4px] pt-[2px] ${
+                      isActive
+                        ? "border-primary text-grey-100"
+                        : "border-transparent text-grey-70"
+                    }`}
+                  >
+                    <span className={isActive ? "font-semibold" : "font-normal"}>
+                      {option.label}
+                    </span>
+                    {option.comingSoon ? (
+                      <span className="rounded-full bg-secondary px-[6px] py-[3px] text-[8px] font-semibold leading-none text-primary-dark">
+                        Coming Soon
+                      </span>
+                    ) : null}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-white">
+          <div className="mx-auto flex h-[126px] w-full items-center justify-between px-6 md:px-[143px]">
+            <Link to={ROUTES.HOME} className="shrink-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary">
+              <img
+                src={figma.logoImg}
+                alt="PayByLeap"
+                className="h-[41px] w-[177px] object-contain object-left"
+              />
+            </Link>
+
+            <div className="hidden items-center gap-[10px] md:flex">
+              <button
+                type="button"
+                className="flex h-[52px] w-[118px] items-center justify-center rounded-[8px] border border-primary bg-white text-[18px] font-medium leading-none text-grey-90 transition-colors hover:bg-primary-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary xl:h-[62px] xl:w-[140px] xl:rounded-[10px] xl:text-[22px]"
+              >
+                Book a call
+              </button>
+              <button
+                type="button"
+                className="flex h-[52px] w-[210px] items-center justify-center rounded-[8px] bg-primary-dark text-[18px] font-medium leading-none text-white transition-colors hover:bg-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary xl:h-[62px] xl:w-[242px] xl:rounded-[10px] xl:text-[22px]"
+              >
+                Download the app
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+    );
+  }
+
   return (
     <header ref={headerRef} className="sticky top-0 z-50">
       {/* Top utility bar */}

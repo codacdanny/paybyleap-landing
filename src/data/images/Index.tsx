@@ -1,5 +1,6 @@
 // Local asset imports
 import iphoneAirMockup from "@/assets/images/iphone-mock.png";
+import iphoneLayout from "@/assets/images/iphone-layout.png";
 import femalePhoneMockup from "@/assets/images/portrait.png";
 import saintLouisCrest from "@/assets/images/international-payment.png";
 import iphone17Mockup from "@/assets/images/benefitsphone.png";
@@ -51,6 +52,7 @@ import logoImg from "@/assets/logo/logo.png";
 
 export const figma = {
   iphoneAirMockup,
+  iphoneLayout,
   femalePhoneMockup,
   saintLouisCrest,
   iphone17Mockup,

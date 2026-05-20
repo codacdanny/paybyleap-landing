@@ -4,3 +4,7 @@ dist
 *.local
 .env
 .env.*
+
+# Claude Code harness
+CLAUDE.md
+.claude/
