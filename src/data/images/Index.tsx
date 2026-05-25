@@ -1,6 +1,7 @@
 // Local asset imports
 import iphoneAirMockup from "@/assets/images/iphone-mock.png";
 import iphoneLayout from "@/assets/images/iphone-layout.png";
+import freeAccountHero from "@/assets/images/freeaccount-hero.png";
 import femalePhoneMockup from "@/assets/images/portrait.png";
 import saintLouisCrest from "@/assets/images/international-payment.png";
 import iphone17Mockup from "@/assets/images/benefitsphone.png";
@@ -47,6 +48,12 @@ import socialFacebook from "@/assets/social/fe_fb.svg";
 import socialLinkedin from "@/assets/social/fe_linkedin.svg";
 import socialYoutube from "@/assets/social/youtube.svg";
 import socialX from "@/assets/social/x.svg";
+
+import creditCardImage from "@/assets/images/creditcard-image.svg";
+import quickTransferImage from "@/assets/images/quicktransfer-image.svg";
+import dottedStar from "@/assets/images/dotted-star.svg";
+import solidStar from "@/assets/images/solid-star.svg";
+import getMoreIphoneMock from "@/assets/images/getmoreiphonemock.png";
 
 import logoImg from "@/assets/logo/logo.png";
 
@@ -105,4 +112,10 @@ export const figma = {
 
   logoImg,
   faGlobe: globeBg,
+  freeAccountHero,
+  creditCardImage,
+  quickTransferImage,
+  dottedStar,
+  solidStar,
+  getMoreIphoneMock,
 } as const;
