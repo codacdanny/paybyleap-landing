@@ -62,7 +62,7 @@ export function WhatYouGainSection() {
 
   return (
     /* Section — warm cream bg, relative so the diagonal overlay is contained */
-    <section className="relative overflow-hidden bg-[#F0EAC4] pb-[100px] pt-[72px] min-[1440px]:pb-[120px] min-[1440px]:pt-[88px]">
+    <section className="relative overflow-hidden bg-[#F0EAC4] mt-[35px] pb-[100px] pt-[72px] min-[1440px]:pb-[120px] min-[1440px]:pt-[88px]">
 
       {/* ── Header row: heading left, nav arrows right ── */}
       <LandingInset>

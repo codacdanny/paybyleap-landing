@@ -30,6 +30,10 @@ import appleLogo from "@/assets/icons/applelogo.svg";
 import blackAppleLogo from "@/assets/icons/blackapplelogo.svg";
 import googlePlayIcon from "@/assets/icons/googlplayiconblack.svg";
 import copyIcon from "@/assets/icons/copy.svg";
+import convertIcon from "@/assets/icons/convert.svg";
+import exhangeIcon from "@/assets/icons/exchange-icon.svg"
+import usdConvertHero from "@/assets/images/usdconverthero.png";
+import euroConvertHero from "@/assets/images/euroconverthero.png";
 
 import flagNg from "@/assets/flags/nigeria-flag.png";
 import flagUs from "@/assets/flags/us-flag.png";
@@ -89,6 +93,10 @@ export const figma = {
   googlePlayIcon,
   footerGooglePlayWhite: googlePlayIcon,
   copyIcon,
+  convertIcon,
+  exhangeIcon,
+  usdConvertHero,
+  euroConvertHero,
   exploreArrow: arrowRight,
 
   flagNg,
