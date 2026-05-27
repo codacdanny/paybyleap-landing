@@ -54,6 +54,7 @@ import quickTransferImage from "@/assets/images/quicktransfer-image.svg";
 import dottedStar from "@/assets/images/dotted-star.svg";
 import solidStar from "@/assets/images/solid-star.svg";
 import getMoreIphoneMock from "@/assets/images/getmoreiphonemock.png";
+import transactionsPhone from "@/assets/images/transactions-phone.png";
 
 import logoImg from "@/assets/logo/logo.png";
 
@@ -118,4 +119,5 @@ export const figma = {
   dottedStar,
   solidStar,
   getMoreIphoneMock,
+  transactionsPhone,
 } as const;

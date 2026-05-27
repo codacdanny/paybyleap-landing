@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect, useCallback } from "react";
+import { useRef, useState, useEffect, useCallback, Fragment } from "react";
 import { figma } from "../../data/images/Index";
 import { LandingInset } from "../../components/landing-inset/Index";
 
@@ -9,11 +9,11 @@ const featurePills = [
   { label: "NO ACCOUNT OPENING FEES" },
   { label: "MULTI-CURRENCY IBAN" },
   { label: "WITHDRAWAL TO LOCAL ACCOUNTS" },
-  { label: "ACCOUNT STATEMENT & PROOF OF ACCOUNT" },
+  { label: "ACCOUNT STATEMENT & PROOF OF ACCOUNT", newLine: true },
   { label: "GNERATE PAYMENT INVOICE" },
   { label: "LOW TRANSACTION FEE" },
   { label: "INSTANT TRANSACTION NOTIFICATIONS" },
-  { label: "ANTI-FRAUD PROTECTION" },
+  { label: "ANTI-FRAUD PROTECTION", newLine: true },
 ];
 
 const transactionFeatures = [
@@ -256,34 +256,36 @@ function BenefitsPillsSection() {
               Get more from Paybyleap Foreign Account
             </h2>
 
-            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-[54px] min-[1440px]:mt-12">
-              {featurePills.map((pill) => (
-                <div
-                  key={pill.label}
-                  className="inline-flex h-[60px] items-center gap-4 rounded-3xl px-6"
-                  style={{
-                    background:
-                      "linear-gradient(#FBF7FB, #FBF7FB) padding-box, linear-gradient(to right, #9A0000, #F6C03A) border-box",
-                    border: "1.5px solid transparent",
-                  }}
-                >
-                  <img
-                    src={figma.star}
-                    alt=""
-                    className="size-6 shrink-0"
-                  />
-                  <span className="whitespace-nowrap text-[24px] font-medium leading-8 text-grey-90">
-                    {pill.bold ? (
-                      <>
-                        <span className="font-bold text-primary">{pill.bold}</span>
-                        {pill.rest}
-                      </>
-                    ) : (
-                      pill.label
-                    )}
-                  </span>
-                </div>
-              ))}
+            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-[34px] min-[1440px]:mt-12">
+              {featurePills.map((pill) => {
+                const pillEl = (
+                  <div
+                    className="inline-flex h-[60px] items-center gap-4 rounded-3xl px-6"
+                    style={{
+                      background:
+                        "linear-gradient(#FBF7FB, #FBF7FB) padding-box, linear-gradient(to right, #9A0000, #F6C03A) border-box",
+                      border: "1.5px solid transparent",
+                    }}
+                  >
+                    <img src={figma.star} alt="" className="size-6 shrink-0" />
+                    <span className="whitespace-nowrap text-[24px] font-medium leading-8 text-grey-90">
+                      {pill.bold ? (
+                        <>
+                          <span className="font-bold text-primary">{pill.bold}</span>
+                          {pill.rest}
+                        </>
+                      ) : (
+                        pill.label
+                      )}
+                    </span>
+                  </div>
+                );
+                return pill.newLine ? (
+                  <div key={pill.label} className="basis-full">{pillEl}</div>
+                ) : (
+                  <Fragment key={pill.label}>{pillEl}</Fragment>
+                );
+              })}
             </div>
           </div>
 
@@ -292,7 +294,7 @@ function BenefitsPillsSection() {
             <img
               src={figma.getMoreIphoneMock}
               alt="PayByLeap foreign account app on iPhone"
-              className="w-[360px] object-contain object-bottom"
+              className="w-[300px] object-contain object-bottom"
             />
           </div>
 
@@ -304,7 +306,7 @@ function BenefitsPillsSection() {
       <img
         src={figma.getMoreIphoneMock}
         alt="PayByLeap foreign account app on iPhone"
-        className="pointer-events-none absolute z-20 hidden min-[1440px]:block"
+        className="pointer-events-none absolute z-0 hidden min-[1440px]:block"
         style={{
           top: "225px",
           left: "calc(50% + 135px)",
@@ -354,40 +356,80 @@ function CTASection() {
 /*  GLOBAL TRANSACTIONS                                                */
 /* ------------------------------------------------------------------ */
 
+const transactionIcons = [
+  /* currency swap */
+  <svg key="swap" viewBox="0 0 24 24" fill="none" className="size-6" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M7 16h10M17 16l-3-3M17 16l-3 3M17 8H7M7 8l3-3M7 8l3 3" />
+  </svg>,
+  /* shield */
+  <svg key="shield" viewBox="0 0 24 24" fill="none" className="size-6" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+    <path d="M9 12l2 2 4-4" />
+  </svg>,
+  /* bell */
+  <svg key="bell" viewBox="0 0 24 24" fill="none" className="size-6" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+    <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+  </svg>,
+];
+
 function GlobalTransactionsSection() {
   return (
-    <section className="relative overflow-hidden bg-primary-light py-16 min-[1440px]:py-[97px]">
+    <section className="relative overflow-hidden bg-primary-light py-16 min-[1440px]:py-[80px]">
+   
+
       <LandingInset className="relative z-10">
-        <div className="grid items-start gap-10 lg:grid-cols-2 min-[1440px]:gap-16">
-          {/* Left: feature cards */}
-          <div className="flex flex-col gap-4">
-            {transactionFeatures.map((f) => (
-              <div
-                key={f.title}
-                className="flex items-center gap-4 rounded-2xl border border-grey-30 bg-white p-5 shadow-[0px_4px_24px_rgba(0,0,0,0.1)]"
-              >
-                <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-b from-[#1F2065] to-[#3E40CB]" />
-                <div className="flex-1">
-                  <p className="text-[18px] font-semibold leading-6 text-grey-90 min-[1440px]:text-[24px]">
-                    {f.title}
-                  </p>
-                  <p className="mt-1 text-[14px] leading-5 text-grey-70 min-[1440px]:text-[16px]">
-                    {f.desc}
-                  </p>
+        <div className="flex flex-col gap-10 lg:flex-row lg:items-start min-[1440px]:gap-10">
+
+          {/* ── Left: phone behind + cards centered on it ── */}
+          <div className="relative shrink-0 min-[1440px]:h-[620px] min-[1440px]:w-[540px]">
+
+            {/* Phone — centred in column, behind the cards */}
+            <img
+              src={figma.transactionsPhone}
+              alt=""
+              className="pointer-events-none absolute left-1/2 top-1/2 z-0 hidden w-[410px] -translate-x-1/2 -translate-y-1/2 object-contain min-[1440px]:block"
+              aria-hidden
+            />
+
+            {/* Feature cards — same centre as phone → centred on it */}
+            <div className="flex flex-col gap-4 min-[1440px]:absolute min-[1440px]:left-1/2 min-[1440px]:-translate-x-1/2 min-[1440px]:top-1/2 min-[1440px]:-translate-y-1/2 min-[1440px]:z-10 min-[1440px]:w-[480px]">
+              {transactionFeatures.map((f, i) => (
+                <div
+                  key={f.title}
+                  className="flex items-center gap-4 rounded-2xl bg-white p-5 shadow-[0px_4px_24px_rgba(0,0,0,0.08)]"
+                >
+                  <div className="flex size-[56px] shrink-0 items-center justify-center rounded-full bg-gradient-to-b from-[#1F2065] to-[#3E40CB]">
+                    {transactionIcons[i]}
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-[16px] font-semibold leading-6 text-grey-90 min-[1440px]:text-[18px]">
+                      {f.title}
+                    </p>
+                    <p className="mt-0.5 text-[13px] leading-5 text-grey-60 min-[1440px]:text-[14px]">
+                      {f.desc}
+                    </p>
+                  </div>
+                  <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-[#22C55E]">
+                    <svg viewBox="0 0 12 10" fill="none" className="size-3.5">
+                      <path d="M1 5l3.5 3.5L11 1" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
-          {/* Right: text */}
-          <div>
-            <h2 className="max-w-[554px] font-nohemi text-[32px] font-semibold leading-[40px] text-grey-90 md:text-[40px] md:leading-[52px] min-[1440px]:text-[48px] min-[1440px]:leading-[64px]">
+          {/* ── Right: heading + body ── */}
+          <div className="flex-1 mt-20">
+            <h2 className="font-nohemi text-[32px] font-semibold leading-[40px] text-grey-90 md:text-[40px] md:leading-[52px] min-[1440px]:text-[48px] min-[1440px]:leading-[60px]">
               Carry out Global Transactions with ease and safety measures
             </h2>
-            <p className="mt-6 max-w-[458px] text-[18px] leading-7 text-grey-90 min-[1440px]:text-[20px] min-[1440px]:leading-7">
+            <p className="mt-6 text-[16px] leading-7 text-grey-70 min-[1440px]:text-[20px] min-[1440px]:leading-8">
               Converting money is now very easy and fast with paybyleap
             </p>
           </div>
+
         </div>
       </LandingInset>
     </section>
