@@ -1,50 +1,34 @@
 import { figma } from "@/data/images/Index";
 import { LandingInset } from "@/components/landing-inset/Index";
+import { FeaturePill } from "@/components/ui/feature-pill/Index";
 
 const pills = [
-  "LIVE EXCHANGE RATE",
-  "CURRENCY WALLET INTEGRATION",
-  "TRANSPARENT FEES",
-  "INSTANT CONVERSION BETWEEN ACCOUNT",
-  "TRANSACTION HISTORY & REPORT",
-  "ANTI-FRAUD PROTECTION",
-  "NOTIFICATIONS ON CONVERSIONS",
+  { label: "LIVE EXCHANGE RATE" },
+  { label: "CURRENCY WALLET INTEGRATION" },
+  { label: "TRANSPARENT FEES" },
+  { label: "INSTANT CONVERSION BETWEEN ACCOUNT" },
+  { label: "TRANSACTION HISTORY & REPORT" },
+  { label: "ANTI-FRAUD PROTECTION" },
+  { label: "NOTIFICATIONS ON CONVERSIONS" },
 ];
-
-function SparkleIcon() {
-  return (
-    <svg viewBox="0 0 16 16" fill="none" className="size-[14px] shrink-0" aria-hidden>
-      <path
-        d="M8 1v14M1 8h14M3.1 3.1l9.8 9.8M12.9 3.1 3.1 12.9"
-        stroke="#F6C03A"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
 
 export function CurrencyBenefitsDark() {
   return (
     <section className="relative overflow-hidden bg-grey-100">
 
-      {/* ── Dark red curved arc — decorative left element ── */}
-      <div
-        className="pointer-events-none absolute left-[-10%] top-[35%] h-[520px] w-[520px] rounded-full border-[80px] border-primary/40"
+      {/* ── Large logo watermark — decorative background ── */}
+      <img
+        src={figma.leapLogoLarge}
+        alt=""
         aria-hidden
-        style={{ transform: "rotate(-30deg) scaleX(0.55)" }}
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-100"
       />
 
-      {/* ── Golden glow — bottom right ── */}
-      <div
-        className="pointer-events-none absolute bottom-[22%] right-[8%] h-[80px] w-[80px] rounded-full"
-        aria-hidden
-        style={{ background: "radial-gradient(circle, rgba(180,140,20,0.55) 0%, transparent 70%)", width: "120px", height: "120px" }}
-      />
+
 
       <LandingInset className="relative z-10 pb-0 pt-16 min-[1440px]:pt-[88px]">
         {/* ── Centered heading ── */}
-        <h2 className="text-center font-nohemi text-[36px] font-bold leading-[1.2] text-white md:text-[44px] min-[1440px]:text-[52px]">
+        <h2 className="text-center font-spartan text-[48px] font-semibold leading-[1.2] text-white">
           Get more from{" "}
           <span className="text-secondary">Paybyleap</span>
           <br />
@@ -52,17 +36,9 @@ export function CurrencyBenefitsDark() {
         </h2>
 
         {/* ── Feature pills ── */}
-        <div className="mt-10 flex flex-wrap gap-3 min-[1440px]:mt-12 min-[1440px]:gap-4">
+        <div className="mt-8 flex flex-wrap gap-x-6 gap-y-[34px] min-[1440px]:mt-12">
           {pills.map((pill) => (
-            <div
-              key={pill}
-              className="inline-flex h-[48px] items-center gap-2.5 rounded-full bg-white px-5 min-[1440px]:h-[54px] min-[1440px]:px-6"
-            >
-              <SparkleIcon />
-              <span className="whitespace-nowrap text-[12px] font-bold uppercase tracking-wide text-grey-90 min-[1440px]:text-[13px]">
-                {pill}
-              </span>
-            </div>
+            <FeaturePill key={pill.label} label={pill.label} />
           ))}
         </div>
       </LandingInset>
@@ -70,14 +46,14 @@ export function CurrencyBenefitsDark() {
       {/* ── Phone with hand — centered, bleeds edge to edge ── */}
       <div className="relative z-10 mt-[-20px] flex justify-center min-[1440px]:mt-[-32px]">
         <img
-          src={figma.iphoneLayout}
+          src={figma.handheld}
           alt="PayByLeap currency exchange app in hand"
-          className="w-full max-w-[360px] object-contain sm:max-w-[420px] md:max-w-[500px] min-[1440px]:max-w-[580px]"
+          className="w-full max-w-[850px] max-h-[796px] object-contain "
         />
       </div>
 
       {/* ── CTA ── */}
-      <div className="relative z-10 flex flex-col items-center gap-6 pb-20 pt-4 text-center min-[1440px]:pb-24">
+      <div className="relative z-10 flex flex-col items-center gap-6 pb-20 mt-12 text-center min-[1440px]:pb-24">
         <h2 className="font-nohemi text-[40px] font-bold leading-[1.15] text-white md:text-[52px] min-[1440px]:text-[62px]">
           Convert Currency
           <br />

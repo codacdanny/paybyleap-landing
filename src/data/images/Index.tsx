@@ -18,6 +18,7 @@ import bgGlobe from "@/assets/images/foreign-accounts-globe.svg";
 import cardsImage from "@/assets/images/cards.png";
 import star from "@/assets/images/Star.svg";
 import herobg from "@/assets/images/herobg.svg"
+import handheld from "@/assets/images/handheld.png"
 
 import arrowRight from "@/assets/icons/arrow-right.svg";
 import arrowRightWhite from "@/assets/icons/arrow-right-white.svg";
@@ -29,6 +30,7 @@ import globeIcon from "@/assets/icons/globeicon.svg";
 import appleLogo from "@/assets/icons/applelogo.svg";
 import blackAppleLogo from "@/assets/icons/blackapplelogo.svg";
 import googlePlayIcon from "@/assets/icons/googlplayiconblack.svg";
+import realtimeconversionIcon from "@/assets/icons/realtime-conversion.svg"
 import copyIcon from "@/assets/icons/copy.svg";
 import convertIcon from "@/assets/icons/convert.svg";
 import exhangeIcon from "@/assets/icons/exchange-icon.svg"
@@ -61,6 +63,7 @@ import getMoreIphoneMock from "@/assets/images/getmoreiphonemock.png";
 import transactionsPhone from "@/assets/images/transactions-phone.png";
 
 import logoImg from "@/assets/logo/logo.png";
+import leapLogoLarge from "@/assets/logo/leap-logo-large.svg";
 
 export const figma = {
   iphoneAirMockup,
@@ -81,6 +84,7 @@ export const figma = {
   star,
   starMobile: star,
   herobg,
+  handheld,
 
   arrowRightWhite,
   navArrowLeft,
@@ -91,6 +95,7 @@ export const figma = {
   appleLogo,
   blackAppleLogo,
   googlePlayIcon,
+  realtimeconversionIcon,
   footerGooglePlayWhite: googlePlayIcon,
   copyIcon,
   convertIcon,
@@ -120,6 +125,7 @@ export const figma = {
   socialX,
 
   logoImg,
+  leapLogoLarge,
   faGlobe: globeBg,
   freeAccountHero,
   creditCardImage,

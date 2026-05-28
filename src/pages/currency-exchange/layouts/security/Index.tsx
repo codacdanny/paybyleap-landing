@@ -92,27 +92,3 @@ function PhoneScreen() {
   );
 }
 
-export function CurrencySecuritySection() {
-  return (
-    <section className="overflow-hidden bg-primary-light py-16 min-[1440px]:py-[80px]">
-      <LandingInset>
-        <div className="grid items-center gap-10 lg:grid-cols-2 min-[1440px]:gap-20">
-          {/* Left: styled phone screen */}
-          <div className="flex items-center justify-center">
-            <PhoneScreen />
-          </div>
-
-          {/* Right: heading + copy */}
-          <div>
-            <h2 className="max-w-[480px] font-nohemi text-[28px] font-semibold leading-[36px] text-grey-90 md:text-[36px] md:leading-[44px] min-[1440px]:text-[44px] min-[1440px]:leading-[52px]">
-              Convert your money with ease and safety measures
-            </h2>
-            <p className="mt-4 max-w-[420px] text-[15px] leading-6 text-grey-60 min-[1440px]:mt-5 min-[1440px]:text-[17px] min-[1440px]:leading-7">
-              Converting money is now very easy and fast with Paybyleap
-            </p>
-          </div>
-        </div>
-      </LandingInset>
-    </section>
-  );
-}

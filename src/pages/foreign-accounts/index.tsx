@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect, useCallback, Fragment } from "react";
 import { figma } from "../../data/images/Index";
 import { LandingInset } from "../../components/landing-inset/Index";
+import { FeaturePill } from "@/components/ui/feature-pill/Index";
 
 
 const featurePills = [
@@ -258,28 +259,7 @@ function BenefitsPillsSection() {
 
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-[34px] min-[1440px]:mt-12">
               {featurePills.map((pill) => {
-                const pillEl = (
-                  <div
-                    className="inline-flex h-[60px] items-center gap-4 rounded-3xl px-6"
-                    style={{
-                      background:
-                        "linear-gradient(#FBF7FB, #FBF7FB) padding-box, linear-gradient(to right, #9A0000, #F6C03A) border-box",
-                      border: "1.5px solid transparent",
-                    }}
-                  >
-                    <img src={figma.star} alt="" className="size-6 shrink-0" />
-                    <span className="whitespace-nowrap text-[24px] font-medium leading-8 text-grey-90">
-                      {pill.bold ? (
-                        <>
-                          <span className="font-bold text-primary">{pill.bold}</span>
-                          {pill.rest}
-                        </>
-                      ) : (
-                        pill.label
-                      )}
-                    </span>
-                  </div>
-                );
+                const pillEl = <FeaturePill label={pill.label} bold={pill.bold} rest={pill.rest} />;
                 return pill.newLine ? (
                   <div key={pill.label} className="basis-full">{pillEl}</div>
                 ) : (
@@ -301,8 +281,7 @@ function BenefitsPillsSection() {
         </div>
       </LandingInset>
 
-      {/* Phone mockup at 1440px+: absolute, matches Figma coords exactly */}
-      {/* left: calc(50% + 135px) keeps it at 855px from section left at 1440px viewport */}
+      
       <img
         src={figma.getMoreIphoneMock}
         alt="PayByLeap foreign account app on iPhone"
@@ -373,7 +352,7 @@ const transactionIcons = [
   </svg>,
 ];
 
-function GlobalTransactionsSection() {
+export function GlobalTransactionsSection() {
   return (
     <section className="relative overflow-hidden bg-primary-light py-16 min-[1440px]:py-[80px]">
    

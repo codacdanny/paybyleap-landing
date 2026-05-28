@@ -122,31 +122,30 @@ export function WhatYouGainSection() {
         {cards.map((c) => (
           <div
             key={c.id}
-            className="min-w-[407px] h-[217px] p-[24px] rounded-2xl bg-white  border border-primary shadow-[0px_4px_24px_rgba(0,0,0,0.07)]"
+            className="min-w-[407px] h-[217px] p-[24px] rounded-2xl bg-white border border-primary shadow-[0px_4px_24px_rgba(0,0,0,0.07)]"
           >
-            {/* Red icon circle */}
-            <div className="flex size-[52px] items-center justify-center rounded-full bg-primary min-[1440px]:size-[60px]">
-              <svg viewBox="0 0 24 24" fill="none" className="size-6 text-white" aria-hidden>
-                <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="2" />
-                <path d="M12 7v5l3 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </div>
-
-            {/* Flag row (multi-currency only) */}
-            {c.flags && (
-              <div className="mt-4 flex items-center gap-1.5">
-                {c.flags.map((flag, i) => (
-                  <div key={i} className="flex size-7 overflow-hidden rounded-full border-2 border-white shadow-sm">
-                    <img src={flag} alt="" className="size-full object-cover" />
+            {c.id === "multi-currency" ? (
+              <div className="flex items-center">
+                {["₦", "$", "€"].map((symbol, i) => (
+                  <div
+                    key={i}
+                    className="flex size-[70px] shrink-0 items-center justify-center rounded-full bg-[#FFF4F4] border border-primary font-nohemi text-[22px] font-semibold text-primary"
+                    style={{ marginLeft: i === 0 ? 0 : "-16px", zIndex: i }}
+                  >
+                    {symbol}
                   </div>
                 ))}
               </div>
+            ) : (
+              <div className="flex items-center justify-center rounded-full bg-[#FFF4F4] size-[70px]">
+                <img src={figma.realtimeconversionIcon} alt="icon" className="size-[32px] object-cover" />
+              </div>
             )}
 
-            <h3 className="mt-5 font-nohemi text-[20px] font-bold text-grey-90 min-[1440px]:text-[22px]">
+            <h3 className="mt-2 font-nohemi text-[24px] font-semibold text-grey-90">
               {c.title}
             </h3>
-            <p className="mt-2 text-[14px] leading-[1.65] text-grey-60 min-[1440px]:text-[15px]">
+            <p className="mt-2 font-spartan font-normal text-[16px] leading-[1.65] text-grey-60">
               {c.desc}
             </p>
           </div>
