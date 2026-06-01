@@ -23,6 +23,8 @@ import heroGlobalMT from "@/assets/images/hero-global-MTpng.png"
 import fastTransferBg from "@/assets/images/fast-transfer-bg.png"
 import multicurrencyBg from "@/assets/images/multicurrency-bg.png"
 import cryptoHeroImg from "@/assets/images/cryptohero.png"
+import internationalFeeHeroImg from "@/assets/images/internationalfee-hero.png"
+import invoiceHeroImg from "@/assets/invoicehero.png"
 
 import arrowRight from "@/assets/icons/arrow-right.svg";
 import arrowRightWhite from "@/assets/icons/arrow-right-white.svg";
@@ -97,6 +99,8 @@ export const figma = {
   stablecoinHero,
   heroGlobalMT,
   cryptoHero: cryptoHeroImg,
+  internationalFeeHero: internationalFeeHeroImg,
+  invoiceHero: invoiceHeroImg,
   fastTransferBg,
   multicurrencyBg,
   easyphonemock,
