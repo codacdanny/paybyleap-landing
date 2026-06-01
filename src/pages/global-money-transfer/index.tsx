@@ -3,6 +3,8 @@ import { TransferChannelsSection } from "./layouts/transfer-channels/Index";
 import { BenefitPillsSection } from "@/components/benefit-pills-section/Index";
 import { SecurityTrustSection } from "@/components/security-trust-section/Index";
 import { TestimonialsSection } from "@/components/testimonials-section/Index";
+import { CurrencyBenefitsDark } from "../currency-exchange/layouts/benefits-dark/Index";
+import { GlobalTransactionsSection } from "../foreign-accounts";
 
 const transferPills = [
   "SEND TO 80+ COUNTRIES",
@@ -32,16 +34,8 @@ export function GlobalMoneyTransferPage() {
     <main>
       <MoneyTransferHero />
       <TransferChannelsSection />
-      <BenefitPillsSection
-        heading="Get more from Paybyleap Transfer Globally"
-        subheading="Transfer Money Globally with Ease"
-        pills={transferPills}
-      />
-      <SecurityTrustSection
-        heading="Send/Receive money globally, with ease and safety measures"
-        subtitle="Sending money globally is now very easy and fast with Paybyleap"
-        features={transferSecurityFeatures}
-      />
+      <CurrencyBenefitsDark />
+      <GlobalTransactionsSection />
       <TestimonialsSection heading="See what our customers say about global transfers" />
     </main>
   );
