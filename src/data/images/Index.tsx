@@ -22,6 +22,7 @@ import handheld from "@/assets/images/handheld.png"
 import heroGlobalMT from "@/assets/images/hero-global-MTpng.png"
 import fastTransferBg from "@/assets/images/fast-transfer-bg.png"
 import multicurrencyBg from "@/assets/images/multicurrency-bg.png"
+import cryptoHeroImg from "@/assets/images/cryptohero.png"
 
 import arrowRight from "@/assets/icons/arrow-right.svg";
 import arrowRightWhite from "@/assets/icons/arrow-right-white.svg";
@@ -95,6 +96,7 @@ export const figma = {
   handheld,
   stablecoinHero,
   heroGlobalMT,
+  cryptoHero: cryptoHeroImg,
   fastTransferBg,
   multicurrencyBg,
   easyphonemock,

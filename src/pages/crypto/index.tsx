@@ -3,6 +3,8 @@ import { CryptoBenefitsSection } from "./layouts/crypto-benefits/Index";
 import { BenefitPillsSection } from "@/components/benefit-pills-section/Index";
 import { SecurityTrustSection } from "@/components/security-trust-section/Index";
 import { TestimonialsSection } from "@/components/testimonials-section/Index";
+import { CurrencyBenefitsDark } from "../currency-exchange/layouts/benefits-dark/Index";
+import { GlobalTransactionsSection } from "../foreign-accounts";
 
 const cryptoPills = [
   "BUY/SELL CRYPTO",
@@ -33,15 +35,8 @@ export function CryptoPage() {
     <main>
       <CryptoHero />
       <CryptoBenefitsSection />
-      <BenefitPillsSection
-        heading="Get more from transacting your Crypto with Paybyleap"
-        pills={cryptoPills}
-      />
-      <SecurityTrustSection
-        heading="Send/Receive crypto globally with ease and safety measures"
-        subtitle="Transacting crypto is now very easy and fast with Paybyleap"
-        features={cryptoSecurityFeatures}
-      />
+      <CurrencyBenefitsDark />
+      <GlobalTransactionsSection />
       <TestimonialsSection heading="See what our customers say about our crypto features" />
     </main>
   );
