@@ -3,6 +3,8 @@ import { CardBenefitsSection } from "./layouts/card-benefits/Index";
 import { BenefitPillsSection } from "@/components/benefit-pills-section/Index";
 import { SecurityTrustSection } from "@/components/security-trust-section/Index";
 import { TestimonialsSection } from "@/components/testimonials-section/Index";
+import { CurrencyBenefitsDark } from "../currency-exchange/layouts/benefits-dark/Index";
+import { GlobalTransactionsSection } from "../foreign-accounts";
 
 const cardPills = [
   "INTEGRATION WITH WALLETS",
@@ -32,15 +34,8 @@ export function StablecoinVirtualCardPage() {
     <main>
       <VirtualCardHero />
       <CardBenefitsSection />
-      <BenefitPillsSection
-        heading="Get more from Paybyleap Virtual Card"
-        pills={cardPills}
-      />
-      <SecurityTrustSection
-        heading="Send crypto globally, take charge of your money with ease and safety measures"
-        subtitle="Transacting with crypto is now very easy and fast with Paybyleap"
-        features={cardSecurityFeatures}
-      />
+     <CurrencyBenefitsDark />
+     <GlobalTransactionsSection />
       <TestimonialsSection heading="See what our customers say about our virtual cards" />
     </main>
   );

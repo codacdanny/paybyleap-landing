@@ -36,6 +36,11 @@ import convertIcon from "@/assets/icons/convert.svg";
 import exhangeIcon from "@/assets/icons/exchange-icon.svg"
 import usdConvertHero from "@/assets/images/usdconverthero.png";
 import euroConvertHero from "@/assets/images/euroconverthero.png";
+import stablecoinHero from "@/assets/images/stablecoin-hero.png"
+import padlockimage from "@/assets/images/secureimage.png"
+import visacard from "@/assets/images/visa-card.png"
+import stablecoinphone from "@/assets/images/stablecoinphone.png"
+import easyphonemock from "@/assets/images/easyonlinepaymentphone.png"
 
 import flagNg from "@/assets/flags/nigeria-flag.png";
 import flagUs from "@/assets/flags/us-flag.png";
@@ -85,6 +90,11 @@ export const figma = {
   starMobile: star,
   herobg,
   handheld,
+  stablecoinHero,
+  easyphonemock,
+  padlockimage,
+  stablecoinphone,
+  visacard,
 
   arrowRightWhite,
   navArrowLeft,
