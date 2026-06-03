@@ -38,7 +38,7 @@ function ExchangeField({
   );
 }
 
-export function RealTimeExchangeSection() {
+export function CurrencyConverterSection() {
   return (
     <div id="real-time-exchange" className="relative z-20 -mt-[176px]">
       <LandingInset>

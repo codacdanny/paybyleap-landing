@@ -1,6 +1,6 @@
 import { LandingInset } from "@/components/landing-inset/Index";
 
-export function GettingStartedSection() {
+export function GrowthMissionBanner() {
   return (
     <section className="bg-[#1D1111] py-20 min-[1440px]:py-[120px]">
       <LandingInset>

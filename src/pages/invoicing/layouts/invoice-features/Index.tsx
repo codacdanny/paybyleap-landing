@@ -1,6 +1,6 @@
-import { WhatYouGainCarousel, type WhatYouGainCard } from "@/components/what-you-gain-carousel/Index";
+import { ProductBenefitsCarousel, type ProductBenefitCard } from "@/components/what-you-gain-carousel/Index";
 
-const cards: WhatYouGainCard[] = [
+const cards: ProductBenefitCard[] = [
   {
     id: "templates",
     title: "Professional Invoice Templates",
@@ -24,9 +24,9 @@ const cards: WhatYouGainCard[] = [
   },
 ];
 
-export function InvoiceFeaturesSection() {
+export function InvoiceBenefitsCarouselSection() {
   return (
-    <WhatYouGainCarousel
+    <ProductBenefitsCarousel
       heading={
         <>
           What you gain creating Invoice

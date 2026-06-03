@@ -52,7 +52,7 @@ const cards: TransferCardProps[] = [
   },
 ];
 
-export function TransferChannelsSection() {
+export function ServiceFeaturesSection() {
   return (
     <section className="bg-off-white py-16 min-[1440px]:py-[99px]">
       <LandingInset>

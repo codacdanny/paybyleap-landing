@@ -23,7 +23,7 @@ const timeline = [
   },
 ];
 
-export function ProductsOverviewSection() {
+export function CompanyTimelineSection() {
   const [active, setActive] = useState("founded");
 
   return (

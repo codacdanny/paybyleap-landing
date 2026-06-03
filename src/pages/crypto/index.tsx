@@ -1,42 +1,32 @@
 import { CryptoHero } from "./layouts/hero/Index";
-import { CryptoBenefitsSection } from "./layouts/crypto-benefits/Index";
-import { BenefitPillsSection } from "@/components/benefit-pills-section/Index";
-import { SecurityTrustSection } from "@/components/security-trust-section/Index";
+import { CryptoBenefitsCarouselSection } from "./layouts/crypto-benefits/Index";
+import { FeaturePitchSection } from "@/components/feature-pitch-section/Index";
+import { TransactionSecuritySection } from "@/components/transaction-security-section/Index";
 import { TestimonialsSection } from "@/components/testimonials-section/Index";
-import { CurrencyBenefitsDark } from "../currency-exchange/layouts/benefits-dark/Index";
-import { GlobalTransactionsSection } from "../foreign-accounts";
+import { figma } from "@/data/images/Index";
 
-const cryptoPills = [
-  "BUY/SELL CRYPTO",
-  "SEND/RECEIVE CRYPTO",
-  "NOTIFICATION ON EVERY CRYPTO TRANSACTIONS",
+const pills = [
+  "BUY & SELL CRYPTO",
+  "SEND & RECEIVE CRYPTO",
   "REAL-TIME PRICE ALERTS",
   "WALLET INTEGRATION",
   "TRANSACTION HISTORY",
-];
-
-const cryptoSecurityFeatures = [
-  {
-    title: "Protected and Regulated",
-    desc: "Our platform is fully regulated and your crypto assets are protected",
-  },
-  {
-    title: "2FA Authentication",
-    desc: "Verify to grant access to use your crypto wallet and transfers",
-  },
-  {
-    title: "Instant Notification",
-    desc: "Receive alert immediately after every crypto transaction",
-  },
+  "ANTI-FRAUD PROTECTION",
+  "INSTANT NOTIFICATIONS",
 ];
 
 export function CryptoPage() {
   return (
     <main>
       <CryptoHero />
-      <CryptoBenefitsSection />
-      <CurrencyBenefitsDark />
-      <GlobalTransactionsSection />
+      <CryptoBenefitsCarouselSection />
+      <FeaturePitchSection
+        heading={<>Get more from <span className="text-secondary">Paybyleap</span><br /><span className="text-secondary">Crypto</span></>}
+        pills={pills}
+        image={figma.handheld}
+        ctaHeading={<>Start using Crypto<br />easily Today!</>}
+      />
+      <TransactionSecuritySection />
       <TestimonialsSection heading="See what our customers say about our crypto features" />
     </main>
   );

@@ -19,7 +19,7 @@ const audiences = [
   },
 ];
 
-export function TeamCultureSection() {
+export function AudienceOverviewSection() {
   return (
     <section className="bg-[#333333] py-16 min-[1440px]:py-[100px]">
       <LandingInset>

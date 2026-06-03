@@ -24,7 +24,7 @@ const benefits = [
   },
 ];
 
-export function CardBenefitsSection() {
+export function ProductBenefitsGrid() {
   return (
     <section className="bg-[#FFF3F3] py-16 min-[1440px]:py-[99px]">
       <LandingInset>

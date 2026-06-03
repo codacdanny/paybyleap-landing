@@ -1,7 +1,7 @@
 import { figma } from "@/data/images/Index";
 import { LandingInset } from "@/components/landing-inset/Index";
 
-export function CompanyFinalCTA() {
+export function AppDownloadSection() {
   return (
     <section className="bg-black py-20 min-[1440px]:py-[100px]">
       <LandingInset>

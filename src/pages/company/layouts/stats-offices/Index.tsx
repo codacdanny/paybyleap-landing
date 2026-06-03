@@ -30,7 +30,7 @@ function FeatureRow({ label, side }: { label: string; side: "left" | "right" }) 
   );
 }
 
-export function StatsOfficesSection() {
+export function ProductEcosystemSection() {
   return (
     <section className="bg-[#1D1212] py-16 min-[1440px]:py-[100px]">
       <LandingInset>

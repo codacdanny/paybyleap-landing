@@ -37,7 +37,7 @@ const cards = [
   },
 ];
 
-export function MissionVisionSection() {
+export function ValuePropositionSection() {
   return (
     <section className="bg-[#1D1111] py-16 min-[1440px]:py-[100px]">
       <LandingInset>

@@ -2,7 +2,7 @@ import { useRef, useState, useEffect, useCallback, type ReactNode } from "react"
 import { figma } from "@/data/images/Index";
 import { LandingInset } from "@/components/landing-inset/Index";
 
-export interface WhatYouGainCard {
+export interface ProductBenefitCard {
   id: string;
   title: string;
   desc: string;
@@ -13,10 +13,10 @@ export interface WhatYouGainCard {
 interface Props {
   heading: ReactNode;
   sectionClassName?: string;
-  cards: WhatYouGainCard[];
+  cards: ProductBenefitCard[];
 }
 
-export function WhatYouGainCarousel({ heading, sectionClassName = "bg-[#FBF2D6]", cards }: Props) {
+export function ProductBenefitsCarousel({ heading, sectionClassName = "bg-[#FBF2D6]", cards }: Props) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -91,7 +91,7 @@ export function WhatYouGainCarousel({ heading, sectionClassName = "bg-[#FBF2D6]"
             >
               {c.currencySymbols ? (
                 <div className="flex items-center">
-                  {c.currencySymbols.map((symbol, i) => (
+                  {c.currencySymbols.map((symbol: string, i: number) => (
                     <div
                       key={i}
                       className="flex size-[70px] shrink-0 items-center justify-center rounded-full border border-primary bg-[#FFF4F4] font-nohemi text-[22px] font-semibold text-primary"

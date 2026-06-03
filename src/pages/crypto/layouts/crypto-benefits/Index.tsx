@@ -1,6 +1,6 @@
-import { WhatYouGainCarousel, type WhatYouGainCard } from "@/components/what-you-gain-carousel/Index";
+import { ProductBenefitsCarousel, type ProductBenefitCard } from "@/components/what-you-gain-carousel/Index";
 
-const cards: WhatYouGainCard[] = [
+const cards: ProductBenefitCard[] = [
   {
     id: "instant-transfer",
     title: "Instant Crypto Transfer",
@@ -24,9 +24,9 @@ const cards: WhatYouGainCard[] = [
   },
 ];
 
-export function CryptoBenefitsSection() {
+export function CryptoBenefitsCarouselSection() {
   return (
-    <WhatYouGainCarousel
+    <ProductBenefitsCarousel
       heading={
         <>
           What you gain using <span className="text-primary">Paybyleap</span>
