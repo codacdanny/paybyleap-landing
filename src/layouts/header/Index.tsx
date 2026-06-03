@@ -11,52 +11,43 @@ const productLinks = [
   {
     label: "Foreign Accounts",
     href: ROUTES.FOREIGN_ACCOUNTS,
-    desc: "Open global IBAN accounts instantly",
-    icon: figma.ionPlanet,
+    desc: "Open an account for International payment",
   },
   {
     label: "Currency Exchange",
     href: ROUTES.CURRENCY_EXCHANGE,
-    desc: "Real-time FX at competitive rates",
-    icon: figma.euFlag,
+    desc: "Covert currencies at competitive rates",
   },
   {
-    label: "Virtual Card",
+    label: "Stablecoin Virtual/Physical Cards",
     href: ROUTES.STABLECOIN_VIRTUAL_CARD,
-    desc: "Spend crypto anywhere in the world",
-    icon: figma.cardsImage,
+    desc: "Send crypto globally using virtual cards",
   },
   {
     label: "Global Money Transfer",
     href: ROUTES.GLOBAL_MONEY_TRANSFER,
-    desc: "Send money to 80+ countries",
-    icon: figma.faGlobe,
+    desc: "Send and receive money worldwide",
   },
   {
-    label: "Crypto",
+    label: "Send/Receive Crypto",
     href: ROUTES.CRYPTO,
-    desc: "Buy, sell and transfer crypto",
-    icon: figma.cryptoGraphic,
+    desc: "Buy, sell or transfer crypto",
   },
   {
-    label: "International Fee Payment",
+    label: "International Fees Payment",
     href: ROUTES.INTERNATIONAL_FEE_PAYMENT,
-    desc: "Pay tuition and school fees",
-    icon: figma.saintLouisCrest,
+    desc: "Pay tuition fee and global fees seamlessly",
   },
   {
     label: "Global Invoicing",
     href: ROUTES.INVOICING,
-    desc: "Invoice and get paid globally",
-    icon: figma.copyIcon,
+    desc: "Create and send invoices internationally.",
   },
 ];
 
 const companyLinks = [
-  { label: "About Us", href: ROUTES.COMPANY },
-  { label: "Careers", href: "#" },
-  { label: "Blog", href: "#" },
-  { label: "The Leap Community", href: "#" },
+  { label: "About Us", desc: "Get to know our company values", href: ROUTES.COMPANY },
+  { label: "Paybyleap Community", desc: "Meet other members & share ideas", href: "#" },
 ];
 
 const topOptions = [
@@ -73,80 +64,33 @@ function ProductDropdown({ onClose }: { onClose: () => void }) {
   const col2 = productLinks.slice(4);
 
   return (
-    <div className="absolute left-1/2 top-full z-50 mt-2 w-[728px] -translate-x-1/2 overflow-hidden rounded-2xl border border-grey-10 bg-white shadow-card">
-      <div className="grid grid-cols-2 divide-x divide-grey-10">
-        {/* Column 1 */}
-        <div className="py-3">
-          {col1.map((p) => (
+    <div className="absolute left-1/2 top-full z-50 mt-2 w-[680px] -translate-x-1/2 rounded-2xl border border-grey-10 bg-white p-4 shadow-card">
+      <div className="grid grid-cols-2 gap-x-6">
+        <div className="flex flex-col gap-1">
+          {col1.map((p, i) => (
             <Link
               key={p.href}
               to={p.href}
               onClick={onClose}
-              className="flex items-center gap-3 px-5 py-3 transition-colors hover:bg-[#FFF3F3]"
+              className={`rounded-xl px-4 py-3 transition-colors hover:bg-[#FFF3F3] ${i === 0 ? "bg-[#FFF3F3]" : ""}`}
             >
-              <div className="flex size-10 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-grey-10 bg-off-white">
-                <img src={p.icon} alt="" className="size-6 object-contain" />
-              </div>
-              <div>
-                <p className="text-[15px] font-semibold leading-5 text-grey-90">
-                  {p.label}
-                </p>
-                <p className="text-[13px] leading-4 text-grey-60">{p.desc}</p>
-              </div>
+              <p className="text-[15px] font-semibold leading-5 text-grey-90">{p.label}</p>
+              <p className="mt-0.5 text-[13px] leading-5 text-grey-60">{p.desc}</p>
             </Link>
           ))}
         </div>
-        {/* Column 2 */}
-        <div className="py-3">
+        <div className="flex flex-col gap-1">
           {col2.map((p) => (
             <Link
               key={p.href}
               to={p.href}
               onClick={onClose}
-              className="flex items-center gap-3 px-5 py-3 transition-colors hover:bg-[#FFF3F3]"
+              className="rounded-xl px-4 py-3 transition-colors hover:bg-[#FFF3F3]"
             >
-              <div className="flex size-10 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-grey-10 bg-off-white">
-                <img src={p.icon} alt="" className="size-6 object-contain" />
-              </div>
-              <div>
-                <p className="text-[15px] font-semibold leading-5 text-grey-90">
-                  {p.label}
-                </p>
-                <p className="text-[13px] leading-4 text-grey-60">{p.desc}</p>
-              </div>
+              <p className="text-[15px] font-semibold leading-5 text-grey-90">{p.label}</p>
+              <p className="mt-0.5 text-[13px] leading-5 text-grey-60">{p.desc}</p>
             </Link>
           ))}
-          {/* CTA inside dropdown */}
-          <div className="mx-5 mt-3 border-t border-grey-10 pt-3">
-            <Link
-              to={ROUTES.HOME}
-              onClick={onClose}
-              className="flex items-center justify-between rounded-xl bg-primary px-4 py-3"
-            >
-              <div>
-                <p className="text-[14px] font-semibold text-white">
-                  Get Started — it's Free
-                </p>
-                <p className="text-[12px] text-white/70">
-                  Download the Paybyleap app
-                </p>
-              </div>
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                className="size-5 shrink-0 text-white"
-                aria-hidden
-              >
-                <path
-                  d="M9 18l6-6-6-6"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </Link>
-          </div>
         </div>
       </div>
     </div>
@@ -155,16 +99,17 @@ function ProductDropdown({ onClose }: { onClose: () => void }) {
 
 function CompanyDropdown({ onClose }: { onClose: () => void }) {
   return (
-    <div className="absolute left-1/2 top-full z-50 mt-2 w-[280px] -translate-x-1/2 overflow-hidden rounded-2xl border border-grey-10 bg-white shadow-card">
-      <div className="py-3">
-        {companyLinks.map((l) => (
+    <div className="absolute left-1/2 top-full z-50 mt-2 w-[340px] -translate-x-1/2 rounded-2xl border border-grey-10 bg-white p-4 shadow-card">
+      <div className="flex flex-col gap-1">
+        {companyLinks.map((l, i) => (
           <Link
             key={l.label}
             to={l.href}
             onClick={onClose}
-            className="block px-5 py-3 text-[15px] font-medium text-grey-90 transition-colors hover:bg-[#FFF3F3] hover:text-primary"
+            className={`rounded-xl px-4 py-3 transition-colors hover:bg-[#FFF3F3] ${i === 0 ? "bg-[#FFF3F3]" : ""}`}
           >
-            {l.label}
+            <p className="text-[15px] font-semibold leading-5 text-grey-90">{l.label}</p>
+            <p className="mt-0.5 text-[13px] leading-5 text-grey-60">{l.desc}</p>
           </Link>
         ))}
       </div>
@@ -438,15 +383,8 @@ export function Header() {
                       key={p.href}
                       to={p.href}
                       onClick={() => setMenuOpen(false)}
-                      className="flex items-center gap-3 rounded-xl py-2.5 text-[16px] font-medium text-grey-80 transition-colors hover:text-primary"
+                      className="rounded-xl py-2.5 text-[16px] font-medium text-grey-80 transition-colors hover:text-primary"
                     >
-                      <div className="flex size-8 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-grey-10 bg-off-white">
-                        <img
-                          src={p.icon}
-                          alt=""
-                          className="size-5 object-contain"
-                        />
-                      </div>
                       {p.label}
                     </Link>
                   ))}
