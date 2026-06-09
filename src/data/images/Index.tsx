@@ -55,6 +55,26 @@ import flagEur from "@/assets/flags/eur-flag.png";
 import flagUk from "@/assets/flags/pounds-flag.png";
 import flagCn from "@/assets/flags/yen-flag.png";
 import cryptoFlag from "@/assets/flags/crypto-flag.png";
+import avatarPerson1 from "@/assets/people/avatar-1.png";
+import avatarPerson2 from "@/assets/people/avatar-2.png";
+import avatarPerson3 from "@/assets/people/avatar-3.png";
+
+import benefitCrossBorder from "@/assets/placeholders/benefit-cross-border.svg";
+import benefitMobile from "@/assets/placeholders/benefit-mobile.svg";
+import benefitUnified from "@/assets/placeholders/benefit-unified.svg";
+import benefitGlobalAccess from "@/assets/placeholders/benefit-global-access.svg";
+import whyExistsPhoto from "@/assets/placeholders/why-exists.svg";
+import serveStudents from "@/assets/placeholders/serve-students.svg";
+import serveFreelancers from "@/assets/placeholders/serve-freelancers.svg";
+import serveBusinesses from "@/assets/placeholders/serve-businesses.svg";
+import serveFamilies from "@/assets/placeholders/serve-families.svg";
+import serveMerchants from "@/assets/placeholders/serve-merchants.svg";
+import coreValue1 from "@/assets/placeholders/core-value-1.svg";
+import coreValue2 from "@/assets/placeholders/core-value-2.svg";
+import coreValue3 from "@/assets/placeholders/core-value-3.svg";
+import coreValue4 from "@/assets/placeholders/core-value-4.svg";
+import coreValue5 from "@/assets/placeholders/core-value-5.svg";
+
 import flagCa2 from "@/assets/flags/flagCa2.svg";
 import flagNg2 from "@/assets/flags/flagNg2.svg";
 import flagUk2 from "@/assets/flags/flagUk2.svg";
@@ -135,6 +155,26 @@ export const figma = {
   flagCn,
   usdc: cryptoFlag,
   usdt: cryptoFlag,
+  avatarPerson1,
+  avatarPerson2,
+  avatarPerson3,
+
+  benefitCrossBorder,
+  benefitMobile,
+  benefitUnified,
+  benefitGlobalAccess,
+  whyExistsPhoto,
+  serveStudents,
+  serveFreelancers,
+  serveBusinesses,
+  serveFamilies,
+  serveMerchants,
+  coreValue1,
+  coreValue2,
+  coreValue3,
+  coreValue4,
+  coreValue5,
+
   flagCa2,
   flagNg2,
   flagUs2,

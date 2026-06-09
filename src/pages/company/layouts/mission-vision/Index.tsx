@@ -5,72 +5,147 @@ const cards = [
   {
     id: "cross-border",
     title: "Seamless Cross-border Payments",
-    desc: "Send and receive money across borders quickly and reliably with minimal delays.",
-    bg: "bg-[#2A1E1E]",
-    image: figma.heroGlobalMT,
-    imageClass: "w-full object-contain",
+    desc: "Send money across borders quickly and reliably with minimal delays.",
+    bg: "bg-[#222a5e]",
+    titleClass: "text-white",
+    descClass: "text-white/65",
+    image: figma.benefitCrossBorder,
   },
   {
     id: "mobile-first",
-    title: "Mobile-first Ecosystem",
-    desc: "A fully mobile-optimised platform built for speed, simplicity, and global access.",
-    bg: "bg-[#222222]",
-    image: figma.transactionsPhone,
-    imageClass: "h-[220px] object-contain mx-auto",
+    title: "Mobile-first Platform",
+    desc: "Mobile-friendly design ensures seamless access and ease of use on any device.",
+    bg: "bg-[#E9E9E6]",
+    titleClass: "text-grey-90",
+    descClass: "text-grey-70",
+    image: figma.benefitMobile,
   },
   {
     id: "unified",
     title: "Unified Financial Ecosystem",
-    desc: "One platform for accounts, exchange, crypto, invoicing, and international payments.",
-    bg: "bg-[#FBF2D6]",
-    image: figma.femalePhoneMockup,
-    imageClass: "h-[220px] w-full object-cover object-top",
-    dark: false,
+    desc: "Have all your currencies in one place, easy to carry out any transactions.",
+    bg: "bg-[#F4E3A4]",
+    titleClass: "text-[#2a1d05]",
+    descClass: "text-[#2a1d05]/70",
+    image: figma.benefitUnified,
   },
   {
     id: "global-access",
     title: "Global Accessibility",
-    desc: "Financial tools for everyone, everywhere — breaking barriers for underserved users worldwide.",
+    desc: "Stay informed and in control with real-time tracking and notifications.",
     bg: "bg-primary",
-    image: figma.faGlobe,
-    imageClass: "h-[180px] w-full object-contain opacity-30 mx-auto",
+    titleClass: "text-white",
+    descClass: "text-white/80",
+    image: figma.benefitGlobalAccess,
   },
 ];
 
 export function ValuePropositionSection() {
   return (
-    <section className="bg-[#1D1111] py-16 min-[1440px]:py-[100px]">
+    <section className="relative overflow-hidden bg-[#1D1111] pt-16 min-[1440px]:pt-[100px]">
       <LandingInset>
-        <h2 className="font-nohemi text-[36px] font-bold leading-[1.15] text-white md:text-[44px] min-[1440px]:text-[52px]">
-          Benefits/Value proposition
-          <br />
-          of <span className="text-primary">Paybyleap</span>
-        </h2>
+        <div className="grid grid-cols-1 gap-y-10 lg:grid-cols-[minmax(0,373px)_minmax(0,1fr)] lg:gap-x-12">
+          <h2 className="font-nohemi text-[40px] font-bold leading-[1.12] text-white md:text-[46px] min-[1440px]:text-[52px]">
+            Benefits/Value proposition of Paybyleap
+          </h2>
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 min-[1440px]:mt-14 min-[1440px]:gap-6">
-          {cards.map((c) => (
-            <div
-              key={c.id}
-              className={`relative overflow-hidden rounded-2xl p-6 min-[1440px]:p-8 ${c.bg}`}
-              style={{ minHeight: 320 }}
-            >
-              <h3
-                className={`text-[22px] font-semibold leading-[1.3] min-[1440px]:text-[26px] ${c.dark === false ? "text-grey-90" : "text-white"}`}
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 min-[1440px]:gap-6">
+            {cards.map((c) => (
+              <div
+                key={c.id}
+                className={`flex min-h-[420px] flex-col overflow-hidden rounded-[20px] min-[1440px]:min-h-[480px] ${c.bg}`}
               >
-                {c.title}
-              </h3>
-              <p
-                className={`mt-3 max-w-[320px] text-[15px] leading-6 min-[1440px]:text-[16px] ${c.dark === false ? "text-grey-70" : "text-white/70"}`}
-              >
-                {c.desc}
-              </p>
-              <div className="mt-6 overflow-hidden rounded-xl">
-                <img src={c.image} alt="" aria-hidden className={c.imageClass} />
+                <div className="p-7 min-[1440px]:p-8">
+                  <h3
+                    className={`text-[21px] font-semibold leading-[1.25] min-[1440px]:text-[24px] ${c.titleClass}`}
+                  >
+                    {c.title}
+                  </h3>
+                  <p
+                    className={`mt-3 text-[14px] leading-[1.5] min-[1440px]:text-[15px] ${c.descClass}`}
+                  >
+                    {c.desc}
+                  </p>
+                </div>
+                <div className="mt-auto flex-1 overflow-hidden">
+                  <img
+                    src={c.image}
+                    alt=""
+                    aria-hidden
+                    className="size-full object-cover"
+                  />
+                </div>
               </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Founder / mission / vision panel */}
+        <div className="mt-16 rounded-[28px] border border-white/10 bg-[#271F1F] p-8 md:p-12 min-[1440px]:p-14">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-[160px_minmax(0,1fr)_minmax(0,1fr)] md:gap-0">
+            <div className="md:pr-10">
+              <p className="text-[13px] font-semibold uppercase tracking-[0.15em] text-secondary">
+                Founded
+              </p>
+              <p className="mt-4 text-[18px] text-white">2026</p>
             </div>
-          ))}
+
+            <div className="md:border-l md:border-white/15 md:px-10">
+              <p className="text-[13px] font-semibold uppercase tracking-[0.15em] text-secondary">
+                Our Mission
+              </p>
+              <p className="mt-4 text-[17px] leading-[1.6] text-white/90">
+                To simplify and expedite financial transactions across borders,
+                making global business and international education payments more
+                accessible.
+              </p>
+            </div>
+
+            <div className="md:border-l md:border-white/15 md:px-10">
+              <p className="text-[13px] font-semibold uppercase tracking-[0.15em] text-secondary">
+                Our Vision
+              </p>
+              <p className="mt-4 text-[17px] leading-[1.6] text-white/90">
+                To create a world where money moves as freely as ideas, enabling
+                individuals, students, and businesses to transact, grow, and
+                thrive across borders effortlessly.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-14 grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center min-[1440px]:mt-20">
+            <div>
+              <h3 className="font-nohemi text-[30px] font-bold leading-[1.15] text-white min-[1440px]:text-[36px]">
+                Why Paybyleap Exists
+              </h3>
+              <p className="mt-5 max-w-[440px] text-[17px] leading-[1.6] text-white/55 min-[1440px]:text-[18px]">
+                People and businesses are no longer limited by geography, yet
+                financial systems remain fragmented, slow, and expensive.
+              </p>
+            </div>
+
+            <div className="overflow-hidden rounded-[20px] md:justify-self-end">
+              <img
+                src={figma.whyExistsPhoto}
+                alt="PayByLeap users"
+                className="aspect-[456/470] w-full object-cover md:w-[440px] min-[1440px]:w-[456px]"
+              />
+            </div>
+          </div>
         </div>
       </LandingInset>
+
+      {/* Bleeding decorative bars */}
+      <div className="pointer-events-none relative mt-16 h-[90px] overflow-hidden min-[1440px]:mt-20 min-[1440px]:h-[120px]">
+        <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 px-4 sm:px-8 min-[1440px]:px-[120px]">
+          {Array.from({ length: 7 }).map((_, i) => (
+            <div
+              key={i}
+              className="h-[150px] max-w-[120px] flex-1 translate-y-[45%] rounded-t-[22px] bg-gradient-to-b from-[#3d1417] via-[#2a1011] to-[#1D1111] min-[1440px]:h-[200px]"
+            />
+          ))}
+        </div>
+      </div>
     </section>
   );
 }

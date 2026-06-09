@@ -1,68 +1,83 @@
+import { figma } from "@/data/images/Index";
 import { LandingInset } from "@/components/landing-inset/Index";
 
 const values = [
   {
     id: "transparency",
-    title: "Transparency First",
-    desc: "Users know exactly what they're paying and why — no hidden fees, no surprises.",
-    col: "sm:col-span-1",
+    num: "01",
+    title: "Transparency first: Users know what they are paying and why",
+    image: figma.coreValue1,
   },
   {
     id: "user-centric",
-    title: "User-centric Innovation",
-    desc: "Solutions that solve a specific problem — designed around real user needs.",
-    col: "sm:col-span-1",
+    num: "02",
+    title: "User-centric innovation: solutions that solve real problems",
+    image: figma.coreValue2,
   },
   {
     id: "global-access",
-    title: "Global Accessibility",
-    desc: "Financial tools for everyone, everywhere — especially the underserved.",
-    col: "sm:col-span-1",
+    num: "03",
+    title: "Global accessibility: financial tools for everyone, everywhere",
+    image: figma.coreValue3,
   },
   {
     id: "reliability",
-    title: "Reliability, Real Trust",
-    desc: "Secure, stable & institutional-grade infrastructure you can count on.",
-    col: "sm:col-span-1",
+    num: "04",
+    title: "Reliability and trust: secure, stable & consistent transactions",
+    image: figma.coreValue4,
   },
   {
     id: "improvement",
-    title: "Continuous Improvement",
-    desc: "Evolving with a changing world — always building, always iterating.",
-    col: "sm:col-span-2 min-[1440px]:col-span-1",
+    num: "05",
+    title: "Continuous improvement: evolving with a changing world",
+    image: figma.coreValue5,
   },
 ];
 
-const ValueIcon = () => (
-  <div className="flex size-10 items-center justify-center rounded-xl bg-primary/20">
-    <svg viewBox="0 0 24 24" fill="none" className="size-5 text-primary" aria-hidden>
-      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
-        stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  </div>
-);
-
 export function CoreValuesSection() {
   return (
-    <section className="bg-[#1D1212] py-16 min-[1440px]:py-[100px]">
+    <section className="bg-[#1D1111] py-16 min-[1440px]:py-[100px]">
       <LandingInset>
-        <h2 className="font-nohemi text-[36px] font-bold leading-[1.15] text-white md:text-[44px] min-[1440px]:text-[52px]">
-          Our Core Values
-        </h2>
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <h2 className="font-nohemi text-[36px] font-bold leading-[1.1] text-white md:text-[44px] min-[1440px]:text-[48px]">
+            Our Core
+            <br />
+            Values
+          </h2>
 
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 min-[1440px]:mt-12 min-[1440px]:grid-cols-3 min-[1440px]:gap-6">
           {values.map((v) => (
             <div
               key={v.id}
-              className={`rounded-2xl border border-white/10 bg-[#2A1A1A] p-6 min-[1440px]:p-8 ${v.col}`}
+              className="flex min-h-[460px] flex-col rounded-2xl bg-[#2A2222] p-6 min-[1440px]:min-h-[500px] min-[1440px]:p-7"
             >
-              <ValueIcon />
-              <h3 className="mt-4 text-[20px] font-semibold text-white min-[1440px]:text-[22px]">
+              <div className="flex items-center gap-3">
+                <span className="text-[13px] font-medium text-white/55">
+                  {v.num}
+                </span>
+                <span className="h-px flex-1 bg-white/15" />
+                <svg viewBox="0 0 24 24" fill="none" className="size-4 text-white/40" aria-hidden>
+                  <path
+                    d="M6 7l5 5-5 5M13 7l5 5-5 5"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
+
+              <h3 className="mt-6 text-[18px] font-semibold leading-[1.4] text-white min-[1440px]:text-[20px]">
                 {v.title}
               </h3>
-              <p className="mt-2 text-[15px] leading-6 text-white/60 min-[1440px]:text-[16px]">
-                {v.desc}
-              </p>
+
+              <div className="mt-auto flex items-end justify-center pt-6">
+                <img
+                  src={v.image}
+                  alt=""
+                  aria-hidden
+                  className="max-h-[220px] w-full object-contain"
+                />
+              </div>
             </div>
           ))}
         </div>

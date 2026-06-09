@@ -1,3 +1,4 @@
+import { useRef, useState } from "react";
 import { figma } from "@/data/images/Index";
 import { LandingInset } from "@/components/landing-inset/Index";
 
@@ -5,74 +6,150 @@ const audiences = [
   {
     id: "students",
     label: "Students paying tuition & fees abroad",
-    image: figma.saintLouisCrest,
+    image: figma.serveStudents,
   },
   {
     id: "freelancers",
-    label: "Freelancers & remote workers",
-    image: figma.femalePhoneMockup,
+    label: "Freelancers & remote workers earning internationally",
+    image: figma.serveFreelancers,
   },
   {
     id: "businesses",
     label: "Businesses managing cross-border transactions",
-    image: figma.freeAccountHero,
+    image: figma.serveBusinesses,
+  },
+  {
+    id: "families",
+    label: "Families sending remittances to loved ones",
+    image: figma.serveFamilies,
+  },
+  {
+    id: "merchants",
+    label: "Online merchants accepting global payments",
+    image: figma.serveMerchants,
   },
 ];
 
 export function AudienceOverviewSection() {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [active, setActive] = useState(0);
+
+  const scrollToIndex = (index: number) => {
+    const track = trackRef.current;
+    if (!track) return;
+    const clamped = Math.max(0, Math.min(index, audiences.length - 1));
+    const card = track.children[clamped] as HTMLElement | undefined;
+    if (card) {
+      track.scrollTo({ left: card.offsetLeft - track.offsetLeft, behavior: "smooth" });
+    }
+  };
+
+  const handleScroll = () => {
+    const track = trackRef.current;
+    if (!track) return;
+    let nearest = 0;
+    let min = Infinity;
+    Array.from(track.children).forEach((child, i) => {
+      const distance = Math.abs(
+        (child as HTMLElement).offsetLeft - track.offsetLeft - track.scrollLeft,
+      );
+      if (distance < min) {
+        min = distance;
+        nearest = i;
+      }
+    });
+    setActive(nearest);
+  };
+
   return (
-    <section className="bg-[#333333] py-16 min-[1440px]:py-[100px]">
+    <section className="overflow-hidden bg-[#383838] py-16 min-[1440px]:py-[100px]">
       <LandingInset>
-        <div className="flex items-end justify-between gap-4">
+        <div className="flex items-start justify-between gap-4">
           <div className="max-w-[560px]">
-            <h2 className="font-nohemi text-[36px] font-bold leading-[1.15] text-white md:text-[44px] min-[1440px]:text-[52px]">
+            <h2 className="font-nohemi text-[36px] font-bold leading-[1.1] text-white md:text-[48px] min-[1440px]:text-[56px]">
               Who We Serve
             </h2>
-            <p className="mt-4 text-[17px] leading-[1.7] text-white/60 min-[1440px]:text-[18px]">
+            <p className="mt-5 text-[17px] leading-[1.6] text-white/65 min-[1440px]:text-[18px]">
               PayByLeap supports a diverse, global audience to participate in
               the international economy.
             </p>
           </div>
 
           {/* Nav arrows */}
-          <div className="hidden shrink-0 items-center gap-3 md:flex">
+          <div className="hidden shrink-0 items-center gap-4 md:flex">
             <button
               type="button"
               aria-label="Previous"
-              className="flex size-[52px] items-center justify-center rounded-full border border-white/20 text-white/60 transition-colors hover:border-white/50 hover:text-white"
+              onClick={() => scrollToIndex(active - 1)}
+              disabled={active === 0}
+              className="flex size-[60px] items-center justify-center rounded-full border-2 border-white/25 text-white/40 transition-colors hover:border-white/50 hover:text-white/70 disabled:opacity-40 disabled:hover:border-white/25 disabled:hover:text-white/40"
             >
-              <svg viewBox="0 0 24 24" fill="none" className="size-5" aria-hidden>
-                <path d="M15 18l-6-6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              <svg viewBox="0 0 24 24" fill="none" className="size-6" aria-hidden>
+                <path
+                  d="M19 12H5M11 6l-6 6 6 6"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
             </button>
             <button
               type="button"
               aria-label="Next"
-              className="flex size-[52px] items-center justify-center rounded-full border border-white/50 text-white transition-colors hover:border-white hover:text-white"
+              onClick={() => scrollToIndex(active + 1)}
+              disabled={active === audiences.length - 1}
+              className="flex size-[60px] items-center justify-center rounded-full border-2 border-secondary text-secondary transition-colors hover:bg-secondary hover:text-[#383838] disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:text-secondary"
             >
-              <svg viewBox="0 0 24 24" fill="none" className="size-5" aria-hidden>
-                <path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              <svg viewBox="0 0 24 24" fill="none" className="size-6" aria-hidden>
+                <path
+                  d="M5 12h14M13 6l6 6-6 6"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
             </button>
           </div>
         </div>
 
-        <div className="mt-10 grid gap-5 sm:grid-cols-3 min-[1440px]:mt-12 min-[1440px]:gap-6">
+        <div
+          ref={trackRef}
+          onScroll={handleScroll}
+          className="mt-12 flex snap-x snap-mandatory gap-6 overflow-x-auto scrollbar-hide min-[1440px]:mt-16"
+        >
           {audiences.map((a) => (
-            <div key={a.id} className="overflow-hidden rounded-2xl bg-[#2B2B2B]">
-              <div className="h-[260px] overflow-hidden min-[1440px]:h-[300px]">
+            <div
+              key={a.id}
+              className="shrink-0 basis-full snap-start sm:basis-[calc(50%-12px)] lg:basis-[calc(33.333%-16px)]"
+            >
+              <div className="aspect-[357/430] overflow-hidden rounded-xl">
                 <img
                   src={a.image}
                   alt={a.label}
-                  className="h-full w-full object-cover"
+                  className="size-full object-cover"
                 />
               </div>
-              <div className="p-5 min-[1440px]:p-6">
-                <p className="text-[16px] font-semibold leading-6 text-white min-[1440px]:text-[18px]">
-                  {a.label}
-                </p>
-              </div>
+              <p className="mt-6 max-w-[280px] text-[22px] font-semibold leading-[1.3] text-white min-[1440px]:text-[26px]">
+                {a.label}
+              </p>
             </div>
+          ))}
+        </div>
+
+        {/* Progress indicator */}
+        <div className="mt-12 flex items-center justify-center gap-2 min-[1440px]:mt-16">
+          {audiences.map((a, i) => (
+            <button
+              key={a.id}
+              type="button"
+              aria-label={`Go to slide ${i + 1}`}
+              onClick={() => scrollToIndex(i)}
+              className={`h-[6px] rounded-full transition-all ${
+                i === active ? "w-[44px] bg-primary" : "w-[36px] bg-white/25"
+              }`}
+            />
           ))}
         </div>
       </LandingInset>
