@@ -2,14 +2,13 @@ import { figma } from "@/data/images/Index";
 import { LandingInset } from "@/components/landing-inset/Index";
 
 const avatars = [
-  { src: figma.flagNg, person: false },
+  { src: figma.aboutFlagNigeria, person: false },
   { src: figma.avatarPerson1, person: true },
   { src: figma.avatarPerson2, person: true },
-  { src: figma.flagUs, person: false },
-  { src: figma.flagCa, person: false },
+  { src: figma.aboutFlagUs, person: false },
+  { src: figma.aboutFlagCanada, person: false },
   { src: figma.avatarPerson3, person: true },
-  { src: figma.flagUk, person: false },
-  { src: figma.euFlag, person: false },
+  { src: figma.aboutFlagUk, person: false },
 ];
 
 export function CompanyHero() {
@@ -53,20 +52,22 @@ export function CompanyHero() {
         </div>
       </LandingInset>
 
-      {/* Bleeding avatar row */}
+      {/* Bleeding avatar marquee */}
       <div className="mt-16 w-full overflow-hidden min-[1440px]:mt-20">
-        <div className="flex items-center justify-center gap-3 md:gap-4 min-[1440px]:gap-6">
-          {avatars.map((avatar, i) => (
+        <div className="flex w-max animate-marquee items-center motion-reduce:animate-none">
+          {[...avatars, ...avatars].map((avatar, i) => (
             <div
               key={i}
-              className={`-mb-[44px] size-[112px] shrink-0 overflow-hidden rounded-full border-[3px] md:-mb-[58px] md:size-[148px] min-[1440px]:-mb-[68px] min-[1440px]:size-[168px] ${
+              className={`mr-3 -mb-[18px] size-[112px] shrink-0 overflow-hidden rounded-full border-[3px] md:mr-4 md:-mb-[24px] md:size-[148px] min-[1440px]:mr-6 min-[1440px]:-mb-[28px] min-[1440px]:size-[168px] ${
                 avatar.person ? "border-secondary" : "border-white/15"
               }`}
             >
               <img
                 src={avatar.src}
                 alt=""
-                className="size-full object-cover"
+                className={`size-full object-cover object-center ${
+                  avatar.person ? "" : "scale-[1.5]"
+                }`}
               />
             </div>
           ))}

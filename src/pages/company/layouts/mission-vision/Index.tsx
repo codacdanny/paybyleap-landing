@@ -72,7 +72,7 @@ export function ValuePropositionSection() {
                     src={c.image}
                     alt=""
                     aria-hidden
-                    className="size-full object-cover"
+                    className="size-full object-contain object-bottom"
                   />
                 </div>
               </div>
@@ -135,17 +135,13 @@ export function ValuePropositionSection() {
         </div>
       </LandingInset>
 
-      {/* Bleeding decorative bars */}
-      <div className="pointer-events-none relative mt-16 h-[90px] overflow-hidden min-[1440px]:mt-20 min-[1440px]:h-[120px]">
-        <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 px-4 sm:px-8 min-[1440px]:px-[120px]">
-          {Array.from({ length: 7 }).map((_, i) => (
-            <div
-              key={i}
-              className="h-[150px] max-w-[120px] flex-1 translate-y-[45%] rounded-t-[22px] bg-gradient-to-b from-[#3d1417] via-[#2a1011] to-[#1D1111] min-[1440px]:h-[200px]"
-            />
-          ))}
-        </div>
-      </div>
+      {/* Bleeding decorative divider */}
+      <img
+        src={figma.pageDivider}
+        alt=""
+        aria-hidden
+        className="pointer-events-none mt-16 w-full min-[1440px]:mt-20"
+      />
     </section>
   );
 }

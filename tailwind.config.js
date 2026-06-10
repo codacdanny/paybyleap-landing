@@ -60,6 +60,15 @@ export default {
       borderRadius: {
         "4xl": "2rem",
       },
+      keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+      },
+      animation: {
+        marquee: "marquee 40s linear infinite",
+      },
       boxShadow: {
         "input-custom": "0 0 0 1px #6C0505",
         soft: "0 24px 40px -12px rgba(0, 0, 0, 0.08)",

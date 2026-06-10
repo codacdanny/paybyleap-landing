@@ -55,25 +55,30 @@ import flagEur from "@/assets/flags/eur-flag.png";
 import flagUk from "@/assets/flags/pounds-flag.png";
 import flagCn from "@/assets/flags/yen-flag.png";
 import cryptoFlag from "@/assets/flags/crypto-flag.png";
-import avatarPerson1 from "@/assets/people/avatar-1.png";
-import avatarPerson2 from "@/assets/people/avatar-2.png";
-import avatarPerson3 from "@/assets/people/avatar-3.png";
+import avatarPerson1 from "@/assets/images/avatar-1.png";
+import avatarPerson2 from "@/assets/images/avatar-2.png";
+import avatarPerson3 from "@/assets/images/avatar-3.png";
+import aboutFlagNigeria from "@/assets/flags/about-flag-for-nigeria.png";
+import aboutFlagUs from "@/assets/flags/about-united-states.png";
+import aboutFlagCanada from "@/assets/flags/about-flag-for-canada.png";
+import aboutFlagUk from "@/assets/flags/about-flag-for-united-kingdom.png";
 
-import benefitCrossBorder from "@/assets/placeholders/benefit-cross-border.svg";
-import benefitMobile from "@/assets/placeholders/benefit-mobile.svg";
-import benefitUnified from "@/assets/placeholders/benefit-unified.svg";
-import benefitGlobalAccess from "@/assets/placeholders/benefit-global-access.svg";
-import whyExistsPhoto from "@/assets/placeholders/why-exists.svg";
-import serveStudents from "@/assets/placeholders/serve-students.svg";
-import serveFreelancers from "@/assets/placeholders/serve-freelancers.svg";
-import serveBusinesses from "@/assets/placeholders/serve-businesses.svg";
+import benefitCrossBorder from "@/assets/images/benefits-bg-1.png";
+import benefitMobile from "@/assets/images/benefitsbg-2.png";
+import benefitUnified from "@/assets/images/benefits-bg-3.png";
+import benefitGlobalAccess from "@/assets/images/benefitsbg-4.png";
+import whyExistsPhoto from "@/assets/images/about-us-image.png";
+import serveStudents from "@/assets/images/service-1.png";
+import serveFreelancers from "@/assets/images/service-2.png";
+import serveBusinesses from "@/assets/images/service-3.png";
 import serveFamilies from "@/assets/placeholders/serve-families.svg";
 import serveMerchants from "@/assets/placeholders/serve-merchants.svg";
-import coreValue1 from "@/assets/placeholders/core-value-1.svg";
-import coreValue2 from "@/assets/placeholders/core-value-2.svg";
-import coreValue3 from "@/assets/placeholders/core-value-3.svg";
-import coreValue4 from "@/assets/placeholders/core-value-4.svg";
-import coreValue5 from "@/assets/placeholders/core-value-5.svg";
+import coreValue1 from "@/assets/images/value1.png";
+import coreValue2 from "@/assets/images/value2.png";
+import coreValue3 from "@/assets/images/value3.png";
+import coreValue4 from "@/assets/images/value4.png";
+import coreValue5 from "@/assets/images/value5.png";
+import pageDivider from "@/assets/icons/divider.svg";
 
 import flagCa2 from "@/assets/flags/flagCa2.svg";
 import flagNg2 from "@/assets/flags/flagNg2.svg";
@@ -158,6 +163,11 @@ export const figma = {
   avatarPerson1,
   avatarPerson2,
   avatarPerson3,
+  aboutFlagNigeria,
+  aboutFlagUs,
+  aboutFlagCanada,
+  aboutFlagUk,
+  pageDivider,
 
   benefitCrossBorder,
   benefitMobile,
