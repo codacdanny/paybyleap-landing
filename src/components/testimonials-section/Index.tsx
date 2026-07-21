@@ -35,26 +35,26 @@ const testimonials = [
 
 function TestimonialCard({ t }: { t: (typeof testimonials)[number] }) {
   return (
-    <article className="relative h-[400px] shrink-0 overflow-hidden rounded-2xl bg-[#EFD8D8] p-5 md:h-[432px] md:p-7 min-[1440px]:w-[604px] min-[1440px]:p-7">
-      <div className="flex items-center gap-4">
+    <article className="relative flex min-h-[400px] w-[65vw] shrink-0 flex-col overflow-hidden rounded-2xl bg-[#EFD8D8] p-5 md:min-h-[432px] md:w-[46vw] md:p-7 min-[1440px]:h-[432px] min-[1440px]:w-[604px] min-[1440px]:p-7">
+      <div className="flex items-center gap-3 md:gap-4">
         <img
           src={t.avatar}
           alt={t.name}
-          className="size-[80px] rounded-full object-cover md:size-[100px] min-[1440px]:size-[128px]"
+          className="size-[52px] rounded-full object-cover md:size-[80px] min-[1440px]:size-[128px]"
         />
         <div>
           <div className="flex items-center gap-3">
-            <p className="text-[24px] font-semibold leading-10 text-grey-100 md:text-[28px] min-[1440px]:text-[32px]">
+            <p className="text-[17px] font-semibold leading-6 text-grey-100 md:text-[22px] md:leading-10 min-[1440px]:text-[32px]">
               {t.name}
             </p>
-            <div className="hidden h-1 w-20 rounded-2xl bg-grey-100 md:block" />
+            <div className="hidden h-1 w-20 rounded-2xl bg-grey-100 min-[1440px]:block" />
           </div>
-          <p className="text-[16px] leading-7 text-grey-100 min-[1440px]:text-[18px]">
+          <p className="text-[13px] leading-5 text-grey-100 md:text-[16px] md:leading-7 min-[1440px]:text-[18px]">
             {t.role}
           </p>
         </div>
       </div>
-      <p className="mt-6 text-[16px] leading-7 text-grey-90 min-[1440px]:text-[20px] min-[1440px]:leading-7">
+      <p className="mt-4 text-[14px] leading-6 text-grey-90 md:mt-6 md:text-[16px] md:leading-7 min-[1440px]:text-[20px] min-[1440px]:leading-7">
         {t.quote}
       </p>
       <img

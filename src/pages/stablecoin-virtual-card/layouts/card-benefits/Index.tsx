@@ -36,10 +36,10 @@ export function ProductBenefitsGrid() {
           {benefits.map((b) => (
             <div
               key={b.title}
-              className="rounded-[24px] h-[592px] w-[545px]  flex flex-col justify-between p-[39px] pb-[45px] "
+              className="flex w-full flex-col gap-5 rounded-[24px] p-6 pb-8 sm:p-[39px] sm:pb-[45px] lg:h-[592px] lg:justify-between lg:gap-0"
             >
               {/* Image container — separate bg, rounded, padded from card edges */}
-              <div className="flex h-[40%] items-center justify-center overflow-hidden rounded-2xl p-[16px] min-[1440px]:h-[320px]">
+              <div className="flex h-[200px] items-center justify-center overflow-hidden rounded-2xl p-[16px] sm:h-[240px] lg:h-[40%] min-[1440px]:h-[320px]">
                 <img
                   src={b.image}
                   alt=""
@@ -49,7 +49,7 @@ export function ProductBenefitsGrid() {
 
               {/* Text */}
               <div className="px-2 pb-2 pt-5 min-[1440px]:px-3 min-[1440px]:pt-6">
-                <h3 className="text-[32px] font-nohemi font-semibold leading-7 text-grey-90  ">
+                <h3 className="font-nohemi text-[24px] font-semibold leading-8 text-grey-90 sm:text-[32px] sm:leading-7">
                   {b.title}
                 </h3>
                 <p className="mt-2 text-[16px] leading-6 text-grey-70 min-[1440px]:text-[18px] ">

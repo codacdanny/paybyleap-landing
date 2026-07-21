@@ -35,7 +35,7 @@ export function CurrencyHero() {
               </a>
               <a
                 href="#real-time-exchange"
-                className="inline-flex h-[48px] w-[357px] items-center justify-center gap-[14px] rounded-[8px] border border-grey-20 bg-[#FFF8F8] px-[8px] py-[16px] text-[18px] font-medium leading-none text-grey-90 transition-colors hover:border-primary/50 hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary 2xl:h-[48px] 2xl:gap-[18px]"
+                className="inline-flex h-[48px] w-full max-w-[357px] items-center justify-center gap-2 rounded-[8px] border border-grey-20 bg-[#FFF8F8] px-[8px] py-[16px] text-[15px] font-medium leading-none text-grey-90 transition-colors hover:border-primary/50 hover:text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary sm:text-[18px] lg:gap-[14px] 2xl:h-[48px] 2xl:gap-[18px]"
               >
                 <PlayIcon />
                 Learn more about currency exchange

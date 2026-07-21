@@ -24,19 +24,19 @@ function HeroIllustration() {
       />
 
       <div className="relative z-[1] flex justify-center lg:justify-end">
-        <div className="relative mt-[-80px] h-[821px] w-[397px]">
+        <div className="relative mt-0 aspect-[397/821] w-full max-w-[300px] sm:max-w-[360px] lg:mt-[-80px] lg:h-[821px] lg:w-[397px] lg:max-w-none">
           <img
             src={figma.iphoneAirMockup}
             alt="PayByLeap app on iPhone"
             className="absolute top-0 inset-0 h-full w-full object-contain drop-shadow-card"
           />
 
-          <div className="absolute left-[183px] top-[375px] z-[2] h-[195px] w-[293px]">
-            <div className="relative h-[195px] overflow-hidden rounded-[9.134px] bg-primary shadow-[0px_9px_4px_rgba(154,0,0,0.05)]">
+          <div className="absolute left-[46.1%] top-[45.68%] z-[2] h-[23.75%] w-[73.8%]">
+            <div className="relative h-full w-full overflow-hidden rounded-[9.134px] bg-primary shadow-[0px_9px_4px_rgba(154,0,0,0.05)]">
               <img
                 src={figma.usdCard}
                 alt=""
-                className="pointer-events-none absolute left-[3px] top-[-2px] h-[184px] w-[287px] max-w-none object-cover"
+                className="pointer-events-none absolute left-[1.02%] top-[-1.03%] h-[94.36%] w-[97.95%] max-w-none object-cover"
               />
             </div>
           </div>
@@ -48,7 +48,7 @@ function HeroIllustration() {
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden h-[600px]">
+    <section className="relative overflow-hidden lg:h-[600px]">
       <div
         className="min-h-0 bg-gradient-to-b from-[hsla(0,100%,98%,0)] from-[24%] via-[#fff4f4] via-[55%] to-[rgba(241,222,226,0.5)] pt-0 lg:min-h-[720px] min-[1440px]:min-h-[799px]"
         data-name="Hero section"

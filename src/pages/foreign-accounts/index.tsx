@@ -67,13 +67,13 @@ const testimonials = [
 function FAHero() {
   return (
     <section className="relative overflow-hidden bg-[#FFF4F4] min-[1440px]:h-[764px]">
-      <LandingInset className="relative z-30 pb-16 pt-24 min-[1440px]:pb-0 min-[1440px]:pt-[105px]">
+      <LandingInset className="relative z-30 pb-16 pt-12 min-[1440px]:pb-0 min-[1440px]:pt-[105px]">
 
         {/* Two-column: left = text, right = images */}
         <div className="flex items-stretch min-[1440px]:h-[659px]">
 
           {/* ── Left column: text content ── */}
-          <div className="max-w-[640px] shrink-0 pt-4">
+          <div className="w-full shrink-0 pt-4 lg:w-auto lg:max-w-[640px]">
             <div className="inline-flex items-center gap-0.5 rounded-2xl border border-secondary bg-[#FBF2D6] px-2 py-1">
               <img src={figma.ionPlanet} alt="" className="size-4" />
               <span className="text-center text-[16px] leading-6 text-grey-80">
@@ -99,7 +99,7 @@ function FAHero() {
               </a>
               <a
                 href="#"
-                className="inline-flex h-12 w-fit items-center gap-3 rounded-lg border border-grey-20 bg-white/60 px-4 text-[18px] font-medium leading-6 text-grey-90"
+                className="inline-flex min-h-[48px] w-fit max-w-full items-center gap-3 rounded-lg border border-grey-20 bg-white/60 px-4 py-2.5 text-[16px] font-medium leading-6 text-grey-90 lg:text-[18px]"
               >
                 <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-primary">
                   <svg viewBox="0 0 10 12" fill="none" className="ml-0.5 size-3">
@@ -421,26 +421,26 @@ export function GlobalTransactionsSection() {
 
 function TestimonialCard({ t }: { t: (typeof testimonials)[number] }) {
   return (
-    <article className="relative h-[400px] shrink-0 overflow-hidden rounded-2xl bg-[#EFD8D8] p-5 md:h-[432px] md:p-7 min-[1440px]:w-[604px] min-[1440px]:p-7">
-      <div className="flex items-center gap-4">
+    <article className="relative flex min-h-[400px] w-[65vw] shrink-0 flex-col overflow-hidden rounded-2xl bg-[#EFD8D8] p-5 md:min-h-[432px] md:w-[46vw] md:p-7 min-[1440px]:h-[432px] min-[1440px]:w-[604px] min-[1440px]:p-7">
+      <div className="flex items-center gap-3 md:gap-4">
         <img
           src={t.avatar}
           alt={t.name}
-          className="size-[80px] rounded-full object-cover md:size-[100px] min-[1440px]:size-[128px]"
+          className="size-[52px] rounded-full object-cover md:size-[80px] min-[1440px]:size-[128px]"
         />
         <div>
           <div className="flex items-center gap-3">
-            <p className="text-[24px] font-semibold leading-10 text-grey-100 md:text-[28px] min-[1440px]:text-[32px]">
+            <p className="text-[17px] font-semibold leading-6 text-grey-100 md:text-[22px] md:leading-10 min-[1440px]:text-[32px]">
               {t.name}
             </p>
-            <div className="hidden h-1 w-20 rounded-2xl bg-grey-100 md:block" />
+            <div className="hidden h-1 w-20 rounded-2xl bg-grey-100 min-[1440px]:block" />
           </div>
-          <p className="text-[16px] leading-7 text-grey-100 min-[1440px]:text-[18px]">
+          <p className="text-[13px] leading-5 text-grey-100 md:text-[16px] md:leading-7 min-[1440px]:text-[18px]">
             {t.role}
           </p>
         </div>
       </div>
-      <p className="mt-6 text-[16px] leading-7 text-grey-90 min-[1440px]:text-[20px] min-[1440px]:leading-7">
+      <p className="mt-4 text-[14px] leading-6 text-grey-90 md:mt-6 md:text-[16px] md:leading-7 min-[1440px]:text-[20px] min-[1440px]:leading-7">
         {t.quote}
       </p>
       <img

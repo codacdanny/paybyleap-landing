@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button/Index";
 export function DownloadAppSection() {
   return (
     <section className="relative bg-[#1a1a1a] text-white">
-      <div className="relative mx-auto grid min-h-[560px] max-w-[1440px] items-stretch lg:h-[668px] lg:min-h-[668px]">
+      <div className="relative mx-auto grid max-w-[1440px] items-stretch lg:h-[668px] lg:min-h-[668px]">
         {/* Desktop background — woman on couch, right-aligned */}
         <div className="pointer-events-none absolute inset-y-0 right-0 hidden overflow-hidden lg:block lg:w-[1071px]">
           <img

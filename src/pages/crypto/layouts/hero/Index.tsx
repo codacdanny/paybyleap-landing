@@ -15,11 +15,11 @@ export function CryptoHero() {
   return (
     <section className="overflow-hidden bg-[#FFF3F3] pb-0 pt-[82px] lg:pt-[94px] 2xl:pt-[112px]">
       <LandingInset>
-        <div className="flex w-full items-center gap-10 lg:gap-16">
+        <div className="flex w-full flex-col items-start gap-10 lg:flex-row lg:items-center lg:gap-16">
 
           {/* ── Left: text ── */}
-          <div className="relative z-[2] w-[50%] shrink-0">
-            <h1 className="font-nohemi text-[48px] font-bold leading-[1.1] tracking-[-0.03em] text-grey-90 md:text-[56px] min-[1440px]:text-[64px]">
+          <div className="relative z-[2] w-full shrink-0 lg:w-[50%]">
+            <h1 className="font-nohemi text-[34px] font-bold leading-[1.1] tracking-[-0.03em] text-grey-90 sm:text-[44px] md:text-[56px] min-[1440px]:text-[64px]">
               Buy, Sell or Transfer Crypto easily with Paybyleap
             </h1>
             <p className="mt-6 text-[20px] font-normal leading-[1.5] text-grey-70 min-[1440px]:text-[22px]">
@@ -43,11 +43,11 @@ export function CryptoHero() {
           </div>
 
           {/* ── Right: crypto app UI image ── */}
-          <div className="w-[50%]">
+          <div className="w-full lg:w-[50%]">
             <img
               src={figma.cryptoHero}
               alt="Paybyleap crypto wallet"
-              className="w-full object-contain"
+              className="mx-auto w-full max-w-[440px] object-contain lg:max-w-none"
             />
           </div>
 

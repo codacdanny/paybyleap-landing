@@ -59,14 +59,14 @@ export function ProductBenefitsCarousel({ heading, sectionClassName = "bg-[#FBF2
   const rightSrc = canScrollRight ? figma.navArrowRight : figma.navArrowLeft;
 
   return (
-    <section className={`relative pb-[100px] pt-[104px] min-[1440px]:pb-[120px] ${sectionClassName}`}>
+    <section className={`relative pb-16 pt-16 md:pb-[100px] md:pt-[104px] min-[1440px]:pb-[120px] ${sectionClassName}`}>
 
       <LandingInset>
         <div className="flex items-start justify-between gap-4">
-          <h2 className="w-[700px] font-nohemi text-[48px] font-semibold leading-[1.2] text-grey-100">
+          <h2 className="w-full font-nohemi text-[28px] font-semibold leading-[1.2] text-grey-100 md:text-[36px] lg:w-[700px] min-[1440px]:text-[48px]">
             {heading}
           </h2>
-          <div className="mt-1 flex shrink-0 items-center gap-4">
+          <div className="mt-1 hidden shrink-0 items-center gap-4 lg:flex">
             <button type="button" onClick={() => go(-1)} disabled={!canScrollLeft} aria-label="Previous"
               className="flex size-[72px] shrink-0 items-center justify-center disabled:cursor-default min-[1440px]:size-[100px]">
               <img src={leftSrc} alt="" className={`size-full object-contain ${canScrollLeft ? "rotate-180" : ""}`} />

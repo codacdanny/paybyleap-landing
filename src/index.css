@@ -37,7 +37,7 @@
     @apply scroll-smooth antialiased;
   }
   body {
-    @apply font-spartan text-grey-80 bg-white;
+    @apply font-spartan text-grey-80 bg-white overflow-x-clip;
   }
 }
 
