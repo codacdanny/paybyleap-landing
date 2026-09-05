@@ -12,6 +12,8 @@ export const ROUTES = {
   INTERNATIONAL_FEE_PAYMENT: "/international-fee-payment",
   INVOICING: "/invoicing",
   COMPANY: "/company",
+  PRIVACY_POLICY: "/privacy-policy",
+  TERMS_AND_CONDITIONS: "/terms-and-conditions",
 } as const;
 
 export type AppRoutePath = (typeof ROUTES)[keyof typeof ROUTES];

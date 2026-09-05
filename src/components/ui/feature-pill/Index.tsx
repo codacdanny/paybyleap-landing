@@ -16,7 +16,7 @@ export function FeaturePill({ label, bold, rest }: FeaturePillProps) {
         border: "1.5px solid transparent",
       }}
     >
-      <img src={figma.star} alt="" className="size-5 shrink-0 lg:size-6" />
+      <img loading="lazy" decoding="async" src={figma.star} alt="" className="size-5 shrink-0 lg:size-6" />
       <span className="text-[13px] font-medium leading-5 text-grey-90 lg:whitespace-nowrap lg:text-[24px] lg:leading-8">
         {bold ? (
           <>

@@ -35,7 +35,7 @@ export function CurrencyFeatureCards() {
               className="rounded-2xl border border-grey-10 bg-white p-5 shadow-[0px_4px_16px_rgba(0,0,0,0.06)] min-[1440px]:p-6"
             >
               <div className="flex size-[52px] items-center justify-center rounded-xl bg-[#FFF3F3] min-[1440px]:size-[60px]">
-                <img
+                <img loading="lazy" decoding="async"
                   src={f.icon}
                   alt=""
                   className="size-6 object-contain min-[1440px]:size-7"

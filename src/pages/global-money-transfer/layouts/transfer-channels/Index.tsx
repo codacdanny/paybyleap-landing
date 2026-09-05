@@ -20,7 +20,7 @@ function TransferCard({ title, desc, bg, textColor = "white", image,  }: Transfe
       <p className={`mt-3 max-w-[280px] text-[16px] leading-6 min-[1440px]:text-[18px] ${body}`}>{desc}</p>
 
       {image && (
-        <img src={image} alt="" aria-hidden className="absolute bottom-0 left-0 w-full object-contain object-bottom" />
+        <img loading="lazy" decoding="async" src={image} alt="" aria-hidden className="absolute bottom-0 left-0 w-full object-contain object-bottom" />
       )}
 
     </div>

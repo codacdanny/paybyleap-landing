@@ -41,7 +41,7 @@ export function TransactionSecuritySection() {
 
           {/* Phone + feature cards */}
           <div className="relative shrink-0 min-[1440px]:h-[620px] min-[1440px]:w-[540px]">
-            <img
+            <img loading="lazy" decoding="async"
               src={figma.transactionsPhone}
               alt=""
               className="pointer-events-none absolute left-1/2 top-1/2 z-0 hidden w-[410px] -translate-x-1/2 -translate-y-1/2 object-contain min-[1440px]:block"

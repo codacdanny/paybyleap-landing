@@ -19,7 +19,7 @@ export function BenefitPillsSection({
     <section className="relative overflow-hidden bg-hero-dark py-16 min-[1440px]:py-[100px]">
       {/* Subtle background texture */}
       <div className="pointer-events-none absolute inset-0 opacity-10">
-        <img src={figma.herobg} alt="" className="size-full object-cover" />
+        <img loading="lazy" decoding="async" src={figma.herobg} alt="" className="size-full object-cover" />
       </div>
 
       <LandingInset className="relative z-10">
@@ -41,7 +41,7 @@ export function BenefitPillsSection({
                   key={pill}
                   className="inline-flex h-[44px] items-center gap-3 rounded-3xl border border-white/15 bg-white/10 px-5 min-[1440px]:h-[52px] min-[1440px]:px-6"
                 >
-                  <img src={figma.star} alt="" className="size-4 shrink-0 min-[1440px]:size-5" />
+                  <img loading="lazy" decoding="async" src={figma.star} alt="" className="size-4 shrink-0 min-[1440px]:size-5" />
                   <span className="whitespace-nowrap text-[13px] font-medium text-white min-[1440px]:text-[15px]">
                     {pill}
                   </span>
@@ -53,7 +53,7 @@ export function BenefitPillsSection({
           {/* Optional right column: phone/product image */}
           {image && (
             <div className="hidden items-end justify-center lg:flex">
-              <img
+              <img loading="lazy" decoding="async"
                 src={image}
                 alt=""
                 className="h-[340px] w-auto object-contain drop-shadow-2xl min-[1440px]:h-[400px]"

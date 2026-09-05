@@ -75,7 +75,7 @@ export function AdditionalServicesSection() {
               className="flex size-[72px] shrink-0 items-center justify-center disabled:cursor-default min-[1440px]:size-[100px]"
               aria-label="Previous services"
             >
-              <img
+              <img loading="lazy" decoding="async"
                 src={leftSrc}
                 alt=""
                 className={`size-full object-contain ${leftRotate}`}
@@ -88,7 +88,7 @@ export function AdditionalServicesSection() {
               className="flex size-[72px] shrink-0 items-center justify-center disabled:cursor-default min-[1440px]:size-[100px]"
               aria-label="Next services"
             >
-              <img
+              <img loading="lazy" decoding="async"
                 src={rightSrc}
                 alt=""
                 className={`size-full object-contain ${rightRotate}`}
@@ -106,7 +106,7 @@ export function AdditionalServicesSection() {
               key={c.title}
               className="relative h-[619px] w-[min(90vw,324px)] shrink-0 snap-center overflow-hidden rounded-lg md:h-[480px] md:w-[min(85vw,555px)] md:rounded-2xl min-[1440px]:h-[575px] min-[1440px]:rounded-[16px]"
             >
-              <img
+              <img loading="lazy" decoding="async"
                 src={c.image}
                 alt=""
                 className="absolute inset-0 h-full w-full object-cover"
@@ -136,7 +136,7 @@ export function AdditionalServicesSection() {
             className="flex size-[100px] shrink-0 items-center justify-center disabled:cursor-default"
             aria-label="Previous services"
           >
-            <img
+            <img loading="lazy" decoding="async"
               src={leftSrc}
               alt=""
               className={`size-full object-contain ${leftRotate}`}
@@ -149,7 +149,7 @@ export function AdditionalServicesSection() {
             className="flex size-[100px] shrink-0 items-center justify-center disabled:cursor-default"
             aria-label="Next services"
           >
-            <img
+            <img loading="lazy" decoding="async"
               src={rightSrc}
               alt=""
               className={`size-full object-contain ${rightRotate}`}

@@ -125,7 +125,7 @@ export function AudienceOverviewSection() {
               className="shrink-0 basis-full snap-start sm:basis-[calc(50%-12px)] lg:basis-[calc(33.333%-16px)]"
             >
               <div className="aspect-[357/430] overflow-hidden rounded-xl">
-                <img
+                <img loading="lazy" decoding="async"
                   src={a.image}
                   alt={a.label}
                   className="size-full object-cover"
@@ -146,7 +146,7 @@ export function AudienceOverviewSection() {
               type="button"
               aria-label={`Go to slide ${i + 1}`}
               onClick={() => scrollToIndex(i)}
-              className={`h-[6px] rounded-full transition-all ${
+              className={`relative before:absolute before:-inset-x-1 before:-top-[18px] before:-bottom-[18px] before:content-[''] h-[6px] rounded-full transition-all ${
                 i === active ? "w-[44px] bg-primary" : "w-[36px] bg-white/25"
               }`}
             />

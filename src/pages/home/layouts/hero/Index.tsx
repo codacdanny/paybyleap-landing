@@ -15,7 +15,7 @@ const walletItems: { code: string; src: string }[] = [
 
 function HeroIllustration() {
   return (
-    <div className="relative mx-auto w-full max-w-[476px] lg:mr-0">
+    <div className="relative mx-auto w-full max-w-[476px] xl:mr-0">
       <img
         src={figma.herobg}
         alt=""
@@ -23,8 +23,8 @@ function HeroIllustration() {
         className="pointer-events-none absolute left-0 z-0 w-[120%] max-w-none  select-none object-contain opacity-1"
       />
 
-      <div className="relative z-[1] flex justify-center lg:justify-end">
-        <div className="relative mt-0 aspect-[397/821] w-full max-w-[300px] sm:max-w-[360px] lg:mt-[-80px] lg:h-[821px] lg:w-[397px] lg:max-w-none">
+      <div className="relative z-[1] flex justify-center lg:justify-start xl:justify-end">
+        <div className="relative mt-0 aspect-[397/821] w-full max-w-[300px] sm:max-w-[360px] lg:mt-[-60px] lg:w-full lg:max-w-[300px] xl:mt-[-80px] xl:h-[821px] xl:w-[397px] xl:max-w-none">
           <img
             src={figma.iphoneAirMockup}
             alt="PayByLeap app on iPhone"
@@ -48,7 +48,7 @@ function HeroIllustration() {
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden lg:h-[600px]">
+    <section className="relative overflow-hidden">
       <div
         className="min-h-0 bg-gradient-to-b from-[hsla(0,100%,98%,0)] from-[24%] via-[#fff4f4] via-[55%] to-[rgba(241,222,226,0.5)] pt-0 lg:min-h-[720px] min-[1440px]:min-h-[799px]"
         data-name="Hero section"
@@ -56,12 +56,12 @@ export function Hero() {
         <LandingInset className="relative pb-12 pt-8 lg:pb-16 lg:pt-10 min-[1440px]:pb-24 min-[1440px]:pt-[116px]">
           <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[45%] bg-organic-lines opacity-20 lg:block min-[1440px]:top-3 min-[1440px]:h-[850px] min-[1440px]:w-[637px]" />
 
-          <div className="relative grid w-full max-w-[1122px] items-start gap-8 lg:grid-cols-[minmax(0,642px)_minmax(0,1fr)] lg:gap-x-8 lg:gap-y-0 min-[1440px]:gap-x-0">
+          <div className="relative grid w-full max-w-[1122px] items-start gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,340px)] lg:gap-x-8 lg:gap-y-0 xl:grid-cols-[minmax(0,642px)_minmax(0,1fr)] min-[1440px]:gap-x-0">
             <div className="relative z-[2] max-w-[642px]">
-              <h1 className="text-[32px] font-semibold leading-10 text-grey-90 lg:text-[64px] lg:leading-[72px]">
+              <h1 className="text-[32px] font-semibold leading-10 text-grey-90 lg:text-[48px] lg:leading-[56px] xl:text-[64px] xl:leading-[72px]">
                 Simplifying global payment for everyone
               </h1>
-              <p className="mt-6 max-w-[583px] text-[16px] leading-6 text-grey-80 lg:mt-[25px] lg:text-[20px] lg:leading-7">
+              <p className="mt-6 max-w-[583px] text-[16px] leading-6 text-grey-80 lg:mt-[25px] lg:text-[18px] lg:leading-7 xl:text-[20px]">
                 PayByLeap makes international transactions fast, easy, and
                 accessible for education, business, and local payments
               </p>
@@ -83,7 +83,7 @@ export function Hero() {
                 <p className="text-[14px] leading-5 text-grey-60 lg:text-[16px] lg:leading-6">
                   Built for everyday people, to transact globally
                 </p>
-                <div className="mt-4 flex flex-wrap gap-2 lg:flex-nowrap">
+                <div className="mt-4 flex flex-wrap gap-2 xl:flex-nowrap">
                   {walletItems.map((w) => (
                     <div
                       key={w.code}
@@ -101,7 +101,7 @@ export function Hero() {
               </div>
             </div>
 
-            <div className="relative flex min-h-[420px] items-start justify-center pb-8 pt-4 md:min-h-[520px] lg:min-h-[821px] lg:justify-end lg:pb-0 lg:pt-0">
+            <div className="relative flex min-h-[420px] items-start justify-center pb-8 pt-4 md:min-h-[520px] lg:min-h-[620px] lg:justify-start lg:pb-0 lg:pt-0 xl:min-h-[821px] xl:justify-end">
               <HeroIllustration />
             </div>
           </div>

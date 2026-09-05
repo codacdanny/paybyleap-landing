@@ -37,7 +37,7 @@ function TestimonialCard({ t }: { t: (typeof testimonials)[number] }) {
   return (
     <article className="relative flex min-h-[400px] w-[65vw] shrink-0 flex-col overflow-hidden rounded-2xl bg-[#EFD8D8] p-5 md:min-h-[432px] md:w-[46vw] md:p-7 min-[1440px]:h-[432px] min-[1440px]:w-[604px] min-[1440px]:p-7">
       <div className="flex items-center gap-3 md:gap-4">
-        <img
+        <img loading="lazy" decoding="async"
           src={t.avatar}
           alt={t.name}
           className="size-[52px] rounded-full object-cover md:size-[80px] min-[1440px]:size-[128px]"
@@ -57,7 +57,7 @@ function TestimonialCard({ t }: { t: (typeof testimonials)[number] }) {
       <p className="mt-4 text-[14px] leading-6 text-grey-90 md:mt-6 md:text-[16px] md:leading-7 min-[1440px]:text-[20px] min-[1440px]:leading-7">
         {t.quote}
       </p>
-      <img
+      <img loading="lazy" decoding="async"
         src={figma.testimonialQuoteMark}
         alt=""
         className="pointer-events-none absolute -bottom-[40px] -right-[10px] w-[100px] md:-bottom-[50px] md:-right-[15px] md:w-[120px] min-[1440px]:w-[140px]"
@@ -129,7 +129,7 @@ export function TestimonialsSection({
             key={i}
             onClick={() => scrollTo(i)}
             aria-label={`Go to testimonial ${i + 1}`}
-            className={`h-2 rounded-2xl transition-all ${
+            className={`relative before:absolute before:-inset-x-1 before:-top-[18px] before:-bottom-[18px] before:content-[''] h-2 rounded-2xl transition-all ${
               i === active ? "w-20 bg-[#EFD8D8]" : "w-7 bg-grey-30"
             }`}
           />

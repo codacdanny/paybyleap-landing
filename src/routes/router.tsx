@@ -9,6 +9,8 @@ import { CryptoPage } from "../pages/crypto/index";
 import { InternationalFeePaymentPage } from "../pages/international-fee-payment/index";
 import { InvoicingPage } from "../pages/invoicing/index";
 import { CompanyPage } from "../pages/company/index";
+import { PrivacyPolicyPage } from "../pages/privacy-policy/index";
+import { TermsAndConditionsPage } from "../pages/terms-and-conditions/index";
 import { ROUTES } from "./paths";
 
 export const router = createBrowserRouter([
@@ -51,6 +53,14 @@ export const router = createBrowserRouter([
       {
         path: "company",
         element: <CompanyPage />,
+      },
+      {
+        path: "privacy-policy",
+        element: <PrivacyPolicyPage />,
+      },
+      {
+        path: "terms-and-conditions",
+        element: <TermsAndConditionsPage />,
       },
     ],
   },

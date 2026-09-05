@@ -71,7 +71,7 @@ export function CoreValuesSection() {
               </h3>
 
               <div className="mt-auto flex items-end justify-center pt-6">
-                <img
+                <img loading="lazy" decoding="async"
                   src={v.image}
                   alt=""
                   aria-hidden

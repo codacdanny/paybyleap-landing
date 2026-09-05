@@ -50,6 +50,11 @@ const companyLinks = [
   { label: "Paybyleap Community", desc: "Meet other members & share ideas", href: "#" },
 ];
 
+const legalLinks = [
+  { label: "Terms and Conditions", href: ROUTES.TERMS_AND_CONDITIONS },
+  { label: "Privacy Policy", href: ROUTES.PRIVACY_POLICY },
+];
+
 const topOptions = [
   { id: "individual", label: "For Individual", comingSoon: false },
   { id: "business", label: "For Business", comingSoon: true },
@@ -150,18 +155,28 @@ export function Header() {
     setMenuOpen(false);
   }, [pathname]);
 
+  /* lock background scroll while the drawer is open */
+  useEffect(() => {
+    if (!menuOpen) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previous;
+    };
+  }, [menuOpen]);
+
   function toggleDropdown(name: "products" | "company") {
     setOpenDropdown((prev) => (prev === name ? null : name));
   }
 
   return (
-    <header ref={headerRef} className="sticky top-0 z-50">
+    <>
       {/* Top utility bar */}
       <div className="border-b border-primary/10 bg-primary-light">
         <LandingInset>
           <div className="mx-auto flex max-w-[1438px] flex-wrap items-center justify-between gap-x-2 gap-y-2 pt-[15px]">
             <div
-              className="flex h-[60px] flex-wrap items-center gap-x-2 gap-y-2 text-[12px] font-medium leading-4 xl:gap-x-[21px] xl:text-[16px] xl:leading-6"
+              className="flex min-h-[60px] flex-wrap items-center gap-x-2 gap-y-1 text-[12px] font-medium leading-4 xl:gap-x-[21px] xl:text-[16px] xl:leading-6"
               role="tablist"
               aria-label="Audience options"
             >
@@ -174,7 +189,7 @@ export function Header() {
                     role="tab"
                     aria-selected={isActive}
                     onClick={() => setActiveTopOption(option.id)}
-                    className={`flex items-center gap-0.5 xl:py-1 ${
+                    className={`flex items-center gap-0.5 py-2 xl:py-1 ${
                       isActive
                         ? "border-b-2 border-primary text-grey-100 xl:border-b-[3px]"
                         : "border-b-2 border-transparent text-grey-70 xl:border-b-[3px]"
@@ -186,7 +201,7 @@ export function Header() {
                       {option.label}
                     </span>
                     {option.comingSoon ? (
-                      <span className="rounded-2xl bg-[#fbe6b0] px-[6px] py-[4px] text-[10px] font-normal leading-tight text-grey-100 xl:bg-secondary">
+                      <span className="rounded-2xl bg-[#fbe6b0] px-[6px] py-[4px] text-[11px] font-normal leading-tight text-grey-100 xl:bg-secondary xl:text-[10px]">
                         Coming Soon
                       </span>
                     ) : null}
@@ -198,26 +213,27 @@ export function Header() {
         </LandingInset>
       </div>
 
-      {/* Main nav bar */}
-      <div className="border-b border-grey-10 bg-white shadow-[0px_4px_24px_rgba(0,0,0,0.05)]">
+      <header ref={headerRef} className="sticky top-0 z-50">
+        {/* Main nav bar */}
+        <div className="border-b border-grey-10 bg-white shadow-[0px_4px_24px_rgba(0,0,0,0.05)]">
         <LandingInset>
-          <div className="flex items-center justify-between py-4 lg:mx-auto lg:h-[76px] lg:w-full lg:max-w-[1122px] lg:justify-center lg:gap-[116px] lg:py-0">
+          <div className="flex items-center justify-between gap-4 py-4 lg:mx-auto lg:h-[76px] lg:w-full lg:gap-6 lg:py-0 xl:max-w-[1122px] xl:justify-center xl:gap-[116px]">
             {/* Logo */}
             <Link to={ROUTES.HOME} className="shrink-0">
               <img
                 src={figma.logoImg}
                 alt="PayByLeap"
-                className="h-6 w-[99px] object-contain object-left lg:h-10 lg:w-[152px]"
+                className="h-6 w-[99px] object-contain object-left lg:h-9 lg:w-[136px] xl:h-10 xl:w-[152px]"
               />
             </Link>
 
             {/* Hamburger (mobile) */}
             <button
               type="button"
-              className="relative z-[61] flex size-6 shrink-0 items-center justify-center lg:hidden"
+              className="-mr-2.5 flex size-11 shrink-0 items-center justify-center lg:hidden"
               aria-expanded={menuOpen}
-              aria-label={menuOpen ? "Close menu" : "Open menu"}
-              onClick={() => setMenuOpen((o) => !o)}
+              aria-label="Open menu"
+              onClick={() => setMenuOpen(true)}
             >
               <svg
                 viewBox="0 0 24 24"
@@ -227,29 +243,20 @@ export function Header() {
                 strokeLinecap="round"
                 className="size-6"
               >
-                {menuOpen ? (
-                  <>
-                    <line x1="18" y1="6" x2="6" y2="18" />
-                    <line x1="6" y1="6" x2="18" y2="18" />
-                  </>
-                ) : (
-                  <>
-                    <line x1="3" y1="6" x2="21" y2="6" />
-                    <line x1="3" y1="12" x2="21" y2="12" />
-                    <line x1="3" y1="18" x2="21" y2="18" />
-                  </>
-                )}
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <line x1="3" y1="12" x2="21" y2="12" />
+                <line x1="3" y1="18" x2="21" y2="18" />
               </svg>
             </button>
 
             {/* Desktop nav */}
-            <nav className="relative hidden lg:flex lg:w-[435px] lg:flex-none lg:items-center lg:justify-center lg:gap-2.5">
+            <nav className="relative hidden lg:flex lg:min-w-0 lg:flex-1 lg:items-center lg:justify-center lg:gap-2 xl:w-[435px] xl:flex-none xl:gap-2.5">
               {/* Products */}
               <div className="relative">
                 <button
                   type="button"
                   onClick={() => toggleDropdown("products")}
-                  className={`flex h-10 items-center gap-1 px-2.5 text-[18px] font-medium leading-6 transition-colors hover:text-primary ${
+                  className={`flex h-10 items-center gap-1 whitespace-nowrap px-2 text-[16px] font-medium leading-6 transition-colors hover:text-primary xl:px-2.5 xl:text-[18px] ${
                     openDropdown === "products"
                       ? "text-primary"
                       : "text-grey-90"
@@ -281,7 +288,7 @@ export function Header() {
                 <button
                   type="button"
                   onClick={() => toggleDropdown("company")}
-                  className={`flex h-10 items-center gap-1 px-2.5 text-[18px] font-medium leading-6 transition-colors hover:text-primary ${
+                  className={`flex h-10 items-center gap-1 whitespace-nowrap px-2 text-[16px] font-medium leading-6 transition-colors hover:text-primary xl:px-2.5 xl:text-[18px] ${
                     openDropdown === "company" ||
                     pathname === ROUTES.COMPANY
                       ? "text-primary"
@@ -311,29 +318,34 @@ export function Header() {
 
               <a
                 href="#support"
-                className="flex h-10 w-[125px] items-center justify-center p-2.5 text-[18px] font-medium leading-6 text-grey-90 hover:text-primary"
+                className="flex h-10 items-center justify-center whitespace-nowrap p-2 text-[16px] font-medium leading-6 text-grey-90 hover:text-primary xl:w-[125px] xl:p-2.5 xl:text-[18px]"
               >
                 Support
               </a>
-              <a
-                href="#legal"
-                className="flex h-10 w-[78px] items-center justify-center p-2.5 text-[18px] font-medium leading-6 text-grey-90 hover:text-primary"
+              <Link
+                to={ROUTES.TERMS_AND_CONDITIONS}
+                className={`flex h-10 items-center justify-center whitespace-nowrap p-2 text-[16px] font-medium leading-6 hover:text-primary xl:w-[78px] xl:p-2.5 xl:text-[18px] ${
+                  pathname === ROUTES.TERMS_AND_CONDITIONS ||
+                  pathname === ROUTES.PRIVACY_POLICY
+                    ? "text-primary"
+                    : "text-grey-90"
+                }`}
               >
                 Legal
-              </a>
+              </Link>
             </nav>
 
             {/* CTA buttons (desktop) */}
             <div className="hidden shrink-0 items-center gap-2 lg:flex">
               <button
                 type="button"
-                className="flex h-12 w-[110px] items-center justify-center rounded-[8px] border border-primary bg-white px-2 py-4 text-[18px] font-medium leading-6 text-grey-90 transition-colors hover:bg-grey-10/80"
+                className="flex h-12 items-center justify-center whitespace-nowrap rounded-[8px] border border-primary bg-white px-3 py-4 text-[16px] font-medium leading-6 text-grey-90 transition-colors hover:bg-grey-10/80 xl:w-[110px] xl:px-2 xl:text-[18px]"
               >
                 Book a call
               </button>
               <button
                 type="button"
-                className="flex h-12 w-[190px] items-center justify-center rounded-[8px] border border-primary-dark bg-primary-dark px-2 py-4 text-[18px] font-medium leading-6 text-white transition-colors hover:border-primary hover:bg-primary"
+                className="flex h-12 items-center justify-center whitespace-nowrap rounded-[8px] border border-primary-dark bg-primary-dark px-3 py-4 text-[16px] font-medium leading-6 text-white transition-colors hover:border-primary hover:bg-primary xl:w-[190px] xl:px-2 xl:text-[18px]"
               >
                 Download the app
               </button>
@@ -351,7 +363,26 @@ export function Header() {
             aria-label="Close menu"
             onClick={() => setMenuOpen(false)}
           />
-          <div className="absolute right-0 top-0 flex h-full w-[min(100%,340px)] flex-col overflow-y-auto bg-white px-6 py-8 shadow-xl">
+          <div className="absolute right-0 top-0 flex h-full w-[min(100%,340px)] flex-col overflow-y-auto bg-white px-6 pb-8 pt-4 shadow-xl">
+            <button
+              type="button"
+              className="-mr-2.5 mb-4 flex size-11 shrink-0 items-center justify-center self-end text-grey-100"
+              aria-label="Close menu"
+              onClick={() => setMenuOpen(false)}
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                strokeLinecap="round"
+                className="size-6"
+              >
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </button>
+
             {/* Products accordion */}
             <div>
               <button
@@ -416,13 +447,21 @@ export function Header() {
             >
               Support
             </a>
-            <a
-              href="#legal"
-              className="mt-5 text-[18px] font-medium text-grey-100"
-              onClick={() => setMenuOpen(false)}
-            >
-              Legal
-            </a>
+            <div className="mt-5">
+              <p className="text-[18px] font-medium text-grey-100">Legal</p>
+              <div className="mt-3 flex flex-col gap-1 border-l-2 border-primary/20 pl-4">
+                {legalLinks.map((l) => (
+                  <Link
+                    key={l.label}
+                    to={l.href}
+                    onClick={() => setMenuOpen(false)}
+                    className="py-2 text-[16px] font-medium text-grey-80 transition-colors hover:text-primary"
+                  >
+                    {l.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
 
             <div className="mt-auto flex flex-col gap-3 pt-8">
               <Button
@@ -436,8 +475,9 @@ export function Header() {
               </Button>
             </div>
           </div>
-        </div>
-      )}
-    </header>
+          </div>
+        )}
+      </header>
+    </>
   );
 }

@@ -25,7 +25,7 @@ function Pill({
     <div
       className={`flex items-center gap-3 rounded-[28px] border border-primary/50 bg-gradient-to-b from-[#2b1f1f] to-[#1a1212] px-5 py-4 shadow-[0_22px_45px_-15px_rgba(0,0,0,0.85)] min-[1440px]:gap-4 min-[1440px]:px-6 min-[1440px]:py-5 ${className}`}
     >
-      <img
+      <img loading="lazy" decoding="async"
         src={figma.star}
         alt=""
         className="size-5 shrink-0 min-[1440px]:size-6"
@@ -65,7 +65,7 @@ export function ProductEcosystemSection() {
 
         {/* Phone */}
         <div className="absolute left-1/2 top-[120px] flex w-[360px] -translate-x-1/2 justify-center">
-          <img
+          <img loading="lazy" decoding="async"
             src={figma.getMoreIphoneMock}
             alt="PayByLeap app"
             className="w-full object-contain"
@@ -102,7 +102,7 @@ export function ProductEcosystemSection() {
             OPEN AND MANAGE FOREIGN ACCOUNTS
           </Pill>
 
-          <img
+          <img loading="lazy" decoding="async"
             src={figma.getMoreIphoneMock}
             alt="PayByLeap app"
             className="w-[240px] object-contain sm:w-[280px]"

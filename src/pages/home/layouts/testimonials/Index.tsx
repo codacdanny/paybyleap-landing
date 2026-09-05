@@ -93,7 +93,7 @@ function TestimonialCard({
       <div
         className={`flex items-start ${isStack ? "gap-3" : "gap-4 min-[1440px]:gap-6"}`}
       >
-        <img
+        <img loading="lazy" decoding="async"
           src={t.avatar}
           alt={t.name}
           className={`shrink-0 rounded-full object-cover ${
@@ -143,7 +143,7 @@ function TestimonialCard({
       </div>
 
       {/* Quote mark — pinned to the exact bottom-right corner, clipped by overflow-hidden */}
-      <img
+      <img loading="lazy" decoding="async"
         src={figma.testimonialQuoteMark}
         alt=""
         className={`pointer-events-none absolute ${
@@ -220,7 +220,7 @@ export function TestimonialsSection() {
                 const card = el.querySelectorAll("article")[i] as HTMLElement;
                 card?.scrollIntoView({ behavior: "smooth", inline: "start" });
               }}
-              className={`h-[6px] rounded-full transition-all duration-300 ${
+              className={`relative before:absolute before:-inset-x-1 before:-top-[18px] before:-bottom-[18px] before:content-[''] h-[6px] rounded-full transition-all duration-300 ${
                 i === active
                   ? "w-14 bg-[#F0DEDE] min-[1440px]:w-[72px]"
                   : "w-5 bg-white/30 min-[1440px]:w-6"

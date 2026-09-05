@@ -75,7 +75,7 @@ function FAHero() {
           {/* ── Left column: text content ── */}
           <div className="w-full shrink-0 pt-4 lg:w-auto lg:max-w-[640px]">
             <div className="inline-flex items-center gap-0.5 rounded-2xl border border-secondary bg-[#FBF2D6] px-2 py-1">
-              <img src={figma.ionPlanet} alt="" className="size-4" />
+              <img loading="lazy" decoding="async" src={figma.ionPlanet} alt="" className="size-4" />
               <span className="text-center text-[16px] leading-6 text-grey-80">
                 GLOBAL ACCOUNTS
               </span>
@@ -120,12 +120,12 @@ function FAHero() {
               style={{ right: "-100px", top: "200px", width: "720px", height: "720px" }}
               aria-hidden
             >
-              <img src={figma.faGlobe} alt="" className="size-full object-contain" />
+              <img loading="lazy" decoding="async" src={figma.faGlobe} alt="" className="size-full object-contain" />
             </div>
 
             {/* Account card — left edge of right column, aligned with heading */}
             <div className="absolute left-0 top-[10px] z-20 w-[270px] min-[1440px]:w-[300px]">
-              <img
+              <img loading="lazy" decoding="async"
                 src={figma.foreignImage}
                 alt="Foreign account details"
                 className="w-full rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.10)]"
@@ -134,7 +134,7 @@ function FAHero() {
 
             {/* Man with hat — bottom-right, bleeds off edge */}
             <div className="absolute bottom-0 right-[-80px] z-10 min-[1440px]:right-[-120px]" aria-hidden>
-              <img
+              <img loading="lazy" decoding="async"
                 src={figma.freeAccountHero}
                 alt=""
                 className="h-[580px] w-auto object-contain object-bottom min-[1440px]:h-[650px]"
@@ -160,7 +160,7 @@ function GetPaidSection() {
           Get Paid Seamlessly, World wide
         </h2>
 
-        <div className="mt-10 grid gap-4 md:grid-cols-3 min-[1440px]:mt-[70px] min-[1440px]:gap-[16px]">
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 min-[1440px]:mt-[70px] min-[1440px]:gap-[16px]">
           {/* Card 1: Quick Transfers */}
           <article className="relative h-[400px] overflow-hidden rounded-2xl bg-primary-dark p-5 text-white min-[1440px]:h-[464px] min-[1440px]:p-6">
             <h3 className="relative z-10 max-w-[219px] text-[20px] font-semibold leading-7 min-[1440px]:text-[24px] min-[1440px]:leading-7">
@@ -170,7 +170,7 @@ function GetPaidSection() {
               Send and receive money in seconds with a seamless, secure payment
               experience designed to keep up with your pace
             </p>
-            <img
+            <img loading="lazy" decoding="async"
               src={figma.quickTransferImage}
               alt=""
               className="absolute top-[44%] left-1/2 z-10 w-[80%] -translate-x-1/2 object-contain"
@@ -189,14 +189,14 @@ function GetPaidSection() {
             </p>
 
             {/* Solid cream star — behind */}
-            <img
+            <img loading="lazy" decoding="async"
               src={figma.solidStar}
               alt=""
               className="absolute bottom-[-30px] left-1/2 z-0 w-[90%] -translate-x-1/2 object-contain"
               aria-hidden
             />
             {/* Dotted red star — in front */}
-            <img
+            <img loading="lazy" decoding="async"
               src={figma.dottedStar}
               alt=""
               className="absolute bottom-[-20px] left-1/2 z-10 w-[95%] -translate-x-[48%] object-contain"
@@ -213,7 +213,7 @@ function GetPaidSection() {
               Send and receive money in seconds with a seamless, secure payment
               experience designed to keep up with your pace
             </p>
-            <img
+            <img loading="lazy" decoding="async"
               src={figma.creditCardImage}
               alt=""
               className="absolute top-[44%] left-1/2 z-10 w-[80%] -translate-x-1/2 object-contain"
@@ -271,7 +271,7 @@ function BenefitsPillsSection() {
 
           {/* ── Right: phone mockup (lg → 1440px in-flow) ── */}
           <div className="hidden shrink-0 self-stretch lg:flex lg:items-end min-[1440px]:hidden">
-            <img
+            <img loading="lazy" decoding="async"
               src={figma.getMoreIphoneMock}
               alt="PayByLeap foreign account app on iPhone"
               className="w-[300px] object-contain object-bottom"
@@ -282,7 +282,7 @@ function BenefitsPillsSection() {
       </LandingInset>
 
       
-      <img
+      <img loading="lazy" decoding="async"
         src={figma.getMoreIphoneMock}
         alt="PayByLeap foreign account app on iPhone"
         className="pointer-events-none absolute z-0 hidden min-[1440px]:block"
@@ -364,7 +364,7 @@ export function GlobalTransactionsSection() {
           <div className="relative shrink-0 min-[1440px]:h-[620px] min-[1440px]:w-[540px]">
 
             {/* Phone — centred in column, behind the cards */}
-            <img
+            <img loading="lazy" decoding="async"
               src={figma.transactionsPhone}
               alt=""
               className="pointer-events-none absolute left-1/2 top-1/2 z-0 hidden w-[410px] -translate-x-1/2 -translate-y-1/2 object-contain min-[1440px]:block"
@@ -423,7 +423,7 @@ function TestimonialCard({ t }: { t: (typeof testimonials)[number] }) {
   return (
     <article className="relative flex min-h-[400px] w-[65vw] shrink-0 flex-col overflow-hidden rounded-2xl bg-[#EFD8D8] p-5 md:min-h-[432px] md:w-[46vw] md:p-7 min-[1440px]:h-[432px] min-[1440px]:w-[604px] min-[1440px]:p-7">
       <div className="flex items-center gap-3 md:gap-4">
-        <img
+        <img loading="lazy" decoding="async"
           src={t.avatar}
           alt={t.name}
           className="size-[52px] rounded-full object-cover md:size-[80px] min-[1440px]:size-[128px]"
@@ -443,7 +443,7 @@ function TestimonialCard({ t }: { t: (typeof testimonials)[number] }) {
       <p className="mt-4 text-[14px] leading-6 text-grey-90 md:mt-6 md:text-[16px] md:leading-7 min-[1440px]:text-[20px] min-[1440px]:leading-7">
         {t.quote}
       </p>
-      <img
+      <img loading="lazy" decoding="async"
         src={figma.testimonialQuoteMark}
         alt=""
         className="pointer-events-none absolute -bottom-[40px] -right-[10px] w-[100px] md:-bottom-[50px] md:-right-[15px] md:w-[120px] min-[1440px]:w-[140px]"
@@ -507,7 +507,7 @@ function FATestimonialsSection() {
             key={i}
             onClick={() => scrollTo(i)}
             aria-label={`Go to testimonial ${i + 1}`}
-            className={`h-2 rounded-2xl transition-all ${
+            className={`relative before:absolute before:-inset-x-1 before:-top-[18px] before:-bottom-[18px] before:content-[''] h-2 rounded-2xl transition-all ${
               i === active ? "w-20 bg-[#EFD8D8]" : "w-7 bg-grey-30"
             }`}
           />

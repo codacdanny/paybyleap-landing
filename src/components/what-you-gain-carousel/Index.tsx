@@ -69,11 +69,11 @@ export function ProductBenefitsCarousel({ heading, sectionClassName = "bg-[#FBF2
           <div className="mt-1 hidden shrink-0 items-center gap-4 lg:flex">
             <button type="button" onClick={() => go(-1)} disabled={!canScrollLeft} aria-label="Previous"
               className="flex size-[72px] shrink-0 items-center justify-center disabled:cursor-default min-[1440px]:size-[100px]">
-              <img src={leftSrc} alt="" className={`size-full object-contain ${canScrollLeft ? "rotate-180" : ""}`} />
+              <img loading="lazy" decoding="async" src={leftSrc} alt="" className={`size-full object-contain ${canScrollLeft ? "rotate-180" : ""}`} />
             </button>
             <button type="button" onClick={() => go(1)} disabled={!canScrollRight} aria-label="Next"
               className="flex size-[72px] shrink-0 items-center justify-center disabled:cursor-default min-[1440px]:size-[100px]">
-              <img src={rightSrc} alt="" className={`size-full object-contain ${canScrollRight ? "" : "rotate-180"}`} />
+              <img loading="lazy" decoding="async" src={rightSrc} alt="" className={`size-full object-contain ${canScrollRight ? "" : "rotate-180"}`} />
             </button>
           </div>
         </div>
@@ -103,7 +103,7 @@ export function ProductBenefitsCarousel({ heading, sectionClassName = "bg-[#FBF2
                 </div>
               ) : (
                 <div className="flex size-[70px] items-center justify-center rounded-full bg-[#FFF4F4]">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={c.icon ?? figma.realtimeconversionIcon}
                     alt=""
                     className="size-[32px] object-contain"
@@ -123,7 +123,7 @@ export function ProductBenefitsCarousel({ heading, sectionClassName = "bg-[#FBF2
             key={i}
             onClick={() => scrollTo(i)}
             aria-label={`Go to slide ${i + 1}`}
-            className={`h-[8px] rounded-full transition-all duration-300 ${
+            className={`relative before:absolute before:-inset-x-1 before:-top-[18px] before:-bottom-[18px] before:content-[''] h-[8px] rounded-full transition-all duration-300 ${
               i === active ? "w-[52px] bg-primary" : "w-[28px] bg-grey-20"
             }`}
           />

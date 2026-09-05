@@ -77,7 +77,7 @@ export function SecurityTrustSection({
               {subtitle}
             </p>
             <div className="mt-8 hidden min-[1440px]:block">
-              <img
+              <img loading="lazy" decoding="async"
                 src={figma.iphoneAirMockup}
                 alt=""
                 className="h-auto w-[260px] object-contain"

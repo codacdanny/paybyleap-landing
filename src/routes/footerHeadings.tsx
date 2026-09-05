@@ -42,6 +42,17 @@ const FOOTER_HEADING_BY_PATH: Partial<Record<string, ReactNode>> = {
       Start Invoicing <span className="text-secondary">Globally</span> Today
     </>
   ),
+  [ROUTES.PRIVACY_POLICY]: (
+    <>
+      Your Money and <span className="text-secondary">Your Data</span>, Protected
+    </>
+  ),
+  [ROUTES.TERMS_AND_CONDITIONS]: (
+    <>
+      Global Payments Built on{" "}
+      <span className="text-secondary">Clear Terms</span>
+    </>
+  ),
   [ROUTES.COMPANY]: (
     <>
       Experience Seamless{" "}

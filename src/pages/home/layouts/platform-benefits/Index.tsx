@@ -5,7 +5,7 @@ import { LandingInset } from "@/components/landing-inset/Index";
 function Tag({ children }: { children: ReactNode }) {
   return (
     <div className="flex items-center gap-2 rounded-3xl border-[1.5px] border-primary bg-[#fbf7fb] px-4 py-2.5 text-left text-[16px] font-medium leading-8 text-grey-100 shadow-soft min-[1440px]:gap-4 min-[1440px]:px-6 min-[1440px]:py-5 min-[1440px]:text-[24px]">
-      <img
+      <img loading="lazy" decoding="async"
         src={figma.star}
         alt=""
         className="size-5 shrink-0 min-[1440px]:size-6"
@@ -33,7 +33,7 @@ export function PlatformBenefitsSection() {
         <div className="relative h-[1105px]">
           {/* Phone mockup */}
           <div className="absolute left-1/2 top-0 flex h-[1105px] w-[553px] -translate-x-1/2 items-start justify-center pt-[106px]">
-            <img
+            <img loading="lazy" decoding="async"
               src={figma.iphone17Mockup}
               alt="PayByLeap on iPhone"
               className="object-cover mix-blend-multiply"
@@ -95,7 +95,7 @@ export function PlatformBenefitsSection() {
 
               {/* Phone mockup — centred */}
               <div className="relative z-[1] mx-auto mt-6 flex max-w-[320px] justify-center lg:mt-0 lg:max-w-[400px]">
-                <img
+                <img loading="lazy" decoding="async"
                   src={figma.iphone17Mockup}
                   alt="PayByLeap on iPhone"
                   className="h-auto w-full mix-blend-multiply"
@@ -132,7 +132,7 @@ export function PlatformBenefitsSection() {
               href="#"
               className="inline-flex h-16 w-full min-w-0 items-center justify-center gap-1 rounded-lg bg-[#000] px-4 text-white min-[1440px]:w-[201px]"
             >
-              <img src={figma.appleLogo} alt="" className="size-8" />
+              <img loading="lazy" decoding="async" src={figma.appleLogo} alt="" className="size-8" />
               <span className="text-left leading-tight">
                 <span className="block text-[14px] font-normal">
                   Download app on
@@ -144,7 +144,7 @@ export function PlatformBenefitsSection() {
               href="#"
               className="inline-flex h-16 w-full min-w-0 items-center justify-center gap-2 rounded-lg bg-[#000] px-4 text-white min-[1440px]:w-[201px]"
             >
-              <img
+              <img loading="lazy" decoding="async"
                 src={figma.googlePlayIcon}
                 alt=""
                 className="h-[34px] w-[37px] object-cover"

@@ -68,7 +68,7 @@ export function ValuePropositionSection() {
                   </p>
                 </div>
                 <div className="mt-auto flex-1 overflow-hidden">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={c.image}
                     alt=""
                     aria-hidden
@@ -125,7 +125,7 @@ export function ValuePropositionSection() {
             </div>
 
             <div className="overflow-hidden rounded-[20px] md:justify-self-end">
-              <img
+              <img loading="lazy" decoding="async"
                 src={figma.whyExistsPhoto}
                 alt="PayByLeap users"
                 className="aspect-[456/470] w-full object-cover md:w-[440px] min-[1440px]:w-[456px]"
@@ -136,7 +136,7 @@ export function ValuePropositionSection() {
       </LandingInset>
 
       {/* Bleeding decorative divider */}
-      <img
+      <img loading="lazy" decoding="async"
         src={figma.pageDivider}
         alt=""
         aria-hidden

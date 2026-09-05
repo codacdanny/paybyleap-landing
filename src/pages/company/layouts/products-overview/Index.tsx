@@ -91,7 +91,7 @@ export function CompanyTimelineSection() {
             </div>
 
             <div className="overflow-hidden rounded-2xl">
-              <img
+              <img loading="lazy" decoding="async"
                 src={figma.freeAccountHero}
                 alt="PayByLeap team"
                 className="h-[300px] w-full object-cover object-top min-[1440px]:h-[360px]"

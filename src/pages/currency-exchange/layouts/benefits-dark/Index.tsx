@@ -17,7 +17,7 @@ export function CurrencyBenefitsDark() {
     <section className="relative overflow-hidden bg-grey-100">
 
       {/* ── Large logo watermark — decorative background ── */}
-      <img
+      <img loading="lazy" decoding="async"
         src={figma.leapLogoLarge}
         alt=""
         aria-hidden
@@ -45,7 +45,7 @@ export function CurrencyBenefitsDark() {
 
       {/* ── Phone with hand — centered, bleeds edge to edge ── */}
       <div className="relative z-10 mt-[-20px] flex justify-center min-[1440px]:mt-[-32px]">
-        <img
+        <img loading="lazy" decoding="async"
           src={figma.handheld}
           alt="PayByLeap currency exchange app in hand"
           className="w-full max-w-[850px] max-h-[796px] object-contain "

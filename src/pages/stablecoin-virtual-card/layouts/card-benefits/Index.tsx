@@ -40,7 +40,7 @@ export function ProductBenefitsGrid() {
             >
               {/* Image container — separate bg, rounded, padded from card edges */}
               <div className="flex h-[200px] items-center justify-center overflow-hidden rounded-2xl p-[16px] sm:h-[240px] lg:h-[40%] min-[1440px]:h-[320px]">
-                <img
+                <img loading="lazy" decoding="async"
                   src={b.image}
                   alt=""
                   className="h-full w-full object-contain"

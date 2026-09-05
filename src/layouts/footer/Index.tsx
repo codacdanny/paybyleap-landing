@@ -28,8 +28,8 @@ const supportLinks = [
 ];
 
 const legalLinks = [
-  { label: "Privacy Policy", href: "#" },
-  { label: "Terms of Service", href: "#" },
+  { label: "Privacy Policy", href: ROUTES.PRIVACY_POLICY },
+  { label: "Terms and Conditions", href: ROUTES.TERMS_AND_CONDITIONS },
   { label: "Acceptance Use of Policy", href: "#" },
   { label: "Global Card Usage Terms", href: "#" },
 ];
@@ -70,11 +70,11 @@ function LinkColumn({
         {links.map((l) => (
           <li key={l.label}>
             {l.href.startsWith("/") ? (
-              <Link to={l.href} className="transition-colors hover:text-secondary">
+              <Link to={l.href} className="inline-block transition-colors hover:text-secondary">
                 {l.label}
               </Link>
             ) : (
-              <a href={l.href} className="transition-colors hover:text-secondary">
+              <a href={l.href} className="inline-block transition-colors hover:text-secondary">
                 {l.label}
               </a>
             )}
@@ -115,7 +115,7 @@ export function SiteFooter({ heading = defaultHeading }: SiteFooterProps) {
             href="#"
             className="inline-flex h-16 w-full items-center justify-center gap-1 rounded-lg bg-white px-4 text-grey-100 md:w-[201px]"
           >
-            <img
+            <img loading="lazy" decoding="async"
               src={figma.blackAppleLogo}
               alt=""
               className="size-10 object-contain"
@@ -131,7 +131,7 @@ export function SiteFooter({ heading = defaultHeading }: SiteFooterProps) {
             href="#"
             className="inline-flex h-16 w-full items-center justify-center gap-2 rounded-lg bg-white px-4 text-grey-100 md:w-[201px]"
           >
-            <img
+            <img loading="lazy" decoding="async"
               src={figma.footerGooglePlayWhite}
               alt=""
               className="h-[34px] w-[37px] object-cover"
@@ -186,7 +186,7 @@ export function SiteFooter({ heading = defaultHeading }: SiteFooterProps) {
         <div className="mx-auto mt-14 max-w-[1300px] border-t border-white/20 min-[1440px]:mt-16" />
 
         {/* Social bar */}
-        <div className="mx-auto mt-10 max-w-[1196px] overflow-x-auto rounded-2xl border border-white/30 md:overflow-visible min-[1440px]:mt-14">
+        <div className="mx-auto mt-10 max-w-[1196px] overflow-x-auto scrollbar-hide rounded-2xl border border-white/30 [mask-image:linear-gradient(to_right,#000_calc(100%-40px),transparent)] md:overflow-visible md:[mask-image:none] min-[1440px]:mt-14">
           <div className="flex min-w-max items-stretch md:min-w-0 md:w-full">
             {social.map((s, i) => (
               <a
@@ -197,7 +197,7 @@ export function SiteFooter({ heading = defaultHeading }: SiteFooterProps) {
                 }`}
               >
                 <span className="whitespace-nowrap">{s.label}</span>
-                <img
+                <img loading="lazy" decoding="async"
                   src={s.icon}
                   alt=""
                   className="size-5 shrink-0 object-contain min-[1440px]:size-6"

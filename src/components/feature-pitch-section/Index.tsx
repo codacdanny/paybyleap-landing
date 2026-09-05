@@ -20,7 +20,7 @@ export function FeaturePitchSection({
 }: FeaturePitchSectionProps) {
   return (
     <section className="relative overflow-hidden bg-grey-100">
-      <img
+      <img loading="lazy" decoding="async"
         src={figma.leapLogoLarge}
         alt=""
         aria-hidden
@@ -40,7 +40,7 @@ export function FeaturePitchSection({
       </LandingInset>
 
       <div className="relative z-10 mt-[-20px] flex justify-center min-[1440px]:mt-[-32px]">
-        <img
+        <img loading="lazy" decoding="async"
           src={image}
           alt=""
           aria-hidden

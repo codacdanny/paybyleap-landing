@@ -78,7 +78,7 @@ function ExchangeField({
           aria-expanded={isOpen}
           className="flex items-center gap-[12px] rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
         >
-          <img
+          <img loading="lazy" decoding="async"
             src={currency.flag}
             alt={`${currency.name} flag`}
             className="size-[32px] rounded-full object-cover"
@@ -118,7 +118,7 @@ function ExchangeField({
                     c.code === currency.code ? "bg-[#FFF3F3]" : ""
                   }`}
                 >
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={c.flag}
                     alt=""
                     className="size-[28px] rounded-full object-cover"
@@ -150,7 +150,7 @@ function ExchangeField({
           placeholder="00.00"
           onChange={(e) => onAmountChange(e.target.value)}
           aria-label={caption}
-          className="mt-[17px] w-[150px] bg-transparent text-right font-spartan text-[24px] font-semibold leading-none tracking-[-0.02em] text-grey-90 caret-primary outline-none placeholder:text-grey-90"
+          className="mt-[9px] w-[150px] bg-transparent py-2 text-right font-spartan text-[24px] font-semibold leading-none tracking-[-0.02em] text-grey-90 caret-primary outline-none placeholder:text-grey-90"
         />
       </div>
     </div>
@@ -260,7 +260,7 @@ export function CurrencyConverterSection() {
               aria-label="Swap currencies"
               className="flex size-[37px] shrink-0 items-center justify-center rounded-full bg-white text-grey-100 shadow-[0_4px_18px_rgba(0,0,0,0.12)] transition-transform hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
             >
-              <img
+              <img loading="lazy" decoding="async"
                 src={figma.exhangeIcon}
                 alt=""
                 className="h-[15px] w-[14px]"

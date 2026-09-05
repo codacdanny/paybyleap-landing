@@ -8,7 +8,7 @@ export function DownloadAppSection() {
       <div className="relative mx-auto grid max-w-[1440px] items-stretch lg:h-[668px] lg:min-h-[668px]">
         {/* Desktop background — woman on couch, right-aligned */}
         <div className="pointer-events-none absolute inset-y-0 right-0 hidden overflow-hidden lg:block lg:w-[1071px]">
-          <img
+          <img loading="lazy" decoding="async"
             src={figma.mobileAppHeroPhoto}
             alt=""
             className="h-full w-full object-cover object-[center_top]"
@@ -43,7 +43,7 @@ export function DownloadAppSection() {
                 className="inline-flex items-center gap-2 text-[18px] font-medium text-white"
               >
                 Learn how it works
-                <img src={figma.arrowRightWhite} alt="" className="size-6" />
+                <img loading="lazy" decoding="async" src={figma.arrowRightWhite} alt="" className="size-6" />
               </a>
             </div>
           </div>
