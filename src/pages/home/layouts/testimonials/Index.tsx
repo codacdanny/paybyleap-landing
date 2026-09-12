@@ -93,7 +93,9 @@ function TestimonialCard({
       <div
         className={`flex items-start ${isStack ? "gap-3" : "gap-4 min-[1440px]:gap-6"}`}
       >
-        <img loading="lazy" decoding="async"
+        <img
+          loading="lazy"
+          decoding="async"
           src={t.avatar}
           alt={t.name}
           className={`shrink-0 rounded-full object-cover ${
@@ -143,7 +145,9 @@ function TestimonialCard({
       </div>
 
       {/* Quote mark — pinned to the exact bottom-right corner, clipped by overflow-hidden */}
-      <img loading="lazy" decoding="async"
+      <img
+        loading="lazy"
+        decoding="async"
         src={figma.testimonialQuoteMark}
         alt=""
         className={`pointer-events-none absolute ${

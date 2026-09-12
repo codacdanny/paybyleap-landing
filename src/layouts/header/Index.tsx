@@ -46,8 +46,16 @@ const productLinks = [
 ];
 
 const companyLinks = [
-  { label: "About Us", desc: "Get to know our company values", href: ROUTES.COMPANY },
-  { label: "Paybyleap Community", desc: "Meet other members & share ideas", href: "#" },
+  {
+    label: "About Us",
+    desc: "Get to know our company values",
+    href: ROUTES.COMPANY,
+  },
+  {
+    label: "Paybyleap Community",
+    desc: "Meet other members & share ideas",
+    href: "#",
+  },
 ];
 
 const legalLinks = [
@@ -79,8 +87,12 @@ function ProductDropdown({ onClose }: { onClose: () => void }) {
               onClick={onClose}
               className={`rounded-xl px-4 py-3 transition-colors hover:bg-[#FFF3F3] ${i === 0 ? "bg-[#FFF3F3]" : ""}`}
             >
-              <p className="text-[15px] font-semibold leading-5 text-grey-90">{p.label}</p>
-              <p className="mt-0.5 text-[13px] leading-5 text-grey-60">{p.desc}</p>
+              <p className="text-[15px] font-semibold leading-5 text-grey-90">
+                {p.label}
+              </p>
+              <p className="mt-0.5 text-[13px] leading-5 text-grey-60">
+                {p.desc}
+              </p>
             </Link>
           ))}
         </div>
@@ -92,8 +104,12 @@ function ProductDropdown({ onClose }: { onClose: () => void }) {
               onClick={onClose}
               className="rounded-xl px-4 py-3 transition-colors hover:bg-[#FFF3F3]"
             >
-              <p className="text-[15px] font-semibold leading-5 text-grey-90">{p.label}</p>
-              <p className="mt-0.5 text-[13px] leading-5 text-grey-60">{p.desc}</p>
+              <p className="text-[15px] font-semibold leading-5 text-grey-90">
+                {p.label}
+              </p>
+              <p className="mt-0.5 text-[13px] leading-5 text-grey-60">
+                {p.desc}
+              </p>
             </Link>
           ))}
         </div>
@@ -113,8 +129,12 @@ function CompanyDropdown({ onClose }: { onClose: () => void }) {
             onClick={onClose}
             className={`rounded-xl px-4 py-3 transition-colors hover:bg-[#FFF3F3] ${i === 0 ? "bg-[#FFF3F3]" : ""}`}
           >
-            <p className="text-[15px] font-semibold leading-5 text-grey-90">{l.label}</p>
-            <p className="mt-0.5 text-[13px] leading-5 text-grey-60">{l.desc}</p>
+            <p className="text-[15px] font-semibold leading-5 text-grey-90">
+              {l.label}
+            </p>
+            <p className="mt-0.5 text-[13px] leading-5 text-grey-60">
+              {l.desc}
+            </p>
           </Link>
         ))}
       </div>
@@ -138,10 +158,7 @@ export function Header() {
   /* close dropdown on outside click */
   useEffect(() => {
     function handler(e: MouseEvent) {
-      if (
-        headerRef.current &&
-        !headerRef.current.contains(e.target as Node)
-      ) {
+      if (headerRef.current && !headerRef.current.contains(e.target as Node)) {
         setOpenDropdown(null);
       }
     }
@@ -172,7 +189,7 @@ export function Header() {
   return (
     <>
       {/* Top utility bar */}
-      <div className="border-b border-primary/10 bg-primary-light">
+      <div className="border-b hidden border-primary/10 bg-primary-light">
         <LandingInset>
           <div className="mx-auto flex max-w-[1438px] flex-wrap items-center justify-between gap-x-2 gap-y-2 pt-[15px]">
             <div
@@ -216,57 +233,184 @@ export function Header() {
       <header ref={headerRef} className="sticky top-0 z-50">
         {/* Main nav bar */}
         <div className="border-b border-grey-10 bg-white shadow-[0px_4px_24px_rgba(0,0,0,0.05)]">
-        <LandingInset>
-          <div className="flex items-center justify-between gap-4 py-4 lg:mx-auto lg:h-[76px] lg:w-full lg:gap-6 lg:py-0 xl:max-w-[1122px] xl:justify-center xl:gap-[116px]">
-            {/* Logo */}
-            <Link to={ROUTES.HOME} className="shrink-0">
-              <img
-                src={figma.logoImg}
-                alt="PayByLeap"
-                className="h-6 w-[99px] object-contain object-left lg:h-9 lg:w-[136px] xl:h-10 xl:w-[152px]"
-              />
-            </Link>
+          <LandingInset>
+            <div className="flex items-center justify-between gap-4 py-4 lg:mx-auto lg:h-[76px] lg:w-full lg:gap-6 lg:py-0 xl:max-w-[1122px] xl:justify-center xl:gap-[116px]">
+              {/* Logo */}
+              <Link to={ROUTES.HOME} className="shrink-0">
+                <img
+                  src={figma.logoImg}
+                  alt="PayByLeap"
+                  className="h-6 w-[99px] object-contain object-left lg:h-9 lg:w-[136px] xl:h-10 xl:w-[152px]"
+                />
+              </Link>
 
-            {/* Hamburger (mobile) */}
-            <button
-              type="button"
-              className="-mr-2.5 flex size-11 shrink-0 items-center justify-center lg:hidden"
-              aria-expanded={menuOpen}
-              aria-label="Open menu"
-              onClick={() => setMenuOpen(true)}
-            >
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                strokeLinecap="round"
-                className="size-6"
+              {/* Hamburger (mobile) */}
+              <button
+                type="button"
+                className="-mr-2.5 flex size-11 shrink-0 items-center justify-center lg:hidden"
+                aria-expanded={menuOpen}
+                aria-label="Open menu"
+                onClick={() => setMenuOpen(true)}
               >
-                <line x1="3" y1="6" x2="21" y2="6" />
-                <line x1="3" y1="12" x2="21" y2="12" />
-                <line x1="3" y1="18" x2="21" y2="18" />
-              </svg>
-            </button>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  className="size-6"
+                >
+                  <line x1="3" y1="6" x2="21" y2="6" />
+                  <line x1="3" y1="12" x2="21" y2="12" />
+                  <line x1="3" y1="18" x2="21" y2="18" />
+                </svg>
+              </button>
 
-            {/* Desktop nav */}
-            <nav className="relative hidden lg:flex lg:min-w-0 lg:flex-1 lg:items-center lg:justify-center lg:gap-2 xl:w-[435px] xl:flex-none xl:gap-2.5">
-              {/* Products */}
-              <div className="relative">
-                <button
-                  type="button"
-                  onClick={() => toggleDropdown("products")}
-                  className={`flex h-10 items-center gap-1 whitespace-nowrap px-2 text-[16px] font-medium leading-6 transition-colors hover:text-primary xl:px-2.5 xl:text-[18px] ${
-                    openDropdown === "products"
+              {/* Desktop nav */}
+              <nav className="relative hidden lg:flex lg:min-w-0 lg:flex-1 lg:items-center lg:justify-center lg:gap-2 xl:w-[435px] xl:flex-none xl:gap-2.5">
+                {/* Products */}
+                <div className="relative">
+                  <button
+                    type="button"
+                    onClick={() => toggleDropdown("products")}
+                    className={`flex h-10 items-center gap-1 whitespace-nowrap px-2 text-[16px] font-medium leading-6 transition-colors hover:text-primary xl:px-2.5 xl:text-[18px] ${
+                      openDropdown === "products"
+                        ? "text-primary"
+                        : "text-grey-90"
+                    }`}
+                  >
+                    Products
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      className={`size-4 transition-transform ${openDropdown === "products" ? "rotate-180" : ""}`}
+                      aria-hidden
+                    >
+                      <path
+                        d="M6 9l6 6 6-6"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </button>
+                  {openDropdown === "products" && (
+                    <ProductDropdown onClose={() => setOpenDropdown(null)} />
+                  )}
+                </div>
+
+                {/* Company */}
+                <div className="relative">
+                  <button
+                    type="button"
+                    onClick={() => toggleDropdown("company")}
+                    className={`flex h-10 items-center gap-1 whitespace-nowrap px-2 text-[16px] font-medium leading-6 transition-colors hover:text-primary xl:px-2.5 xl:text-[18px] ${
+                      openDropdown === "company" || pathname === ROUTES.COMPANY
+                        ? "text-primary"
+                        : "text-grey-90"
+                    }`}
+                  >
+                    Company
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      className={`size-4 transition-transform ${openDropdown === "company" ? "rotate-180" : ""}`}
+                      aria-hidden
+                    >
+                      <path
+                        d="M6 9l6 6 6-6"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </button>
+                  {openDropdown === "company" && (
+                    <CompanyDropdown onClose={() => setOpenDropdown(null)} />
+                  )}
+                </div>
+
+                <a
+                  href="#support"
+                  className="flex h-10 items-center justify-center whitespace-nowrap p-2 text-[16px] font-medium leading-6 text-grey-90 hover:text-primary xl:w-[125px] xl:p-2.5 xl:text-[18px]"
+                >
+                  Support
+                </a>
+                <Link
+                  to={ROUTES.TERMS_AND_CONDITIONS}
+                  className={`flex h-10 items-center justify-center whitespace-nowrap p-2 text-[16px] font-medium leading-6 hover:text-primary xl:w-[78px] xl:p-2.5 xl:text-[18px] ${
+                    pathname === ROUTES.TERMS_AND_CONDITIONS ||
+                    pathname === ROUTES.PRIVACY_POLICY
                       ? "text-primary"
                       : "text-grey-90"
                   }`}
+                >
+                  Legal
+                </Link>
+              </nav>
+
+              {/* CTA buttons (desktop) */}
+              <div className="hidden shrink-0 items-center gap-2 lg:flex">
+                <button
+                  type="button"
+                  className="flex h-12 items-center justify-center whitespace-nowrap rounded-[8px] border border-primary bg-white px-3 py-4 text-[16px] font-medium leading-6 text-grey-90 transition-colors hover:bg-grey-10/80 xl:w-[110px] xl:px-2 xl:text-[18px]"
+                >
+                  Book a call
+                </button>
+                <button
+                  type="button"
+                  className="flex h-12 items-center justify-center whitespace-nowrap rounded-[8px] border border-primary-dark bg-primary-dark px-3 py-4 text-[16px] font-medium leading-6 text-white transition-colors hover:border-primary hover:bg-primary xl:w-[190px] xl:px-2 xl:text-[18px]"
+                >
+                  Download the app
+                </button>
+              </div>
+            </div>
+          </LandingInset>
+        </div>
+
+        {/* Mobile drawer */}
+        {menuOpen && (
+          <div className="fixed inset-0 z-[60] lg:hidden">
+            <button
+              type="button"
+              className="absolute inset-0 bg-black/40"
+              aria-label="Close menu"
+              onClick={() => setMenuOpen(false)}
+            />
+            <div className="absolute right-0 top-0 flex h-full w-[min(100%,340px)] flex-col overflow-y-auto bg-white px-6 pb-8 pt-4 shadow-xl">
+              <button
+                type="button"
+                className="-mr-2.5 mb-4 flex size-11 shrink-0 items-center justify-center self-end text-grey-100"
+                aria-label="Close menu"
+                onClick={() => setMenuOpen(false)}
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  className="size-6"
+                >
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+              </button>
+
+              {/* Products accordion */}
+              <div>
+                <button
+                  type="button"
+                  onClick={() => setMobileProductsOpen((o) => !o)}
+                  className="flex w-full items-center justify-between text-[18px] font-medium text-grey-100"
                 >
                   Products
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
-                    className={`size-4 transition-transform ${openDropdown === "products" ? "rotate-180" : ""}`}
+                    className={`size-5 transition-transform ${mobileProductsOpen ? "rotate-180" : ""}`}
                     aria-hidden
                   >
                     <path
@@ -278,203 +422,75 @@ export function Header() {
                     />
                   </svg>
                 </button>
-                {openDropdown === "products" && (
-                  <ProductDropdown onClose={() => setOpenDropdown(null)} />
+
+                {mobileProductsOpen && (
+                  <div className="mt-3 flex flex-col gap-1 border-l-2 border-primary/20 pl-4">
+                    {productLinks.map((p) => (
+                      <Link
+                        key={p.href}
+                        to={p.href}
+                        onClick={() => setMenuOpen(false)}
+                        className="rounded-xl py-2.5 text-[16px] font-medium text-grey-80 transition-colors hover:text-primary"
+                      >
+                        {p.label}
+                      </Link>
+                    ))}
+                  </div>
                 )}
               </div>
 
               {/* Company */}
-              <div className="relative">
-                <button
-                  type="button"
-                  onClick={() => toggleDropdown("company")}
-                  className={`flex h-10 items-center gap-1 whitespace-nowrap px-2 text-[16px] font-medium leading-6 transition-colors hover:text-primary xl:px-2.5 xl:text-[18px] ${
-                    openDropdown === "company" ||
-                    pathname === ROUTES.COMPANY
-                      ? "text-primary"
-                      : "text-grey-90"
-                  }`}
-                >
-                  Company
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    className={`size-4 transition-transform ${openDropdown === "company" ? "rotate-180" : ""}`}
-                    aria-hidden
-                  >
-                    <path
-                      d="M6 9l6 6 6-6"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </button>
-                {openDropdown === "company" && (
-                  <CompanyDropdown onClose={() => setOpenDropdown(null)} />
-                )}
+              <div className="mt-5">
+                <p className="text-[18px] font-medium text-grey-100">Company</p>
+                <div className="mt-3 flex flex-col gap-1 border-l-2 border-primary/20 pl-4">
+                  {companyLinks.map((l) => (
+                    <Link
+                      key={l.label}
+                      to={l.href}
+                      onClick={() => setMenuOpen(false)}
+                      className="py-2 text-[16px] font-medium text-grey-80 transition-colors hover:text-primary"
+                    >
+                      {l.label}
+                    </Link>
+                  ))}
+                </div>
               </div>
 
               <a
                 href="#support"
-                className="flex h-10 items-center justify-center whitespace-nowrap p-2 text-[16px] font-medium leading-6 text-grey-90 hover:text-primary xl:w-[125px] xl:p-2.5 xl:text-[18px]"
+                className="mt-5 text-[18px] font-medium text-grey-100"
+                onClick={() => setMenuOpen(false)}
               >
                 Support
               </a>
-              <Link
-                to={ROUTES.TERMS_AND_CONDITIONS}
-                className={`flex h-10 items-center justify-center whitespace-nowrap p-2 text-[16px] font-medium leading-6 hover:text-primary xl:w-[78px] xl:p-2.5 xl:text-[18px] ${
-                  pathname === ROUTES.TERMS_AND_CONDITIONS ||
-                  pathname === ROUTES.PRIVACY_POLICY
-                    ? "text-primary"
-                    : "text-grey-90"
-                }`}
-              >
-                Legal
-              </Link>
-            </nav>
-
-            {/* CTA buttons (desktop) */}
-            <div className="hidden shrink-0 items-center gap-2 lg:flex">
-              <button
-                type="button"
-                className="flex h-12 items-center justify-center whitespace-nowrap rounded-[8px] border border-primary bg-white px-3 py-4 text-[16px] font-medium leading-6 text-grey-90 transition-colors hover:bg-grey-10/80 xl:w-[110px] xl:px-2 xl:text-[18px]"
-              >
-                Book a call
-              </button>
-              <button
-                type="button"
-                className="flex h-12 items-center justify-center whitespace-nowrap rounded-[8px] border border-primary-dark bg-primary-dark px-3 py-4 text-[16px] font-medium leading-6 text-white transition-colors hover:border-primary hover:bg-primary xl:w-[190px] xl:px-2 xl:text-[18px]"
-              >
-                Download the app
-              </button>
-            </div>
-          </div>
-        </LandingInset>
-      </div>
-
-      {/* Mobile drawer */}
-      {menuOpen && (
-        <div className="fixed inset-0 z-[60] lg:hidden">
-          <button
-            type="button"
-            className="absolute inset-0 bg-black/40"
-            aria-label="Close menu"
-            onClick={() => setMenuOpen(false)}
-          />
-          <div className="absolute right-0 top-0 flex h-full w-[min(100%,340px)] flex-col overflow-y-auto bg-white px-6 pb-8 pt-4 shadow-xl">
-            <button
-              type="button"
-              className="-mr-2.5 mb-4 flex size-11 shrink-0 items-center justify-center self-end text-grey-100"
-              aria-label="Close menu"
-              onClick={() => setMenuOpen(false)}
-            >
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                strokeLinecap="round"
-                className="size-6"
-              >
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
-              </svg>
-            </button>
-
-            {/* Products accordion */}
-            <div>
-              <button
-                type="button"
-                onClick={() => setMobileProductsOpen((o) => !o)}
-                className="flex w-full items-center justify-between text-[18px] font-medium text-grey-100"
-              >
-                Products
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  className={`size-5 transition-transform ${mobileProductsOpen ? "rotate-180" : ""}`}
-                  aria-hidden
-                >
-                  <path
-                    d="M6 9l6 6 6-6"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </button>
-
-              {mobileProductsOpen && (
+              <div className="mt-5">
+                <p className="text-[18px] font-medium text-grey-100">Legal</p>
                 <div className="mt-3 flex flex-col gap-1 border-l-2 border-primary/20 pl-4">
-                  {productLinks.map((p) => (
+                  {legalLinks.map((l) => (
                     <Link
-                      key={p.href}
-                      to={p.href}
+                      key={l.label}
+                      to={l.href}
                       onClick={() => setMenuOpen(false)}
-                      className="rounded-xl py-2.5 text-[16px] font-medium text-grey-80 transition-colors hover:text-primary"
+                      className="py-2 text-[16px] font-medium text-grey-80 transition-colors hover:text-primary"
                     >
-                      {p.label}
+                      {l.label}
                     </Link>
                   ))}
                 </div>
-              )}
-            </div>
+              </div>
 
-            {/* Company */}
-            <div className="mt-5">
-              <p className="text-[18px] font-medium text-grey-100">Company</p>
-              <div className="mt-3 flex flex-col gap-1 border-l-2 border-primary/20 pl-4">
-                {companyLinks.map((l) => (
-                  <Link
-                    key={l.label}
-                    to={l.href}
-                    onClick={() => setMenuOpen(false)}
-                    className="py-2 text-[16px] font-medium text-grey-80 transition-colors hover:text-primary"
-                  >
-                    {l.label}
-                  </Link>
-                ))}
+              <div className="mt-auto flex flex-col gap-3 pt-8">
+                <Button
+                  variant="outline"
+                  className="w-full border-primary !bg-white text-[18px] font-medium !text-grey-90 hover:!bg-grey-10/80 hover:!text-grey-90"
+                >
+                  Book a call
+                </Button>
+                <Button variant="primaryDark" className="w-full">
+                  Download the app
+                </Button>
               </div>
             </div>
-
-            <a
-              href="#support"
-              className="mt-5 text-[18px] font-medium text-grey-100"
-              onClick={() => setMenuOpen(false)}
-            >
-              Support
-            </a>
-            <div className="mt-5">
-              <p className="text-[18px] font-medium text-grey-100">Legal</p>
-              <div className="mt-3 flex flex-col gap-1 border-l-2 border-primary/20 pl-4">
-                {legalLinks.map((l) => (
-                  <Link
-                    key={l.label}
-                    to={l.href}
-                    onClick={() => setMenuOpen(false)}
-                    className="py-2 text-[16px] font-medium text-grey-80 transition-colors hover:text-primary"
-                  >
-                    {l.label}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            <div className="mt-auto flex flex-col gap-3 pt-8">
-              <Button
-                variant="outline"
-                className="w-full border-primary !bg-white text-[18px] font-medium !text-grey-90 hover:!bg-grey-10/80 hover:!text-grey-90"
-              >
-                Book a call
-              </Button>
-              <Button variant="primaryDark" className="w-full">
-                Download the app
-              </Button>
-            </div>
-          </div>
           </div>
         )}
       </header>

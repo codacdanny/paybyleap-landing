@@ -2,32 +2,8 @@ import { Link } from "react-router-dom";
 import { figma } from "@/data/images/Index";
 import { ROUTES } from "@/routes/paths";
 import { LandingInset } from "@/components/landing-inset/Index";
-
-function ForeignAccountsVisual() {
-  return (
-    <div className="relative mt-6 min-h-[320px] overflow-hidden rounded-2xl bg-transparent md:min-h-[380px] min-[1440px]:mt-[43px] min-[1440px]:h-[512px] min-[1440px]:min-h-0 min-[1440px]:overflow-visible min-[1440px]:rounded-none">
-      <div className="relative z-[1] ml-auto mr-0 mt-14 max-w-[320px] rounded-2xl border border-primary/10 bg-white p-4 shadow-soft md:mt-32 md:p-5 min-[1440px]:absolute min-[1440px]:right-[22px] min-[1440px]:top-[56px] min-[1440px]:mt-[0] min-[1440px]:w-[320px] min-[1440px]:max-w-none min-[1440px]:rounded-[16px] min-[1440px]:border-0 min-[1440px]:bg-transparent min-[1440px]:p-0 min-[1440px]:shadow-none">
-        <img loading="lazy" decoding="async"
-          src={figma.foreignImage}
-          alt=""
-          className="h-auto w-full rounded-2xl min-[1440px]:rounded-[16px]"
-        />
-      </div>
-    </div>
-  );
-}
-
-function StackedCardsVisualDesktop() {
-  return (
-    <div className="relative mx-auto mt-24 h-[300px] w-full max-w-[369px] md:h-[368px]">
-      <img loading="lazy" decoding="async"
-        src={figma.cardsImage}
-        alt=""
-        className="w-full h-auto object-cover"
-      />
-    </div>
-  );
-}
+import PayByLeapGlobeAccounts from "./components/global-accounts/Index";
+import PayByLeapCardDeck from "./components/cards/Index";
 
 export function MoneyTransferSection() {
   return (
@@ -48,13 +24,21 @@ export function MoneyTransferSection() {
                   className="mt-8 inline-flex h-10 items-center gap-2 rounded-2xl px-2 text-[18px] font-medium text-secondary min-[1440px]:mt-[34px]"
                 >
                   Transfer Now
-                  <img loading="lazy" decoding="async" src={figma.transferArrow} alt="" className="size-6" />
+                  <img
+                    loading="lazy"
+                    decoding="async"
+                    src={figma.transferArrow}
+                    alt=""
+                    className="size-6"
+                  />
                 </a>
               </div>
 
               <div className="relative min-h-[280px] lg:min-h-[329px] min-[1440px]:min-h-[329px]">
                 <div className="relative mx-auto h-[232px] w-full max-w-[270px] overflow-hidden rounded-t-lg lg:mx-0 lg:ml-auto lg:h-[352px] lg:max-w-[409px] lg:rounded-none lg:absolute lg:bottom-0 lg:right-0 min-[1440px]:h-[329px] min-[1440px]:w-[409px] min-[1440px]:max-w-none">
-                  <img loading="lazy" decoding="async"
+                  <img
+                    loading="lazy"
+                    decoding="async"
                     src={figma.femalePhoneMockup}
                     alt="Person using PayByLeap on a phone"
                     className="h-full w-full object-cover object-[center_12%]"
@@ -68,25 +52,33 @@ export function MoneyTransferSection() {
             </div>
 
             {/* Floating country flags — positioned relative to the whole card */}
-            <img loading="lazy" decoding="async"
+            <img
+              loading="lazy"
+              decoding="async"
               src={figma.flagNg2}
               alt=""
               className="absolute z-[4] hidden size-7 object-contain min-[1440px]:block"
               style={{ top: 42, right: 386 }}
             />
-            <img loading="lazy" decoding="async"
+            <img
+              loading="lazy"
+              decoding="async"
               src={figma.flagUk2}
               alt=""
               className="absolute z-[4] hidden size-7 object-contain min-[1440px]:block"
               style={{ top: 42, right: 34 }}
             />
-            <img loading="lazy" decoding="async"
+            <img
+              loading="lazy"
+              decoding="async"
               src={figma.flagCa2}
               alt=""
               className="absolute z-[4] hidden size-7 object-contain min-[1440px]:block"
               style={{ top: 144, right: 460 }}
             />
-            <img loading="lazy" decoding="async"
+            <img
+              loading="lazy"
+              decoding="async"
               src={figma.flagUs2}
               alt=""
               className="absolute z-[4] hidden size-7 object-contain min-[1440px]:block"
@@ -96,7 +88,9 @@ export function MoneyTransferSection() {
               className="absolute z-[4] hidden size-7 overflow-hidden rounded-full min-[1440px]:block"
               style={{ bottom: 54, right: 36 }}
             >
-              <img loading="lazy" decoding="async"
+              <img
+                loading="lazy"
+                decoding="async"
                 src={figma.euFlag}
                 alt=""
                 className="h-full w-full object-cover"
@@ -118,10 +112,18 @@ export function MoneyTransferSection() {
                 className="mt-4 inline-flex h-10 items-center gap-2 px-2 text-[18px] font-medium text-primary min-[1440px]:mt-6"
               >
                 Explore Crypto
-                <img loading="lazy" decoding="async" src={figma.exploreArrow} alt="" className="size-6" />
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src={figma.exploreArrow}
+                  alt=""
+                  className="size-6"
+                />
               </a>
               <div className="relative mt-6 flex w-full flex-1 items-end justify-center overflow-hidden min-[1440px]:mt-8 min-[1440px]:-mx-[22px] min-[1440px]:mb-0 min-[1440px]:w-[calc(100%+44px)]">
-                <img loading="lazy" decoding="async"
+                <img
+                  loading="lazy"
+                  decoding="async"
                   src={figma.cryptoGraphic}
                   alt=""
                   className="h-auto w-full object-contain"
@@ -142,18 +144,28 @@ export function MoneyTransferSection() {
                 className="mt-4 inline-flex h-10 items-center gap-2 px-2 text-[18px] font-medium text-primary min-[1440px]:mt-6"
               >
                 Pay Fees
-                <img loading="lazy" decoding="async" src={figma.exploreArrow} alt="" className="size-6" />
+                <img
+                  loading="lazy"
+                  decoding="async"
+                  src={figma.exploreArrow}
+                  alt=""
+                  className="size-6"
+                />
               </a>
               <div className="relative mt-6 flex-1 min-[1440px]:mt-8">
                 {/* Desktop: polygon bg + card image as one unit */}
                 <div className="relative mx-auto max-w-[504px]">
-                  <img loading="lazy" decoding="async"
+                  <img
+                    loading="lazy"
+                    decoding="async"
                     src={figma.feesPolygon}
                     alt=""
                     className="pointer-events-none absolute -right-[60px] top-[10px] z-0  rotate-[300deg] object-contain"
                   />
                   <div className="relative z-[1] overflow-hidden rounded-[16px] ">
-                    <img loading="lazy" decoding="async"
+                    <img
+                      loading="lazy"
+                      decoding="async"
                       src={figma.saintLouisCrest}
                       alt=""
                       className="block h-auto w-full"
@@ -176,7 +188,9 @@ export function ProductsSection() {
         <div className="mx-auto max-w-[1120px]">
           <div className="flex flex-col items-center text-center">
             <div className="inline-flex h-7 items-center gap-1 rounded-[999px] border border-primary/50 bg-primary-light px-2 py-1 text-[14px] leading-5 text-primary min-[1440px]:h-10 min-[1440px]:gap-2 min-[1440px]:px-3 min-[1440px]:text-[16px] min-[1440px]:leading-6">
-              <img loading="lazy" decoding="async"
+              <img
+                loading="lazy"
+                decoding="async"
                 src={figma.smarterLogo}
                 alt=""
                 className="shrink-0 min-[1440px]:size-[18px]"
@@ -189,46 +203,58 @@ export function ProductsSection() {
           </div>
 
           <div className="mt-10 grid grid-cols-1 gap-6 min-[1440px]:mt-[56px] min-[1440px]:grid-cols-[545px_545px] min-[1440px]:gap-[27px]">
-            <article className="relative flex min-h-[464px] flex-col overflow-hidden rounded-2xl bg-[#fcf0f1] p-3 min-[1440px]:h-[711px] min-[1440px]:w-[545px] min-[1440px]:max-w-[545px] min-[1440px]:rounded-[16px] min-[1440px]:p-[22px] md:p-6 lg:p-8">
-              <img loading="lazy" decoding="async"
-                src={figma.bgGlobe}
-                alt=""
-                aria-hidden
-                className="pointer-events-none absolute bottom-0 left-0 z-0 h-[300px] w-auto max-w-none -translate-x-[40%] translate-y-[12%] object-contain object-left-bottom sm:h-[460px] md:h-[500px] min-[1440px]:h-[552px] min-[1440px]:max-h-[576px] min-[1440px]:-translate-x-[14%] min-[1440px]:translate-y-[16%]"
-              />
-              <div className="relative z-[1] flex min-h-0 flex-1 flex-col">
-                <h3 className="font-nohemi text-[20px] font-semibold leading-7 text-grey-100 min-[1440px]:text-[32px] min-[1440px]:leading-10">
+            <article className="relative flex min-h-[464px] flex-col overflow-hidden rounded-2xl bg-[#fcf0f1] p-3 min-[1440px]:h-[711px] min-[1440px]:w-[545px] min-[1440px]:max-w-[545px] min-[1440px]:rounded-[16px]  min-[1440px]:py-12 min-[1440px]:px-6 md:p-6 lg:p-8">
+              <div className="absolute bottom-0 left-0 w-[98%] h-[320px] min-[1440px]:h-[500px]">
+                <PayByLeapGlobeAccounts width="100%" height="100%" />
+              </div>
+              <div className="relative z-[1] flex min-h-0 flex-1 flex-col pointer-events-none">
+                <h3 className="font-nohemi text-[20px] font-semibold leading-7 text-grey-100 min-[1440px]:text-[32px] min-[1440px]:leading-10 pointer-events-auto">
                   Foreign Accounts
                 </h3>
-                <p className="mt-2 text-[14px] leading-[22px] text-grey-80 min-[1440px]:text-[20px] min-[1440px]:leading-7">
+                <p className="mt-2 text-[14px] leading-[22px] text-grey-80 min-[1440px]:text-[20px] min-[1440px]:leading-7 pointer-events-auto">
                   Open Global accounts for international payments.
                 </p>
                 <Link
                   to={ROUTES.FOREIGN_ACCOUNTS}
-                  className="mt-4 inline-flex h-10 items-center gap-2 rounded-2xl px-2 text-[18px] font-medium text-primary min-[1440px]:mt-6"
+                  className="mt-4 inline-flex h-10 items-center gap-2 rounded-2xl px-2 text-[18px] font-medium text-primary min-[1440px]:mt-6 pointer-events-auto self-start"
                 >
                   Explore
-                  <img loading="lazy" decoding="async" src={figma.exploreArrow} alt="" className="size-6" />
+                  <img
+                    loading="lazy"
+                    decoding="async"
+                    src={figma.exploreArrow}
+                    alt=""
+                    className="size-6"
+                  />
                 </Link>
-                <ForeignAccountsVisual />
               </div>
             </article>
 
-            <article className="flex min-h-[464px] flex-col overflow-hidden rounded-2xl bg-[#fdf2d8] p-3 min-[1440px]:h-[711px] min-[1440px]:w-[545px] min-[1440px]:max-w-[545px] min-[1440px]:rounded-[16px] min-[1440px]:p-[18px] md:p-6 lg:p-8">
-              <h3 className="font-nohemi text-[20px] font-semibold leading-7 text-grey-100 min-[1440px]:text-[32px] min-[1440px]:leading-10">
-                Stablecoins Virtual/Physical Cards
-              </h3>
-              <p className="mt-2 text-[14px] leading-[22px] text-grey-80 min-[1440px]:text-[20px] min-[1440px]:leading-7">
-                Spend crypto globally using Virtual Cards
-              </p>
-              <a
-                href="#cards"
-                className="mt-4 inline-flex h-10 items-center gap-2 rounded-2xl px-2 text-[18px] font-medium text-primary min-[1440px]:mt-6"
-              >
-                Get Card
-                <img loading="lazy" decoding="async" src={figma.exploreArrow} alt="" className="size-6" />
-              </a>
-              <StackedCardsVisualDesktop />
+            <article className="relative flex min-h-[464px] flex-col overflow-hidden rounded-2xl bg-[#fdf2d8] p-3 min-[1440px]:h-[711px] min-[1440px]:w-[545px] min-[1440px]:max-w-[545px] min-[1440px]:rounded-[16px] min-[1440px]:py-12 min-[1440px]:px-6 md:p-6 lg:p-8">
+              <div className="relative z-[1] flex-none pointer-events-none">
+                <h3 className="font-nohemi text-[20px] font-semibold leading-7 text-grey-100 min-[1440px]:text-[32px] min-[1440px]:leading-10 pointer-events-auto">
+                  Virtual & Physical Cards
+                </h3>
+                <p className="mt-2 text-[14px] leading-[22px] text-grey-80 min-[1440px]:text-[20px] min-[1440px]:leading-7 pointer-events-auto">
+                  Spend Globally with Paybyleap cards powered by Stablecoins.
+                </p>
+                <a
+                  href="#cards"
+                  className="mt-4 inline-flex h-10 items-center gap-2 rounded-2xl px-2 text-[18px] font-medium text-primary min-[1440px]:mt-6 pointer-events-auto self-start"
+                >
+                  Get Card
+                  <img
+                    loading="lazy"
+                    decoding="async"
+                    src={figma.exploreArrow}
+                    alt=""
+                    className="size-6"
+                  />
+                </a>
+              </div>
+              <div className="relative flex-1 w-[90%] max-w-[340px] min-[1440px]:max-w-[420px] pointer-events-auto mt-6 min-[1440px]:mt-10 ml-[11%]">
+                <PayByLeapCardDeck width="90%" height="90%" />
+              </div>
             </article>
           </div>
         </div>
