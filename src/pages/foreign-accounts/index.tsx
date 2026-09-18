@@ -2,6 +2,7 @@ import { useRef, useState, useEffect, useCallback, Fragment } from "react";
 import { figma } from "../../data/images/Index";
 import { LandingInset } from "../../components/landing-inset/Index";
 import { FeaturePill } from "@/components/ui/feature-pill/Index";
+import { AccountDetailsCard } from "@/components/account-details-card/Index";
 
 
 const featurePills = [
@@ -125,11 +126,7 @@ function FAHero() {
 
             {/* Account card — left edge of right column, aligned with heading */}
             <div className="absolute left-0 top-[10px] z-20 w-[270px] min-[1440px]:w-[300px]">
-              <img loading="lazy" decoding="async"
-                src={figma.foreignImage}
-                alt="Foreign account details"
-                className="w-full rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.10)]"
-              />
+              <AccountDetailsCard />
             </div>
 
             {/* Man with hat — bottom-right, bleeds off edge */}
