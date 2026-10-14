@@ -227,7 +227,7 @@ export function CurrencyConverterSection() {
   }
 
   return (
-    <div id="real-time-exchange" className="relative z-20 mt-0 lg:-mt-[176px]">
+    <div id="real-time-exchange" className="relative z-20 -mt-[110px] lg:-mt-[145px]">
       <LandingInset>
         <div
           ref={cardRef}

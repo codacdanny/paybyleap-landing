@@ -1,8 +1,12 @@
-import { useRef, useState, useEffect, useCallback, Fragment } from "react";
+import { Fragment } from "react";
 import { figma } from "../../data/images/Index";
 import { LandingInset } from "../../components/landing-inset/Index";
+import { REVEAL_EASE, useRevealOnScroll } from "@/hooks/useRevealOnScroll";
 import { FeaturePill } from "@/components/ui/feature-pill/Index";
 import { AccountDetailsCard } from "@/components/account-details-card/Index";
+import { TransactionSecuritySection } from "@/components/transaction-security-section/Index";
+import { TestimonialsSection } from "@/components/testimonials-section/Index";
+import { HeroGlobe } from "@/components/hero-globe/Index";
 
 
 const featurePills = [
@@ -18,63 +22,60 @@ const featurePills = [
   { label: "ANTI-FRAUD PROTECTION", newLine: true },
 ];
 
-const transactionFeatures = [
-  {
-    title: "Protected and Regulated",
-    desc: "Our exchange rate is considerate and of market value",
-  },
-  {
-    title: "2FA Authentication",
-    desc: "Verify to grant access to convert your money",
-  },
-  {
-    title: "Instant Notifications for Payment",
-    desc: "Receive alert immediately after you convert currency",
-  },
+// Mobile has its own design (Figma 4787:12890, 390px frame): nine pills with
+// alternating alignment and widths fixed per pill. Widths are percentages of
+// the 340px content column. Note it drops the "ACCOUNT STATEMENT & PROOF OF
+// ACCOUNT" pill the desktop frame carries, and rewords several others.
+const mobilePills = [
+  { label: "100% DIGITAL SIGNUP", bold: "100%", rest: " DIGITAL SIGNUP", width: "75.3%" },
+  { label: "ZERO MAINTANCES CHARGES", width: "80.6%" },
+  { label: "NO ACCOUNT OPENING FEES", width: "77.6%" },
+  { label: "MULTI-CURRENCY IBAN", width: "75.3%" },
+  { label: "WITHDRAWAL TO LOCAL ACCOUNT", width: "90.3%" },
+  { label: "GENERATE PAYMENT INVOICE", width: "86.2%" },
+  { label: "LOW TRANSACTION FEES", width: "90.3%" },
+  { label: "INSTANT TRANSACTION NOTIFICATIONS", width: "100%" },
+  { label: "ANTI-FRAUD PROTECTION", width: "77.6%" },
 ];
 
-const testimonials = [
-  {
-    name: "Sarah Gatewill",
-    role: "Freelance Designer",
-    avatar: "https://randomuser.me/api/portraits/women/44.jpg",
-    quote:
-      '"Finally, a payment app that actually understands borderless work." "Before PayByLeap, I was losing a huge chunk of my freelance income to hidden exchange fees and slow bank transfers. Now, I can generate an invoice, get paid in USD or stablecoins, and withdraw to my local currency instantly. It\'s an absolute game-changer for my business."',
-  },
-  {
-    name: "David Odera",
-    role: "International Student",
-    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
-    quote:
-      '"Paying my tuition overseas used to be a nightmare." "Paying international fees used to mean multiple bank visits and ridiculous exchange rates. With PayByLeap\'s global accounts, I can convert my local currency to Euros in seconds and pay my university directly. The virtual stablecoin card is also perfect for my daily coffee runs!"',
-  },
-  {
-    name: "Elena Joseph",
-    role: "E-commerce Founder",
-    avatar: "https://randomuser.me/api/portraits/women/65.jpg",
-    quote:
-      '"The fastest way to send money to my suppliers globally." "We import goods from three different continents, and the global money transfer feature has saved us thousands in fees. The interface is incredibly clean, and the transaction speed is unmatched. I love how I can track all my expenses in one place."',
-  },
-  {
-    name: "Marcus John",
-    role: "Tech Consultant",
-    avatar: "https://randomuser.me/api/portraits/men/75.jpg",
-    quote:
-      '"A seamless experience!" "The virtual card feature is brilliant. I converted my crypto to USD and started spending online in less than two minutes. Highly recommend!"',
-  },
-];
+const pillBorder = {
+  background:
+    "linear-gradient(#FBF7FB, #FBF7FB) padding-box, linear-gradient(to right, #9A0000, #F6C03A) border-box",
+  border: "1.5px solid transparent",
+};
+
+function MobilePill({ label, bold, rest }: { label: string; bold?: string; rest?: string }) {
+  return (
+    <div
+      className="flex h-[45px] items-center justify-center gap-2 rounded-3xl"
+      style={pillBorder}
+    >
+      <img loading="lazy" decoding="async" src={figma.star} alt="" className="size-5 shrink-0" />
+      <span className="whitespace-nowrap text-[16px] font-medium leading-8 text-grey-90">
+        {bold ? (
+          <>
+            <span className="font-bold text-primary">{bold}</span>
+            {rest}
+          </>
+        ) : (
+          label
+        )}
+      </span>
+    </div>
+  );
+}
 
 
 function FAHero() {
   return (
     <section className="relative overflow-hidden bg-[#FFF4F4] min-[1440px]:h-[764px]">
-      <LandingInset className="relative z-30 pb-16 pt-12 min-[1440px]:pb-0 min-[1440px]:pt-[105px]">
+      <div className="mx-auto w-full max-w-[1440px] px-6 sm:px-8 lg:px-8 min-[1440px]:pl-[160px] relative z-30 pb-0 pt-12 min-[1440px]:pt-[105px]">
 
         {/* Two-column: left = text, right = images */}
-        <div className="flex items-stretch min-[1440px]:h-[659px]">
+        <div className="flex flex-col items-stretch lg:flex-row lg:gap-8 min-[1440px]:h-[659px] min-[1440px]:gap-0">
 
           {/* ── Left column: text content ── */}
-          <div className="w-full shrink-0 pt-4 lg:w-auto lg:max-w-[640px]">
+          <div className="w-full shrink-0 pt-4 lg:w-1/2 min-[1440px]:w-auto min-[1440px]:max-w-[680px]">
             <div className="inline-flex items-center gap-0.5 rounded-2xl border border-secondary bg-[#FBF2D6] px-2 py-1">
               <img loading="lazy" decoding="async" src={figma.ionPlanet} alt="" className="size-4" />
               <span className="text-center text-[16px] leading-6 text-grey-80">
@@ -82,11 +83,11 @@ function FAHero() {
               </span>
             </div>
 
-            <h1 className="mt-12 font-nohemi text-[40px] font-semibold leading-[48px] text-grey-90 md:text-[52px] md:leading-[60px] min-[1440px]:text-[64px] min-[1440px]:leading-[72px]">
+            <h1 className="mt-12 font-spartan text-[40px] font-semibold leading-[48px] text-grey-90 md:text-[52px] md:leading-[60px] min-[1440px]:text-[64px] min-[1440px]:leading-[72px]">
               The next-gen account for professional
             </h1>
 
-            <p className="mt-4 text-[18px] leading-7 text-grey-80 min-[1440px]:text-[20px] min-[1440px]:leading-7">
+            <p className="mt-4 text-[18px] font-spartan leading-7 text-grey-80 min-[1440px]:text-[20px] min-[1440px]:leading-7">
               Open global accounts to receive international payments instantly. No
               minimum deposits required
             </p>
@@ -112,35 +113,29 @@ function FAHero() {
             </div>
           </div>
 
-          {/* ── Right column: images (desktop only) ── */}
-          <div className="relative hidden flex-1 lg:block">
+          {/* ── Right column: images — stacks under the text below lg ── */}
+          <div className="relative mt-10 h-[300px] w-full sm:h-[400px] md:h-[440px] lg:mt-0 lg:h-[500px] lg:flex-1 xl:h-[580px] min-[1440px]:h-auto">
 
             {/* Globe arc — centered low so only the upper arc is visible */}
-            <div
-              className="pointer-events-none absolute"
-              style={{ right: "-100px", top: "200px", width: "720px", height: "720px" }}
-              aria-hidden
-            >
-              <img loading="lazy" decoding="async" src={figma.faGlobe} alt="" className="size-full object-contain" />
-            </div>
+            <HeroGlobe className="absolute right-[-160px] top-[40px] size-[420px] sm:right-[-180px] sm:size-[540px] md:size-[600px] lg:right-[-200px] lg:top-[60px] lg:size-[620px] xl:top-[50px] xl:size-[720px] min-[1440px]:size-[800px]" />
 
             {/* Account card — left edge of right column, aligned with heading */}
-            <div className="absolute left-0 top-[10px] z-20 w-[270px] min-[1440px]:w-[300px]">
+            <div className="absolute left-0 top-0 z-20 w-[300px] origin-top-left scale-[0.6] sm:scale-[0.78] md:scale-[0.85] lg:top-[10px] lg:scale-[0.72] xl:scale-[0.85] min-[1440px]:scale-100">
               <AccountDetailsCard />
             </div>
 
             {/* Man with hat — bottom-right, bleeds off edge */}
-            <div className="absolute bottom-0 right-[-80px] z-10 min-[1440px]:right-[-120px]" aria-hidden>
+            <div className="absolute bottom-0 right-[-40px] z-10 sm:right-[-56px] lg:right-[-80px] min-[1440px]:right-[-120px]" aria-hidden>
               <img loading="lazy" decoding="async"
                 src={figma.freeAccountHero}
                 alt=""
-                className="h-[580px] w-auto object-contain object-bottom min-[1440px]:h-[650px]"
+                className="h-[280px] w-auto object-contain object-bottom sm:h-[380px] md:h-[430px] lg:h-[470px] xl:h-[550px] min-[1440px]:h-[650px]"
               />
             </div>
 
           </div>
         </div>
-      </LandingInset>
+      </div>
     </section>
   );
 }
@@ -149,15 +144,66 @@ function FAHero() {
 /*  GET PAID SEAMLESSLY                                                */
 /* ------------------------------------------------------------------ */
 
+// Entrance transforms live on the <img>, idle motion on its wrapper, so the
+// two never overwrite each other's transform.
+const getPaidCss = `
+  /* Hidden only once JS has armed the reveal, so the artwork still shows
+     if the observer never runs */
+  .gp-armed .gp-rise, .gp-armed .gp-pop { opacity: 0; }
+
+  @keyframes gpRise {
+    from { opacity: 0; transform: translateY(26px) scale(.96); }
+    to   { opacity: 1; transform: none; }
+  }
+  @keyframes gpPop {
+    0%   { opacity: 0; transform: translateY(10px) scale(.92); }
+    60%  { opacity: 1; transform: translateY(-2px) scale(1.02); }
+    100% { opacity: 1; transform: none; }
+  }
+  @keyframes gpFloat {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-8px); }
+  }
+  @keyframes gpDriftA {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50%      { transform: translateY(-10px) rotate(2.2deg); }
+  }
+  @keyframes gpDriftB {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50%      { transform: translateY(-6px) rotate(-2.8deg); }
+  }
+
+  .gp-armed.gp-in .gp-rise { animation: gpRise .7s ${REVEAL_EASE} var(--d, 0s) both; }
+  .gp-armed.gp-in .gp-pop  { animation: gpPop .55s ${REVEAL_EASE} calc(var(--d, 0s) + .5s) both; }
+
+  .gp-in .gp-float   { animation: gpFloat 7s ease-in-out calc(var(--d, 0s) + 1s) infinite; }
+  .gp-in .gp-drift-a { animation: gpDriftA 13s ease-in-out calc(var(--d, 0s) + 1s) infinite; }
+  .gp-in .gp-drift-b { animation: gpDriftB 9s ease-in-out calc(var(--d, 0s) + 1s) infinite; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .gp-armed .gp-rise, .gp-armed .gp-pop { opacity: 1; }
+    .gp-armed.gp-in .gp-rise, .gp-armed.gp-in .gp-pop,
+    .gp-in .gp-float, .gp-in .gp-drift-a, .gp-in .gp-drift-b {
+      animation: none !important;
+    }
+  }
+`;
+
 function GetPaidSection() {
+  const { ref: gridRef, armed, revealed } = useRevealOnScroll<HTMLDivElement>();
+
   return (
     <section className="bg-less-white py-16 min-[1440px]:py-[113px]">
+      <style>{getPaidCss}</style>
       <LandingInset>
         <h2 className="mx-auto max-w-[480px] text-center font-nohemi text-[32px] font-semibold leading-[40px] text-grey-90 md:text-[40px] md:leading-[48px] min-[1440px]:text-[48px] min-[1440px]:leading-[56px]">
           Get Paid Seamlessly, World wide
         </h2>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 min-[1440px]:mt-[70px] min-[1440px]:gap-[16px]">
+        <div
+          ref={gridRef}
+          className={`mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 min-[1440px]:mt-[70px] min-[1440px]:gap-[16px]${armed ? " gp-armed" : ""}${revealed ? " gp-in" : ""}`}
+        >
           {/* Card 1: Quick Transfers */}
           <article className="relative h-[400px] overflow-hidden rounded-2xl bg-primary-dark p-5 text-white min-[1440px]:h-[464px] min-[1440px]:p-6">
             <h3 className="relative z-10 max-w-[219px] text-[20px] font-semibold leading-7 min-[1440px]:text-[24px] min-[1440px]:leading-7">
@@ -167,12 +213,23 @@ function GetPaidSection() {
               Send and receive money in seconds with a seamless, secure payment
               experience designed to keep up with your pace
             </p>
-            <img loading="lazy" decoding="async"
-              src={figma.quickTransferImage}
-              alt=""
-              className="absolute top-[44%] left-1/2 z-10 w-[80%] -translate-x-1/2 object-contain"
-              aria-hidden
-            />
+            {/* Panel and its success toast are one SVG, split by clip-path at
+                the panel's bottom edge (176 of 222) so the toast can land after
+                the panel has settled */}
+            <div className="absolute top-[44%] left-1/2 z-10 w-[80%] -translate-x-1/2" aria-hidden>
+              <div className="gp-float" style={{ ["--d" as string]: "0s" }}>
+                <img loading="lazy" decoding="async"
+                  src={figma.quickTransferImage}
+                  alt=""
+                  className="gp-rise w-full object-contain [clip-path:inset(0_0_20.72%_0)]"
+                />
+                <img loading="lazy" decoding="async"
+                  src={figma.quickTransferImage}
+                  alt=""
+                  className="gp-pop absolute inset-0 w-full object-contain [clip-path:inset(79.28%_0_0_0)]"
+                />
+              </div>
+            </div>
           </article>
 
           {/* Card 2: Smooth Process */}
@@ -186,19 +243,25 @@ function GetPaidSection() {
             </p>
 
             {/* Solid cream star — behind */}
-            <img loading="lazy" decoding="async"
-              src={figma.solidStar}
-              alt=""
-              className="absolute bottom-[-30px] left-1/2 z-0 w-[90%] -translate-x-1/2 object-contain"
-              aria-hidden
-            />
-            {/* Dotted red star — in front */}
-            <img loading="lazy" decoding="async"
-              src={figma.dottedStar}
-              alt=""
-              className="absolute bottom-[-20px] left-1/2 z-10 w-[95%] -translate-x-[48%] object-contain"
-              aria-hidden
-            />
+            <div className="absolute bottom-[-30px] left-1/2 z-0 w-[90%] -translate-x-1/2" aria-hidden>
+              <div className="gp-drift-a" style={{ ["--d" as string]: ".12s" }}>
+                <img loading="lazy" decoding="async"
+                  src={figma.solidStar}
+                  alt=""
+                  className="gp-rise w-full object-contain"
+                />
+              </div>
+            </div>
+            {/* Dotted red star — in front, drifting against the solid one */}
+            <div className="absolute bottom-[-20px] left-1/2 z-10 w-[95%] -translate-x-[48%]" aria-hidden>
+              <div className="gp-drift-b" style={{ ["--d" as string]: ".22s" }}>
+                <img loading="lazy" decoding="async"
+                  src={figma.dottedStar}
+                  alt=""
+                  className="gp-rise w-full object-contain"
+                />
+              </div>
+            </div>
           </article>
 
           {/* Card 3: Credit */}
@@ -210,12 +273,28 @@ function GetPaidSection() {
               Send and receive money in seconds with a seamless, secure payment
               experience designed to keep up with your pace
             </p>
-            <img loading="lazy" decoding="async"
-              src={figma.creditCardImage}
-              alt=""
-              className="absolute top-[44%] left-1/2 z-10 w-[80%] -translate-x-1/2 object-contain"
+            {/* Figma 'Credit' frame is 364x464: the 'Vector 284' backplate sits
+                at 26,214 (293x228) under the glass panel at 30,243 (305x169).
+                The pair is wrapped in one aspect box so they stay locked
+                together as the card resizes. */}
+            <div
+              className="absolute left-[10.1%] top-[44%] z-10 aspect-[310.5/231] w-[78%] min-[1440px]:left-[6.73%] min-[1440px]:top-[45.8%] min-[1440px]:w-[85.3%]"
               aria-hidden
-            />
+            >
+              <div className="gp-float size-full" style={{ ["--d" as string]: ".24s" }}>
+                <img loading="lazy" decoding="async"
+                  src={figma.creditCardBackplate}
+                  alt=""
+                  className="gp-rise absolute left-0 top-0 w-[95.33%]"
+                />
+                <img loading="lazy" decoding="async"
+                  src={figma.creditCardImage}
+                  alt=""
+                  className="gp-rise absolute left-[1.77%] top-[13.2%] w-[98.23%]"
+                  style={{ ["--d" as string]: ".34s" }}
+                />
+              </div>
+            </div>
           </article>
         </div>
       </LandingInset>
@@ -227,21 +306,104 @@ function GetPaidSection() {
 /*  BENEFITS PILLS                                                     */
 /* ------------------------------------------------------------------ */
 
-function BenefitsPillsSection() {
-  return (
-    <section className="relative overflow-hidden bg-[#FBF2D6] py-16 min-[1440px]:py-[99px] min-[1440px]:min-h-[868px]">
+// Mobile pills alternate left/right, so they fly in from the side they sit on.
+const benefitsCss = `
+  .bp-armed .bp-rise, .bp-armed .bp-left, .bp-armed .bp-right { opacity: 0; }
 
-      {/* Decorative blob */}
-      <div
-        className="pointer-events-none absolute hidden lg:block"
-        style={{
-          left: "12%",
-          top: "48%",
-          width: "300px",
-          height: "300px",
-          background: "radial-gradient(circle, rgba(180,130,90,0.22) 0%, transparent 70%)",
-          filter: "blur(24px)",
-        }}
+  @keyframes bpRise {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: none; }
+  }
+  @keyframes bpLeft {
+    from { opacity: 0; transform: translateX(-32px); }
+    to   { opacity: 1; transform: none; }
+  }
+  @keyframes bpRight {
+    from { opacity: 0; transform: translateX(32px); }
+    to   { opacity: 1; transform: none; }
+  }
+  @keyframes bpFloat {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-10px); }
+  }
+  @keyframes bpDrift {
+    0%, 100% { transform: scale(1) translate(0, 0); }
+    50%      { transform: scale(1.05) translate(1.2%, -1%); }
+  }
+
+  .bp-armed.bp-in .bp-rise  { animation: bpRise .65s ${REVEAL_EASE} var(--d, 0s) both; }
+  .bp-armed.bp-in .bp-left  { animation: bpLeft .6s ${REVEAL_EASE} var(--d, 0s) both; }
+  .bp-armed.bp-in .bp-right { animation: bpRight .6s ${REVEAL_EASE} var(--d, 0s) both; }
+
+  .bp-in .bp-float { animation: bpFloat 8s ease-in-out 1.3s infinite; }
+  .bp-in .bp-drift { animation: bpDrift 26s ease-in-out infinite; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bp-armed .bp-rise, .bp-armed .bp-left, .bp-armed .bp-right { opacity: 1; }
+    .bp-armed.bp-in .bp-rise, .bp-armed.bp-in .bp-left, .bp-armed.bp-in .bp-right,
+    .bp-in .bp-float, .bp-in .bp-drift { animation: none !important; }
+  }
+`;
+
+function BenefitsPillsSection() {
+  const { ref: sectionRef, armed, revealed } = useRevealOnScroll<HTMLElement>(0.12);
+
+  return (
+    <section
+      ref={sectionRef}
+      className={`relative overflow-hidden bg-[#FBF2D6]${armed ? " bp-armed" : ""}${revealed ? " bp-in" : ""}`}
+    >
+      <style>{benefitsCss}</style>
+
+      {/* ─── Mobile (<lg) — Figma 4787:12890, a 390px frame. Offsets are
+           percentages of that frame width so the whole thing scales. ─── */}
+      <div className="mx-auto w-full max-w-[430px] pb-[12.8%] lg:hidden">
+        <h2 className="bp-rise px-[9.23%] pt-[15.9%] text-center font-nohemi text-[24px] font-semibold leading-8 text-grey-90">
+          Get more from Paybyleap Foreign Account
+        </h2>
+
+        <div className="mt-[14.6%] flex flex-col gap-4 px-[6.41%]">
+          {mobilePills.map((pill, i) => (
+            <div
+              key={pill.label}
+              style={{ width: pill.width, ["--d" as string]: `${160 + i * 70}ms` }}
+              className={`${i % 2 ? "self-end bp-right" : "self-start bp-left"}`}
+            >
+              <MobilePill label={pill.label} bold={pill.bold} rest={pill.rest} />
+            </div>
+          ))}
+        </div>
+
+        {/* Watermark + tilted phone ride together: the watermark starts above
+            the last pill, so the pair is offset up as one block */}
+        <div className="relative ml-[-15.13%] mt-[-15.64%] aspect-[519/608] w-[133.08%]">
+          <img loading="lazy" decoding="async"
+            src={figma.benefitsWatermarkMobile}
+            alt=""
+            className="bp-drift pointer-events-none absolute left-0 top-0 w-full"
+            aria-hidden
+          />
+          <div className="bp-float absolute left-[9.83%] top-[16.61%] w-[83.43%]">
+            <img loading="lazy" decoding="async"
+              src={figma.getMoreIphoneMobile}
+              alt="PayByLeap foreign account app on iPhone"
+              className="bp-rise w-full"
+              style={{ ["--d" as string]: "820ms" }}
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* ─── Desktop (lg+) ─── */}
+      <div className="hidden lg:block lg:py-16 min-[1440px]:min-h-[868px] min-[1440px]:py-[99px]">
+
+      {/* Background leap mark — Figma places it at 24,232 (1007x711) in the
+          1441px frame; its 10% opacity is baked into the export */}
+      <img loading="lazy" decoding="async"
+        src={figma.benefitsWatermark}
+        alt=""
+        className="bp-drift pointer-events-none absolute z-0"
+        style={{ top: "232px", left: "calc(50% - 696px)", width: "1007px", height: "711px" }}
         aria-hidden
       />
 
@@ -250,13 +412,17 @@ function BenefitsPillsSection() {
 
           {/* ── Left: heading + pills ── */}
           <div className="flex-1">
-            <h2 className="max-w-[605px] font-nohemi text-[32px] font-semibold leading-[40px] text-grey-90 md:text-[40px] md:leading-[52px] min-[1440px]:text-[48px] min-[1440px]:leading-[64px]">
+            <h2 className="bp-rise max-w-[605px] font-nohemi text-[32px] font-semibold leading-[40px] text-grey-90 md:text-[40px] md:leading-[52px] min-[1440px]:text-[48px] min-[1440px]:leading-[64px]">
               Get more from Paybyleap Foreign Account
             </h2>
 
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-[34px] min-[1440px]:mt-12">
-              {featurePills.map((pill) => {
-                const pillEl = <FeaturePill label={pill.label} bold={pill.bold} rest={pill.rest} />;
+              {featurePills.map((pill, i) => {
+                const pillEl = (
+                  <div className="bp-rise" style={{ ["--d" as string]: `${160 + i * 65}ms` }}>
+                    <FeaturePill label={pill.label} bold={pill.bold} rest={pill.rest} />
+                  </div>
+                );
                 return pill.newLine ? (
                   <div key={pill.label} className="basis-full">{pillEl}</div>
                 ) : (
@@ -268,30 +434,32 @@ function BenefitsPillsSection() {
 
           {/* ── Right: phone mockup (lg → 1440px in-flow) ── */}
           <div className="hidden shrink-0 self-stretch lg:flex lg:items-end min-[1440px]:hidden">
-            <img loading="lazy" decoding="async"
-              src={figma.getMoreIphoneMock}
-              alt="PayByLeap foreign account app on iPhone"
-              className="w-[300px] object-contain object-bottom"
-            />
+            <div className="bp-float">
+              <img loading="lazy" decoding="async"
+                src={figma.getMoreIphoneMock}
+                alt="PayByLeap foreign account app on iPhone"
+                className="bp-rise w-[300px] object-contain object-bottom"
+                style={{ ["--d" as string]: "760ms" }}
+              />
+            </div>
           </div>
 
         </div>
       </LandingInset>
 
       
-      <img loading="lazy" decoding="async"
-        src={figma.getMoreIphoneMock}
-        alt="PayByLeap foreign account app on iPhone"
-        className="pointer-events-none absolute z-0 hidden min-[1440px]:block"
-        style={{
-          top: "225px",
-          left: "calc(50% + 135px)",
-          width: "639px",
-          height: "843px",
-          objectFit: "contain",
-          objectPosition: "top",
-        }}
-      />
+      <div
+        className="bp-float pointer-events-none absolute z-0 hidden min-[1440px]:block"
+        style={{ top: "225px", left: "calc(50% + 135px)", width: "639px", height: "843px" }}
+      >
+        <img loading="lazy" decoding="async"
+          src={figma.getMoreIphoneMock}
+          alt="PayByLeap foreign account app on iPhone"
+          className="bp-rise size-full object-contain object-top"
+          style={{ ["--d" as string]: "760ms" }}
+        />
+      </div>
+      </div>
     </section>
   );
 }
@@ -302,214 +470,33 @@ function BenefitsPillsSection() {
 
 function CTASection() {
   return (
-    <section className="relative overflow-hidden bg-grey-100 py-16 min-[1440px]:py-0 min-[1440px]:h-[528px]">
-      <div className="pointer-events-none absolute inset-0 hidden min-[1440px]:block">
-        <div className="absolute right-[1px] top-0 h-[155px] w-[392px] bg-[rgba(239,216,216,0.2)]" />
-        <div className="absolute left-[550px] top-[155px] h-[212px] w-[497px] bg-[rgba(239,216,216,0.2)]" />
-        <div className="absolute left-[160px] top-0 h-[98px] w-[390px] bg-[rgba(239,216,216,0.2)]" />
-        <div className="absolute bottom-0 left-[160px] h-[160px] w-[390px] bg-[rgba(239,216,216,0.2)]" />
-        <div className="absolute bottom-0 right-[3px] h-[164px] w-[390px] bg-[rgba(239,216,216,0.2)]" />
-      </div>
+    <section className="relative overflow-hidden bg-grey-100">
+      <LandingInset className="relative pb-[149px] pt-[114px] lg:h-[528px] lg:pb-0 lg:pt-[98px]">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-y-0 left-[-128px] hidden w-[1440px] lg:block min-[1440px]:left-0"
+        >
+          <div className="absolute left-[1047px] top-0 h-[155px] w-[392px] bg-[rgba(239,216,216,0.2)]" />
+          <div className="absolute left-[550px] top-[155px] h-[212px] w-[497px] bg-[rgba(239,216,216,0.2)]" />
+          <div className="absolute left-[160px] top-0 h-[98px] w-[390px] bg-[rgba(239,216,216,0.2)]" />
+          <div className="absolute left-[160px] top-[367px] h-[160px] w-[390px] bg-[rgba(239,216,216,0.2)]" />
+          <div className="absolute left-[1047px] top-[367px] h-[164px] w-[390px] bg-[rgba(239,216,216,0.2)]" />
+        </div>
 
-      <LandingInset className="relative z-10 flex items-center min-[1440px]:h-full">
-        <div className="w-full overflow-hidden rounded-2xl bg-white p-8 md:p-12 min-[1440px]:max-w-[814px] min-[1440px]:p-12">
-          <h2 className="max-w-[658px] font-nohemi text-[28px] font-semibold leading-[36px] text-grey-90 md:text-[36px] md:leading-[44px] min-[1440px]:text-[48px] min-[1440px]:leading-[56px]">
+        <div className="relative lg:w-[814px] lg:rounded-2xl lg:bg-white lg:px-12 lg:pb-[61px] lg:pt-[52px]">
+          <h2 className="mx-auto max-w-[315px] text-center font-nohemi text-heading-5 text-white lg:mx-0 lg:max-w-[658px] lg:text-left lg:font-spartan lg:text-heading-3 lg:text-grey-90">
             Ready to experience borderless banking with PayByLeap?
           </h2>
-          <a
-            href="#"
-            className="mt-6 inline-flex h-12 items-center justify-center rounded-lg bg-primary px-4 text-[18px] font-medium leading-6 text-white min-[1440px]:mt-10 min-[1440px]:w-[216px]"
-          >
-            Get Started - it's Free
-          </a>
+          <div className="mt-[55px] flex justify-center lg:mt-14 lg:justify-start">
+            <a
+              href="#"
+              className="inline-flex h-12 w-[216px] items-center justify-center rounded-lg bg-primary px-2 font-spartan text-[18px] font-medium leading-6 text-white transition-colors hover:bg-primary-dark"
+            >
+              Get Started - it's Free
+            </a>
+          </div>
         </div>
       </LandingInset>
-    </section>
-  );
-}
-
-/* ------------------------------------------------------------------ */
-/*  GLOBAL TRANSACTIONS                                                */
-/* ------------------------------------------------------------------ */
-
-const transactionIcons = [
-  /* currency swap */
-  <svg key="swap" viewBox="0 0 24 24" fill="none" className="size-6" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M7 16h10M17 16l-3-3M17 16l-3 3M17 8H7M7 8l3-3M7 8l3 3" />
-  </svg>,
-  /* shield */
-  <svg key="shield" viewBox="0 0 24 24" fill="none" className="size-6" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-    <path d="M9 12l2 2 4-4" />
-  </svg>,
-  /* bell */
-  <svg key="bell" viewBox="0 0 24 24" fill="none" className="size-6" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
-    <path d="M13.73 21a2 2 0 0 1-3.46 0" />
-  </svg>,
-];
-
-export function GlobalTransactionsSection() {
-  return (
-    <section className="relative overflow-hidden bg-primary-light py-16 min-[1440px]:py-[80px]">
-   
-
-      <LandingInset className="relative z-10">
-        <div className="flex flex-col gap-10 lg:flex-row lg:items-start min-[1440px]:gap-10">
-
-          {/* ── Left: phone behind + cards centered on it ── */}
-          <div className="relative shrink-0 min-[1440px]:h-[620px] min-[1440px]:w-[540px]">
-
-            {/* Phone — centred in column, behind the cards */}
-            <img loading="lazy" decoding="async"
-              src={figma.transactionsPhone}
-              alt=""
-              className="pointer-events-none absolute left-1/2 top-1/2 z-0 hidden w-[410px] -translate-x-1/2 -translate-y-1/2 object-contain min-[1440px]:block"
-              aria-hidden
-            />
-
-            {/* Feature cards — same centre as phone → centred on it */}
-            <div className="flex flex-col gap-4 min-[1440px]:absolute min-[1440px]:left-1/2 min-[1440px]:-translate-x-1/2 min-[1440px]:top-1/2 min-[1440px]:-translate-y-1/2 min-[1440px]:z-10 min-[1440px]:w-[480px]">
-              {transactionFeatures.map((f, i) => (
-                <div
-                  key={f.title}
-                  className="flex items-center gap-4 rounded-2xl bg-white p-5 shadow-[0px_4px_24px_rgba(0,0,0,0.08)]"
-                >
-                  <div className="flex size-[56px] shrink-0 items-center justify-center rounded-full bg-gradient-to-b from-[#1F2065] to-[#3E40CB]">
-                    {transactionIcons[i]}
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-[16px] font-semibold leading-6 text-grey-90 min-[1440px]:text-[18px]">
-                      {f.title}
-                    </p>
-                    <p className="mt-0.5 text-[13px] leading-5 text-grey-60 min-[1440px]:text-[14px]">
-                      {f.desc}
-                    </p>
-                  </div>
-                  <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-[#22C55E]">
-                    <svg viewBox="0 0 12 10" fill="none" className="size-3.5">
-                      <path d="M1 5l3.5 3.5L11 1" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* ── Right: heading + body ── */}
-          <div className="flex-1 mt-20">
-            <h2 className="font-nohemi text-[32px] font-semibold leading-[40px] text-grey-90 md:text-[40px] md:leading-[52px] min-[1440px]:text-[48px] min-[1440px]:leading-[60px]">
-              Carry out Global Transactions with ease and safety measures
-            </h2>
-            <p className="mt-6 text-[16px] leading-7 text-grey-70 min-[1440px]:text-[20px] min-[1440px]:leading-8">
-              Converting money is now very easy and fast with paybyleap
-            </p>
-          </div>
-
-        </div>
-      </LandingInset>
-    </section>
-  );
-}
-
-/* ------------------------------------------------------------------ */
-/*  TESTIMONIALS                                                       */
-/* ------------------------------------------------------------------ */
-
-function TestimonialCard({ t }: { t: (typeof testimonials)[number] }) {
-  return (
-    <article className="relative flex min-h-[400px] w-[65vw] shrink-0 flex-col overflow-hidden rounded-2xl bg-[#EFD8D8] p-5 md:min-h-[432px] md:w-[46vw] md:p-7 min-[1440px]:h-[432px] min-[1440px]:w-[604px] min-[1440px]:p-7">
-      <div className="flex items-center gap-3 md:gap-4">
-        <img loading="lazy" decoding="async"
-          src={t.avatar}
-          alt={t.name}
-          className="size-[52px] rounded-full object-cover md:size-[80px] min-[1440px]:size-[128px]"
-        />
-        <div>
-          <div className="flex items-center gap-3">
-            <p className="text-[17px] font-semibold leading-6 text-grey-100 md:text-[22px] md:leading-10 min-[1440px]:text-[32px]">
-              {t.name}
-            </p>
-            <div className="hidden h-1 w-20 rounded-2xl bg-grey-100 min-[1440px]:block" />
-          </div>
-          <p className="text-[13px] leading-5 text-grey-100 md:text-[16px] md:leading-7 min-[1440px]:text-[18px]">
-            {t.role}
-          </p>
-        </div>
-      </div>
-      <p className="mt-4 text-[14px] leading-6 text-grey-90 md:mt-6 md:text-[16px] md:leading-7 min-[1440px]:text-[20px] min-[1440px]:leading-7">
-        {t.quote}
-      </p>
-      <img loading="lazy" decoding="async"
-        src={figma.testimonialQuoteMark}
-        alt=""
-        className="pointer-events-none absolute -bottom-[40px] -right-[10px] w-[100px] md:-bottom-[50px] md:-right-[15px] md:w-[120px] min-[1440px]:w-[140px]"
-      />
-    </article>
-  );
-}
-
-function FATestimonialsSection() {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [active, setActive] = useState(0);
-
-  const syncActive = useCallback(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-    const cardW = el.firstElementChild
-      ? (el.firstElementChild as HTMLElement).offsetWidth + 32
-      : 636;
-    setActive(Math.round(el.scrollLeft / cardW));
-  }, []);
-
-  useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-    el.addEventListener("scroll", syncActive, { passive: true });
-    return () => el.removeEventListener("scroll", syncActive);
-  }, [syncActive]);
-
-  const scrollTo = (idx: number) => {
-    const el = scrollRef.current;
-    if (!el) return;
-    const cardW = el.firstElementChild
-      ? (el.firstElementChild as HTMLElement).offsetWidth + 32
-      : 636;
-    el.scrollTo({ left: cardW * idx, behavior: "smooth" });
-  };
-
-  return (
-    <section className="bg-white py-16 min-[1440px]:py-[84px]">
-      <LandingInset>
-        <p className="text-center text-[16px] font-medium leading-6 text-grey-90 min-[1440px]:text-[18px]">
-          GLOBAL FEEDBACK: REAL STORIES FROM USERS
-        </p>
-        <h2 className="mx-auto mt-4 max-w-[708px] text-center font-nohemi text-[32px] font-semibold leading-[40px] text-grey-90 md:text-[40px] md:leading-[48px] min-[1440px]:text-[48px] min-[1440px]:leading-[56px]">
-          See what our customers says about rates
-        </h2>
-      </LandingInset>
-
-      <div
-        ref={scrollRef}
-        className="scrollbar-hide mt-10 flex snap-x snap-mandatory gap-8 overflow-x-auto px-6 md:px-8 min-[1440px]:mt-[62px] min-[1440px]:gap-8 min-[1440px]:px-[112px]"
-      >
-        {testimonials.map((t) => (
-          <TestimonialCard key={t.name} t={t} />
-        ))}
-      </div>
-
-      <div className="mt-10 flex items-center justify-center gap-1.5 min-[1440px]:mt-14">
-        {testimonials.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => scrollTo(i)}
-            aria-label={`Go to testimonial ${i + 1}`}
-            className={`relative before:absolute before:-inset-x-1 before:-top-[18px] before:-bottom-[18px] before:content-[''] h-2 rounded-2xl transition-all ${
-              i === active ? "w-20 bg-[#EFD8D8]" : "w-7 bg-grey-30"
-            }`}
-          />
-        ))}
-      </div>
     </section>
   );
 }
@@ -525,8 +512,8 @@ export function ForeignAccountsPage() {
       <GetPaidSection />
       <BenefitsPillsSection />
       <CTASection />
-      <GlobalTransactionsSection />
-      <FATestimonialsSection />
+      <TransactionSecuritySection />
+      <TestimonialsSection heading="See what our customers says about rates" />
     </main>
   );
 }

@@ -10,6 +10,7 @@ import serviceBillPayments from "@/assets/images/billpayment.png";
 import serviceExpenses from "@/assets/images/expenses.png";
 import usdCard from "@/assets/images/usd-card.png";
 import globeBg from "@/assets/images/Globebg.svg";
+import globeLand from "@/assets/images/globe-land.webp";
 import feesPolygon from "@/assets/images/Polygonbg.svg";
 import cryptoGraphic from "@/assets/images/cryptimg.svg";
 import smarterLogo from "@/assets/images/smarterlogo.svg";
@@ -42,6 +43,8 @@ import convertIcon from "@/assets/icons/convert.svg";
 import exhangeIcon from "@/assets/icons/exchange-icon.svg"
 import usdConvertHero from "@/assets/images/usdconverthero.png";
 import euroConvertHero from "@/assets/images/euroconverthero.png";
+import heroFlagUs from "@/assets/flags/hero-flag-us.svg";
+import heroFlagEu from "@/assets/flags/hero-flag-eu.svg";
 import stablecoinHero from "@/assets/images/stablecoin-hero.png"
 import padlockimage from "@/assets/images/secureimage.png"
 import visacard from "@/assets/images/visa-card.png"
@@ -92,10 +95,21 @@ import socialYoutube from "@/assets/social/youtube.svg";
 import socialX from "@/assets/social/x.svg";
 
 import creditCardImage from "@/assets/images/creditcard-image.svg";
+import creditCardBackplate from "@/assets/images/creditcard-backplate.svg";
 import quickTransferImage from "@/assets/images/quicktransfer-image.svg";
 import dottedStar from "@/assets/images/dotted-star.svg";
 import solidStar from "@/assets/images/solid-star.svg";
 import getMoreIphoneMock from "@/assets/images/getmoreiphonemock.png";
+import txnArc from "@/assets/images/txn-arc.svg";
+import txnArcMobile from "@/assets/images/txn-arc-mobile.svg";
+import txnSwap from "@/assets/icons/txn-swap.svg";
+import txnShield from "@/assets/icons/txn-shield.svg";
+import txnBell from "@/assets/icons/txn-bell.svg";
+import txnSealCheck from "@/assets/icons/txn-seal-check.svg";
+import transactionsPhoneFigma from "@/assets/images/transactions-phone-figma.png";
+import getMoreIphoneMobile from "@/assets/images/getmore-iphone-mobile.png";
+import benefitsWatermark from "@/assets/images/benefits-watermark.png";
+import benefitsWatermarkMobile from "@/assets/images/benefits-watermark-mobile.png";
 import transactionsPhone from "@/assets/images/transactions-phone.png";
 
 import logoImg from "@/assets/logo/logo.png";
@@ -149,6 +163,8 @@ export const figma = {
   exhangeIcon,
   usdConvertHero,
   euroConvertHero,
+  heroFlagUs,
+  heroFlagEu,
   exploreArrow: arrowRight,
 
   flagNg,
@@ -199,11 +215,23 @@ export const figma = {
   logoImg,
   leapLogoLarge,
   faGlobe: globeBg,
+  faGlobeLand: globeLand,
+  creditCardBackplate,
   freeAccountHero,
   creditCardImage,
   quickTransferImage,
   dottedStar,
   solidStar,
   getMoreIphoneMock,
+  txnArc,
+  txnArcMobile,
+  txnSwap,
+  txnShield,
+  txnBell,
+  txnSealCheck,
+  transactionsPhoneFigma,
+  getMoreIphoneMobile,
+  benefitsWatermark,
+  benefitsWatermarkMobile,
   transactionsPhone,
 } as const;

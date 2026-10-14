@@ -3,7 +3,7 @@ import { LandingInset } from "@/components/landing-inset/Index";
 
 export type LegalBlock =
   | { kind: "p"; text: string }
-  | { kind: "subheading"; text: string }
+  | { kind: "subheading"; text: string; id?: string }
   | { kind: "list"; items: string[] }
   | { kind: "ordered"; items: string[] }
   | { kind: "table"; head: string[]; rows: string[][] }
@@ -18,8 +18,8 @@ export type LegalSection = {
 type Props = {
   title: string;
   summary: string;
-  effectiveDate: string;
-  lastUpdated: string;
+  effectiveDate?: string;
+  lastUpdated?: string;
   sections: LegalSection[];
 };
 
@@ -33,7 +33,7 @@ function Block({ block }: { block: LegalBlock }) {
       );
     case "subheading":
       return (
-        <h3 className="mt-8 font-nohemi text-[18px] font-semibold leading-7 text-grey-90 first:mt-0 xl:text-[20px]">
+        <h3 id={block.id} className="mt-8 scroll-mt-[110px] [[data-view=app]_&]:scroll-mt-6 font-nohemi text-[18px] font-semibold leading-7 text-grey-90 first:mt-0 xl:text-[20px]">
           {block.text}
         </h3>
       );
@@ -172,24 +172,26 @@ export function LegalDocument({
           <p className="mt-5 max-w-[720px] text-[16px] leading-7 text-grey-80 xl:text-[18px] xl:leading-8">
             {summary}
           </p>
-          <dl className="mt-8 flex flex-wrap gap-x-10 gap-y-4">
-            <div>
-              <dt className="text-[13px] uppercase tracking-wide text-grey-60">
-                Effective date
-              </dt>
-              <dd className="mt-1 text-[15px] font-medium text-grey-90">
-                {effectiveDate}
-              </dd>
-            </div>
-            <div>
-              <dt className="text-[13px] uppercase tracking-wide text-grey-60">
-                Last updated
-              </dt>
-              <dd className="mt-1 text-[15px] font-medium text-grey-90">
-                {lastUpdated}
-              </dd>
-            </div>
-          </dl>
+          {effectiveDate && lastUpdated && (
+            <dl className="mt-8 flex flex-wrap gap-x-10 gap-y-4">
+              <div>
+                <dt className="text-[13px] uppercase tracking-wide text-grey-60">
+                  Effective date
+                </dt>
+                <dd className="mt-1 text-[15px] font-medium text-grey-90">
+                  {effectiveDate}
+                </dd>
+              </div>
+              <div>
+                <dt className="text-[13px] uppercase tracking-wide text-grey-60">
+                  Last updated
+                </dt>
+                <dd className="mt-1 text-[15px] font-medium text-grey-90">
+                  {lastUpdated}
+                </dd>
+              </div>
+            </dl>
+          )}
         </LandingInset>
       </section>
 
@@ -254,7 +256,7 @@ export function LegalDocument({
               <section
                 key={s.id}
                 id={s.id}
-                className="scroll-mt-[110px] border-t border-grey-10 pb-10 pt-10 first:border-t-0 first:pt-0"
+                className="scroll-mt-[110px] [[data-view=app]_&]:scroll-mt-6 border-t border-grey-10 pb-10 pt-10 first:border-t-0 first:pt-0"
               >
                 <h2 className="font-nohemi text-[22px] font-semibold leading-8 text-grey-90 xl:text-[26px] xl:leading-9">
                   <span className="mr-2 text-primary">

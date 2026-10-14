@@ -190,11 +190,12 @@ const styles: Record<string, React.CSSProperties> = {
   panel: {
     position: "relative",
     width: "100%",
+    height: "40%",
     background: "#fff",
     borderRadius: 18,
     border: "1px solid rgba(155,20,20,.16)",
     boxShadow: "0 24px 50px rgba(120,50,40,.10)",
-    padding: "26px 26px 28px",
+    padding: "26px 26px 15px",
     transition: `transform .5s ${EASE}, box-shadow .5s ${EASE}`,
     fontFamily:
       "'Avenir Next','Nunito Sans','Segoe UI',system-ui,-apple-system,sans-serif",

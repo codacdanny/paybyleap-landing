@@ -1,6 +1,7 @@
 import type { LegalSection } from "@/components/legal-document/Index";
-import { legalEntity } from "@/data/legal/entity";
 
+// Section and subheading ids are deep-link targets used by the mobile app
+// (e.g. /terms-and-conditions#fees). Renaming one breaks those links.
 export const termsSections: LegalSection[] = [
   {
     id: "about-these-terms",
@@ -8,19 +9,15 @@ export const termsSections: LegalSection[] = [
     blocks: [
       {
         kind: "p",
-        text: `These Terms and Conditions form a binding agreement between you and ${legalEntity.brand} and govern your access to and use of our website, mobile applications, dashboards, application programming interfaces and every related service we make available (together, the "Services"). Please read them carefully and keep a copy for your records.`,
+        text: "These Terms and Conditions (“Terms”) form a binding agreement between you and PayByLeap and govern your access to and use of our website, mobile applications, dashboards, application programming interfaces and related products and services (together, the “Services”).",
       },
       {
         kind: "p",
-        text: `You accept these Terms when you create an account, access the Services, or continue to use them after we publish an updated version. If you do not accept these Terms, you must not use the Services.`,
+        text: "Please read these Terms carefully before using the Services. You accept these Terms when you create an Account, access the Services, initiate a Transaction, or otherwise use the Services after these Terms have been made available to you.",
       },
       {
         kind: "p",
-        text: `These Terms apply alongside our Privacy Policy, our Acceptable Use Policy and any product-specific terms we present to you at the point of use, including card usage terms. Where a product-specific term conflicts with these Terms, the product-specific term prevails for that product only.`,
-      },
-      {
-        kind: "callout",
-        text: `${legalEntity.brand} is a financial technology company, not a bank. Regulated banking, card issuing and payment services are provided by our licensed partners. Your funds are not bank deposits and are not covered by deposit insurance.`,
+        text: "These Terms apply together with our Privacy Policy and any product-specific terms, disclosures or conditions presented to you in connection with a particular Service, including card terms and any terms applicable to digital asset, payment or other regulated services.",
       },
     ],
   },
@@ -30,18 +27,34 @@ export const termsSections: LegalSection[] = [
     blocks: [
       {
         kind: "p",
-        text: `The ${legalEntity.brand} Services are operated by the following entities, depending on where you are resident or incorporated:`,
+        text: "PayByLeap is a financial technology platform. The Services are operated by one or more PayByLeap entities, depending on your country of residence or incorporation, the Service you use and the applicable legal and regulatory framework.",
+      },
+      {
+        kind: "p",
+        text: "The PayByLeap entities currently associated with the Services include:",
       },
       {
         kind: "list",
         items: [
-          `${legalEntity.usEntity.name}, incorporated in ${legalEntity.usEntity.registration}, with its registered office at ${legalEntity.usEntity.address}.`,
-          `${legalEntity.ngEntity.name}, incorporated in Nigeria under ${legalEntity.ngEntity.registration}, with offices at ${legalEntity.ngEntity.address}.`,
+          "PayByLeap Inc., incorporated in Delaware, United States, with its registered office at 8 The Green, Ste A, Dover, Delaware 19901, United States; and",
+          "PayByLeap Technologies Limited, incorporated in Nigeria, with offices at Block 59, Plot 12B Kusenla Road, Ikate, Lekki, Lagos, Nigeria and 42 Olowu Street, Opebi, 101233, Ikeja, Lagos, Nigeria.",
         ],
       },
       {
         kind: "p",
-        text: `Our regulatory registrations and licences are as follows: ${legalEntity.regulators}. Banking, custody, card issuing and settlement services are provided by our partners: ${legalEntity.bankingPartners}. In these Terms, "we", "us" and "our" refer to the ${legalEntity.brand} entity that contracts with you.`,
+        text: "The PayByLeap entity that contracts with you may depend on your country of residence or incorporation, the Service you use, the currency or payment corridor involved, and the applicable regulatory framework.",
+      },
+      {
+        kind: "p",
+        text: "The applicable contracting entity will be identified during onboarding, within your Account, in applicable product terms or disclosures, or otherwise communicated to you.",
+      },
+      {
+        kind: "p",
+        text: "Where a Service is provided through a third-party partner, that partner may also be identified in the applicable product terms or disclosures and that partner’s product terms and applicable rules may also apply to your use of that Service.",
+      },
+      {
+        kind: "p",
+        text: "References in these Terms to “PayByLeap”, “we”, “us” or “our” mean the relevant PayByLeap entity that provides or contracts with you for the applicable Service.",
       },
     ],
   },
@@ -49,19 +62,60 @@ export const termsSections: LegalSection[] = [
     id: "definitions",
     title: "Definitions",
     blocks: [
+      { kind: "p", text: "For these Terms:" },
       {
         kind: "list",
         items: [
-          `"Account" means the ${legalEntity.brand} profile you open, including any foreign currency accounts, wallets, balances and cards held within it.`,
-          `"Balance" means funds recorded to your Account that are available for transactions, net of any fees, holds, reserves or amounts you owe us.`,
-          `"Business Day" means a day other than a Saturday, Sunday or public holiday in the jurisdiction of the relevant entity.`,
-          `"Digital Assets" means stablecoins and other cryptographic assets we support, including USDC and USDT.`,
-          `"FX Rate" means the exchange rate we quote for a currency conversion, which includes our margin and is valid only for the short period stated at quotation.`,
-          `"Foreign Account" means a payment account denominated in a currency other than your local currency, provided through our banking partners and made available to you within the Services.`,
-          `"KYC" and "KYB" mean the customer and business identification, verification and due diligence checks we are required to perform.`,
-          `"Transaction" means any payment, transfer, conversion, card purchase, deposit, withdrawal or Digital Asset movement initiated through the Services.`,
-          `"Virtual Card" and "Physical Card" mean payment cards issued to you through our card issuing partners under the applicable card network rules.`,
+          "“Account” means the PayByLeap account or profile you create and operate through the Services, including any balances, virtual account details, wallets, cards or other features made available to you.",
+          "“Balance” means an amount recorded as available to you through the Services, subject to applicable fees, holds, reserves, reversals, restrictions and amounts you owe us or a relevant provider.",
+          "“Business Day” means a day other than a Saturday, Sunday or public holiday in the jurisdiction relevant to the applicable Service or PayByLeap entity.",
+          "“Digital Assets” means supported digital assets, cryptocurrencies and stablecoins that may be made available through the Services, including assets such as USDC or USDT where supported.",
+          "“FX Rate” means the exchange rate displayed or quoted to you for a currency conversion, which may include a PayByLeap margin or spread.",
+          "“KYC” means customer identification, verification and due diligence procedures.",
+          "“KYB” means business identification, verification and due diligence procedures.",
+          "“Payment Method” means a bank transfer, card, mobile money, digital asset transfer or other method supported by the Services.",
+          "“Transaction” means a payment, transfer, currency conversion, card transaction, deposit, withdrawal, Digital Asset movement or other transaction initiated, received or processed through the Services.",
+          "“Virtual Account” means virtual account details or payment account functionality made available through PayByLeap or a third-party provider.",
+          "“Virtual Card” and “Physical Card” mean payment cards issued through PayByLeap or its card-issuing partners under applicable card network and product rules.",
         ],
+      },
+    ],
+  },
+  {
+    id: "services-and-availability",
+    title: "Services and availability",
+    blocks: [
+      {
+        kind: "p",
+        text: "PayByLeap provides different Services depending on your location, eligibility, verification status, applicable laws and the availability of our partners and payment networks.",
+      },
+      { kind: "p", text: "Services may include:" },
+      {
+        kind: "ordered",
+        items: [
+          "multi-currency balances and wallets;",
+          "virtual or foreign currency account details for receiving and making payments;",
+          "peer-to-peer transfers between PayByLeap users;",
+          "domestic and international money transfers;",
+          "foreign exchange and currency conversion;",
+          "eligible payments, including tuition, application, examination, visa and other approved fees;",
+          "digital asset and stablecoin transfers;",
+          "virtual and physical payment cards;",
+          "invoicing and payment collection tools; and",
+          "other payment and financial technology services that we may introduce.",
+        ],
+      },
+      {
+        kind: "p",
+        text: "A particular Service may be provided directly by PayByLeap or through one or more third-party providers. Additional product-specific terms, disclosures, eligibility requirements, fees or limitations may apply.",
+      },
+      {
+        kind: "p",
+        text: "We may determine which currencies, countries, payment methods, networks, Digital Assets, cards and other features are available to you and may add, remove or restrict availability where permitted by applicable law.",
+      },
+      {
+        kind: "p",
+        text: "A feature described in these Terms may not yet be available to all users and may be introduced progressively.",
       },
     ],
   },
@@ -69,122 +123,410 @@ export const termsSections: LegalSection[] = [
     id: "eligibility",
     title: "Eligibility and registration",
     blocks: [
-      { kind: "p", text: "To open and operate an Account you must:" },
+      { kind: "p", text: "To open and operate an Account, you must:" },
       {
-        kind: "list",
+        kind: "ordered",
         items: [
-          "Be at least 18 years old and have full legal capacity to enter into a binding contract.",
-          "Be resident or incorporated in a country we currently serve, and not in a country subject to comprehensive sanctions or on our restricted list.",
-          "Not be listed on any applicable sanctions list, and not be acting on behalf of any person who is.",
-          "Provide accurate, current and complete information about yourself or your business, and keep it up to date.",
-          "Open only one Account, unless we have agreed otherwise in writing.",
+          "be at least 18 years old and have full legal capacity to enter into a binding agreement;",
+          "be resident or incorporated in a country we currently serve;",
+          "not be located in a jurisdiction that we restrict or are prohibited from serving;",
+          "not be subject to applicable sanctions or acting on behalf of a sanctioned person;",
+          "provide accurate, current and complete information about yourself or your business;",
+          "keep your information updated;",
+          "maintain only one Account unless we expressly permit otherwise; and",
+          "comply with these Terms and all applicable laws.",
         ],
       },
       {
         kind: "p",
-        text: `Where you open an Account on behalf of a business, you confirm that you are authorised to bind that business, and "you" in these Terms refers to both you and the business. You are responsible for the acts and omissions of any authorised user you add to your Account.`,
+        text: "If you open an Account on behalf of a business or other legal entity, you confirm that you are authorised to act for and bind that entity.",
       },
       {
         kind: "p",
-        text: "You must notify us within 14 days of any material change to the information you have given us, including a change of name, address, ownership, control, business activity or tax residency.",
+        text: "Where you open or operate an Account on behalf of a business, “you” includes both you and that business, as applicable.",
+      },
+      {
+        kind: "p",
+        text: "You are responsible for the acts and omissions of any person you authorise to access or operate your Account.",
+      },
+      {
+        kind: "p",
+        text: "You must notify us promptly of any material change to information provided to us, including changes to your name, address, ownership, control, business activity, tax residency or other information relevant to your Account.",
       },
     ],
   },
   {
-    id: "verification",
+    id: "identity-verification",
     title: "Identity verification and due diligence",
     blocks: [
       {
         kind: "p",
-        text: "Before we can activate your Account or certain features, and from time to time afterwards, we are required by law to verify your identity. You authorise us and our partners to make the enquiries we consider necessary for this purpose, including checks against identity databases, sanctions and politically exposed person lists, credit reference agencies and other authorised sources.",
+        text: "Before activating your Account or particular Services, and from time to time thereafter, we may be required to verify your identity or the identity of your business.",
       },
       {
         kind: "p",
-        text: "We may request documents including government-issued identification, proof of address, bank verification or national identity numbers, company registration documents, ownership structures, source of funds evidence and information about the purpose of your Transactions. We may apply enhanced due diligence where our risk assessment requires it.",
+        text: "You authorise us and relevant providers to conduct reasonable checks necessary to provide the Services and comply with applicable law.",
+      },
+      { kind: "p", text: "These checks may include verification against:" },
+      {
+        kind: "list",
+        items: [
+          "identity databases;",
+          "sanctions lists;",
+          "politically exposed person databases;",
+          "fraud and financial crime databases;",
+          "corporate and beneficial ownership records;",
+          "tax or regulatory databases;",
+          "device and security information; and",
+          "other lawful and authorised sources.",
+        ],
+      },
+      { kind: "p", text: "We may request documents or information including:" },
+      {
+        kind: "list",
+        items: [
+          "government-issued identification;",
+          "proof of address;",
+          "national identification information;",
+          "bank or payment information;",
+          "company registration documents;",
+          "ownership and control structures;",
+          "beneficial ownership information;",
+          "source of funds or source of wealth information;",
+          "tax information;",
+          "information concerning the purpose of a Transaction; and",
+          "information concerning counterparties or beneficiaries.",
+        ],
       },
       {
         kind: "p",
-        text: "If you do not provide the information we request, if we cannot verify it, or if verification produces a result that we determine to be unacceptable under our risk policies, we may decline your application, limit your Account or close it. We may not always be able to tell you the reason.",
+        text: "We may apply enhanced due diligence where our legal, regulatory or risk requirements require it.",
+      },
+      {
+        kind: "p",
+        text: "If you do not provide requested information, if we cannot verify the information provided, or if the results of our checks do not satisfy our requirements, we may decline your application, restrict your Account or Services, delay or refuse Transactions, or close your Account.",
+      },
+      {
+        kind: "p",
+        text: "Where permitted by law, we may not be able to disclose the specific reasons for a restriction or decision.",
       },
     ],
   },
   {
-    id: "your-account",
-    title: "Your account and how funds are held",
+    id: "accounts-and-wallets",
+    title: "Accounts, virtual accounts and wallets",
     blocks: [
       {
         kind: "p",
-        text: `Once verified, your Account may give you access to Foreign Accounts, currency wallets, Digital Asset wallets, Virtual and Physical Cards, invoicing tools and transfer services, depending on your location and verification level.`,
+        text: "Once verified, your Account may provide access to different financial and payment features depending on your location, verification level, product eligibility and applicable providers.",
       },
       {
         kind: "p",
-        text: "Funds recorded to your Balance are held with our licensed banking or custody partners in accounts designated for the benefit of customers. They are not held by us as deposits, they do not earn interest unless we expressly state otherwise, and we do not lend or use them for our own operations.",
+        text: "These may include multi-currency balances, Virtual Accounts, Digital Asset wallets, cards, transfer functionality and other Services.",
+      },
+      { kind: "subheading", id: "virtual-accounts", text: "Virtual Accounts" },
+      {
+        kind: "p",
+        text: "Where available, PayByLeap may provide you with Virtual Account details or payment account functionality in supported currencies and payment networks.",
       },
       {
         kind: "p",
-        text: "A Foreign Account is provided for receiving and making payments in connection with your own legitimate activity. You must not permit any third party to use your Foreign Account details as their own, operate it as a payment service for others, or use it to pool or process funds belonging to other people.",
+        text: "A Virtual Account may allow you to receive or send payments through a partner bank, payment institution or other financial infrastructure provider.",
+      },
+      {
+        kind: "p",
+        text: "A Virtual Account is not necessarily a bank account opened directly by PayByLeap. The legal nature of the account, available payment methods, supported currencies and applicable protections depend on the relevant provider and jurisdiction.",
+      },
+      {
+        kind: "p",
+        text: "You may only use Virtual Account details for your own legitimate transactions.",
+      },
+      { kind: "p", text: "You must not:" },
+      {
+        kind: "list",
+        items: [
+          "allow another person or business to use your account details as their own;",
+          "use your Account to receive or process funds for unrelated third parties;",
+          "operate an undisclosed payment or money transmission service;",
+          "pool funds belonging to other persons;",
+          "use your Account as an undisclosed collection account for third parties; or",
+          "use your Account for unlawful or prohibited activity.",
+        ],
+      },
+      {
+        kind: "p",
+        text: "We may impose transaction, balance, receiving and sending limits on Virtual Accounts and may suspend or close access where required by law, partner requirements or our risk controls.",
+      },
+      {
+        kind: "subheading",
+        id: "digital-asset-wallets",
+        text: "Digital Asset Wallets",
+      },
+      {
+        kind: "p",
+        text: "Where Digital Asset wallet functionality is available, the applicable custody or control arrangement may depend on the relevant product and provider.",
+      },
+      {
+        kind: "p",
+        text: "The Services may display wallet addresses or enable you to send and receive Digital Assets through supported blockchain networks.",
+      },
+      {
+        kind: "p",
+        text: "You are responsible for ensuring that you use the correct asset, wallet address and blockchain network before authorising a Digital Asset transaction.",
+      },
+    ],
+  },
+  {
+    id: "funds-and-safeguarding",
+    title: "Your funds and safeguarding",
+    blocks: [
+      {
+        kind: "p",
+        text: "Depending on the Service you use, funds associated with your Account may be held, safeguarded, settled or otherwise maintained by PayByLeap or by one or more third-party financial institutions or payment service providers.",
+      },
+      {
+        kind: "p",
+        text: "The entity responsible for holding or safeguarding funds, the applicable safeguarding or deposit-protection arrangements, and the rights available to you in the event of insolvency may differ depending on the Service and jurisdiction.",
+      },
+      {
+        kind: "p",
+        text: "Where a third party holds or safeguards your funds, PayByLeap does not control that institution’s internal systems or processes and your use of the relevant Service may also be subject to that provider’s terms.",
+      },
+      { kind: "p", text: "Unless expressly stated otherwise:" },
+      {
+        kind: "list",
+        items: [
+          "balances do not constitute deposits with PayByLeap;",
+          "balances do not earn interest; and",
+          "PayByLeap does not use customer balances for its own operating purposes except as permitted by the applicable legal and contractual structure.",
+        ],
+      },
+      {
+        kind: "p",
+        text: "Where applicable law provides specific safeguarding or customer-fund protections, those protections will apply notwithstanding anything inconsistent in these Terms.",
       },
     ],
   },
   {
     id: "currency-exchange",
-    title: "Currency exchange and FX rates",
+    title: "Currency exchange and FX",
     blocks: [
       {
         kind: "p",
-        text: `We support conversions between the currencies we make available, currently ${legalEntity.supportedCurrencies}. Availability varies by country and may change without notice.`,
+        text: "PayByLeap may allow you to convert between currencies supported by the Services.",
       },
       {
         kind: "p",
-        text: "Before you confirm a conversion we display the FX Rate and the amount you will receive. That quote is valid only for the period shown. Exchange rates move continuously, and the rate we quote includes our margin, so it will differ from mid-market or interbank rates you may see elsewhere.",
+        text: "Supported currencies and Digital Assets may vary by jurisdiction, product and provider and may change from time to time without notice.",
       },
       {
         kind: "p",
-        text: "Once you confirm a conversion it is final and cannot be reversed because the rate has moved against you. Where a conversion is required to settle an amount you owe us, we may apply our prevailing rate at the time.",
+        text: "Before you confirm a currency conversion, we will generally display the applicable FX Rate and the amount you will receive.",
+      },
+      {
+        kind: "p",
+        text: "The FX Rate may include a PayByLeap margin or spread and may therefore differ from rates available from other sources.",
+      },
+      { kind: "p", text: "Exchange rates can change continuously." },
+      {
+        kind: "p",
+        text: "A quoted rate is valid only for the period stated or implied in the applicable Service. If the quote expires before you complete the conversion, a new rate may apply.",
+      },
+      {
+        kind: "p",
+        text: "Once you confirm a conversion, it may be final and cannot be reversed solely because the market subsequently moves in a different direction.",
+      },
+      {
+        kind: "p",
+        text: "Where a currency conversion is required to recover an amount you owe us, we may use the prevailing rate available through the Services or relevant provider at the time of conversion.",
       },
     ],
   },
   {
-    id: "money-transfer",
-    title: "Global money transfer and fee payments",
+    id: "transfers",
+    title: "Domestic and international transfers",
     blocks: [
       {
         kind: "p",
-        text: "You are solely responsible for the accuracy of the payment details you enter, including account numbers, IBANs, sort codes, routing numbers, wallet addresses, beneficiary names and reference fields. Payment systems generally rely on the account identifier rather than the beneficiary name.",
+        text: "Where available, PayByLeap may enable you to send funds to beneficiaries in supported countries through bank transfers, mobile money, Digital Assets or other payment methods.",
       },
       {
         kind: "p",
-        text: "If you send funds to the wrong beneficiary because of details you supplied, we will make reasonable efforts to help you recover them but we cannot guarantee recovery, and we may charge a fee for the attempt.",
+        text: "The available Payment Method, delivery time, currency, fees, limits and required information depend on the destination country, payment corridor, beneficiary institution and third-party providers involved.",
       },
       {
         kind: "p",
-        text: "Delivery times are estimates. Transfers may be delayed or rejected by intermediary banks, correspondent institutions, card networks or receiving institutions, or held pending compliance review. Intermediary banks may deduct their own charges from the amount sent.",
+        text: "You are responsible for providing accurate payment information, including:",
+      },
+      {
+        kind: "list",
+        items: [
+          "beneficiary name;",
+          "account number;",
+          "IBAN;",
+          "sort code;",
+          "routing number;",
+          "wallet address;",
+          "destination network;",
+          "payment reference; and",
+          "any other information required for the Transaction.",
+        ],
       },
       {
         kind: "p",
-        text: "For international fee payments, including tuition, application and assessment fees, you are responsible for confirming the institution's payment details, deadlines and reference requirements. We are not responsible for an institution rejecting, misapplying or delaying a payment, or for any consequence of a missed deadline.",
+        text: "Payment systems may rely primarily on account identifiers rather than beneficiary names.",
+      },
+      {
+        kind: "p",
+        text: "If you provide incorrect information and a Transaction is sent to the wrong beneficiary, we may make reasonable efforts to assist with recovery, but we cannot guarantee that funds will be recovered.",
+      },
+      {
+        kind: "p",
+        text: "A transfer may pass through one or more intermediary or correspondent institutions before reaching the beneficiary.",
+      },
+      {
+        kind: "p",
+        text: "Transfers may be delayed, rejected, returned or subject to additional requirements imposed by an intermediary, correspondent bank, receiving institution, payment network or regulatory authority.",
+      },
+      {
+        kind: "p",
+        text: "Third parties in the payment chain may deduct their own fees.",
+      },
+      {
+        kind: "p",
+        text: "Delivery times displayed through the Services are estimates unless expressly stated otherwise.",
+      },
+      {
+        kind: "p",
+        text: "Some payment services may be subject to mandatory cancellation, refund, error-resolution or consumer-protection rights in the applicable jurisdiction. Nothing in these Terms limits those rights.",
+      },
+    ],
+  },
+  {
+    id: "peer-to-peer-transfers",
+    title: "Peer-to-peer transfers",
+    blocks: [
+      {
+        kind: "p",
+        text: "Where available, you may send or receive funds from other PayByLeap users using information such as their name, username, account details or other identifiers supported by the Services.",
+      },
+      {
+        kind: "p",
+        text: "You are responsible for confirming that you have selected the correct recipient before authorising a transfer.",
+      },
+      {
+        kind: "p",
+        text: "A transfer initiated by you may be irreversible once processed.",
+      },
+      {
+        kind: "p",
+        text: "PayByLeap is not responsible for disputes between users concerning the underlying reason for a transfer, goods or services supplied between users, or any other private arrangement between them.",
+      },
+      {
+        kind: "p",
+        text: "We may delay, reject, reverse or restrict a peer-to-peer transfer where necessary to:",
+      },
+      {
+        kind: "list",
+        items: [
+          "comply with applicable law;",
+          "prevent fraud or financial crime;",
+          "investigate suspicious activity;",
+          "correct an error; or",
+          "comply with a partner or payment network requirement.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "payment-and-fee-services",
+    title: "Payment and fee services",
+    blocks: [
+      {
+        kind: "p",
+        text: "Where available, PayByLeap may allow you to make payments to educational institutions, government or visa-related services, testing providers, subscription providers, utility providers, merchants and other approved recipients.",
+      },
+      { kind: "p", text: "You are responsible for providing accurate:" },
+      {
+        kind: "list",
+        items: [
+          "recipient information;",
+          "payment references;",
+          "application or account numbers;",
+          "deadlines;",
+          "invoice details; and",
+          "any other information required for the payment.",
+        ],
+      },
+      {
+        kind: "p",
+        text: "PayByLeap acts as a payment facilitator or technology platform unless expressly stated otherwise.",
+      },
+      {
+        kind: "p",
+        text: "We are not a party to the underlying agreement between you and the recipient and are not responsible for the underlying goods or services.",
+      },
+      { kind: "p", text: "We are not responsible for:" },
+      {
+        kind: "list",
+        items: [
+          "a recipient rejecting a payment;",
+          "a recipient misapplying a payment;",
+          "changes to fees imposed by the recipient;",
+          "the quality or delivery of goods or services;",
+          "a recipient’s internal processing delays; or",
+          "disputes between you and the recipient.",
+        ],
+      },
+      {
+        kind: "p",
+        text: "Where a payment fails, is rejected or is returned, we will handle the funds in accordance with the applicable payment method, provider rules and applicable law.",
       },
     ],
   },
   {
     id: "cards",
-    title: "Virtual and physical cards",
+    title: "Cards",
     blocks: [
       {
         kind: "p",
-        text: "Cards are issued by our card issuing partners under licence from the relevant card network, and your use of a card is also governed by the card terms presented to you when the card is issued and by the applicable network rules.",
+        text: "Where available, PayByLeap may provide Virtual Cards and Physical Cards through card-issuing partners and applicable card networks.",
       },
       {
         kind: "p",
-        text: "You must keep sufficient funds available to cover card transactions. Repeated declines for insufficient funds may result in your card being suspended and, after further occurrences, permanently terminated. Issuing a replacement card may attract a fee.",
+        text: "Card use may be subject to separate cardholder terms, network rules and additional disclosures presented to you when the card is issued.",
+      },
+      { kind: "p", text: "You must:" },
+      {
+        kind: "list",
+        items: [
+          "keep your card and card credentials secure;",
+          "maintain sufficient available funds;",
+          "use the card only for lawful purposes;",
+          "notify us promptly if your card is lost, stolen or used without your authorisation; and",
+          "comply with applicable card terms and network rules.",
+        ],
       },
       {
         kind: "p",
-        text: "Some merchants place a temporary authorisation hold that is higher than the final amount, and some transactions settle at a different amount or on a later date than the purchase. Cards may not be accepted by every merchant, and certain merchant categories may be blocked for compliance reasons.",
+        text: "Merchants may place temporary authorisation holds that differ from the final transaction amount.",
       },
       {
         kind: "p",
-        text: "You must notify us immediately if a card is lost, stolen or used without your authorisation so that we can freeze it. Disputes about a card purchase are subject to the chargeback rules and time limits of the relevant card network, and we cannot guarantee an outcome.",
+        text: "Some transactions may settle at an amount or time different from the original authorisation.",
+      },
+      {
+        kind: "p",
+        text: "Cards may not be accepted by every merchant, country or transaction type.",
+      },
+      {
+        kind: "p",
+        text: "Certain merchant categories may be restricted or blocked for legal, regulatory, risk or partner requirements.",
+      },
+      { kind: "p", text: "Replacement cards may attract applicable fees." },
+      {
+        kind: "p",
+        text: "Card purchase disputes, chargebacks and related claims are subject to applicable card network rules, issuer procedures and mandatory law.",
       },
     ],
   },
@@ -193,42 +535,104 @@ export const termsSections: LegalSection[] = [
     title: "Digital assets and stablecoins",
     blocks: [
       {
-        kind: "callout",
-        text: "Digital Asset transactions are recorded on public blockchains and are irreversible. Once a transfer is broadcast it cannot be cancelled, recalled or refunded by us for any reason, including an incorrect address or an incorrect network.",
+        kind: "p",
+        text: "Where available, PayByLeap may allow you to send, receive, hold, convert or otherwise transact in supported Digital Assets.",
       },
       {
         kind: "p",
-        text: "You are solely responsible for verifying the destination address and selecting the correct network before you confirm a transfer. Sending an asset to an incompatible address or over an unsupported network will normally result in permanent loss.",
+        text: "Digital Asset Services are subject to additional risks and limitations.",
       },
       {
         kind: "p",
-        text: "Network fees are payable on blockchain transactions and may vary significantly with network conditions. We are not responsible for blockchain congestion, forks, reorganisations, protocol changes, validator failures, smart contract defects or the actions of any third-party network participant.",
+        text: "Digital Asset transactions may be recorded on public blockchains and, once confirmed, may be irreversible.",
+      },
+      { kind: "p", text: "You are solely responsible for verifying:" },
+      {
+        kind: "list",
+        items: [
+          "the destination wallet address;",
+          "the Digital Asset;",
+          "the blockchain network;",
+          "the amount; and",
+          "any applicable transaction details",
+        ],
+      },
+      { kind: "p", text: "before confirming a transfer." },
+      {
+        kind: "p",
+        text: "Sending an asset to an incorrect address or over an unsupported network may result in permanent loss.",
       },
       {
         kind: "p",
-        text: "Digital Assets are not legal tender, are not deposits, and are not covered by deposit insurance or investor compensation schemes. The value of a Digital Asset can change, and a stablecoin may not hold its peg. We do not provide investment, tax or legal advice, and nothing in the Services is a recommendation to acquire or dispose of any asset.",
+        text: "Blockchain transactions may involve network fees that vary according to network conditions.",
       },
       {
         kind: "p",
-        text: "Digital Asset services are not available in every jurisdiction. You are responsible for confirming that your use of these features is lawful where you are, and we may withdraw or restrict them at any time in response to legal or regulatory developments.",
+        text: "We are not responsible for blockchain congestion, forks, reorganisations, protocol changes, validator failures, smart contract defects or the acts or omissions of third-party blockchain participants, except to the extent liability cannot lawfully be excluded.",
+      },
+      { kind: "p", text: "Digital Assets:" },
+      {
+        kind: "list",
+        items: [
+          "are not legal tender unless expressly recognised as such by applicable law;",
+          "are not deposits with PayByLeap;",
+          "may not be protected by deposit insurance or investor compensation schemes;",
+          "may experience significant changes in value; and",
+          "may involve additional technological, legal, regulatory and operational risks.",
+        ],
+      },
+      {
+        kind: "p",
+        text: "A stablecoin may lose or deviate from its intended value or peg.",
+      },
+      {
+        kind: "p",
+        text: "Digital Asset Services may also be subject to additional custody, transfer, withdrawal, geographic or transaction restrictions imposed by PayByLeap or its providers.",
+      },
+      {
+        kind: "p",
+        text: "We do not provide investment, tax or legal advice through the Services. Nothing in the Services constitutes a recommendation to buy, sell, hold or otherwise transact in any Digital Asset.",
+      },
+      {
+        kind: "p",
+        text: "Digital Asset Services may not be available in every jurisdiction.",
       },
     ],
   },
   {
     id: "invoicing",
-    title: "Global invoicing",
+    title: "Invoicing and payment collection",
     blocks: [
       {
         kind: "p",
-        text: "Our invoicing tools let you create, send and track invoices and receive payment against them. You are responsible for the accuracy and lawfulness of everything you put on an invoice, including amounts, descriptions, tax treatment and any regulatory particulars your jurisdiction requires.",
+        text: "Where available, our invoicing tools may allow you to create, send, manage and track invoices and receive payments against them.",
       },
       {
         kind: "p",
-        text: "We are not a party to the underlying contract between you and the person you invoice. We do not verify that goods or services were delivered, do not guarantee that an invoice will be paid, and are not responsible for collecting unpaid invoices or resolving commercial disputes.",
+        text: "You are solely responsible for the accuracy and lawfulness of information contained in your invoices, including:",
+      },
+      {
+        kind: "list",
+        items: [
+          "amounts;",
+          "descriptions;",
+          "payment terms;",
+          "tax treatment;",
+          "recipient information; and",
+          "any regulatory information required by applicable law.",
+        ],
       },
       {
         kind: "p",
-        text: "You are responsible for determining, charging, collecting and remitting any taxes arising from your invoices, and for retaining records for the period your law requires.",
+        text: "PayByLeap is not a party to the underlying contract between you and the person or business you invoice.",
+      },
+      {
+        kind: "p",
+        text: "We do not verify that goods or services have been supplied, do not guarantee that an invoice will be paid and do not assume responsibility for collecting unpaid invoices.",
+      },
+      {
+        kind: "p",
+        text: "You are responsible for determining, charging, collecting and remitting taxes arising from your invoices and for maintaining any records required by applicable law.",
       },
     ],
   },
@@ -238,114 +642,270 @@ export const termsSections: LegalSection[] = [
     blocks: [
       {
         kind: "p",
-        text: "Our fees are published in the Services and are presented to you before you confirm a Transaction. Fees may include transaction fees, conversion margins built into the FX Rate, card issuance and maintenance fees, network fees for Digital Asset transfers, and fees charged for failed, returned or reversed payments.",
+        text: "Our applicable fees will be displayed through the Services or otherwise communicated to you before you confirm a Transaction where required.",
+      },
+      { kind: "p", text: "Fees may include:" },
+      {
+        kind: "list",
+        items: [
+          "transfer fees;",
+          "currency conversion margins or spreads;",
+          "card issuance or maintenance fees;",
+          "withdrawal fees;",
+          "Digital Asset network fees;",
+          "failed or returned payment fees; and",
+          "other applicable Service fees.",
+        ],
       },
       {
         kind: "p",
-        text: "We may revise our fees. Where we do, we will give you reasonable notice through the Services or by email before the change takes effect, except where a change is favourable to you or is required immediately by law or by a partner or network.",
+        text: "Third parties in the payment chain, including intermediary banks, receiving institutions, card networks and Digital Asset networks, may impose additional charges outside our control.",
       },
       {
         kind: "p",
-        text: "Third parties in the payment chain, including intermediary and receiving banks, merchants and networks, may apply their own charges which are outside our control. You are responsible for all taxes arising from your use of the Services other than taxes on our own income.",
+        text: "You are responsible for taxes arising from your use of the Services other than taxes imposed on PayByLeap’s own income.",
+      },
+      { kind: "p", text: "We may change our fees from time to time." },
+      {
+        kind: "p",
+        text: "Where a change is material and applicable law requires advance notice, we will provide the required notice before the change takes effect.",
       },
       {
         kind: "p",
-        text: "If you believe a fee has been applied incorrectly, contact us within 30 days of the charge so that we can investigate.",
+        text: "If you believe a fee has been applied incorrectly, you should contact us through the support channels made available in the Services as soon as reasonably possible.",
       },
     ],
   },
   {
-    id: "limits-and-holds",
+    id: "limits-holds-and-reserves",
     title: "Limits, holds and reserves",
     blocks: [
       {
         kind: "p",
-        text: "We may set and vary limits on your Account, including limits on transaction size, frequency, velocity, balances and card spending. Limits may depend on your verification level, location, product and risk profile.",
-      },
-      {
-        kind: "p",
-        text: "We may place a hold on a Transaction or on part of your Balance, delay or decline a Transaction, or require a reserve, where we consider it necessary to manage risk, investigate suspected fraud or a breach of these Terms, comply with a legal or regulatory obligation, or respond to a partner or network instruction. Where the law permits and it is safe to do so we will tell you, but there are circumstances in which we are prohibited from explaining our reasons.",
-      },
-    ],
-  },
-  {
-    id: "irreversibility",
-    title: "Finality of transactions",
-    blocks: [
-      {
-        kind: "p",
-        text: "Once a Transaction has been executed it is generally final and cannot be reversed by us. We may be able to attempt a recall of a bank transfer, but recall depends entirely on the receiving institution and the beneficiary and cannot be guaranteed. Digital Asset transfers cannot be recalled at all.",
-      },
-      {
-        kind: "p",
-        text: "We may reverse or adjust an entry where it resulted from our own processing error, where funds were credited to you in error, or where we are required to do so by law, a court order, a partner or a card network.",
-      },
-    ],
-  },
-  {
-    id: "errors",
-    title: "Errors and unauthorised transactions",
-    blocks: [
-      {
-        kind: "p",
-        text: "Tell us as soon as possible, and in any event within 60 days of the Transaction appearing in your history, if you believe your Account has been accessed without authorisation or that a Transaction is incorrect. Contact us at " + legalEntity.supportEmail + " or through in-app support.",
-      },
-      {
-        kind: "subheading",
-        text: "How we investigate",
-      },
-      {
-        kind: "p",
-        text: "We will investigate and aim to complete our review within 10 Business Days. Where a matter is complex we may need up to 45 days, and we will keep you informed. Where our investigation shows that an amount was incorrectly debited from your Account, we will correct it.",
-      },
-      {
-        kind: "subheading",
-        text: "What is not an error",
+        text: "We may set and vary limits on your Account and Services, including limits relating to:",
       },
       {
         kind: "list",
         items: [
-          "A Transaction you or an authorised user initiated, including one sent to the wrong beneficiary because of details you entered.",
-          "A currency conversion executed at the rate you were shown and accepted, where the market has since moved.",
-          "A delay or deduction caused by an intermediary bank, receiving institution, merchant or blockchain network.",
-          "A hold, limit or review applied under these Terms.",
-          "A request for a copy of a record or a routine query about a Transaction.",
-          "Loss arising because you shared your credentials or one-time codes with another person.",
+          "individual Transactions;",
+          "daily, weekly or monthly transaction volume;",
+          "transaction frequency and velocity;",
+          "account balances;",
+          "receiving and sending amounts;",
+          "card spending;",
+          "Digital Asset transfers; and",
+          "other activity.",
+        ],
+      },
+      {
+        kind: "p",
+        text: "Limits may depend on your verification level, location, product, payment method, provider requirements and risk profile.",
+      },
+      {
+        kind: "p",
+        text: "We may place a hold on a Transaction or part of your Balance, delay or decline a Transaction, or require a reserve where reasonably necessary to:",
+      },
+      {
+        kind: "list",
+        items: [
+          "manage financial or operational risk;",
+          "investigate suspected fraud;",
+          "investigate a breach of these Terms;",
+          "comply with legal or regulatory obligations;",
+          "comply with a partner or payment network requirement;",
+          "address a chargeback, reversal or disputed payment; or",
+          "protect the integrity or security of the Services.",
+        ],
+      },
+      {
+        kind: "p",
+        text: "Where permitted by law and where doing so would not compromise a legal, security or financial crime investigation, we may provide information concerning a restriction.",
+      },
+      {
+        kind: "p",
+        text: "There may be circumstances in which we cannot disclose the reasons for a restriction.",
+      },
+    ],
+  },
+  {
+    id: "cancellation-and-refunds",
+    title: "Finality, cancellation and refunds",
+    blocks: [
+      {
+        kind: "p",
+        text: "A Transaction that has been successfully executed is generally final.",
+      },
+      {
+        kind: "p",
+        text: "Whether a Transaction can be cancelled, recalled or refunded depends on the type of Transaction, its processing status, the Payment Method, the applicable payment network or provider and applicable law.",
+      },
+      {
+        kind: "p",
+        text: "Where cancellation is available, you must submit the request through the process specified in the Services and before the applicable processing deadline.",
+      },
+      {
+        kind: "p",
+        text: "A request to cancel a Transaction does not guarantee that the Transaction can be stopped or that funds can be recovered.",
+      },
+      {
+        kind: "p",
+        text: "For bank transfers, we may be able to request a recall, but recovery depends on the receiving institution, payment network and beneficiary and cannot be guaranteed.",
+      },
+      {
+        kind: "p",
+        text: "Digital Asset transfers generally cannot be cancelled or recalled once broadcast or confirmed on the applicable blockchain.",
+      },
+      {
+        kind: "p",
+        text: "Where PayByLeap or a payment partner receives funds that are required to be returned to you, the refund will generally be made using the original Payment Method or another method reasonably available to us.",
+      },
+      {
+        kind: "p",
+        text: "A refund may be reduced by applicable fees where permitted by law and where those fees were properly disclosed.",
+      },
+      {
+        kind: "p",
+        text: "Nothing in these Terms limits any mandatory cancellation, refund, chargeback or consumer-protection rights applicable to a Transaction.",
+      },
+    ],
+  },
+  {
+    id: "errors-and-unauthorised-transactions",
+    title: "Errors and unauthorised transactions",
+    blocks: [
+      { kind: "p", text: "If you believe that:" },
+      {
+        kind: "list",
+        items: [
+          "your Account has been accessed without your authorisation;",
+          "a Transaction was not authorised by you;",
+          "a Transaction contains an error; or",
+          "your card or payment credentials have been compromised,",
+        ],
+      },
+      {
+        kind: "p",
+        text: "you should notify us as soon as reasonably possible through the support channels provided in the Services.",
+      },
+      {
+        kind: "p",
+        text: "We may request information or documentation reasonably necessary to investigate the issue, including information concerning the relevant device, authentication method, Transaction and circumstances in which the issue occurred.",
+      },
+      {
+        kind: "p",
+        text: "We will investigate reported errors and unauthorised Transactions in accordance with our procedures, the applicable product terms, the rules of the relevant payment network or provider and applicable law.",
+      },
+      {
+        kind: "p",
+        text: "Where applicable law provides a specific timeframe for:",
+      },
+      {
+        kind: "list",
+        items: [
+          "reporting an error;",
+          "making a claim;",
+          "investigating a Transaction;",
+          "providing provisional credit;",
+          "issuing a refund; or",
+          "resolving an unauthorised Transaction,",
+        ],
+      },
+      {
+        kind: "p",
+        text: "those requirements will apply notwithstanding anything else in these Terms.",
+      },
+      {
+        kind: "p",
+        text: "You may be responsible for losses resulting from your failure to protect your Account credentials, payment instruments or authentication information to the extent permitted by applicable law.",
+      },
+      {
+        kind: "p",
+        text: "Nothing in these Terms excludes or limits any statutory protection applicable to you.",
+      },
+      {
+        kind: "p",
+        text: "A Transaction is not necessarily an “error” merely because:",
+      },
+      {
+        kind: "list",
+        items: [
+          "you changed your mind;",
+          "you entered incorrect beneficiary information;",
+          "you dispute an underlying transaction with a merchant or recipient;",
+          "you are dissatisfied with goods or services provided by a third party; or",
+          "a Transaction was delayed or rejected for reasons outside our reasonable control.",
         ],
       },
     ],
   },
   {
-    id: "reversals",
+    id: "reversals-and-negative-balances",
     title: "Reversals, chargebacks and negative balances",
     blocks: [
       {
         kind: "p",
-        text: "If a payment into your Account is reversed, recalled, charged back or otherwise returned, you are liable for the full amount together with any related fees. This applies whether or not you have already spent or transferred the funds.",
+        text: "If a payment into your Account is reversed, recalled, charged back or otherwise returned, you remain liable for the amount owed together with any properly applicable fees.",
       },
       {
         kind: "p",
-        text: "If your Balance becomes negative, the amount is immediately due. We may recover it by deducting from any Balance you hold with us in any currency, applying our prevailing FX Rate where a conversion is needed, setting it off against amounts we owe you, or pursuing recovery through other lawful means, including a collections agent.",
+        text: "This applies whether or not you have already spent, withdrawn or transferred the relevant funds.",
       },
-    ],
-  },
-  {
-    id: "your-responsibilities",
-    title: "Your responsibilities and account security",
-    blocks: [
+      {
+        kind: "p",
+        text: "If your Balance becomes negative, the amount is immediately due and payable.",
+      },
+      {
+        kind: "p",
+        text: "Where permitted by law, we may recover a negative Balance by:",
+      },
       {
         kind: "list",
         items: [
-          "Keep your password, PIN, one-time codes, device and biometric access secure, and never share them with anyone, including anyone claiming to be from PayByLeap.",
-          "Use a unique password and enable every additional security feature we offer.",
-          "Keep your contact details current so that we can reach you about security matters.",
-          "Review your transaction history regularly and report anything unexpected immediately.",
-          "Tell us at once if you suspect your Account or device has been compromised.",
+          "deducting from other balances held through the Services;",
+          "applying an applicable FX Rate where currency conversion is required;",
+          "setting off the amount against sums otherwise payable to you; or",
+          "pursuing other lawful recovery methods.",
         ],
       },
       {
         kind: "p",
-        text: "We treat instructions given using your valid credentials as authorised by you. You may be liable for losses arising from Transactions authenticated with your credentials, subject to any protection the law of your jurisdiction gives you. We will never ask you for your password or a one-time code.",
+        text: "You remain responsible for any negative Balance until it has been fully settled.",
+      },
+    ],
+  },
+  {
+    id: "account-security",
+    title: "Account security",
+    blocks: [
+      {
+        kind: "p",
+        text: "You are responsible for keeping your Account and authentication credentials secure.",
+      },
+      { kind: "p", text: "You must:" },
+      {
+        kind: "list",
+        items: [
+          "use a strong and unique password;",
+          "keep your password, PIN and one-time codes confidential;",
+          "never share authentication information with another person;",
+          "keep your device secure;",
+          "enable additional security features made available by PayByLeap;",
+          "keep your contact information current;",
+          "regularly review your Transaction history; and",
+          "notify us promptly if you suspect your Account, device or credentials have been compromised.",
+        ],
+      },
+      {
+        kind: "p",
+        text: "PayByLeap will not ask you to disclose your password or one-time authentication code.",
+      },
+      {
+        kind: "p",
+        text: "We may treat a Transaction authenticated using your Account credentials or an applicable authentication method as having been initiated by you, subject to applicable law and any mandatory unauthorised-transaction protections.",
+      },
+      {
+        kind: "p",
+        text: "You remain responsible for losses arising from your intentional or negligent disclosure of authentication information to the extent permitted by applicable law.",
       },
     ],
   },
@@ -355,92 +915,218 @@ export const termsSections: LegalSection[] = [
     blocks: [
       {
         kind: "p",
-        text: "You must use the Services only for lawful purposes and in accordance with our Acceptable Use Policy. You must not use the Services to:",
+        text: "You must use the Services only for lawful purposes and in accordance with these Terms and our Acceptable Use Policy.",
+      },
+      { kind: "p", text: "You must not use the Services to:" },
+      {
+        kind: "ordered",
+        items: [
+          "engage in or facilitate money laundering, terrorist financing, proliferation financing, sanctions evasion, tax evasion, bribery or corruption;",
+          "process funds derived from or connected to criminal activity;",
+          "provide unlicensed financial, payment, money transmission, lending, securities or investment services to third parties;",
+          "operate an undisclosed or unlicensed payment or money transmission service;",
+          "operate an unlicensed exchange or financial intermediary;",
+          "process funds on behalf of third parties where such activity is prohibited or requires authorisation;",
+          "facilitate unlawful gambling, adult content, illegal narcotics, controlled pharmaceuticals, weapons or ammunition, counterfeit or stolen goods, wildlife trafficking or human exploitation;",
+          "operate pyramid, Ponzi, matrix or similar unlawful schemes;",
+          "infringe intellectual property rights;",
+          "distribute malware, spam or deceptive content;",
+          "impersonate another person or misrepresent your identity;",
+          "use a false, stolen or borrowed identity;",
+          "circumvent sanctions, transaction limits, KYC or other compliance controls;",
+          "probe, interfere with or compromise the security or integrity of the Services;",
+          "access another person’s Account without authorisation;",
+          "scrape, reverse engineer, decompile or create derivative works from the Services except to the extent applicable law does not permit such restriction; or",
+          "use the Services in any other manner prohibited by applicable law or our policies.",
+        ],
       },
       {
-        kind: "list",
-        items: [
-          "Engage in or facilitate money laundering, terrorist financing, proliferation financing, sanctions evasion, tax evasion, bribery or corruption.",
-          "Process funds derived from, or connected to, criminal activity of any kind.",
-          "Provide unlicensed financial, payment, money transmission, lending, securities or investment services to third parties.",
-          "Operate an unlicensed exchange, or process payments on behalf of other people as an intermediary.",
-          "Support gambling, adult content, illegal narcotics, controlled pharmaceuticals, weapons or ammunition, counterfeit or stolen goods, wildlife trafficking, or any form of human exploitation.",
-          "Operate a pyramid, ponzi, matrix or other scheme presenting an unrealistic prospect of return.",
-          "Infringe intellectual property rights, or distribute malware, spam or deceptive content.",
-          "Impersonate any person, misrepresent your identity, or use a false or borrowed identity to open or operate an Account.",
-          "Circumvent, probe or interfere with the security, integrity or availability of the Services, or attempt to access another user's Account.",
-          "Scrape, reverse engineer, decompile or create derivative works from any part of the Services except to the extent the law does not allow this to be restricted.",
-        ],
+        kind: "p",
+        text: "We may restrict additional activities or transaction types where reasonably necessary to comply with law, regulatory requirements, provider requirements or our risk controls.",
       },
     ],
   },
   {
-    id: "compliance",
+    id: "financial-crime-compliance",
     title: "Financial crime compliance and monitoring",
     blocks: [
       {
         kind: "p",
-        text: "We monitor Transactions and Account activity to meet our obligations under applicable anti-money laundering, counter-terrorist financing and sanctions laws. We may request information about the source of funds, the purpose of a Transaction or your relationship with a counterparty at any time, and you must respond promptly and accurately.",
+        text: "We monitor Account activity and Transactions to comply with applicable anti-money laundering, counter-terrorist financing, sanctions, fraud prevention and other financial crime requirements.",
       },
       {
         kind: "p",
-        text: "We may delay, block, freeze or refuse a Transaction, and we may freeze or close an Account, in order to comply with these obligations. Where we are required to report suspicious activity to a regulator, financial intelligence unit or law enforcement agency, we may be legally prohibited from telling you that we have done so, and we will not be liable to you for acting in accordance with the law.",
-      },
-    ],
-  },
-  {
-    id: "termination",
-    title: "Suspension, restriction and termination",
-    blocks: [
-      {
-        kind: "p",
-        text: "You may close your Account at any time from the Services or by contacting support. Before closure, you must settle any negative Balance and withdraw your remaining funds. Pending Transactions will complete first, and we may retain funds for a reasonable period to cover chargebacks, reversals or an ongoing investigation.",
-      },
-      {
-        kind: "p",
-        text: "We may suspend, restrict or terminate your Account, or any feature of it, where:",
+        text: "Our monitoring may include automated and manual controls and may take into account factors such as:",
       },
       {
         kind: "list",
         items: [
-          "You breach these Terms or our Acceptable Use Policy.",
-          "We are required to do so by law, a regulator, a court, a banking partner or a card network.",
-          "We reasonably suspect fraud, financial crime or unauthorised access.",
-          "You provide information that is false, misleading or that we cannot verify.",
-          "We withdraw a product or cease to serve your jurisdiction.",
+          "transaction patterns;",
+          "transaction amounts and frequency;",
+          "geographic information;",
+          "counterparties and beneficiaries;",
+          "source of funds;",
+          "source of wealth;",
+          "sanctions and watchlist information;",
+          "identity and verification information;",
+          "device and account behaviour;",
+          "Digital Asset transaction information where applicable; and",
+          "other information permitted by law.",
         ],
       },
       {
         kind: "p",
-        text: "Where we terminate without cause, we will give you reasonable notice. Termination does not affect rights or obligations that accrued before it, and the sections of these Terms that by their nature should survive will survive.",
+        text: "We may request information concerning the source of funds, purpose of a Transaction, relationship with a counterparty, beneficial ownership or other matters relevant to our compliance obligations.",
+      },
+      {
+        kind: "p",
+        text: "You must provide requested information accurately and promptly.",
+      },
+      {
+        kind: "p",
+        text: "We may delay, block, freeze, reject or restrict a Transaction or Account where necessary to comply with applicable law, regulatory requirements, sanctions obligations, fraud controls or financial crime requirements.",
+      },
+      {
+        kind: "p",
+        text: "Where we are required to report suspicious activity to a regulator, financial intelligence unit or law enforcement authority, we may be legally prohibited from telling you that we have done so.",
+      },
+      {
+        kind: "p",
+        text: "We will not be liable for taking actions reasonably required to comply with applicable financial crime laws or regulatory obligations, subject to any liability that cannot lawfully be excluded.",
+      },
+    ],
+  },
+  {
+    id: "suspension-and-termination",
+    title: "Suspension, restriction and termination",
+    blocks: [
+      {
+        kind: "p",
+        text: "You may close your Account at any time through the Services or by contacting support.",
+      },
+      {
+        kind: "p",
+        text: "Before closure, you must settle any negative Balance and, subject to applicable restrictions, withdraw or otherwise receive any remaining funds to which you are entitled.",
+      },
+      {
+        kind: "p",
+        text: "We may suspend, restrict or terminate your Account or any Service where:",
+      },
+      {
+        kind: "ordered",
+        items: [
+          "you breach these Terms or our Acceptable Use Policy;",
+          "we are required to do so by law, a regulator, court, payment network or financial institution;",
+          "we reasonably suspect fraud, financial crime or unauthorised access;",
+          "you provide information that is false, misleading, incomplete or unverifiable;",
+          "continued use presents a legal, regulatory, security or material operational risk;",
+          "a third-party provider terminates or restricts the relevant Service;",
+          "we withdraw a product or cease serving your jurisdiction; or",
+          "another lawful basis exists for taking such action.",
+        ],
+      },
+      {
+        kind: "p",
+        text: "Where appropriate and legally permissible, we may provide notice before terminating or restricting an Account.",
+      },
+      {
+        kind: "p",
+        text: "However, we may take immediate action where required to protect users, PayByLeap, our partners, payment networks or the integrity of the Services, or where required by law.",
+      },
+      {
+        kind: "p",
+        text: "If your Account is closed, we may retain funds for a reasonable period where necessary to address pending Transactions, chargebacks, reversals, disputes, legal obligations or investigations.",
+      },
+      {
+        kind: "p",
+        text: "Termination does not affect rights or obligations that accrued before termination.",
       },
     ],
   },
   {
     id: "intellectual-property",
-    title: "Intellectual property and licence",
+    title: "Intellectual property and API use",
     blocks: [
       {
         kind: "p",
-        text: `All intellectual property in the Services, including software, interfaces, designs, text, graphics, the ${legalEntity.brand} name and our logos, belongs to us or our licensors. Nothing in these Terms transfers any of it to you.`,
+        text: "All intellectual property rights in the Services, including software, interfaces, designs, text, graphics, trademarks, logos and other materials, belong to PayByLeap or its licensors.",
       },
       {
         kind: "p",
-        text: "We grant you a limited, personal, non-exclusive, non-transferable and revocable licence to use the Services for their intended purpose while these Terms are in force. If we give you access to an API, you must use it in accordance with our documentation, keep your credentials secure, and stop using it when your access ends.",
+        text: "Nothing in these Terms transfers ownership of our intellectual property to you.",
       },
       {
         kind: "p",
-        text: "If you send us feedback or suggestions, you agree that we may use them without restriction or obligation to you.",
+        text: "We grant you a limited, personal, non-exclusive, non-transferable and revocable licence to access and use the Services for their intended purpose while these Terms remain in force.",
+      },
+      { kind: "p", text: "If we provide you with API access, you must:" },
+      {
+        kind: "list",
+        items: [
+          "use the API in accordance with our documentation;",
+          "keep API credentials secure;",
+          "comply with applicable usage limits;",
+          "not use the API for unlawful purposes; and",
+          "stop using the API when your access is suspended or terminated.",
+        ],
+      },
+      {
+        kind: "p",
+        text: "You must not use PayByLeap trademarks, branding or other intellectual property without our prior written permission.",
+      },
+      {
+        kind: "p",
+        text: "If you provide feedback, suggestions or ideas concerning the Services, you agree that we may use them without restriction or obligation to compensate you, subject to applicable law.",
       },
     ],
   },
   {
-    id: "third-parties",
-    title: "Third-party services and materials",
+    id: "third-party-providers",
+    title: "Third-party providers and partners",
     blocks: [
       {
         kind: "p",
-        text: "The Services may link to, or interoperate with, websites, applications and services operated by third parties. We do not control them, we do not endorse them, and we are not responsible for their content, availability, security or practices. Your use of a third-party service is governed by that party's own terms.",
+        text: "Certain Services depend on third-party providers, including:",
+      },
+      {
+        kind: "list",
+        items: [
+          "banks;",
+          "payment institutions;",
+          "money services businesses;",
+          "card issuers;",
+          "card networks;",
+          "payment processors;",
+          "Digital Asset providers or custodians;",
+          "foreign exchange providers;",
+          "identity verification providers;",
+          "blockchain networks; and",
+          "technology and infrastructure providers.",
+        ],
+      },
+      {
+        kind: "p",
+        text: "These providers may impose additional terms, eligibility requirements, fees, transaction limits or restrictions.",
+      },
+      {
+        kind: "p",
+        text: "Where additional third-party terms apply, we will make them available to you where reasonably required.",
+      },
+      {
+        kind: "p",
+        text: "You agree to comply with applicable third-party terms where they are presented to you.",
+      },
+      {
+        kind: "p",
+        text: "PayByLeap may change, add or replace third-party providers where reasonably necessary to operate, improve, secure or comply with legal or regulatory requirements relating to the Services.",
+      },
+      {
+        kind: "p",
+        text: "Where a third-party provider is responsible for a particular aspect of a Service, that provider may be responsible for the relevant regulated activity, infrastructure or account arrangement.",
+      },
+      {
+        kind: "p",
+        text: "PayByLeap is not responsible for the acts or omissions of a third-party provider to the extent they are outside PayByLeap’s reasonable control, subject to any liability that cannot lawfully be excluded or limited.",
       },
     ],
   },
@@ -450,33 +1136,76 @@ export const termsSections: LegalSection[] = [
     blocks: [
       {
         kind: "p",
-        text: "The Services are provided on an as-is and as-available basis. To the fullest extent permitted by law, we exclude all warranties, conditions and representations that are not expressly set out in these Terms, including any implied warranty of merchantability, fitness for a particular purpose, accuracy or non-infringement.",
+        text: "The Services are provided on an “as-is” and “as-available” basis to the fullest extent permitted by applicable law.",
+      },
+      { kind: "p", text: "We do not guarantee that:" },
+      {
+        kind: "list",
+        items: [
+          "the Services will always be available;",
+          "the Services will be uninterrupted;",
+          "Transactions will always be completed within a particular timeframe;",
+          "the Services will be error-free;",
+          "all currencies, countries or payment methods will remain available;",
+          "a beneficiary will accept a payment;",
+          "a third-party provider will remain available;",
+          "a Digital Asset will maintain its value or peg; or",
+          "defects will always be corrected immediately.",
+        ],
       },
       {
         kind: "p",
-        text: "We do not warrant that the Services will be uninterrupted, timely, secure or error-free, that defects will be corrected, or that any Transaction will complete within a particular time. We may suspend the Services for maintenance, upgrades or emergency work.",
+        text: "We may suspend the Services for maintenance, upgrades, security measures, emergency work, legal requirements or other operational reasons.",
       },
       {
         kind: "p",
-        text: "Nothing in these Terms excludes or limits liability that cannot lawfully be excluded or limited, including liability for fraud, for death or personal injury caused by negligence, or any statutory right you have as a consumer.",
+        text: "Nothing in these Terms excludes or limits liability or rights that cannot lawfully be excluded or limited, including applicable statutory consumer protections.",
+      },
+      {
+        kind: "p",
+        text: "Nothing in the Services constitutes investment, legal, tax or financial advice unless expressly stated otherwise.",
       },
     ],
   },
   {
-    id: "liability",
+    id: "limitation-of-liability",
     title: "Limitation of liability",
     blocks: [
       {
         kind: "p",
-        text: "Subject to the paragraph above, we are not liable for indirect, incidental, special, consequential, exemplary or punitive loss, or for loss of profits, revenue, business, goodwill, opportunity, anticipated savings or data, however caused.",
+        text: "To the fullest extent permitted by applicable law, PayByLeap will not be liable for indirect, incidental, special, consequential, exemplary or punitive losses, or for loss of profits, revenue, business, goodwill, opportunity, anticipated savings or data.",
       },
       {
         kind: "p",
-        text: "Our total aggregate liability arising out of or in connection with these Terms and the Services in any 12-month period is limited to the total fees you paid us in the three months immediately preceding the event giving rise to the claim.",
+        text: "Subject to applicable law, our total aggregate liability arising out of or in connection with these Terms or the Services will not exceed the greater of:",
+      },
+      {
+        kind: "ordered",
+        items: [
+          "the total fees you paid to PayByLeap for the relevant Service during the twelve (12) months immediately preceding the event giving rise to the claim; or",
+          "USD 100, or the equivalent amount in the applicable local currency.",
+        ],
       },
       {
         kind: "p",
-        text: "We are not liable for loss arising from events outside our reasonable control, including acts of God, war, civil unrest, epidemic, industrial action, failure of a bank, card network, blockchain, telecommunications or power infrastructure, government or regulatory action, or the act or omission of any third party in the payment chain.",
+        text: "This limitation does not apply to liability that cannot lawfully be excluded or limited.",
+      },
+      { kind: "p", text: "Nothing in this section is intended to limit:" },
+      {
+        kind: "list",
+        items: [
+          "your statutory rights;",
+          "mandatory consumer protections;",
+          "applicable rights concerning unauthorised electronic transactions;",
+          "applicable rights relating to customer funds;",
+          "liability for fraud or fraudulent misrepresentation;",
+          "liability for death or personal injury caused by negligence where such limitation is prohibited; or",
+          "any other liability that applicable law prohibits us from limiting.",
+        ],
+      },
+      {
+        kind: "p",
+        text: "We are not responsible for loss caused by events outside our reasonable control, including natural disasters, war, civil unrest, epidemics, industrial action, telecommunications or power failures, blockchain network failures, government or regulatory action, payment network failures or the acts or omissions of third parties in the payment chain, except to the extent applicable law provides otherwise.",
       },
     ],
   },
@@ -486,7 +1215,22 @@ export const termsSections: LegalSection[] = [
     blocks: [
       {
         kind: "p",
-        text: "You agree to indemnify and hold us, our affiliates and our partners harmless against any claim, loss, liability, fine, penalty, cost or expense (including reasonable legal fees) arising out of your breach of these Terms or of any applicable law, your misuse of the Services, any chargeback or reversal attributable to you, or any dispute between you and a third party.",
+        text: "To the fullest extent permitted by law, you agree to indemnify and hold harmless PayByLeap, its affiliates and, where applicable, its officers, employees and partners against claims, losses, liabilities, costs and reasonable expenses arising directly from:",
+      },
+      {
+        kind: "ordered",
+        items: [
+          "your material breach of these Terms;",
+          "your unlawful or prohibited use of the Services;",
+          "your fraud, intentional misconduct or misrepresentation;",
+          "your violation of applicable law;",
+          "a chargeback, reversal or payment dispute attributable to your conduct; or",
+          "a dispute between you and a third party arising from your use of the Services.",
+        ],
+      },
+      {
+        kind: "p",
+        text: "This indemnity does not apply to the extent that the relevant loss was caused by PayByLeap’s own breach of these Terms, fraud, wilful misconduct or liability that cannot lawfully be transferred to you.",
       },
     ],
   },
@@ -496,25 +1240,197 @@ export const termsSections: LegalSection[] = [
     blocks: [
       {
         kind: "p",
-        text: `If something goes wrong, contact us first at ${legalEntity.supportEmail} with a description of the issue and any reference numbers. We will acknowledge your complaint promptly and aim to resolve it as quickly as we can, keeping you updated on our progress.`,
+        text: "If you have a complaint about the Services, you should first contact us through the support channels made available in the Services.",
       },
       {
         kind: "p",
-        text: "If a dispute is not resolved through our complaints process, both parties agree to attempt in good faith to settle it through discussion for a period of 15 Business Days before commencing formal proceedings. Nothing in this section prevents either party from seeking urgent injunctive relief, or prevents you from exercising any right to refer a complaint to a financial services ombudsman or regulator in your jurisdiction.",
+        text: "When contacting us, please provide sufficient information to identify the relevant Account or Transaction, including any applicable reference number.",
+      },
+      {
+        kind: "p",
+        text: "We will acknowledge and investigate complaints in accordance with our applicable procedures and legal obligations.",
+      },
+      {
+        kind: "p",
+        text: "Where a specific jurisdiction or regulated Service provides a prescribed complaints process, response period, escalation route, ombudsman scheme or regulatory complaint mechanism, that process will apply.",
+      },
+      {
+        kind: "p",
+        text: "Where permitted by applicable law, the parties will attempt in good faith to resolve disputes through discussion before commencing formal proceedings.",
+      },
+      { kind: "p", text: "Nothing in this section:" },
+      {
+        kind: "list",
+        items: [
+          "prevents either party from seeking urgent injunctive or protective relief;",
+          "prevents you from exercising a statutory right;",
+          "prevents you from making a complaint to a competent regulator or ombudsman; or",
+          "limits any mandatory dispute-resolution or consumer-protection procedure applicable to you.",
+        ],
       },
     ],
   },
   {
-    id: "changes",
-    title: "Changes to these Terms",
+    id: "jurisdiction-specific-terms",
+    title: "Jurisdiction-specific terms",
     blocks: [
+      { kind: "subheading", id: "nigeria", text: "A. Nigeria" },
       {
         kind: "p",
-        text: "We may update these Terms to reflect changes to our Services, our partners, our risk assessment or the law. Where a change is material and adverse to you, we will give you reasonable advance notice through the Services or by email before it takes effect.",
+        text: "Where you contract with a PayByLeap entity in Nigeria or use Services provided to you in Nigeria, applicable Nigerian laws and regulatory requirements will apply to the relevant Services.",
       },
       {
         kind: "p",
-        text: "Changes apply from their effective date and do not apply retrospectively to Transactions already completed. If you do not accept a change, you may close your Account before it takes effect. Continuing to use the Services after that date means you accept the updated Terms.",
+        text: "Depending on the Service, applicable requirements may include laws and regulations relating to payments, foreign exchange, anti-money laundering, consumer protection, data protection, electronic transactions and financial services.",
+      },
+      {
+        kind: "p",
+        text: "Certain Services may be provided through regulated third-party institutions or providers.",
+      },
+      {
+        kind: "p",
+        text: "Where a Nigerian law or regulatory requirement provides a mandatory customer protection, disclosure, complaint or transaction right, that requirement will apply notwithstanding anything inconsistent in these Terms.",
+      },
+      {
+        kind: "p",
+        text: "Nothing in these Terms represents that PayByLeap holds a particular Nigerian licence or regulatory approval unless that status is expressly disclosed by PayByLeap for the relevant Service.",
+      },
+      { kind: "subheading", id: "united-states", text: "B. United States" },
+      {
+        kind: "p",
+        text: "Where PayByLeap provides Services to users in the United States, the applicable Service may be subject to federal and state financial-services, money-transmission, consumer-protection and other laws.",
+      },
+      {
+        kind: "p",
+        text: "Certain Services may be provided through regulated third-party financial institutions or payment providers.",
+      },
+      {
+        kind: "p",
+        text: "Where applicable, additional product disclosures and terms may apply, including disclosures relating to electronic fund transfers, remittance transfers, cards or other regulated products.",
+      },
+      {
+        kind: "p",
+        text: "Where applicable law provides specific cancellation, disclosure, error-resolution, refund or unauthorised-transaction rights, those rights will apply notwithstanding these Terms.",
+      },
+      {
+        kind: "p",
+        text: "Nothing in these Terms is intended to waive or limit any consumer protection or statutory right that applies to you under applicable United States law.",
+      },
+      { kind: "subheading", id: "canada", text: "C. Canada" },
+      {
+        kind: "p",
+        text: "Where PayByLeap provides Services to users in Canada, the applicable PayByLeap entity and Service may be subject to Canadian federal or provincial laws and regulatory requirements.",
+      },
+      {
+        kind: "p",
+        text: "Depending on the Service, applicable requirements may include those relating to money services, retail payment activities, consumer protection, privacy, anti-money laundering and payment services.",
+      },
+      {
+        kind: "p",
+        text: "Where applicable, PayByLeap may be subject to requirements administered by the Financial Transactions and Reports Analysis Centre of Canada (FINTRAC) or the Bank of Canada, including requirements applicable to relevant payment activities.",
+      },
+      {
+        kind: "p",
+        text: "The regulatory status and protections applicable to a particular Service depend on the nature of the Service, the applicable PayByLeap entity and the relevant third-party providers.",
+      },
+      {
+        kind: "p",
+        text: "Registration with or oversight by a regulator does not constitute an endorsement, approval or guarantee of PayByLeap or its Services unless expressly stated by the regulator.",
+      },
+      {
+        kind: "p",
+        text: "Nothing in these Terms limits any right or protection that cannot lawfully be excluded under applicable Canadian law.",
+      },
+      { kind: "subheading", id: "united-kingdom", text: "D. United Kingdom" },
+      {
+        kind: "p",
+        text: "Where PayByLeap provides Services to users in the United Kingdom, the availability of particular payment, electronic money, Digital Asset or other financial services may depend on the regulatory status of PayByLeap and its relevant third-party providers.",
+      },
+      {
+        kind: "p",
+        text: "Where required by applicable UK law, PayByLeap will provide applicable regulatory disclosures, customer protections and complaints procedures.",
+      },
+      {
+        kind: "p",
+        text: "Digital Asset Services may be restricted or unavailable to UK users where PayByLeap or the relevant provider is not permitted to provide or promote the relevant Service in the United Kingdom.",
+      },
+      {
+        kind: "p",
+        text: "Where applicable UK financial promotion rules apply to communications concerning Digital Assets or financial services, PayByLeap will comply with the requirements applicable to the relevant communication and Service.",
+      },
+      {
+        kind: "p",
+        text: "Nothing in these Terms represents that PayByLeap is authorised or regulated by the Financial Conduct Authority unless expressly stated in the applicable product disclosure.",
+      },
+      {
+        kind: "subheading",
+        id: "other-jurisdictions",
+        text: "E. Other Jurisdictions",
+      },
+      {
+        kind: "p",
+        text: "Where you use the Services from a jurisdiction not specifically addressed above, the availability of the Services will depend on applicable local laws, PayByLeap’s regulatory permissions, third-party provider availability and our internal country restrictions.",
+      },
+      {
+        kind: "p",
+        text: "You are responsible for complying with laws applicable to your use of the Services in your jurisdiction.",
+      },
+      {
+        kind: "p",
+        text: "We may restrict or discontinue access to a Service where providing it would create a legal, regulatory or operational issue.",
+      },
+    ],
+  },
+  {
+    id: "privacy",
+    title: "Privacy",
+    blocks: [
+      {
+        kind: "p",
+        text: "Our collection and use of personal information is governed by our Privacy Policy.",
+      },
+      {
+        kind: "p",
+        text: "By using the Services, you acknowledge that personal information may be collected, used, disclosed, transferred and retained in accordance with the Privacy Policy and applicable law.",
+      },
+      {
+        kind: "p",
+        text: "Where a Service requires identity verification, fraud prevention, sanctions screening or other regulatory checks, your information may be shared with relevant service providers, financial institutions, regulators or other authorised recipients where permitted or required by law.",
+      },
+      { kind: "p", text: "The Privacy Policy forms part of these Terms." },
+    ],
+  },
+  {
+    id: "changes-to-these-terms",
+    title: "Changes to these Terms",
+    blocks: [
+      { kind: "p", text: "We may update these Terms to reflect:" },
+      {
+        kind: "list",
+        items: [
+          "changes to our Services;",
+          "changes to our third-party providers;",
+          "changes to our risk and security controls;",
+          "changes in applicable law or regulation;",
+          "new products or features; or",
+          "other legitimate business or operational requirements.",
+        ],
+      },
+      {
+        kind: "p",
+        text: "Where a change is material and applicable law requires advance notice, we will provide notice through the Services, by email or by another permitted communication method before the change takes effect.",
+      },
+      {
+        kind: "p",
+        text: "Changes will not retrospectively alter Transactions that have already been completed, except where necessary to comply with law, correct an error or otherwise permitted by applicable law.",
+      },
+      {
+        kind: "p",
+        text: "If you do not agree to an updated version of these Terms, you may close your Account before the updated Terms take effect, subject to any outstanding obligations.",
+      },
+      {
+        kind: "p",
+        text: "Your continued use of the Services after the effective date of updated Terms constitutes acceptance of the updated Terms to the extent permitted by applicable law.",
       },
     ],
   },
@@ -522,16 +1438,53 @@ export const termsSections: LegalSection[] = [
     id: "general",
     title: "General",
     blocks: [
+      { kind: "subheading", text: "Entire Agreement" },
       {
-        kind: "list",
-        items: [
-          "Entire agreement: these Terms, together with the policies referred to in them, form the entire agreement between us about the Services.",
-          "Severability: if any provision is found to be unenforceable, the remainder continues in full force.",
-          "No waiver: if we do not enforce a right immediately, we do not waive it.",
-          "Assignment: we may assign or transfer our rights and obligations, including as part of a reorganisation or sale of our business. You may not assign yours without our prior written consent.",
-          "Notices: we may contact you through the Services, by email or by push notification, and you agree to receive communications from us electronically.",
-          "Language: these Terms are made in English, and any translation is provided for convenience only.",
-        ],
+        kind: "p",
+        text: "These Terms, together with the Privacy Policy, Acceptable Use Policy and any applicable product-specific terms, form the agreement between you and PayByLeap concerning the Services.",
+      },
+      { kind: "subheading", text: "Severability" },
+      {
+        kind: "p",
+        text: "If any provision of these Terms is found to be invalid or unenforceable, that provision will be interpreted or modified to the minimum extent necessary to make it enforceable, where permitted by law. The remaining provisions will continue in effect.",
+      },
+      { kind: "subheading", text: "No Waiver" },
+      {
+        kind: "p",
+        text: "Our failure to enforce a provision of these Terms immediately does not constitute a waiver of our right to enforce it later.",
+      },
+      { kind: "subheading", text: "Assignment" },
+      {
+        kind: "p",
+        text: "We may assign or transfer our rights and obligations under these Terms in connection with a reorganisation, merger, acquisition, sale of assets or other legitimate business transaction, subject to applicable law.",
+      },
+      {
+        kind: "p",
+        text: "You may not assign your rights or obligations under these Terms without our prior written consent, except where applicable law permits otherwise.",
+      },
+      { kind: "subheading", text: "Notices" },
+      {
+        kind: "p",
+        text: "We may communicate with you through the Services, by email, push notification or other electronic means.",
+      },
+      {
+        kind: "p",
+        text: "You are responsible for ensuring that your contact details remain current.",
+      },
+      { kind: "subheading", text: "Electronic Communications" },
+      {
+        kind: "p",
+        text: "You agree that notices, disclosures, statements, Transaction information and other communications may be provided electronically where permitted by applicable law.",
+      },
+      { kind: "subheading", text: "Language" },
+      {
+        kind: "p",
+        text: "These Terms are made available in English. Any translation is provided for convenience unless applicable law requires otherwise.",
+      },
+      { kind: "subheading", text: "Relationship" },
+      {
+        kind: "p",
+        text: "Nothing in these Terms creates a partnership, joint venture, agency, employment or fiduciary relationship between you and PayByLeap unless expressly stated otherwise.",
       },
     ],
   },
@@ -541,15 +1494,31 @@ export const termsSections: LegalSection[] = [
     blocks: [
       {
         kind: "p",
-        text: "Where you contract with our United States entity, these Terms are governed by the laws of the State of Delaware and the federal laws of the United States, and the state and federal courts located in Delaware have exclusive jurisdiction.",
+        text: "The governing law and jurisdiction applicable to your use of the Services will depend on the PayByLeap entity contracting with you, your location, the relevant Service and mandatory applicable law.",
       },
       {
         kind: "p",
-        text: "Where you contract with our Nigerian entity, these Terms are governed by the laws of the Federal Republic of Nigeria and the courts of Lagos State have exclusive jurisdiction.",
+        text: "Where you contract with PayByLeap Inc., these Terms will, subject to mandatory applicable law, be governed by the laws of the State of Delaware and applicable federal laws of the United States.",
       },
       {
         kind: "p",
-        text: "Nothing in this section removes any protection or right of action that the mandatory law of your country of residence gives you as a consumer.",
+        text: "Subject to mandatory applicable law, disputes concerning that contractual relationship will be submitted to the competent courts of Delaware.",
+      },
+      {
+        kind: "p",
+        text: "Where you contract with PayByLeap Technologies Limited, these Terms will, subject to mandatory applicable law, be governed by the laws of the Federal Republic of Nigeria.",
+      },
+      {
+        kind: "p",
+        text: "Subject to mandatory applicable law, disputes concerning that contractual relationship will be submitted to the competent courts of Lagos State, Nigeria.",
+      },
+      {
+        kind: "p",
+        text: "Where mandatory consumer or financial-services laws in your jurisdiction provide otherwise, those mandatory rights and protections will continue to apply.",
+      },
+      {
+        kind: "p",
+        text: "Nothing in this section prevents you from exercising any mandatory statutory right to bring a claim, make a complaint or seek regulatory or ombudsman assistance in your jurisdiction.",
       },
     ],
   },
@@ -559,7 +1528,29 @@ export const termsSections: LegalSection[] = [
     blocks: [
       {
         kind: "p",
-        text: `You can reach our support team in-app, or by email at ${legalEntity.supportEmail}. For legal or regulatory correspondence, write to ${legalEntity.usEntity.name} at ${legalEntity.usEntity.address}, or to ${legalEntity.ngEntity.name} at ${legalEntity.ngEntity.address}.`,
+        text: "You may contact PayByLeap through the support channels made available within the Services.",
+      },
+      {
+        kind: "p",
+        text: "For legal, regulatory or formal correspondence, you may contact the applicable PayByLeap entity at its address identified in these Terms or through the contact details provided in the Services.",
+      },
+      {
+        kind: "table",
+        head: ["Entity", "Address"],
+        rows: [
+          [
+            "PayByLeap Inc.",
+            "8 The Green, Ste A, Dover, Delaware 19901, United States",
+          ],
+          [
+            "PayByLeap Technologies Limited",
+            "Block 59, Plot 12B Kusenla Road, Ikate, Lekki, Lagos, Nigeria",
+          ],
+          [
+            "PayByLeap Technologies Limited",
+            "42 Olowu Street, Opebi, 101233, Ikeja, Lagos, Nigeria",
+          ],
+        ],
       },
     ],
   },
