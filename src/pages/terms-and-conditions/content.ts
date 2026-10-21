@@ -1041,6 +1041,119 @@ export const termsSections: LegalSection[] = [
         kind: "p",
         text: "Termination does not affect rights or obligations that accrued before termination.",
       },
+      {
+        kind: "p",
+        text: "What happens to your Account and personal data when you choose to close your Account is explained in “Account closure and data deletion” below.",
+      },
+    ],
+  },
+  {
+    id: "account-closure-and-data-deletion",
+    title: "Account closure and data deletion",
+    blocks: [
+      {
+        kind: "p",
+        text: "This section explains how you can close your Account, the period during which you can change your mind, and what happens to your personal data after your Account is closed, including the records we are required by law to keep.",
+      },
+      {
+        kind: "subheading",
+        id: "closing-your-account",
+        text: "Requesting closure",
+      },
+      {
+        kind: "p",
+        text: "You may request the closure of your Account at any time through the Services or by contacting support. We will ask you to confirm the request and may ask you to verify your identity before we process it.",
+      },
+      { kind: "p", text: "Before you request closure, you should:" },
+      {
+        kind: "list",
+        items: [
+          "withdraw or transfer any remaining Balance, including Digital Assets, to an account or wallet in your own name;",
+          "settle any negative Balance or other amount you owe us;",
+          "allow any pending Transactions to complete;",
+          "cancel any recurring payments or subscriptions linked to your cards or Virtual Accounts; and",
+          "download any account statements, Transaction history or other records you wish to keep.",
+        ],
+      },
+      {
+        kind: "p",
+        text: "We may delay closing your Account while it has a Balance, a negative Balance, pending Transactions, an open dispute or chargeback, or while it is subject to a legal, regulatory or compliance review. You must not close your Account to avoid an investigation, and closing your Account does not end any obligation you owe us.",
+      },
+      {
+        kind: "subheading",
+        id: "reactivation-period",
+        text: "7-day reactivation period",
+      },
+      {
+        kind: "p",
+        text: "Once you confirm your closure request, your Account will be deactivated. While your Account is deactivated, you will not be able to make Transactions, your cards will be blocked, and payments sent to your Virtual Account details may be rejected or returned to the sender.",
+      },
+      {
+        kind: "p",
+        text: "For seven (7) days after you confirm your request (the “Reactivation Period”), we will keep your Account and its details in case you change your mind. You may ask us to restore your Account at any time during the Reactivation Period by contacting support through the channels made available in the Services. Restoring your Account may require you to verify your identity again.",
+      },
+      {
+        kind: "subheading",
+        id: "permanent-closure",
+        text: "After the Reactivation Period",
+      },
+      {
+        kind: "p",
+        text: "If you do not ask us to restore your Account before the Reactivation Period ends, your Account will be permanently closed. After that:",
+      },
+      {
+        kind: "list",
+        items: [
+          "your Account cannot be restored, and you will no longer be able to access it, your Transaction history or your statements through the Services;",
+          "your Virtual Account details, cards and Digital Asset wallet addresses will be permanently deactivated, and you should tell anyone who pays you to stop using them;",
+          "payments sent to closed account details may be rejected or returned, and Digital Assets sent to a closed wallet address may be permanently lost;",
+          "your personal data will be removed from our active systems and will no longer be used to provide the Services or to contact you for marketing; and",
+          "if you wish to use the Services again, you will need to open a new Account and complete our verification checks again.",
+        ],
+      },
+      {
+        kind: "subheading",
+        id: "records-we-keep",
+        text: "Records we must keep after closure",
+      },
+      {
+        kind: "p",
+        text: "Closing your Account does not mean that all of your data is deleted immediately. As a financial services provider, we are required by law, including the Money Laundering (Prevention and Prohibition) Act 2022, the Nigeria Data Protection Act 2023 and applicable regulations of the Central Bank of Nigeria, as well as equivalent laws in other jurisdictions where we operate, to keep certain records after a customer relationship ends.",
+      },
+      {
+        kind: "p",
+        text: "We will retain the following records for at least five (5) years after your Account is permanently closed, or for longer where required by law or where reasonably necessary to deal with an ongoing investigation, dispute or legal claim:",
+      },
+      {
+        kind: "list",
+        items: [
+          "identity and verification records, including the information and documents collected for KYC or KYB;",
+          "Transaction records and account statements;",
+          "records of your communications with us, including complaints; and",
+          "records relating to fraud prevention, sanctions screening and financial crime compliance.",
+        ],
+      },
+      {
+        kind: "p",
+        text: "During this retention period, your records will be stored securely, access will be restricted to authorised personnel, and the records will be used only to comply with our legal and regulatory obligations, to prevent fraud and financial crime, to respond to lawful requests from regulators, law enforcement or courts, and to establish, exercise or defend legal claims. They will not be used to provide the Services to you or for marketing.",
+      },
+      {
+        kind: "p",
+        text: "At the end of the applicable retention period, we will securely delete your records or anonymise them so that they can no longer be linked to you. Anonymised information may be retained and used for statistical and analytical purposes.",
+      },
+      {
+        kind: "subheading",
+        id: "your-data-rights",
+        text: "Your data protection rights",
+      },
+      {
+        kind: "p",
+        text: "Applicable data protection laws, including the Nigeria Data Protection Act 2023, may give you the right to request the erasure of your personal data. Where we are legally required to retain records as described above, we may not be able to delete them before the end of the applicable retention period, and we will explain this to you if you make a request.",
+      },
+      {
+        kind: "p",
+        text: "You may continue to exercise your other rights, such as the right to request access to a copy of the personal data we hold about you, during the retention period, subject to verification of your identity and applicable law. More information is available in our Privacy Policy.",
+      },
     ],
   },
   {
@@ -1396,6 +1509,10 @@ export const termsSections: LegalSection[] = [
       {
         kind: "p",
         text: "Where a Service requires identity verification, fraud prevention, sanctions screening or other regulatory checks, your information may be shared with relevant service providers, financial institutions, regulators or other authorised recipients where permitted or required by law.",
+      },
+      {
+        kind: "p",
+        text: "How long we keep your personal data after you close your Account is explained in “Account closure and data deletion” above.",
       },
       { kind: "p", text: "The Privacy Policy forms part of these Terms." },
     ],
