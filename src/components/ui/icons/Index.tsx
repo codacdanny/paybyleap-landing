@@ -59,3 +59,14 @@ export function IconStarSmall({ className }: { className?: string }) {
     </svg>
   );
 }
+
+export function IconPlayCircle({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+      <path
+        fillRule="evenodd"
+        d="M12 1a11 11 0 1 1 0 22a11 11 0 1 1 0-22ZM10.5 7.67l6 3.464a1 1 0 0 1 0 1.732l-6 3.464A1 1 0 0 1 9 15.464V8.536a1 1 0 0 1 1.5-.866Z"
+      />
+    </svg>
+  );
+}

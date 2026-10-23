@@ -1,84 +1,77 @@
 import { figma } from "@/data/images/Index";
 import { LandingInset } from "@/components/landing-inset/Index";
+import { useSectionReveal } from "../../reveal";
 
+// Figma 4669:12826. Cards are 364x481; art keeps its Figma offset, with x and
+// width as a share of the card so it scales on narrower cards.
 const values = [
   {
-    id: "transparency",
     num: "01",
     title: "Transparency first: Users know what they are paying and why",
-    image: figma.coreValue1,
+    image: figma.companyValueTransparency,
+    artClass: "left-[7.69%] top-[184px] w-[84.62%]",
   },
   {
-    id: "user-centric",
     num: "02",
-    title: "User-centric innovation: solutions that solve real problems",
-    image: figma.coreValue2,
+    title: "User-centric innovation: solutions that solve real problem",
+    image: figma.companyValueInnovation,
+    artClass: "left-[4.67%] top-[143px] w-[90.93%]",
   },
   {
-    id: "global-access",
     num: "03",
     title: "Global accessibility: financial tools for everyone, everywhere",
-    image: figma.coreValue3,
+    image: figma.companyValueAccessibility,
+    artClass: "left-[6.32%] top-[187px] w-[82.42%]",
   },
   {
-    id: "reliability",
     num: "04",
     title: "Reliability and trust: secure, stable & consistent transactions",
-    image: figma.coreValue4,
+    image: figma.companyValueReliability,
+    artClass: "left-[37.64%] top-[140px] w-[62.36%]",
   },
   {
-    id: "improvement",
     num: "05",
     title: "Continuous improvement: evolving with a changing world",
-    image: figma.coreValue5,
+    image: figma.companyValueImprovement,
+    artClass: "left-[6.32%] top-[206px] w-[93.68%]",
   },
 ];
 
 export function CoreValuesSection() {
+  const { ref, revealClass } = useSectionReveal<HTMLElement>(0.1);
+
   return (
-    <section className="bg-[#1D1111] py-16 min-[1440px]:py-[100px]">
+    <section ref={ref} className={`bg-[#1D1212] pt-16 xl:pt-[206px]${revealClass}`}>
       <LandingInset>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <h2 className="font-nohemi text-[36px] font-bold leading-[1.1] text-white md:text-[44px] min-[1440px]:text-[48px]">
+        <div className="grid gap-6 md:grid-cols-2 xl:-ml-5 xl:grid-cols-[364px_364px_364px] xl:gap-y-[86px]">
+          <h2 className="co-rise font-nohemi text-[32px] font-semibold leading-10 text-white xl:relative xl:-top-[75px] xl:ml-[19px] xl:text-[48px] xl:leading-[64px]">
             Our Core
             <br />
             Values
           </h2>
 
-          {values.map((v) => (
-            <div
-              key={v.id}
-              className="flex min-h-[460px] flex-col rounded-2xl bg-[#2A2222] p-6 min-[1440px]:min-h-[500px] min-[1440px]:p-7"
+          {values.map((v, i) => (
+            <article
+              key={v.num}
+              className="co-pop group relative h-[481px] overflow-hidden rounded-2xl bg-grey-80 px-5 pt-[26px]"
+              style={{ ["--d" as string]: `${120 + i * 100}ms` }}
             >
-              <div className="flex items-center gap-3">
-                <span className="text-[13px] font-medium text-white/55">
-                  {v.num}
-                </span>
-                <span className="h-px flex-1 bg-white/15" />
-                <svg viewBox="0 0 24 24" fill="none" className="size-4 text-white/40" aria-hidden>
-                  <path
-                    d="M6 7l5 5-5 5M13 7l5 5-5 5"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
+              <div className="ml-[3px] flex items-center gap-3 text-white opacity-80">
+                <span className="text-[16px] font-medium leading-6">{v.num}</span>
+                <span className="h-[1.5px] w-[212px] max-w-full rounded-full bg-white" />
+                <svg viewBox="0 0 1024 1024" fill="currentColor" className="size-4 shrink-0" aria-hidden>
+                  <path d="M533.2 492.3L277.9 166.1c-3-3.9-7.7-6.1-12.6-6.1H188c-6.7 0-10.4 7.7-6.3 12.9L447.1 512 181.7 851.1A7.98 7.98 0 00188 864h77.3c4.9 0 9.6-2.3 12.6-6.1l255.3-326.1c9.1-11.7 9.1-27.9 0-39.5zm304 0L581.9 166.1c-3-3.9-7.7-6.1-12.6-6.1H492c-6.7 0-10.4 7.7-6.3 12.9L751.1 512 485.7 851.1A7.98 7.98 0 00492 864h77.3c4.9 0 9.6-2.3 12.6-6.1l255.3-326.1c9.1-11.7 9.1-27.9 0-39.5z" />
                 </svg>
               </div>
-
-              <h3 className="mt-6 text-[18px] font-semibold leading-[1.4] text-white min-[1440px]:text-[20px]">
-                {v.title}
-              </h3>
-
-              <div className="mt-auto flex items-end justify-center pt-6">
-                <img loading="lazy" decoding="async"
-                  src={v.image}
-                  alt=""
-                  aria-hidden
-                  className="max-h-[220px] w-full object-contain"
-                />
-              </div>
-            </div>
+              <h3 className="relative z-10 mt-9 max-w-[271px] text-heading-6 text-white">{v.title}</h3>
+              <img
+                loading="lazy"
+                decoding="async"
+                src={v.image}
+                alt=""
+                className={`absolute max-w-none transition-transform duration-700 ease-out group-hover:-translate-y-3 group-hover:scale-[1.03] ${v.artClass}`}
+              />
+            </article>
           ))}
         </div>
       </LandingInset>

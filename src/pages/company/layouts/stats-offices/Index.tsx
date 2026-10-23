@@ -1,138 +1,90 @@
-import type { ReactNode } from "react";
 import { figma } from "@/data/images/Index";
 import { LandingInset } from "@/components/landing-inset/Index";
+import { useSectionReveal } from "../../reveal";
 
-const leftFeatures = [
-  "PERFORM INSTANT CURRENCY EXCHANGE",
-  "PAY INTERNATIONAL SCHOOL FEES & BILLS",
-  "USE STABLECOIN POWERED VISUAL CARDS",
+// Figma 4669:12732, in the order they stack on mobile. From xl each pill takes
+// its spot in the 1440 frame: x, y, box size, and the width its label wraps at.
+const pills = [
+  { label: "OPEN AND MANAGE FOREIGN ACCOUNTS", side: "top", x: 483, y: 426, w: 534, h: 60, tw: 438 },
+  { label: "PERFORM INSTANT CURRENCY EXCHANGE", side: "left", x: 132, y: 640, w: 440, h: 85, tw: 338 },
+  { label: "SEND & RECEIVE GLOBAL PAYMENTS", side: "right", x: 900, y: 580, w: 416, h: 85, tw: 300 },
+  { label: "PAY INTERNATIONAL SCHOOL FEES & BILLS", side: "left", x: 132, y: 945, w: 440, h: 85, tw: 338 },
+  { label: "GENERATE & MANAGE GLOBAL INVOICES", side: "right", x: 902, y: 823, w: 440, h: 85, tw: 338 },
+  { label: "USE STABLECOIN POWERED VISUAL CARDS", side: "left", x: 132, y: 1160, w: 440, h: 85, tw: 338 },
+  { label: "SEND & RECEIVE CRYPTO SEAMLESSLY", side: "right", x: 902, y: 1129, w: 440, h: 85, tw: 338 },
 ];
 
-const rightFeatures = [
-  "SEND & RECEIVE GLOBAL PAYMENTS",
-  "GENERATE & MANAGE GLOBAL INVOICES",
-  "SEND & RECEIVE CRYPTO SEAMLESSLY",
-];
-
-function Pill({
-  children,
-  className = "",
-}: {
-  children: ReactNode;
-  className?: string;
-}) {
-  return (
-    <div
-      className={`flex items-center gap-3 rounded-[28px] border border-primary/50 bg-gradient-to-b from-[#2b1f1f] to-[#1a1212] px-5 py-4 shadow-[0_22px_45px_-15px_rgba(0,0,0,0.85)] min-[1440px]:gap-4 min-[1440px]:px-6 min-[1440px]:py-5 ${className}`}
-    >
-      <img loading="lazy" decoding="async"
-        src={figma.star}
-        alt=""
-        className="size-5 shrink-0 min-[1440px]:size-6"
-      />
-      <span className="flex-1 text-center text-[13px] font-semibold uppercase leading-[1.3] tracking-wide text-white min-[1440px]:text-[15px]">
-        {children}
-      </span>
-    </div>
-  );
-}
+const entrance = { top: "co-rise", left: "co-left", right: "co-right" } as const;
 
 export function ProductEcosystemSection() {
+  const { ref, revealClass } = useSectionReveal<HTMLElement>(0.1);
+
   return (
-    <section className="overflow-hidden bg-[#1D1111] py-16 min-[1440px]:py-[100px]">
-      {/* Header */}
-      <LandingInset>
-        <div className="text-center">
-          <p className="text-[13px] font-semibold uppercase tracking-[0.2em] text-secondary">
-            What We Do
-          </p>
-          <h2 className="mt-4 font-nohemi text-[36px] font-bold leading-[1.15] text-white md:text-[44px] min-[1440px]:text-[52px]">
-            Our Financial Ecosystem
-          </h2>
-          <p className="mx-auto mt-4 max-w-[460px] text-[16px] leading-[1.6] text-white/60 min-[1440px]:text-[17px]">
-            Mobile-first platform enabling global financial transactions with
-            speed and control.
-          </p>
-        </div>
+    <section
+      ref={ref}
+      className={`relative overflow-hidden bg-[#1D1212] pb-20 pt-16 xl:h-[1817px] xl:p-0${revealClass}`}
+    >
+      <LandingInset className="relative z-10 text-center xl:pt-[160px]">
+        <p className="co-rise text-[18px] font-semibold leading-6 text-secondary">WHAT WE DO</p>
+        <h2
+          className="co-rise mt-6 font-nohemi text-[32px] font-semibold leading-10 text-white xl:text-[48px] xl:leading-[64px]"
+          style={{ ["--d" as string]: "80ms" }}
+        >
+          Our Financial Ecosystem
+        </h2>
+        <p
+          className="co-rise mx-auto mt-2 max-w-[478px] text-body-3 text-white xl:mt-0"
+          style={{ ["--d" as string]: "160ms" }}
+        >
+          Mobile-first platform enabling global financial transactions with speed and control.
+        </p>
       </LandingInset>
 
-      {/* ── Desktop layout (1440px+) — phone centred with pills floating around ── */}
-      <div className="relative mx-auto mt-12 hidden h-[960px] max-w-[1440px] min-[1440px]:block">
-        {/* Top pill */}
-        <div className="absolute left-1/2 top-0 z-[1] -translate-x-1/2">
-          <Pill className="w-[560px]">OPEN AND MANAGE FOREIGN ACCOUNTS</Pill>
-        </div>
+      <div className="relative mt-10 flex flex-col items-center gap-4 px-6 xl:absolute xl:left-1/2 xl:top-0 xl:mt-0 xl:block xl:h-full xl:w-[1440px] xl:-translate-x-1/2 xl:px-0">
+        <img
+          loading="lazy"
+          decoding="async"
+          src={figma.companyAppPhone}
+          alt="PayByLeap app home screen"
+          className="co-rise order-1 my-4 w-[240px] xl:absolute xl:left-[551px] xl:top-[547px] xl:my-0 xl:w-[397px]"
+          style={{ ["--d" as string]: "200ms" }}
+        />
 
-        {/* Phone */}
-        <div className="absolute left-1/2 top-[120px] flex w-[360px] -translate-x-1/2 justify-center">
-          <img loading="lazy" decoding="async"
-            src={figma.getMoreIphoneMock}
-            alt="PayByLeap app"
-            className="w-full object-contain"
-          />
-        </div>
-
-        {/* Left pills */}
-        <div className="absolute left-[115px] top-[200px] z-[1]">
-          <Pill className="w-[420px]">{leftFeatures[0]}</Pill>
-        </div>
-        <div className="absolute left-[115px] top-[505px] z-[1]">
-          <Pill className="w-[420px]">{leftFeatures[1]}</Pill>
-        </div>
-        <div className="absolute left-[115px] top-[740px] z-[1]">
-          <Pill className="w-[420px]">{leftFeatures[2]}</Pill>
-        </div>
-
-        {/* Right pills */}
-        <div className="absolute right-[115px] top-[150px] z-[1]">
-          <Pill className="w-[420px]">{rightFeatures[0]}</Pill>
-        </div>
-        <div className="absolute right-[115px] top-[400px] z-[1]">
-          <Pill className="w-[420px]">{rightFeatures[1]}</Pill>
-        </div>
-        <div className="absolute right-[115px] top-[705px] z-[1]">
-          <Pill className="w-[420px]">{rightFeatures[2]}</Pill>
-        </div>
+        {pills.map((p, i) => (
+          <div
+            key={p.label}
+            className={`${entrance[p.side as keyof typeof entrance]} w-full max-w-[440px] xl:absolute xl:z-10 xl:w-[var(--w)] xl:max-w-none ${i === 0 ? "order-0" : "order-2"}`}
+            style={{
+              left: p.x,
+              top: p.y,
+              ["--w" as string]: `${p.w}px`,
+              ["--d" as string]: `${280 + i * 90}ms`,
+            }}
+          >
+            <div
+              className="co-float co-glass-pill flex items-center justify-center gap-4 rounded-3xl px-5 py-4 xl:h-[var(--h)] xl:px-0 xl:py-0"
+              style={{ ["--h" as string]: `${p.h}px`, ["--f" as string]: `${1.4 + (i % 3) * 0.7}s` }}
+            >
+              <img src={figma.star} alt="" className="size-5 shrink-0 xl:size-6" />
+              <span
+                className="text-center text-[16px] font-medium leading-6 text-white xl:w-[var(--tw)] xl:text-[24px] xl:leading-8"
+                style={{ ["--tw" as string]: `${p.tw}px` }}
+              >
+                {p.label}
+              </span>
+            </div>
+          </div>
+        ))}
       </div>
 
-      {/* ── Tablet / Mobile layout (below 1440px) ── */}
-      <LandingInset className="min-[1440px]:hidden">
-        <div className="mt-12 flex flex-col items-center gap-8">
-          <Pill className="w-full max-w-[440px]">
-            OPEN AND MANAGE FOREIGN ACCOUNTS
-          </Pill>
-
-          <img loading="lazy" decoding="async"
-            src={figma.getMoreIphoneMock}
-            alt="PayByLeap app"
-            className="w-[240px] object-contain sm:w-[280px]"
-          />
-
-          <div className="flex w-full max-w-[440px] flex-col gap-4">
-            {[...leftFeatures, ...rightFeatures].map((f) => (
-              <Pill key={f}>{f}</Pill>
-            ))}
-          </div>
-        </div>
-      </LandingInset>
-
-      {/* All-in-one banner */}
-      <LandingInset>
-        <h2 className="mt-16 text-center font-nohemi text-[40px] font-bold leading-[1.18] text-white md:text-[52px] min-[1440px]:mt-20 min-[1440px]:text-[64px]">
-          All-in-one{" "}
-          <span className="bg-gradient-to-r from-[#F6C03A] to-[#F2772E] bg-clip-text text-transparent">
-            platform
-          </span>
-          ,
-          <br />
-          Instant and{" "}
-          <span className="bg-gradient-to-r from-[#F2933C] via-[#E0481E] to-[#9A0000] bg-clip-text text-transparent">
-            transparent
-          </span>
-          <br />
-          transactions
-        </h2>
-      </LandingInset>
+      <h2 className="co-rise relative mx-auto mt-16 max-w-[833px] bg-[linear-gradient(90deg,#F6C03A_36%,#D52B1E_68%)] bg-clip-text px-6 text-center font-nohemi text-[36px] font-semibold leading-[44px] text-transparent md:text-[48px] md:leading-[60px] xl:absolute xl:inset-x-0 xl:top-[1465px] xl:mt-0 xl:w-[833px] xl:px-0 xl:text-[64px] xl:leading-[76px]">
+        <span className="text-white">All-in-one</span>{" "}
+        <span className="bg-[linear-gradient(90deg,#F6C03A_74%,#D52B1E_114%)] bg-clip-text">platform</span>
+        <span className="text-white">,</span> <br className="hidden xl:inline" />
+        <span className="text-white">Instant and</span> transparent{" "}
+        <br className="hidden xl:inline" />
+        <span className="text-white">transactions</span>
+      </h2>
     </section>
   );
 }

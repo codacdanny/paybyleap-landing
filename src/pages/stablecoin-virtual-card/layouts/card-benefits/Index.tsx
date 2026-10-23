@@ -1,62 +1,81 @@
 import { figma } from "@/data/images/Index";
 import { LandingInset } from "@/components/landing-inset/Index";
 
+// Art is placed inside the grey panel: below xl as a share of the 318x281
+// mobile panel (Figma 4789:13414), from xl in px of the 498px desktop panel
+// (Figma 4643:37900). The first panel is 15px taller on desktop.
 const benefits = [
   {
     title: "Instant Card Issuance",
     desc: "Instant card issuance lets you get a Paybyleap virtual card instantly and start paying right away.",
-    image: figma.visacard,
+    panel: "xl:mt-[28px] xl:h-[365px]",
+    art: [
+      { src: figma.virtualCardMirror, className: "left-[7.86%] top-[7.12%] w-[84.28%] xl:hidden" },
+      { src: figma.virtualCardUsd, className: "hidden rounded-2xl xl:left-[83px] xl:top-[21px] xl:block xl:w-[321px]" },
+      { src: figma.virtualCardUsd, className: "hidden rounded-2xl opacity-[.19] blur-[2px] xl:left-[88px] xl:top-[258px] xl:block xl:w-[321px]" },
+    ],
   },
   {
     title: "Spend Crypto Anywhere",
     desc: "Spend seamlessly online with your virtual card anytime, anywhere.",
-    image: figma.stablecoinphone,
+    panel: "xl:mt-[43px] xl:h-[350px]",
+    art: [
+      { src: figma.virtualCardPhoneStablecoins, className: "left-[11.32%] top-[7.83%] w-[75.47%] xl:left-[85px] xl:top-[30px] xl:w-[329px]" },
+    ],
   },
   {
     title: "Easy Online Payments",
     desc: "Make payment instantly using your virtual card, also withdraw from your card to make payment.",
-    image: figma.easyphonemock,
+    panel: "xl:mt-[43px] xl:h-[350px]",
+    art: [
+      { src: figma.virtualCardPhoneWithdraw, className: "left-[13.84%] top-[10.32%] w-[66.35%] xl:left-[108px] xl:top-[27px] xl:w-[282px]" },
+    ],
   },
   {
     title: "Secure Transactions",
     desc: "Secure transactions with advanced protection on every payment.",
-    image: figma.padlockimage,
+    panel: "xl:mt-[43px] xl:h-[350px]",
+    art: [
+      { src: figma.virtualCardSecure, className: "-left-[5.66%] top-[2.85%] w-[111.32%] xl:left-[7px] xl:top-[-6px] xl:w-[483px]" },
+    ],
   },
 ];
 
 export function ProductBenefitsGrid() {
   return (
-    <section className="bg-[#FFF3F3] py-16 min-[1440px]:py-[99px]">
+    <section className="bg-[#FFF4F4] pb-[87px] pt-[52px] xl:pb-[140px] xl:pt-[111px]">
       <LandingInset>
-        <h2 className="mx-auto max-w-[694px] text-center font-nohemi text-[32px] font-semibold leading-[40px] text-grey-90 md:text-[40px] md:leading-[48px] min-[1440px]:text-[48px] min-[1440px]:leading-[56px]">
+        <h2 className="mx-auto max-w-[329px] text-center font-nohemi text-[20px] font-semibold leading-7 text-grey-90 md:max-w-[520px] md:text-heading-5 xl:max-w-[693px] xl:text-heading-3">
           Benefits of using Paybyleap Virtual Card
         </h2>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 min-[1440px]:mt-[60px] min-[1440px]:gap-6">
+        <div className="mt-[33px] grid gap-6 md:grid-cols-2 xl:mt-[93px] xl:grid-cols-[575px_575px] xl:justify-center xl:gap-x-[22px] xl:gap-y-10">
           {benefits.map((b) => (
-            <div
+            <article
               key={b.title}
-              className="flex w-full flex-col gap-5 rounded-[24px] p-6 pb-8 sm:p-[39px] sm:pb-[45px] lg:h-[592px] lg:justify-between lg:gap-0"
+              className="rounded-2xl bg-white pb-[25px] pt-6 xl:h-[592px] xl:rounded-3xl xl:border xl:border-grey-10 xl:pb-0 xl:pt-0 xl:shadow-[0_4px_36px_rgba(0,0,0,0.05)]"
             >
-              {/* Image container — separate bg, rounded, padded from card edges */}
-              <div className="flex h-[200px] items-center justify-center overflow-hidden rounded-2xl p-[16px] sm:h-[240px] lg:h-[40%] min-[1440px]:h-[320px]">
-                <img loading="lazy" decoding="async"
-                  src={b.image}
-                  alt=""
-                  className="h-full w-full object-contain"
-                />
+              <div
+                className={`relative ml-[19px] mr-3 aspect-[318/281] overflow-hidden rounded-lg bg-less-white xl:ml-[38px] xl:mr-0 xl:aspect-auto xl:w-[498px] xl:rounded-2xl ${b.panel}`}
+              >
+                {b.art.map((a, i) => (
+                  <img
+                    key={i}
+                    loading="lazy"
+                    decoding="async"
+                    src={a.src}
+                    alt=""
+                    className={`absolute max-w-none ${a.className}`}
+                  />
+                ))}
               </div>
-
-              {/* Text */}
-              <div className="px-2 pb-2 pt-5 min-[1440px]:px-3 min-[1440px]:pt-6">
-                <h3 className="font-nohemi text-[24px] font-semibold leading-8 text-grey-90 sm:text-[32px] sm:leading-7">
-                  {b.title}
-                </h3>
-                <p className="mt-2 text-[16px] leading-6 text-grey-70 min-[1440px]:text-[18px] ">
-                  {b.desc}
-                </p>
-              </div>
-            </div>
+              <h3 className="mt-6 pl-[19px] font-nohemi text-[16px] font-semibold leading-7 text-grey-90 xl:mt-[42px] xl:pl-[27px] xl:text-heading-5">
+                {b.title}
+              </h3>
+              <p className="mt-[7px] max-w-[317px] pl-[19px] text-body-5 text-grey-90 xl:mt-[11px] xl:max-w-[516px] xl:pl-[27px] xl:text-[20px] xl:leading-7">
+                {b.desc}
+              </p>
+            </article>
           ))}
         </div>
       </LandingInset>

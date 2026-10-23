@@ -20,12 +20,6 @@ import cardsImage from "@/assets/images/cards.png";
 import star from "@/assets/images/Star.svg";
 import herobg from "@/assets/images/herobg.svg"
 import handheld from "@/assets/images/handheld.png"
-import heroGlobalMT from "@/assets/images/hero-global-MTpng.png"
-import fastTransferBg from "@/assets/images/fast-transfer-bg.png"
-import multicurrencyBg from "@/assets/images/multicurrency-bg.png"
-import cryptoHeroImg from "@/assets/images/cryptohero.png"
-import internationalFeeHeroImg from "@/assets/images/internationalfee-hero.png"
-import invoiceHeroImg from "@/assets/invoicehero.png"
 
 import arrowRight from "@/assets/icons/arrow-right.svg";
 import arrowRightWhite from "@/assets/icons/arrow-right-white.svg";
@@ -45,11 +39,59 @@ import usdConvertHero from "@/assets/images/usdconverthero.png";
 import euroConvertHero from "@/assets/images/euroconverthero.png";
 import heroFlagUs from "@/assets/flags/hero-flag-us.svg";
 import heroFlagEu from "@/assets/flags/hero-flag-eu.svg";
-import stablecoinHero from "@/assets/images/stablecoin-hero.png"
-import padlockimage from "@/assets/images/secureimage.png"
-import visacard from "@/assets/images/visa-card.png"
-import stablecoinphone from "@/assets/images/stablecoinphone.png"
-import easyphonemock from "@/assets/images/easyonlinepaymentphone.png"
+import virtualCardRed from "@/assets/images/virtual-card-red.webp";
+import virtualCardBlack from "@/assets/images/virtual-card-black.webp";
+import virtualCardInfoIcon from "@/assets/icons/virtual-card-info-icon.svg";
+import virtualCardUsd from "@/assets/images/virtual-card-usd.webp";
+import virtualCardMirror from "@/assets/images/virtual-card-mirror.webp";
+import virtualCardPhoneStablecoins from "@/assets/images/virtual-card-phone-stablecoins.webp";
+import virtualCardPhoneWithdraw from "@/assets/images/virtual-card-phone-withdraw.webp";
+import virtualCardSecure from "@/assets/images/virtual-card-secure.webp";
+import virtualCardHand from "@/assets/images/virtual-card-hand.webp";
+import virtualCardSwooshMobile from "@/assets/images/virtual-card-swoosh-mobile.webp";
+import companyHeroNg from "@/assets/images/company/hero-ng.webp";
+import companyHeroPerson1 from "@/assets/images/company/hero-person-1.webp";
+import companyHeroPerson2 from "@/assets/images/company/hero-person-2.webp";
+import companyHeroUs from "@/assets/images/company/hero-us.webp";
+import companyHeroCa from "@/assets/images/company/hero-ca.webp";
+import companyHeroPerson3 from "@/assets/images/company/hero-person-3.webp";
+import companyHeroUk from "@/assets/images/company/hero-uk.webp";
+import companyBenefitGlobe from "@/assets/images/company/benefit-globe.webp";
+import companyBenefitUnified from "@/assets/images/company/benefit-unified.webp";
+import companyBenefitAccess from "@/assets/images/company/benefit-access.webp";
+import companyWhyPhoto from "@/assets/images/company/why-photo.webp";
+import companyAppPhone from "@/assets/images/company/app-phone.webp";
+import companyServeStudents from "@/assets/images/company/serve-students.webp";
+import companyServeFreelancers from "@/assets/images/company/serve-freelancers.webp";
+import companyServeBusinesses from "@/assets/images/company/serve-businesses.webp";
+import companyServeFamilies from "@/assets/images/company/serve-families.webp";
+import companyValueTransparency from "@/assets/images/company/value-transparency.webp";
+import companyValueInnovation from "@/assets/images/company/value-innovation.webp";
+import companyValueAccessibility from "@/assets/images/company/value-accessibility.webp";
+import companyValueReliability from "@/assets/images/company/value-reliability.webp";
+import companyValueImprovement from "@/assets/images/company/value-improvement.webp";
+import companySwoosh from "@/assets/images/company/swoosh.webp";
+import pageDividerShort from "@/assets/icons/divider-short.svg";
+import moneyTransferWorldMap from "@/assets/images/money-transfer/world-map.webp";
+import moneyTransferAvatarNg from "@/assets/images/money-transfer/avatar-ng.webp";
+import moneyTransferAvatarUs from "@/assets/images/money-transfer/avatar-us.webp";
+import moneyTransferAvatarUk from "@/assets/images/money-transfer/avatar-uk.webp";
+import moneyTransferAvatarCa from "@/assets/images/money-transfer/avatar-ca.webp";
+import moneyTransferAvatarEu from "@/assets/images/money-transfer/avatar-eu.webp";
+import moneyTransferBlueGlobe from "@/assets/images/money-transfer/blue-globe.webp";
+import moneyTransferCurrencyFlags from "@/assets/images/money-transfer/currency-flags.svg";
+import cryptoHeroBase from "@/assets/images/crypto/hero-base.webp";
+import cryptoHeroWalletUsdc from "@/assets/images/crypto/hero-wallet-usdc.webp";
+import cryptoHeroWalletUsdt from "@/assets/images/crypto/hero-wallet-usdt.webp";
+import cryptoHeroNetworks from "@/assets/images/crypto/hero-networks.webp";
+import feePaymentHeroPhone from "@/assets/images/fee-payment/hero-phone.webp";
+import invoicingHeroBase from "@/assets/images/invoicing/hero-base.webp";
+import invoicingHeroQty from "@/assets/images/invoicing/hero-qty.webp";
+import roundFlagNg from "@/assets/flags/round-flag-ng.svg";
+import roundFlagUs from "@/assets/flags/round-flag-us.svg";
+import roundFlagUk from "@/assets/flags/round-flag-uk.svg";
+import roundFlagCa from "@/assets/flags/round-flag-ca.svg";
+import roundFlagEu from "@/assets/flags/round-flag-eu.svg";
 
 import flagNg from "@/assets/flags/nigeria-flag.png";
 import flagUs from "@/assets/flags/us-flag.png";
@@ -58,29 +100,7 @@ import flagEur from "@/assets/flags/eur-flag.png";
 import flagUk from "@/assets/flags/pounds-flag.png";
 import flagCn from "@/assets/flags/yen-flag.png";
 import cryptoFlag from "@/assets/flags/crypto-flag.png";
-import avatarPerson1 from "@/assets/images/avatar-1.png";
-import avatarPerson2 from "@/assets/images/avatar-2.png";
-import avatarPerson3 from "@/assets/images/avatar-3.png";
-import aboutFlagNigeria from "@/assets/flags/about-flag-for-nigeria.png";
-import aboutFlagUs from "@/assets/flags/about-united-states.png";
-import aboutFlagCanada from "@/assets/flags/about-flag-for-canada.png";
-import aboutFlagUk from "@/assets/flags/about-flag-for-united-kingdom.png";
 
-import benefitCrossBorder from "@/assets/images/benefits-bg-1.png";
-import benefitMobile from "@/assets/images/benefitsbg-2.png";
-import benefitUnified from "@/assets/images/benefits-bg-3.png";
-import benefitGlobalAccess from "@/assets/images/benefitsbg-4.png";
-import whyExistsPhoto from "@/assets/images/about-us-image.png";
-import serveStudents from "@/assets/images/service-1.png";
-import serveFreelancers from "@/assets/images/service-2.png";
-import serveBusinesses from "@/assets/images/service-3.png";
-import serveFamilies from "@/assets/placeholders/serve-families.svg";
-import serveMerchants from "@/assets/placeholders/serve-merchants.svg";
-import coreValue1 from "@/assets/images/value1.png";
-import coreValue2 from "@/assets/images/value2.png";
-import coreValue3 from "@/assets/images/value3.png";
-import coreValue4 from "@/assets/images/value4.png";
-import coreValue5 from "@/assets/images/value5.png";
 import pageDivider from "@/assets/icons/divider.svg";
 
 import flagCa2 from "@/assets/flags/flagCa2.svg";
@@ -135,17 +155,59 @@ export const figma = {
   starMobile: star,
   herobg,
   handheld,
-  stablecoinHero,
-  heroGlobalMT,
-  cryptoHero: cryptoHeroImg,
-  internationalFeeHero: internationalFeeHeroImg,
-  invoiceHero: invoiceHeroImg,
-  fastTransferBg,
-  multicurrencyBg,
-  easyphonemock,
-  padlockimage,
-  stablecoinphone,
-  visacard,
+  virtualCardRed,
+  virtualCardBlack,
+  virtualCardInfoIcon,
+  virtualCardUsd,
+  virtualCardMirror,
+  virtualCardPhoneStablecoins,
+  virtualCardPhoneWithdraw,
+  virtualCardSecure,
+  virtualCardHand,
+  virtualCardSwooshMobile,
+  companyHeroNg,
+  companyHeroPerson1,
+  companyHeroPerson2,
+  companyHeroUs,
+  companyHeroCa,
+  companyHeroPerson3,
+  companyHeroUk,
+  companyBenefitGlobe,
+  companyBenefitUnified,
+  companyBenefitAccess,
+  companyWhyPhoto,
+  companyAppPhone,
+  companyServeStudents,
+  companyServeFreelancers,
+  companyServeBusinesses,
+  companyServeFamilies,
+  companyValueTransparency,
+  companyValueInnovation,
+  companyValueAccessibility,
+  companyValueReliability,
+  companyValueImprovement,
+  companySwoosh,
+  pageDividerShort,
+  moneyTransferWorldMap,
+  moneyTransferAvatarNg,
+  moneyTransferAvatarUs,
+  moneyTransferAvatarUk,
+  moneyTransferAvatarCa,
+  moneyTransferAvatarEu,
+  moneyTransferBlueGlobe,
+  moneyTransferCurrencyFlags,
+  cryptoHeroBase,
+  cryptoHeroWalletUsdc,
+  cryptoHeroWalletUsdt,
+  cryptoHeroNetworks,
+  feePaymentHeroPhone,
+  invoicingHeroBase,
+  invoicingHeroQty,
+  roundFlagNg,
+  roundFlagUs,
+  roundFlagUk,
+  roundFlagCa,
+  roundFlagEu,
 
   arrowRightWhite,
   navArrowLeft,
@@ -176,30 +238,7 @@ export const figma = {
   flagCn,
   usdc: cryptoFlag,
   usdt: cryptoFlag,
-  avatarPerson1,
-  avatarPerson2,
-  avatarPerson3,
-  aboutFlagNigeria,
-  aboutFlagUs,
-  aboutFlagCanada,
-  aboutFlagUk,
   pageDivider,
-
-  benefitCrossBorder,
-  benefitMobile,
-  benefitUnified,
-  benefitGlobalAccess,
-  whyExistsPhoto,
-  serveStudents,
-  serveFreelancers,
-  serveBusinesses,
-  serveFamilies,
-  serveMerchants,
-  coreValue1,
-  coreValue2,
-  coreValue3,
-  coreValue4,
-  coreValue5,
 
   flagCa2,
   flagNg2,

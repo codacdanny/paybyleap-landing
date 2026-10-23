@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { figma } from "../../data/images/Index";
 import { LandingInset } from "../../components/landing-inset/Index";
 import { Button } from "../../components/ui/button/Index";
@@ -79,55 +79,47 @@ function ProductDropdown({ onClose }: { onClose: () => void }) {
   return (
     <div className="absolute left-1/2 top-full z-50 mt-2 w-[680px] -translate-x-1/2 rounded-2xl border border-grey-10 bg-white p-4 shadow-card">
       <div className="grid grid-cols-2 gap-x-6">
-        <div className="flex flex-col gap-1">
-          {col1.map((p, i) => (
-            <Link
-              key={p.href}
-              to={p.href}
-              onClick={onClose}
-              className={`rounded-xl px-4 py-3 transition-colors hover:bg-[#FFF3F3] ${i === 0 ? "bg-[#FFF3F3]" : ""}`}
-            >
-              <p className="text-[15px] font-semibold leading-5 text-grey-90">
-                {p.label}
-              </p>
-              <p className="mt-0.5 text-[13px] leading-5 text-grey-60">
-                {p.desc}
-              </p>
-            </Link>
-          ))}
-        </div>
-        <div className="flex flex-col gap-1">
-          {col2.map((p) => (
-            <Link
-              key={p.href}
-              to={p.href}
-              onClick={onClose}
-              className="rounded-xl px-4 py-3 transition-colors hover:bg-[#FFF3F3]"
-            >
-              <p className="text-[15px] font-semibold leading-5 text-grey-90">
-                {p.label}
-              </p>
-              <p className="mt-0.5 text-[13px] leading-5 text-grey-60">
-                {p.desc}
-              </p>
-            </Link>
-          ))}
-        </div>
+        {[col1, col2].map((column) => (
+          <div key={column[0].href} className="flex flex-col gap-1">
+            {column.map((p) => (
+              <NavLink
+                key={p.href}
+                to={p.href}
+                onClick={onClose}
+                className={({ isActive }) =>
+                  `rounded-xl px-4 py-3 transition-colors hover:bg-[#FFF3F3] ${isActive ? "bg-[#FFF3F3]" : ""}`
+                }
+              >
+                <p className="text-[15px] font-semibold leading-5 text-grey-90">
+                  {p.label}
+                </p>
+                <p className="mt-0.5 text-[13px] leading-5 text-grey-60">
+                  {p.desc}
+                </p>
+              </NavLink>
+            ))}
+          </div>
+        ))}
       </div>
     </div>
   );
 }
 
 function CompanyDropdown({ onClose }: { onClose: () => void }) {
+  // Compared by path rather than NavLink, which treats the "#" placeholder
+  // as the current page.
+  const { pathname } = useLocation();
+
   return (
     <div className="absolute left-1/2 top-full z-50 mt-2 w-[340px] -translate-x-1/2 rounded-2xl border border-grey-10 bg-white p-4 shadow-card">
       <div className="flex flex-col gap-1">
-        {companyLinks.map((l, i) => (
+        {companyLinks.map((l) => (
           <Link
             key={l.label}
             to={l.href}
             onClick={onClose}
-            className={`rounded-xl px-4 py-3 transition-colors hover:bg-[#FFF3F3] ${i === 0 ? "bg-[#FFF3F3]" : ""}`}
+            aria-current={l.href === pathname ? "page" : undefined}
+            className={`rounded-xl px-4 py-3 transition-colors hover:bg-[#FFF3F3] ${l.href === pathname ? "bg-[#FFF3F3]" : ""}`}
           >
             <p className="text-[15px] font-semibold leading-5 text-grey-90">
               {l.label}
@@ -154,6 +146,7 @@ export function Header() {
   >(null);
   const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
+  const isProductPage = productLinks.some((p) => p.href === pathname);
 
   /* close dropdown on outside click */
   useEffect(() => {
@@ -274,7 +267,7 @@ export function Header() {
                     type="button"
                     onClick={() => toggleDropdown("products")}
                     className={`flex h-10 items-center gap-1 whitespace-nowrap px-2 text-[16px] font-medium leading-6 transition-colors hover:text-primary xl:px-2.5 xl:text-[18px] ${
-                      openDropdown === "products"
+                      openDropdown === "products" || isProductPage
                         ? "text-primary"
                         : "text-grey-90"
                     }`}
@@ -426,14 +419,16 @@ export function Header() {
                 {mobileProductsOpen && (
                   <div className="mt-3 flex flex-col gap-1 border-l-2 border-primary/20 pl-4">
                     {productLinks.map((p) => (
-                      <Link
+                      <NavLink
                         key={p.href}
                         to={p.href}
                         onClick={() => setMenuOpen(false)}
-                        className="rounded-xl py-2.5 text-[16px] font-medium text-grey-80 transition-colors hover:text-primary"
+                        className={({ isActive }) =>
+                          `rounded-xl py-2.5 text-[16px] font-medium transition-colors hover:text-primary ${isActive ? "text-primary" : "text-grey-80"}`
+                        }
                       >
                         {p.label}
-                      </Link>
+                      </NavLink>
                     ))}
                   </div>
                 )}

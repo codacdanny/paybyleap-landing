@@ -1,28 +1,39 @@
+import { figma } from "@/data/images/Index";
 import { LandingInset } from "@/components/landing-inset/Index";
+import { useSectionReveal } from "../../reveal";
 
 export function GrowthMissionBanner() {
+  const { ref, revealClass } = useSectionReveal<HTMLElement>(0.2);
+
   return (
-    <section className="bg-[#1D1111] py-20 min-[1440px]:py-[120px]">
-      <LandingInset>
-        <svg
-          viewBox="0 0 160 40"
-          className="mx-auto mb-8 h-9 w-[160px]"
-          fill="none"
+    <section ref={ref} className={`overflow-hidden bg-[#1D1212] pt-20 xl:pt-[236px]${revealClass}`}>
+      <LandingInset className="text-center">
+        <img
+          loading="lazy"
+          decoding="async"
+          src={figma.companySwoosh}
+          alt=""
           aria-hidden
+          className="co-pop mx-auto aspect-[216/71] w-[160px] xl:w-[216px]"
+        />
+        <h2
+          className="co-rise mx-auto mt-10 max-w-[1099px] font-nohemi text-[32px] font-semibold leading-10 text-white md:text-[48px] md:leading-[60px] xl:mt-14 xl:text-[64px] xl:leading-[76px]"
+          style={{ ["--d" as string]: "150ms" }}
         >
-          <path
-            d="M10 24 Q60 6 122 16"
-            stroke="#9A0000"
-            strokeWidth="9"
-            strokeLinecap="round"
-          />
-          <circle cx="136" cy="22" r="6" fill="#F6C03A" />
-        </svg>
-        <h2 className="mx-auto max-w-[820px] text-center font-nohemi text-[40px] font-bold leading-[1.15] text-white md:text-[52px] min-[1440px]:text-[60px]">
-          We are just getting started: continuously building, improving &
+          We are just getting started: continuously building, improving &amp;
           expanding to serve more users globally
         </h2>
       </LandingInset>
+
+      <img
+        loading="lazy"
+        decoding="async"
+        src={figma.pageDividerShort}
+        alt=""
+        aria-hidden
+        className="co-fade pointer-events-none mt-16 aspect-[1440/110] mix-blend-color-dodge w-full xl:mx-auto xl:mt-[217px] xl:w-[1440px]"
+        style={{ ["--d" as string]: "300ms" }}
+      />
     </section>
   );
 }
