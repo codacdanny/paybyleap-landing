@@ -1,4 +1,4 @@
-import { figma } from "@/data/images/Index";
+import { cryptoImages } from "@/data/images/crypto";
 import { LandingInset } from "@/components/landing-inset/Index";
 import { IconPlayCircle } from "@/components/ui/icons/Index";
 import { REVEAL_EASE } from "@/hooks/useRevealOnScroll";
@@ -36,9 +36,9 @@ const css = `
 
 // Layer bounds are the source pixels each piece was cut from (990x1120).
 const layers = [
-  { src: figma.cryptoHeroWalletUsdc, className: "cx-usdc left-[10.909%] top-[21.429%] w-[36.566%]" },
-  { src: figma.cryptoHeroWalletUsdt, className: "cx-usdt left-[50.707%] top-[21.429%] w-[36.566%]" },
-  { src: figma.cryptoHeroNetworks, className: "cx-networks left-[10.909%] top-[63.929%] w-[79.596%]" },
+  { src: cryptoImages.heroWalletUsdc, className: "cx-usdc left-[10.909%] top-[21.429%] w-[36.566%]" },
+  { src: cryptoImages.heroWalletUsdt, className: "cx-usdt left-[50.707%] top-[21.429%] w-[36.566%]" },
+  { src: cryptoImages.heroNetworks, className: "cx-networks left-[10.909%] top-[63.929%] w-[79.596%]" },
 ];
 
 // Figma 4643:38492 (1440) and 4884:6337 (390).
@@ -78,7 +78,7 @@ export function CryptoHero() {
             className="cx-card mt-10 w-[345px] md:mx-auto md:w-[562px] xl:absolute xl:left-[611px] xl:top-[-50px] xl:mt-0"
           >
             <div className="cx-drift relative">
-              <img src={figma.cryptoHeroBase} alt="" className="w-full" />
+              <img src={cryptoImages.heroBase} alt="" className="w-full" />
               {layers.map(({ src, className }) => (
                 <img key={src} src={src} alt="" className={`absolute ${className}`} />
               ))}

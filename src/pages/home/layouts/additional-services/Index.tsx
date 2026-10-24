@@ -1,5 +1,6 @@
 import { useRef, useState, useCallback, useEffect } from "react";
-import { figma } from "@/data/images/Index";
+import { sharedImages } from "@/data/images/shared";
+import { homeImages } from "@/data/images/home";
 import { LandingInset } from "@/components/landing-inset/Index";
 import { Button } from "@/components/ui/button/Index";
 
@@ -7,13 +8,13 @@ const cards = [
   {
     title: "Bill Payments",
     body: " enable users to conveniently pay for utilities and subscription services across the globe, allowing seamless, secure, and timely transactions",
-    image: figma.serviceBillPayments,
+    image: homeImages.serviceBillPayments,
     gradient: "linear-gradient(234deg, rgba(0,0,0,0) 25.5%, rgb(0,0,0) 84.4%)",
   },
   {
     title: "Expenses Management",
     body: "It allows users to effectively monitor, track, and categorize their spending in real time, providing clear insights into where their money goes by organizing expenses into meaningful categories",
-    image: figma.serviceExpenses,
+    image: homeImages.serviceExpenses,
     gradient: "linear-gradient(222deg, rgba(0,0,0,0) 25%, rgb(0,0,0) 81.7%)",
   },
 ];
@@ -49,10 +50,10 @@ export function AdditionalServicesSection() {
     el.scrollBy({ left: dir * w, behavior: "smooth" });
   };
 
-  const leftSrc = canScrollLeft ? figma.navArrowRight : figma.navArrowLeft;
+  const leftSrc = canScrollLeft ? sharedImages.navArrowRight : sharedImages.navArrowLeft;
   const leftRotate = canScrollLeft ? "rotate-180" : "";
 
-  const rightSrc = canScrollRight ? figma.navArrowRight : figma.navArrowLeft;
+  const rightSrc = canScrollRight ? sharedImages.navArrowRight : sharedImages.navArrowLeft;
   const rightRotate = canScrollRight ? "" : "rotate-180";
 
   return (

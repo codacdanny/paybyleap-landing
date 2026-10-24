@@ -1,4 +1,4 @@
-import { figma } from "@/data/images/Index";
+import { sharedImages } from "@/data/images/shared";
 import { ProductBenefitsCarousel, type ProductBenefitCard } from "@/components/what-you-gain-carousel/Index";
 
 const cards: ProductBenefitCard[] = [
@@ -17,13 +17,13 @@ const cards: ProductBenefitCard[] = [
     id: "low-fees",
     title: "Low Fees",
     desc: "All costs are transparent and shown upfront — no hidden charges, ever.",
-    icon: figma.realtimeconversionIcon,
+    icon: sharedImages.realtimeconversionIcon,
   },
   {
     id: "instant",
     title: "Instant Conversion",
     desc: "Convert between currencies instantly without processing delays.",
-    icon: figma.realtimeconversionIcon,
+    icon: sharedImages.realtimeconversionIcon,
   },
 ];
 

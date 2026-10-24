@@ -1,5 +1,6 @@
 import type { CSSProperties } from "react";
-import { figma } from "@/data/images/Index";
+import { sharedImages } from "@/data/images/shared";
+import { stablecoinVirtualCardImages } from "@/data/images/stablecoin-virtual-card";
 import { LandingInset } from "@/components/landing-inset/Index";
 
 // Listed in mobile order (Figma 4789:13436), where they alternate left and
@@ -27,7 +28,7 @@ export function GetMoreSection() {
       <img
         loading="lazy"
         decoding="async"
-        src={figma.virtualCardSwooshMobile}
+        src={stablecoinVirtualCardImages.virtualCardSwooshMobile}
         alt=""
         aria-hidden
         className="pointer-events-none absolute left-[calc(50%-274px)] top-[713px] w-[519px] max-w-none xl:hidden"
@@ -35,7 +36,7 @@ export function GetMoreSection() {
       <img
         loading="lazy"
         decoding="async"
-        src={figma.leapLogoLarge}
+        src={sharedImages.leapLogoLarge}
         alt=""
         aria-hidden
         className="pointer-events-none absolute left-[calc(50%-753px)] top-[144px] hidden w-[1440px] max-w-none opacity-[.667] xl:block"
@@ -61,7 +62,7 @@ export function GetMoreSection() {
                   ["--w-d" as string]: `${p.w}px`,
                 }}
               >
-                <img src={figma.star} alt="" className="size-5 shrink-0 xl:size-6" />
+                <img src={sharedImages.star} alt="" className="size-5 shrink-0 xl:size-6" />
                 <span className="whitespace-nowrap text-[16px] font-medium leading-8 text-grey-90 xl:text-[24px]">
                   {p.label}
                 </span>
@@ -73,7 +74,7 @@ export function GetMoreSection() {
             <img
               loading="lazy"
               decoding="async"
-              src={figma.virtualCardHand}
+              src={stablecoinVirtualCardImages.virtualCardHand}
               alt="Hand holding a phone showing the PayByLeap virtual card"
               className="w-full"
             />

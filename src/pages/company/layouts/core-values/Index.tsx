@@ -1,4 +1,4 @@
-import { figma } from "@/data/images/Index";
+import { companyImages } from "@/data/images/company";
 import { LandingInset } from "@/components/landing-inset/Index";
 import { useSectionReveal } from "../../reveal";
 
@@ -8,31 +8,31 @@ const values = [
   {
     num: "01",
     title: "Transparency first: Users know what they are paying and why",
-    image: figma.companyValueTransparency,
+    image: companyImages.valueTransparency,
     artClass: "left-[7.69%] top-[184px] w-[84.62%]",
   },
   {
     num: "02",
     title: "User-centric innovation: solutions that solve real problem",
-    image: figma.companyValueInnovation,
+    image: companyImages.valueInnovation,
     artClass: "left-[4.67%] top-[143px] w-[90.93%]",
   },
   {
     num: "03",
     title: "Global accessibility: financial tools for everyone, everywhere",
-    image: figma.companyValueAccessibility,
+    image: companyImages.valueAccessibility,
     artClass: "left-[6.32%] top-[187px] w-[82.42%]",
   },
   {
     num: "04",
     title: "Reliability and trust: secure, stable & consistent transactions",
-    image: figma.companyValueReliability,
+    image: companyImages.valueReliability,
     artClass: "left-[37.64%] top-[140px] w-[62.36%]",
   },
   {
     num: "05",
     title: "Continuous improvement: evolving with a changing world",
-    image: figma.companyValueImprovement,
+    image: companyImages.valueImprovement,
     artClass: "left-[6.32%] top-[206px] w-[93.68%]",
   },
 ];

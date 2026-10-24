@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { figma } from "@/data/images/Index";
+import { sharedImages } from "@/data/images/shared";
 import { LandingInset } from "@/components/landing-inset/Index";
 import { FeaturePill } from "@/components/ui/feature-pill/Index";
 
@@ -21,7 +21,7 @@ export function FeaturePitchSection({
   return (
     <section className="relative overflow-hidden bg-grey-100">
       <img loading="lazy" decoding="async"
-        src={figma.leapLogoLarge}
+        src={sharedImages.leapLogoLarge}
         alt=""
         aria-hidden
         className="pointer-events-none absolute inset-0 h-full w-full object-cover"

@@ -1,4 +1,5 @@
-import { figma } from "@/data/images/Index";
+import { sharedImages } from "@/data/images/shared";
+import { companyImages } from "@/data/images/company";
 import { LandingInset } from "@/components/landing-inset/Index";
 import { useSectionReveal } from "../../reveal";
 
@@ -44,7 +45,7 @@ export function ProductEcosystemSection() {
         <img
           loading="lazy"
           decoding="async"
-          src={figma.companyAppPhone}
+          src={companyImages.appPhone}
           alt="PayByLeap app home screen"
           className="co-rise order-1 my-4 w-[240px] xl:absolute xl:left-[551px] xl:top-[547px] xl:my-0 xl:w-[397px]"
           style={{ ["--d" as string]: "200ms" }}
@@ -65,7 +66,7 @@ export function ProductEcosystemSection() {
               className="co-float co-glass-pill flex items-center justify-center gap-4 rounded-3xl px-5 py-4 xl:h-[var(--h)] xl:px-0 xl:py-0"
               style={{ ["--h" as string]: `${p.h}px`, ["--f" as string]: `${1.4 + (i % 3) * 0.7}s` }}
             >
-              <img src={figma.star} alt="" className="size-5 shrink-0 xl:size-6" />
+              <img src={sharedImages.star} alt="" className="size-5 shrink-0 xl:size-6" />
               <span
                 className="text-center text-[16px] font-medium leading-6 text-white xl:w-[var(--tw)] xl:text-[24px] xl:leading-8"
                 style={{ ["--tw" as string]: `${p.tw}px` }}

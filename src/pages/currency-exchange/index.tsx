@@ -4,7 +4,7 @@ import { CurrencyBenefitsCarouselSection } from "./layouts/what-you-gain/Index";
 import { FeaturePitchSection } from "@/components/feature-pitch-section/Index";
 import { TransactionSecuritySection } from "@/components/transaction-security-section/Index";
 import { TestimonialsSection } from "@/components/testimonials-section/Index";
-import { figma } from "@/data/images/Index";
+import { sharedImages } from "@/data/images/shared";
 
 const pills = [
   "LIVE EXCHANGE RATE",
@@ -25,7 +25,7 @@ export function CurrencyExchangePage() {
       <FeaturePitchSection
         heading={<>Get more from <span className="text-secondary">Paybyleap</span><br /><span className="text-secondary">Currency</span> Exchange</>}
         pills={pills}
-        image={figma.handheld}
+        image={sharedImages.handheld}
         ctaHeading={<>Convert Currency<br />easily Today!</>}
       />
       <TransactionSecuritySection />

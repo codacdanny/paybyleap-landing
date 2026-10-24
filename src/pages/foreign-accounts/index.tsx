@@ -1,5 +1,6 @@
 import { Fragment } from "react";
-import { figma } from "../../data/images/Index";
+import { sharedImages } from "../../data/images/shared";
+import { foreignAccountsImages } from "../../data/images/foreign-accounts";
 import { LandingInset } from "../../components/landing-inset/Index";
 import { REVEAL_EASE, useRevealOnScroll } from "@/hooks/useRevealOnScroll";
 import { FeaturePill } from "@/components/ui/feature-pill/Index";
@@ -50,7 +51,7 @@ function MobilePill({ label, bold, rest }: { label: string; bold?: string; rest?
       className="flex h-[45px] items-center justify-center gap-2 rounded-3xl"
       style={pillBorder}
     >
-      <img loading="lazy" decoding="async" src={figma.star} alt="" className="size-5 shrink-0" />
+      <img loading="lazy" decoding="async" src={sharedImages.star} alt="" className="size-5 shrink-0" />
       <span className="whitespace-nowrap text-[16px] font-medium leading-8 text-grey-90">
         {bold ? (
           <>
@@ -77,7 +78,7 @@ function FAHero() {
           {/* ── Left column: text content ── */}
           <div className="w-full shrink-0 pt-4 lg:w-1/2 min-[1440px]:w-auto min-[1440px]:max-w-[680px]">
             <div className="inline-flex items-center gap-0.5 rounded-2xl border border-secondary bg-[#FBF2D6] px-2 py-1">
-              <img loading="lazy" decoding="async" src={figma.ionPlanet} alt="" className="size-4" />
+              <img loading="lazy" decoding="async" src={sharedImages.ionPlanet} alt="" className="size-4" />
               <span className="text-center text-[16px] leading-6 text-grey-80">
                 GLOBAL ACCOUNTS
               </span>
@@ -127,7 +128,7 @@ function FAHero() {
             {/* Man with hat — bottom-right, bleeds off edge */}
             <div className="absolute bottom-0 right-[-40px] z-10 sm:right-[-56px] lg:right-[-80px] min-[1440px]:right-[-120px]" aria-hidden>
               <img loading="lazy" decoding="async"
-                src={figma.freeAccountHero}
+                src={sharedImages.freeAccountHero}
                 alt=""
                 className="h-[280px] w-auto object-contain object-bottom sm:h-[380px] md:h-[430px] lg:h-[470px] xl:h-[550px] min-[1440px]:h-[650px]"
               />
@@ -219,12 +220,12 @@ function GetPaidSection() {
             <div className="absolute top-[44%] left-1/2 z-10 w-[80%] -translate-x-1/2" aria-hidden>
               <div className="gp-float" style={{ ["--d" as string]: "0s" }}>
                 <img loading="lazy" decoding="async"
-                  src={figma.quickTransferImage}
+                  src={foreignAccountsImages.quickTransferImage}
                   alt=""
                   className="gp-rise w-full object-contain [clip-path:inset(0_0_20.72%_0)]"
                 />
                 <img loading="lazy" decoding="async"
-                  src={figma.quickTransferImage}
+                  src={foreignAccountsImages.quickTransferImage}
                   alt=""
                   className="gp-pop absolute inset-0 w-full object-contain [clip-path:inset(79.28%_0_0_0)]"
                 />
@@ -246,7 +247,7 @@ function GetPaidSection() {
             <div className="absolute bottom-[-30px] left-1/2 z-0 w-[90%] -translate-x-1/2" aria-hidden>
               <div className="gp-drift-a" style={{ ["--d" as string]: ".12s" }}>
                 <img loading="lazy" decoding="async"
-                  src={figma.solidStar}
+                  src={foreignAccountsImages.solidStar}
                   alt=""
                   className="gp-rise w-full object-contain"
                 />
@@ -256,7 +257,7 @@ function GetPaidSection() {
             <div className="absolute bottom-[-20px] left-1/2 z-10 w-[95%] -translate-x-[48%]" aria-hidden>
               <div className="gp-drift-b" style={{ ["--d" as string]: ".22s" }}>
                 <img loading="lazy" decoding="async"
-                  src={figma.dottedStar}
+                  src={foreignAccountsImages.dottedStar}
                   alt=""
                   className="gp-rise w-full object-contain"
                 />
@@ -283,12 +284,12 @@ function GetPaidSection() {
             >
               <div className="gp-float size-full" style={{ ["--d" as string]: ".24s" }}>
                 <img loading="lazy" decoding="async"
-                  src={figma.creditCardBackplate}
+                  src={foreignAccountsImages.creditCardBackplate}
                   alt=""
                   className="gp-rise absolute left-0 top-0 w-[95.33%]"
                 />
                 <img loading="lazy" decoding="async"
-                  src={figma.creditCardImage}
+                  src={foreignAccountsImages.creditCardImage}
                   alt=""
                   className="gp-rise absolute left-[1.77%] top-[13.2%] w-[98.23%]"
                   style={{ ["--d" as string]: ".34s" }}
@@ -378,14 +379,14 @@ function BenefitsPillsSection() {
             the last pill, so the pair is offset up as one block */}
         <div className="relative ml-[-15.13%] mt-[-15.64%] aspect-[519/608] w-[133.08%]">
           <img loading="lazy" decoding="async"
-            src={figma.benefitsWatermarkMobile}
+            src={foreignAccountsImages.benefitsWatermarkMobile}
             alt=""
             className="bp-drift pointer-events-none absolute left-0 top-0 w-full"
             aria-hidden
           />
           <div className="bp-float absolute left-[9.83%] top-[16.61%] w-[83.43%]">
             <img loading="lazy" decoding="async"
-              src={figma.getMoreIphoneMobile}
+              src={foreignAccountsImages.getMoreIphoneMobile}
               alt="PayByLeap foreign account app on iPhone"
               className="bp-rise w-full"
               style={{ ["--d" as string]: "820ms" }}
@@ -400,7 +401,7 @@ function BenefitsPillsSection() {
       {/* Background leap mark — Figma places it at 24,232 (1007x711) in the
           1441px frame; its 10% opacity is baked into the export */}
       <img loading="lazy" decoding="async"
-        src={figma.benefitsWatermark}
+        src={foreignAccountsImages.benefitsWatermark}
         alt=""
         className="bp-drift pointer-events-none absolute z-0"
         style={{ top: "232px", left: "calc(50% - 696px)", width: "1007px", height: "711px" }}
@@ -436,7 +437,7 @@ function BenefitsPillsSection() {
           <div className="hidden shrink-0 self-stretch lg:flex lg:items-end min-[1440px]:hidden">
             <div className="bp-float">
               <img loading="lazy" decoding="async"
-                src={figma.getMoreIphoneMock}
+                src={foreignAccountsImages.getMoreIphoneMock}
                 alt="PayByLeap foreign account app on iPhone"
                 className="bp-rise w-[300px] object-contain object-bottom"
                 style={{ ["--d" as string]: "760ms" }}
@@ -453,7 +454,7 @@ function BenefitsPillsSection() {
         style={{ top: "225px", left: "calc(50% + 135px)", width: "639px", height: "843px" }}
       >
         <img loading="lazy" decoding="async"
-          src={figma.getMoreIphoneMock}
+          src={foreignAccountsImages.getMoreIphoneMock}
           alt="PayByLeap foreign account app on iPhone"
           className="bp-rise size-full object-contain object-top"
           style={{ ["--d" as string]: "760ms" }}

@@ -1,4 +1,5 @@
-import { figma } from "@/data/images/Index";
+import { sharedImages } from "@/data/images/shared";
+import { homeImages } from "@/data/images/home";
 import { LandingInset } from "@/components/landing-inset/Index";
 import { Button } from "@/components/ui/button/Index";
 
@@ -9,7 +10,7 @@ export function DownloadAppSection() {
         {/* Desktop background — woman on couch, right-aligned */}
         <div className="pointer-events-none absolute inset-y-0 right-0 hidden overflow-hidden lg:block lg:w-[1071px]">
           <img loading="lazy" decoding="async"
-            src={figma.mobileAppHeroPhoto}
+            src={homeImages.mobileAppHeroPhoto}
             alt=""
             className="h-full w-full object-cover object-[center_top]"
           />
@@ -43,7 +44,7 @@ export function DownloadAppSection() {
                 className="inline-flex items-center gap-2 text-[18px] font-medium text-white"
               >
                 Learn how it works
-                <img loading="lazy" decoding="async" src={figma.arrowRightWhite} alt="" className="size-6" />
+                <img loading="lazy" decoding="async" src={sharedImages.arrowRightWhite} alt="" className="size-6" />
               </a>
             </div>
           </div>

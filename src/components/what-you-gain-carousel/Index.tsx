@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect, useCallback, type ReactNode } from "react";
-import { figma } from "@/data/images/Index";
+import { sharedImages } from "@/data/images/shared";
 import { LandingInset } from "@/components/landing-inset/Index";
 
 export interface ProductBenefitCard {
@@ -55,8 +55,8 @@ export function ProductBenefitsCarousel({ heading, sectionClassName = "bg-[#FBF2
   const go = (dir: -1 | 1) =>
     scrollTo(Math.max(0, Math.min(cards.length - 1, active + dir)));
 
-  const leftSrc = canScrollLeft ? figma.navArrowRight : figma.navArrowLeft;
-  const rightSrc = canScrollRight ? figma.navArrowRight : figma.navArrowLeft;
+  const leftSrc = canScrollLeft ? sharedImages.navArrowRight : sharedImages.navArrowLeft;
+  const rightSrc = canScrollRight ? sharedImages.navArrowRight : sharedImages.navArrowLeft;
 
   return (
     <section className={`relative pb-16 pt-16 md:pb-[100px] md:pt-[104px] min-[1440px]:pb-[120px] ${sectionClassName}`}>
@@ -104,7 +104,7 @@ export function ProductBenefitsCarousel({ heading, sectionClassName = "bg-[#FBF2
               ) : (
                 <div className="flex size-[70px] items-center justify-center rounded-full bg-[#FFF4F4]">
                   <img loading="lazy" decoding="async"
-                    src={c.icon ?? figma.realtimeconversionIcon}
+                    src={c.icon ?? sharedImages.realtimeconversionIcon}
                     alt=""
                     className="size-[32px] object-contain"
                   />

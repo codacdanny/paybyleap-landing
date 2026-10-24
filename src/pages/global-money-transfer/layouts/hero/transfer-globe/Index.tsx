@@ -1,5 +1,6 @@
 import type { CSSProperties } from "react";
-import { figma } from "@/data/images/Index";
+import { sharedImages } from "@/data/images/shared";
+import { globalMoneyTransferImages } from "@/data/images/global-money-transfer";
 
 // The land drifts one globe-width per cycle with a second copy trailing a
 // globe-width behind, so the loop restarts on an identical frame.
@@ -51,11 +52,11 @@ const landTiles = [
 ];
 
 const avatars = [
-  { photo: figma.moneyTransferAvatarNg, flag: figma.roundFlagNg, x: 584, y: 547, flagX: 612, flagY: 542 },
-  { photo: figma.moneyTransferAvatarUs, flag: figma.roundFlagUs, x: 787, y: 728, flagX: 812, flagY: 722 },
-  { photo: figma.moneyTransferAvatarUk, flag: figma.roundFlagUk, x: 930, y: 547, flagX: 957, flagY: 545 },
-  { photo: figma.moneyTransferAvatarCa, flag: figma.roundFlagCa, x: 319, y: 747, flagX: 343, flagY: 741 },
-  { photo: figma.moneyTransferAvatarEu, flag: figma.roundFlagEu, x: 1126, y: 735, flagX: 1152, flagY: 731 },
+  { photo: globalMoneyTransferImages.avatarNg, flag: sharedImages.roundFlagNg, x: 584, y: 547, flagX: 612, flagY: 542 },
+  { photo: globalMoneyTransferImages.avatarUs, flag: sharedImages.roundFlagUs, x: 787, y: 728, flagX: 812, flagY: 722 },
+  { photo: globalMoneyTransferImages.avatarUk, flag: sharedImages.roundFlagUk, x: 930, y: 547, flagX: 957, flagY: 545 },
+  { photo: globalMoneyTransferImages.avatarCa, flag: sharedImages.roundFlagCa, x: 319, y: 747, flagX: 343, flagY: 741 },
+  { photo: globalMoneyTransferImages.avatarEu, flag: sharedImages.roundFlagEu, x: 1126, y: 735, flagX: 1152, flagY: 731 },
 ];
 
 const arcs = [
@@ -102,7 +103,7 @@ export function TransferGlobe({ className = "" }: { className?: string }) {
                 <div key={offset} className="absolute inset-0" style={{ transform: `translateX(${offset})` }}>
                   {landTiles.map(({ box, crop }, i) => (
                     <div key={i} className="absolute origin-top-left overflow-hidden opacity-20" style={box}>
-                      <img src={figma.moneyTransferWorldMap} alt="" className="absolute max-w-none" style={crop} />
+                      <img src={globalMoneyTransferImages.worldMap} alt="" className="absolute max-w-none" style={crop} />
                     </div>
                   ))}
                 </div>
@@ -146,7 +147,7 @@ export function TransferGlobe({ className = "" }: { className?: string }) {
                   <text x="17" y="32" fontSize="12" fill="#000">
                     {label}
                   </text>
-                  <image href={figma.txnSealCheck} x="169" y="17" width="24" height="24" />
+                  <image href={sharedImages.txnSealCheck} x="169" y="17" width="24" height="24" />
                 </g>
               </g>
             ))}

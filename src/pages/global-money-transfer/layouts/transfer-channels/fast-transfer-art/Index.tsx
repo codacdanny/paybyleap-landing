@@ -1,4 +1,5 @@
-import { figma } from "@/data/images/Index";
+import { sharedImages } from "@/data/images/shared";
+import { globalMoneyTransferImages } from "@/data/images/global-money-transfer";
 
 const arcs = [
   "M61.3 232C37.1 197.2 35 152.7 57.2 118.3C76.2 88.8 109.5 64.3 146 66.4",
@@ -13,9 +14,9 @@ const dots = [
 ];
 
 const avatars = [
-  { photo: figma.moneyTransferAvatarUs, flag: figma.roundFlagUs, cx: 279.07, cy: 291.46, r: 15.545, flagX: 283.97, flagY: 271, flagSize: 16.36 },
-  { photo: figma.moneyTransferAvatarCa, flag: figma.roundFlagCa, cx: 93.64, cy: 238.89, r: 15.115, flagX: 97.61, flagY: 219, flagSize: 15.91 },
-  { photo: figma.moneyTransferAvatarNg, flag: figma.roundFlagNg, cx: 149.4, cy: 61.58, r: 17.875, flagX: 157.86, flagY: 39, flagSize: 18.82 },
+  { photo: globalMoneyTransferImages.avatarUs, flag: sharedImages.roundFlagUs, cx: 279.07, cy: 291.46, r: 15.545, flagX: 283.97, flagY: 271, flagSize: 16.36 },
+  { photo: globalMoneyTransferImages.avatarCa, flag: sharedImages.roundFlagCa, cx: 93.64, cy: 238.89, r: 15.115, flagX: 97.61, flagY: 219, flagSize: 15.91 },
+  { photo: globalMoneyTransferImages.avatarNg, flag: sharedImages.roundFlagNg, cx: 149.4, cy: 61.58, r: 17.875, flagX: 157.86, flagY: 39, flagSize: 18.82 },
 ];
 
 // Figma group 5044:6121, drawn in its own coordinates and anchored where the
@@ -32,7 +33,7 @@ export function FastTransferArt() {
           <circle cx=".5" cy=".5" r=".5" />
         </clipPath>
       </defs>
-      <image href={figma.moneyTransferBlueGlobe} x="8.52" y="0" width="426" height="426" />
+      <image href={globalMoneyTransferImages.blueGlobe} x="8.52" y="0" width="426" height="426" />
       {arcs.map((d) => (
         <path key={d} d={d} fill="none" stroke="#fff" strokeDasharray="2 2" />
       ))}

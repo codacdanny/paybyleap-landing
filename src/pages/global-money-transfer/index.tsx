@@ -3,7 +3,7 @@ import { ServiceFeaturesSection } from "./layouts/transfer-channels/Index";
 import { FeaturePitchSection } from "@/components/feature-pitch-section/Index";
 import { TransactionSecuritySection } from "@/components/transaction-security-section/Index";
 import { TestimonialsSection } from "@/components/testimonials-section/Index";
-import { figma } from "@/data/images/Index";
+import { sharedImages } from "@/data/images/shared";
 
 const pills = [
   "FAST INTERNATIONAL TRANSFERS",
@@ -23,7 +23,7 @@ export function GlobalMoneyTransferPage() {
       <FeaturePitchSection
         heading={<>Get more from <span className="text-secondary">Paybyleap</span><br /><span className="text-secondary">Global</span> Money Transfer</>}
         pills={pills}
-        image={figma.handheld}
+        image={sharedImages.handheld}
         ctaHeading={<>Transfer Money<br />easily Today!</>}
       />
       <TransactionSecuritySection />

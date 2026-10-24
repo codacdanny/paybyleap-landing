@@ -1,5 +1,6 @@
 import type { CSSProperties } from "react";
-import { figma } from "@/data/images/Index";
+import { sharedImages } from "@/data/images/shared";
+import { internationalFeePaymentImages } from "@/data/images/international-fee-payment";
 import { LandingInset } from "@/components/landing-inset/Index";
 import { IconPlayCircle } from "@/components/ui/icons/Index";
 import { REVEAL_EASE } from "@/hooks/useRevealOnScroll";
@@ -85,7 +86,7 @@ export function FeePaymentHero() {
         className="relative mt-[125px] h-[334px] md:mt-[35px] md:h-[417px]"
       >
         <img
-          src={figma.feePaymentHeroPhone}
+          src={internationalFeePaymentImages.heroPhone}
           alt=""
           className="fp-phone absolute left-1/2 top-0 ml-[-142px] w-[285px] max-w-none md:ml-[-208px] md:w-[405px]"
         />
@@ -95,7 +96,7 @@ export function FeePaymentHero() {
             className={`${cardBase} pt-[7px] md:h-[87px] md:w-[150px] md:pl-3 md:pt-[13px] md:shadow-[inset_0_0_0_0.5px_#6C0505,0_4px_36px_rgba(154,0,0,0.11)]`}
             style={{ "--bob": "6s" } as CSSProperties}
           >
-            <img src={figma.roundFlagCa} alt="" className="size-4 md:size-[30px]" />
+            <img src={sharedImages.roundFlagCa} alt="" className="size-4 md:size-[30px]" />
             <p className="ml-0.5 mt-0.5 whitespace-nowrap text-[12px] leading-4 text-grey-80 md:ml-0 md:mt-px md:text-[16px] md:leading-6">
               Canada, Toronto
             </p>

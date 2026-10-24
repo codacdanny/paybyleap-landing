@@ -1,4 +1,4 @@
-import { figma } from "@/data/images/Index";
+import { sharedImages } from "@/data/images/shared";
 
 // Geometry mirrors Globebg.svg: a 736x557 viewBox holding a circle at
 // (562, 562) with r=561.5, letterboxed by object-contain into a square
@@ -13,8 +13,8 @@ const SPHERE = { size: "152.582%", left: "0.068%", top: "12.228%" };
 const TILES = 2;
 
 const land = {
-  WebkitMaskImage: `url(${figma.faGlobeLand})`,
-  maskImage: `url(${figma.faGlobeLand})`,
+  WebkitMaskImage: `url(${sharedImages.faGlobeLand})`,
+  maskImage: `url(${sharedImages.faGlobeLand})`,
   WebkitMaskRepeat: "repeat-x",
   maskRepeat: "repeat-x",
   // Only the sphere's northern crescent is on screen, so the band is

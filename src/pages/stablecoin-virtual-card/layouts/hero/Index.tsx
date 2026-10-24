@@ -1,4 +1,5 @@
-import { figma } from "@/data/images/Index";
+import { sharedImages } from "@/data/images/shared";
+import { stablecoinVirtualCardImages } from "@/data/images/stablecoin-virtual-card";
 import { LandingInset } from "@/components/landing-inset/Index";
 import { REVEAL_EASE, useRevealOnScroll } from "@/hooks/useRevealOnScroll";
 
@@ -84,7 +85,7 @@ function InfoCard() {
   return (
     <div className="vc-pop absolute left-[7.48%] top-[71.05%] w-[46.26%] xl:left-[-53px] xl:top-[458px] xl:w-[306px]">
       <div className="vc-bob rounded-[2.42cqw] border border-grey-20 bg-white px-[2.19cqw] pb-[2.57cqw] pt-[2.65cqw] xl:rounded-2xl xl:px-[15px] xl:py-[18px]">
-        <img src={figma.virtualCardInfoIcon} alt="" className="size-[7.26cqw] xl:size-12" />
+        <img src={sharedImages.virtualCardInfoIcon} alt="" className="size-[7.26cqw] xl:size-12" />
         <p className="mt-[1.81cqw] text-[length:2.72cqw] leading-[4.23cqw] text-grey-100 xl:mt-3 xl:text-[18px] xl:leading-7">
           Send crypto globally, take charge of your money using paybyleap virtual card
         </p>
@@ -137,19 +138,19 @@ export function VirtualCardHero() {
           >
             <div className="vc-red-in absolute left-[7.63%] top-[20.98%] h-[74.95%] w-[69.92%]">
               <div className="vc-fan-red size-full">
-                <img src={figma.virtualCardRed} alt="" fetchPriority="high" className="vc-float-red size-full" />
+                <img src={stablecoinVirtualCardImages.virtualCardRed} alt="" fetchPriority="high" className="vc-float-red size-full" />
               </div>
             </div>
             <div className="vc-black-in absolute left-[31.74%] top-[3.4%] h-[81.67%] w-[68.26%]">
               <div className="vc-fan-black size-full">
                 <div className="vc-float-black relative size-full">
-                  <img src={figma.virtualCardBlack} alt="" fetchPriority="high" className="size-full" />
+                  <img src={stablecoinVirtualCardImages.virtualCardBlack} alt="" fetchPriority="high" className="size-full" />
                   <div
                     aria-hidden
                     className="vc-sheen absolute inset-0"
                     style={{
-                      maskImage: `url(${figma.virtualCardBlack})`,
-                      WebkitMaskImage: `url(${figma.virtualCardBlack})`,
+                      maskImage: `url(${stablecoinVirtualCardImages.virtualCardBlack})`,
+                      WebkitMaskImage: `url(${stablecoinVirtualCardImages.virtualCardBlack})`,
                     }}
                   />
                 </div>

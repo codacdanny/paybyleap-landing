@@ -3,7 +3,7 @@ import { CryptoBenefitsCarouselSection } from "./layouts/crypto-benefits/Index";
 import { FeaturePitchSection } from "@/components/feature-pitch-section/Index";
 import { TransactionSecuritySection } from "@/components/transaction-security-section/Index";
 import { TestimonialsSection } from "@/components/testimonials-section/Index";
-import { figma } from "@/data/images/Index";
+import { sharedImages } from "@/data/images/shared";
 
 const pills = [
   "BUY & SELL CRYPTO",
@@ -23,7 +23,7 @@ export function CryptoPage() {
       <FeaturePitchSection
         heading={<>Get more from <span className="text-secondary">Paybyleap</span><br /><span className="text-secondary">Crypto</span></>}
         pills={pills}
-        image={figma.handheld}
+        image={sharedImages.handheld}
         ctaHeading={<>Start using Crypto<br />easily Today!</>}
       />
       <TransactionSecuritySection />

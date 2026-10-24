@@ -3,7 +3,7 @@ import { PaymentBenefitsCarouselSection } from "./layouts/payment-features/Index
 import { FeaturePitchSection } from "@/components/feature-pitch-section/Index";
 import { TransactionSecuritySection } from "@/components/transaction-security-section/Index";
 import { TestimonialsSection } from "@/components/testimonials-section/Index";
-import { figma } from "@/data/images/Index";
+import { sharedImages } from "@/data/images/shared";
 
 const pills = [
   "SCHOOL FEES PAYMENT",
@@ -23,7 +23,7 @@ export function InternationalFeePaymentPage() {
       <FeaturePitchSection
         heading={<>Get more from <span className="text-secondary">Paybyleap</span><br />for <span className="text-secondary">International</span> Payments</>}
         pills={pills}
-        image={figma.handheld}
+        image={sharedImages.handheld}
         ctaHeading={<>Pay Fees<br />easily Today!</>}
       />
       <TransactionSecuritySection />

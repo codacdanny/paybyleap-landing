@@ -1,4 +1,4 @@
-import { figma } from "@/data/images/Index";
+import { sharedImages } from "@/data/images/shared";
 import { REVEAL_EASE, useRevealOnScroll } from "@/hooks/useRevealOnScroll";
 
 // Figma: PAYBYLEAP OUTPUT File, node 4549:36214 — a 1438x918 frame.
@@ -6,17 +6,17 @@ const features = [
   {
     title: "Protected and Regulated",
     desc: "Our exchange rate is considerate and of market value",
-    icon: figma.txnSwap,
+    icon: sharedImages.txnSwap,
   },
   {
     title: "2FA Authentication",
     desc: "Verify to grant access to convert your money",
-    icon: figma.txnShield,
+    icon: sharedImages.txnShield,
   },
   {
     title: "Instant Notifications for Payment",
     desc: "Receive alert immediately after you convert currency",
-    icon: figma.txnBell,
+    icon: sharedImages.txnBell,
   },
 ];
 
@@ -110,7 +110,7 @@ function FeatureCard({ feature }: { feature: (typeof features)[number] }) {
         </p>
       </div>
       <img loading="lazy" decoding="async"
-        src={figma.txnSealCheck}
+        src={sharedImages.txnSealCheck}
         alt=""
         className="txn-seal ml-2 size-[18px] shrink-0 md:ml-3 md:size-6 min-[1440px]:size-8"
       />
@@ -134,7 +134,7 @@ export function TransactionSecuritySection() {
           {arcs.map((arc) => (
             <img loading="lazy" decoding="async"
               key={arc.left}
-              src={figma.txnArc}
+              src={sharedImages.txnArc}
               alt=""
               className="txn-arc absolute hidden min-[1440px]:block"
               style={{ left: `${arc.left}px`, top: `${arc.top}px`, width: "790.8px", height: "715.5px" }}
@@ -143,7 +143,7 @@ export function TransactionSecuritySection() {
           {mobileArcs.map((arc) => (
             <img loading="lazy" decoding="async"
               key={arc.left}
-              src={figma.txnArcMobile}
+              src={sharedImages.txnArcMobile}
               alt=""
               className="absolute h-[290px] w-[205px] origin-top-left lg:hidden"
               style={{ left: `${arc.left}px`, top: `${arc.top}px`, transform: `rotate(${arc.rotate}deg)` }}
@@ -168,7 +168,7 @@ export function TransactionSecuritySection() {
           >
             <div className="txn-float">
               <img loading="lazy" decoding="async"
-                src={figma.transactionsPhoneFigma}
+                src={sharedImages.transactionsPhoneFigma}
                 alt=""
                 className="txn-phone w-full"
               />

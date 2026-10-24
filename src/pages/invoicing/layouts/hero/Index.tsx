@@ -1,5 +1,5 @@
 import type { CSSProperties } from "react";
-import { figma } from "@/data/images/Index";
+import { invoicingImages } from "@/data/images/invoicing";
 import { LandingInset } from "@/components/landing-inset/Index";
 import { IconPlayCircle } from "@/components/ui/icons/Index";
 import { REVEAL_EASE } from "@/hooks/useRevealOnScroll";
@@ -76,8 +76,8 @@ export function InvoicingHero() {
             className="iv-art mx-auto mt-[51px] w-[334px] md:w-[506px] xl:absolute xl:left-[678px] xl:top-[3px] xl:mt-0"
           >
             <div className="iv-drift relative">
-              <img src={figma.invoicingHeroBase} alt="" className="w-full" />
-              <img src={figma.invoicingHeroQty} alt="" className="iv-qty absolute left-[1.385%] top-[1.153%] w-[40.166%]" />
+              <img src={invoicingImages.heroBase} alt="" className="w-full" />
+              <img src={invoicingImages.heroQty} alt="" className="iv-qty absolute left-[1.385%] top-[1.153%] w-[40.166%]" />
               <span
                 className="iv-ping absolute left-[49.861%] top-[8.824%] aspect-square w-[9.834%] rounded-full border-[1.5px] border-primary"
                 style={{ "--in": "1.8s" } as CSSProperties}

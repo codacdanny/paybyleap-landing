@@ -1,15 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 import { LandingInset } from "@/components/landing-inset/Index";
-import { figma } from "@/data/images/Index";
+import { sharedImages } from "@/data/images/shared";
 
 type Currency = { code: string; name: string; flag: string };
 
 const CURRENCIES: Currency[] = [
-  { code: "USD", name: "United States Dollar", flag: figma.flagUs },
-  { code: "EUR", name: "Euro", flag: figma.euFlag },
-  { code: "GBP", name: "British Pound", flag: figma.flagUk },
-  { code: "CAD", name: "Canadian Dollar", flag: figma.flagCa },
-  { code: "NGN", name: "Nigerian Naira", flag: figma.flagNg },
+  { code: "USD", name: "United States Dollar", flag: sharedImages.flagUs },
+  { code: "EUR", name: "Euro", flag: sharedImages.euFlag },
+  { code: "GBP", name: "British Pound", flag: sharedImages.flagUk },
+  { code: "CAD", name: "Canadian Dollar", flag: sharedImages.flagCa },
+  { code: "NGN", name: "Nigerian Naira", flag: sharedImages.flagNg },
 ];
 
 const FALLBACK_RATES: Record<string, number> = {
@@ -261,7 +261,7 @@ export function CurrencyConverterSection() {
               className="flex size-[37px] shrink-0 items-center justify-center rounded-full bg-white text-grey-100 shadow-[0_4px_18px_rgba(0,0,0,0.12)] transition-transform hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
             >
               <img loading="lazy" decoding="async"
-                src={figma.exhangeIcon}
+                src={sharedImages.exchangeIcon}
                 alt=""
                 className="h-[15px] w-[14px]"
                 aria-hidden

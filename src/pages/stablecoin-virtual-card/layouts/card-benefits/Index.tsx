@@ -1,4 +1,4 @@
-import { figma } from "@/data/images/Index";
+import { stablecoinVirtualCardImages } from "@/data/images/stablecoin-virtual-card";
 import { LandingInset } from "@/components/landing-inset/Index";
 
 // Art is placed inside the grey panel: below xl as a share of the 318x281
@@ -10,9 +10,9 @@ const benefits = [
     desc: "Instant card issuance lets you get a Paybyleap virtual card instantly and start paying right away.",
     panel: "xl:mt-[28px] xl:h-[365px]",
     art: [
-      { src: figma.virtualCardMirror, className: "left-[7.86%] top-[7.12%] w-[84.28%] xl:hidden" },
-      { src: figma.virtualCardUsd, className: "hidden rounded-2xl xl:left-[83px] xl:top-[21px] xl:block xl:w-[321px]" },
-      { src: figma.virtualCardUsd, className: "hidden rounded-2xl opacity-[.19] blur-[2px] xl:left-[88px] xl:top-[258px] xl:block xl:w-[321px]" },
+      { src: stablecoinVirtualCardImages.virtualCardMirror, className: "left-[7.86%] top-[7.12%] w-[84.28%] xl:hidden" },
+      { src: stablecoinVirtualCardImages.virtualCardUsd, className: "hidden rounded-2xl xl:left-[83px] xl:top-[21px] xl:block xl:w-[321px]" },
+      { src: stablecoinVirtualCardImages.virtualCardUsd, className: "hidden rounded-2xl opacity-[.19] blur-[2px] xl:left-[88px] xl:top-[258px] xl:block xl:w-[321px]" },
     ],
   },
   {
@@ -20,7 +20,7 @@ const benefits = [
     desc: "Spend seamlessly online with your virtual card anytime, anywhere.",
     panel: "xl:mt-[43px] xl:h-[350px]",
     art: [
-      { src: figma.virtualCardPhoneStablecoins, className: "left-[11.32%] top-[7.83%] w-[75.47%] xl:left-[85px] xl:top-[30px] xl:w-[329px]" },
+      { src: stablecoinVirtualCardImages.virtualCardPhoneStablecoins, className: "left-[11.32%] top-[7.83%] w-[75.47%] xl:left-[85px] xl:top-[30px] xl:w-[329px]" },
     ],
   },
   {
@@ -28,7 +28,7 @@ const benefits = [
     desc: "Make payment instantly using your virtual card, also withdraw from your card to make payment.",
     panel: "xl:mt-[43px] xl:h-[350px]",
     art: [
-      { src: figma.virtualCardPhoneWithdraw, className: "left-[13.84%] top-[10.32%] w-[66.35%] xl:left-[108px] xl:top-[27px] xl:w-[282px]" },
+      { src: stablecoinVirtualCardImages.virtualCardPhoneWithdraw, className: "left-[13.84%] top-[10.32%] w-[66.35%] xl:left-[108px] xl:top-[27px] xl:w-[282px]" },
     ],
   },
   {
@@ -36,7 +36,7 @@ const benefits = [
     desc: "Secure transactions with advanced protection on every payment.",
     panel: "xl:mt-[43px] xl:h-[350px]",
     art: [
-      { src: figma.virtualCardSecure, className: "-left-[5.66%] top-[2.85%] w-[111.32%] xl:left-[7px] xl:top-[-6px] xl:w-[483px]" },
+      { src: stablecoinVirtualCardImages.virtualCardSecure, className: "-left-[5.66%] top-[2.85%] w-[111.32%] xl:left-[7px] xl:top-[-6px] xl:w-[483px]" },
     ],
   },
 ];

@@ -1,15 +1,15 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { figma } from "@/data/images/Index";
+import { companyImages } from "@/data/images/company";
 import { LandingInset } from "@/components/landing-inset/Index";
 import { useSectionReveal } from "../../reveal";
 
 // Figma 4669:12788 reuses one office photo for the last two audiences.
 const audiences = [
-  { label: "Students paying tuition & fees abroad", image: figma.companyServeStudents },
-  { label: "Freelancers & remote workers earning internationally", image: figma.companyServeFreelancers },
-  { label: "Businesses managing cross-border transactions", image: figma.companyServeBusinesses },
-  { label: "Families sending & receiving global remittances", image: figma.companyServeFamilies },
-  { label: "Fintech and Institution seeking payment infrastructure", image: figma.companyServeFamilies },
+  { label: "Students paying tuition & fees abroad", image: companyImages.serveStudents },
+  { label: "Freelancers & remote workers earning internationally", image: companyImages.serveFreelancers },
+  { label: "Businesses managing cross-border transactions", image: companyImages.serveBusinesses },
+  { label: "Families sending & receiving global remittances", image: companyImages.serveFamilies },
+  { label: "Fintech and Institution seeking payment infrastructure", image: companyImages.serveFamilies },
 ];
 
 function ArrowIcon({ className = "" }: { className?: string }) {

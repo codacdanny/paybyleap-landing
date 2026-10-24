@@ -1,9 +1,10 @@
 import { useState, useRef, useEffect } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { figma } from "../../data/images/Index";
+import { sharedImages } from "../../data/images/shared";
 import { LandingInset } from "../../components/landing-inset/Index";
 import { Button } from "../../components/ui/button/Index";
 import { ROUTES } from "../../routes/paths";
+import { featureFlags } from "../../data/feature-flags";
 
 /* ─── data ─────────────────────────────────────────────────────────── */
 
@@ -55,8 +56,9 @@ const companyLinks = [
     label: "Paybyleap Community",
     desc: "Meet other members & share ideas",
     href: "#",
+    visible: featureFlags.community,
   },
-];
+].filter((l) => l.visible !== false);
 
 const legalLinks = [
   { label: "Terms and Conditions", href: ROUTES.TERMS_AND_CONDITIONS },
@@ -227,11 +229,11 @@ export function Header() {
         {/* Main nav bar */}
         <div className="border-b border-grey-10 bg-white shadow-[0px_4px_24px_rgba(0,0,0,0.05)]">
           <LandingInset>
-            <div className="flex items-center justify-between gap-4 py-4 lg:mx-auto lg:h-[76px] lg:w-full lg:gap-6 lg:py-0 xl:max-w-[1122px] xl:justify-center xl:gap-[116px]">
+            <div className="flex items-center justify-between gap-4 py-4 lg:mx-auto lg:h-[76px] lg:w-full lg:gap-6 lg:py-0 xl:max-w-[1122px] xl:gap-[116px]">
               {/* Logo */}
               <Link to={ROUTES.HOME} className="shrink-0">
                 <img
-                  src={figma.logoImg}
+                  src={sharedImages.logoImg}
                   alt="PayByLeap"
                   className="h-6 w-[99px] object-contain object-left lg:h-9 lg:w-[136px] xl:h-10 xl:w-[152px]"
                 />
@@ -260,7 +262,7 @@ export function Header() {
               </button>
 
               {/* Desktop nav */}
-              <nav className="relative hidden lg:flex lg:min-w-0 lg:flex-1 lg:items-center lg:justify-center lg:gap-2 xl:w-[435px] xl:flex-none xl:gap-2.5">
+              <nav className="relative hidden lg:flex lg:min-w-0 lg:flex-1 lg:items-center lg:justify-center lg:gap-2 xl:gap-2.5">
                 {/* Products */}
                 <div className="relative">
                   <button
@@ -325,12 +327,14 @@ export function Header() {
                   )}
                 </div>
 
-                <a
-                  href="#support"
-                  className="flex h-10 items-center justify-center whitespace-nowrap p-2 text-[16px] font-medium leading-6 text-grey-90 hover:text-primary xl:w-[125px] xl:p-2.5 xl:text-[18px]"
-                >
-                  Support
-                </a>
+                {featureFlags.support && (
+                  <a
+                    href="#support"
+                    className="flex h-10 items-center justify-center whitespace-nowrap p-2 text-[16px] font-medium leading-6 text-grey-90 hover:text-primary xl:w-[125px] xl:p-2.5 xl:text-[18px]"
+                  >
+                    Support
+                  </a>
+                )}
                 <Link
                   to={ROUTES.TERMS_AND_CONDITIONS}
                   className={`flex h-10 items-center justify-center whitespace-nowrap p-2 text-[16px] font-medium leading-6 hover:text-primary xl:w-[78px] xl:p-2.5 xl:text-[18px] ${
@@ -346,12 +350,14 @@ export function Header() {
 
               {/* CTA buttons (desktop) */}
               <div className="hidden shrink-0 items-center gap-2 lg:flex">
-                <button
-                  type="button"
-                  className="flex h-12 items-center justify-center whitespace-nowrap rounded-[8px] border border-primary bg-white px-3 py-4 text-[16px] font-medium leading-6 text-grey-90 transition-colors hover:bg-grey-10/80 xl:w-[110px] xl:px-2 xl:text-[18px]"
-                >
-                  Book a call
-                </button>
+                {featureFlags.bookACall && (
+                  <button
+                    type="button"
+                    className="flex h-12 items-center justify-center whitespace-nowrap rounded-[8px] border border-primary bg-white px-3 py-4 text-[16px] font-medium leading-6 text-grey-90 transition-colors hover:bg-grey-10/80 xl:w-[110px] xl:px-2 xl:text-[18px]"
+                  >
+                    Book a call
+                  </button>
+                )}
                 <button
                   type="button"
                   className="flex h-12 items-center justify-center whitespace-nowrap rounded-[8px] border border-primary-dark bg-primary-dark px-3 py-4 text-[16px] font-medium leading-6 text-white transition-colors hover:border-primary hover:bg-primary xl:w-[190px] xl:px-2 xl:text-[18px]"
@@ -451,13 +457,15 @@ export function Header() {
                 </div>
               </div>
 
-              <a
-                href="#support"
-                className="mt-5 text-[18px] font-medium text-grey-100"
-                onClick={() => setMenuOpen(false)}
-              >
-                Support
-              </a>
+              {featureFlags.support && (
+                <a
+                  href="#support"
+                  className="mt-5 text-[18px] font-medium text-grey-100"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Support
+                </a>
+              )}
               <div className="mt-5">
                 <p className="text-[18px] font-medium text-grey-100">Legal</p>
                 <div className="mt-3 flex flex-col gap-1 border-l-2 border-primary/20 pl-4">
@@ -475,12 +483,14 @@ export function Header() {
               </div>
 
               <div className="mt-auto flex flex-col gap-3 pt-8">
-                <Button
-                  variant="outline"
-                  className="w-full border-primary !bg-white text-[18px] font-medium !text-grey-90 hover:!bg-grey-10/80 hover:!text-grey-90"
-                >
-                  Book a call
-                </Button>
+                {featureFlags.bookACall && (
+                  <Button
+                    variant="outline"
+                    className="w-full border-primary !bg-white text-[18px] font-medium !text-grey-90 hover:!bg-grey-10/80 hover:!text-grey-90"
+                  >
+                    Book a call
+                  </Button>
+                )}
                 <Button variant="primaryDark" className="w-full">
                   Download the app
                 </Button>

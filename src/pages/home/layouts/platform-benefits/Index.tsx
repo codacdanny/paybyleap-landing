@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
-import { figma } from "@/data/images/Index";
+import { sharedImages } from "@/data/images/shared";
+import { homeImages } from "@/data/images/home";
 import { LandingInset } from "@/components/landing-inset/Index";
 
 function Tag({ children }: { children: ReactNode }) {
@@ -8,7 +9,7 @@ function Tag({ children }: { children: ReactNode }) {
       <img
         loading="lazy"
         decoding="async"
-        src={figma.star}
+        src={sharedImages.star}
         alt=""
         className="size-5 shrink-0 min-[1440px]:size-6"
       />
@@ -38,7 +39,7 @@ export function PlatformBenefitsSection() {
             <img
               loading="lazy"
               decoding="async"
-              src={figma.iphone17Mockup}
+              src={homeImages.iphone17Mockup}
               alt="PayByLeap on iPhone"
               className="object-cover mix-blend-multiply"
             />
@@ -102,7 +103,7 @@ export function PlatformBenefitsSection() {
                 <img
                   loading="lazy"
                   decoding="async"
-                  src={figma.iphone17Mockup}
+                  src={homeImages.iphone17Mockup}
                   alt="PayByLeap on iPhone"
                   className="h-auto w-full mix-blend-multiply"
                 />
@@ -141,7 +142,7 @@ export function PlatformBenefitsSection() {
               <img
                 loading="lazy"
                 decoding="async"
-                src={figma.appleLogo}
+                src={sharedImages.appleLogo}
                 alt=""
                 className="size-8"
               />
@@ -159,7 +160,7 @@ export function PlatformBenefitsSection() {
               <img
                 loading="lazy"
                 decoding="async"
-                src={figma.googlePlayIcon}
+                src={sharedImages.googlePlayIcon}
                 alt=""
                 className="h-[34px] w-[37px] object-cover"
               />

@@ -1,4 +1,4 @@
-import { figma } from "@/data/images/Index";
+import { sharedImages } from "@/data/images/shared";
 import { LandingInset } from "@/components/landing-inset/Index";
 
 export interface SecurityFeature {
@@ -78,7 +78,7 @@ export function SecurityTrustSection({
             </p>
             <div className="mt-8 hidden min-[1440px]:block">
               <img loading="lazy" decoding="async"
-                src={figma.iphoneAirMockup}
+                src={sharedImages.iphoneAirMockup}
                 alt=""
                 className="h-auto w-[260px] object-contain"
               />

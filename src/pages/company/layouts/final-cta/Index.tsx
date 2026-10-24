@@ -1,4 +1,4 @@
-import { figma } from "@/data/images/Index";
+import { sharedImages } from "@/data/images/shared";
 import { LandingInset } from "@/components/landing-inset/Index";
 
 export function AppDownloadSection() {
@@ -16,14 +16,14 @@ export function AppDownloadSection() {
               href="#"
               className="inline-flex h-[52px] items-center gap-2.5 rounded-lg bg-white px-6 text-[16px] font-semibold text-grey-90 transition-colors hover:bg-grey-10"
             >
-              <img loading="lazy" decoding="async" src={figma.blackAppleLogo} alt="" className="size-5" aria-hidden />
+              <img loading="lazy" decoding="async" src={sharedImages.blackAppleLogo} alt="" className="size-5" aria-hidden />
               App Store
             </a>
             <a
               href="#"
               className="inline-flex h-[52px] items-center gap-2.5 rounded-lg bg-white px-6 text-[16px] font-semibold text-grey-90 transition-colors hover:bg-grey-10"
             >
-              <img loading="lazy" decoding="async" src={figma.googlePlayIcon} alt="" className="size-5" aria-hidden />
+              <img loading="lazy" decoding="async" src={sharedImages.googlePlayIcon} alt="" className="size-5" aria-hidden />
               Google Play
             </a>
           </div>

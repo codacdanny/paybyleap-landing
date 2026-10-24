@@ -1,4 +1,5 @@
-import { figma } from "@/data/images/Index";
+import { sharedImages } from "@/data/images/shared";
+import { companyImages } from "@/data/images/company";
 import { LandingInset } from "@/components/landing-inset/Index";
 import { useSectionReveal } from "../../reveal";
 
@@ -11,7 +12,7 @@ export function GrowthMissionBanner() {
         <img
           loading="lazy"
           decoding="async"
-          src={figma.companySwoosh}
+          src={companyImages.swoosh}
           alt=""
           aria-hidden
           className="co-pop mx-auto aspect-[216/71] w-[160px] xl:w-[216px]"
@@ -28,7 +29,7 @@ export function GrowthMissionBanner() {
       <img
         loading="lazy"
         decoding="async"
-        src={figma.pageDividerShort}
+        src={sharedImages.pageDividerShort}
         alt=""
         aria-hidden
         className="co-fade pointer-events-none mt-16 aspect-[1440/110] mix-blend-color-dodge w-full xl:mx-auto xl:mt-[217px] xl:w-[1440px]"

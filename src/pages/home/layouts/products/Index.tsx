@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { figma } from "@/data/images/Index";
+import { sharedImages } from "@/data/images/shared";
+import { homeImages } from "@/data/images/home";
 import { ROUTES } from "@/routes/paths";
 import { LandingInset } from "@/components/landing-inset/Index";
 import PayByLeapGlobeAccounts from "./components/global-accounts/Index";
@@ -27,7 +28,7 @@ export function MoneyTransferSection() {
                   <img
                     loading="lazy"
                     decoding="async"
-                    src={figma.transferArrow}
+                    src={sharedImages.transferArrow}
                     alt=""
                     className="size-6"
                   />
@@ -39,7 +40,7 @@ export function MoneyTransferSection() {
                   <img
                     loading="lazy"
                     decoding="async"
-                    src={figma.femalePhoneMockup}
+                    src={homeImages.femalePhoneMockup}
                     alt="Person using PayByLeap on a phone"
                     className="h-full w-full object-cover object-[center_12%]"
                   />
@@ -55,7 +56,7 @@ export function MoneyTransferSection() {
             <img
               loading="lazy"
               decoding="async"
-              src={figma.flagNg2}
+              src={sharedImages.flagNg2}
               alt=""
               className="absolute z-[4] hidden size-7 object-contain min-[1440px]:block"
               style={{ top: 42, right: 386 }}
@@ -63,7 +64,7 @@ export function MoneyTransferSection() {
             <img
               loading="lazy"
               decoding="async"
-              src={figma.flagUk2}
+              src={sharedImages.flagUk2}
               alt=""
               className="absolute z-[4] hidden size-7 object-contain min-[1440px]:block"
               style={{ top: 42, right: 34 }}
@@ -71,7 +72,7 @@ export function MoneyTransferSection() {
             <img
               loading="lazy"
               decoding="async"
-              src={figma.flagCa2}
+              src={sharedImages.flagCa2}
               alt=""
               className="absolute z-[4] hidden size-7 object-contain min-[1440px]:block"
               style={{ top: 144, right: 460 }}
@@ -79,7 +80,7 @@ export function MoneyTransferSection() {
             <img
               loading="lazy"
               decoding="async"
-              src={figma.flagUs2}
+              src={sharedImages.flagUs2}
               alt=""
               className="absolute z-[4] hidden size-7 object-contain min-[1440px]:block"
               style={{ bottom: 48, right: 420 }}
@@ -91,7 +92,7 @@ export function MoneyTransferSection() {
               <img
                 loading="lazy"
                 decoding="async"
-                src={figma.euFlag}
+                src={sharedImages.euFlag}
                 alt=""
                 className="h-full w-full object-cover"
               />
@@ -115,7 +116,7 @@ export function MoneyTransferSection() {
                 <img
                   loading="lazy"
                   decoding="async"
-                  src={figma.exploreArrow}
+                  src={sharedImages.exploreArrow}
                   alt=""
                   className="size-6"
                 />
@@ -124,7 +125,7 @@ export function MoneyTransferSection() {
                 <img
                   loading="lazy"
                   decoding="async"
-                  src={figma.cryptoGraphic}
+                  src={homeImages.cryptoGraphic}
                   alt=""
                   className="h-auto w-full object-contain"
                 />
@@ -147,7 +148,7 @@ export function MoneyTransferSection() {
                 <img
                   loading="lazy"
                   decoding="async"
-                  src={figma.exploreArrow}
+                  src={sharedImages.exploreArrow}
                   alt=""
                   className="size-6"
                 />
@@ -158,7 +159,7 @@ export function MoneyTransferSection() {
                   <img
                     loading="lazy"
                     decoding="async"
-                    src={figma.feesPolygon}
+                    src={homeImages.feesPolygon}
                     alt=""
                     className="pointer-events-none absolute -right-[60px] top-[10px] z-0  rotate-[300deg] object-contain"
                   />
@@ -166,7 +167,7 @@ export function MoneyTransferSection() {
                     <img
                       loading="lazy"
                       decoding="async"
-                      src={figma.saintLouisCrest}
+                      src={homeImages.saintLouisCrest}
                       alt=""
                       className="block h-auto w-full"
                     />
@@ -191,7 +192,7 @@ export function ProductsSection() {
               <img
                 loading="lazy"
                 decoding="async"
-                src={figma.smarterLogo}
+                src={homeImages.smarterLogo}
                 alt=""
                 className="shrink-0 min-[1440px]:size-[18px]"
               />
@@ -222,7 +223,7 @@ export function ProductsSection() {
                   <img
                     loading="lazy"
                     decoding="async"
-                    src={figma.exploreArrow}
+                    src={sharedImages.exploreArrow}
                     alt=""
                     className="size-6"
                   />
@@ -246,7 +247,7 @@ export function ProductsSection() {
                   <img
                     loading="lazy"
                     decoding="async"
-                    src={figma.exploreArrow}
+                    src={sharedImages.exploreArrow}
                     alt=""
                     className="size-6"
                   />

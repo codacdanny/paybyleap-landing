@@ -1,24 +1,24 @@
 import { LandingInset } from "@/components/landing-inset/Index";
-import { figma } from "@/data/images/Index";
+import { sharedImages } from "@/data/images/shared";
 
 const features = [
   {
-    icon: figma.transferArrow,
+    icon: sharedImages.transferArrow,
     title: "Real-time conversion",
     desc: "Instantly converts currencies using live exchange rates for accurate, seamless transactions.",
   },
   {
-    icon: figma.ionPlanet,
+    icon: sharedImages.ionPlanet,
     title: "Multi-currency Support",
     desc: "Access and transact in multiple global currencies from a single account with ease.",
   },
   {
-    icon: figma.arrowRightWhite,
+    icon: sharedImages.arrowRightWhite,
     title: "Low Fees",
     desc: "All costs are transparent and shown upfront — no hidden charges, ever.",
   },
   {
-    icon: figma.transferArrow,
+    icon: sharedImages.transferArrow,
     title: "Fast Settlement",
     desc: "Currency conversions settle instantly, so your funds are available right away.",
   },

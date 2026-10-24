@@ -1,19 +1,19 @@
 import { useState, useEffect } from "react";
-import { figma } from "@/data/images/Index";
+import { sharedImages } from "@/data/images/shared";
+import { homeImages } from "@/data/images/home";
 import { LandingInset } from "@/components/landing-inset/Index";
 import { Button } from "@/components/ui/button/Index";
-import { homeImg } from "@/data/images/img/Index";
 import PayByLeapPhoneHero from "./paybyleap-mobile/Index";
 
 const walletItems: { code: string; src: string }[] = [
-  { code: "NGN", src: figma.flagNg },
-  { code: "USD", src: figma.flagUs },
-  { code: "CAD", src: figma.flagCa },
-  { code: "EUR", src: figma.euFlag },
-  { code: "GBP", src: figma.flagUk },
-  { code: "YEN", src: figma.flagCn },
-  { code: "USDC", src: figma.usdc },
-  { code: "USDT", src: figma.usdt },
+  { code: "NGN", src: sharedImages.flagNg },
+  { code: "USD", src: sharedImages.flagUs },
+  { code: "CAD", src: sharedImages.flagCa },
+  { code: "EUR", src: sharedImages.euFlag },
+  { code: "GBP", src: sharedImages.flagUk },
+  { code: "YEN", src: sharedImages.flagCn },
+  { code: "USDC", src: sharedImages.usdc },
+  { code: "USDT", src: sharedImages.usdt },
 ];
 
 export function Hero() {
@@ -104,7 +104,7 @@ export function Hero() {
               </div>
               <div className="h-[750px] w-[100vw] md:w-[90vw] lg:w-[40vw] absolute bottom-0 -right-[5vw] md:-right-[11vw]">
                 <img
-                  src={homeImg.herobg}
+                  src={homeImages.heroBg}
                   alt=""
                   aria-hidden
                   className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-1"
@@ -112,12 +112,12 @@ export function Hero() {
               </div>
               {/* <div className="relative -mb-8 xl:-mt-6 lg:mb-0">
                 <img
-                  src={homeImg.heroPhone}
+                  src={homeImages.heroPhone}
                   className="w-[88%] mx-auto md:w-full"
                   alt=""
                 />
                 <img
-                  src={homeImg.heroCard}
+                  src={homeImages.heroCard}
                   className="absolute w-[70%] md:w-[89%] xl:w-[80%] top-[50%] left-[34%] md:left-[46%] lg:left-[21%] xl:left-[46%] z-10"
                   alt=""
                 />

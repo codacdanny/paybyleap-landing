@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { figma } from "@/data/images/Index";
+import { sharedImages } from "@/data/images/shared";
 import { LandingInset } from "@/components/landing-inset/Index";
 
 const timeline = [
@@ -92,7 +92,7 @@ export function CompanyTimelineSection() {
 
             <div className="overflow-hidden rounded-2xl">
               <img loading="lazy" decoding="async"
-                src={figma.freeAccountHero}
+                src={sharedImages.freeAccountHero}
                 alt="PayByLeap team"
                 className="h-[300px] w-full object-cover object-top min-[1440px]:h-[360px]"
               />

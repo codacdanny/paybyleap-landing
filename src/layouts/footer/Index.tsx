@@ -1,8 +1,9 @@
 import { type ReactNode } from "react";
 import { Link } from "react-router-dom";
-import { figma } from "../../data/images/Index";
+import { sharedImages } from "../../data/images/shared";
 import { LandingInset } from "../../components/landing-inset/Index";
 import { ROUTES } from "../../routes/paths";
+import { featureFlags } from "../../data/feature-flags";
 
 const quickLinks = [
   { label: "Foreign Accounts", href: ROUTES.FOREIGN_ACCOUNTS },
@@ -18,8 +19,8 @@ const companyLinks = [
   { label: "About Us", href: ROUTES.COMPANY },
   { label: "Careers", href: "#" },
   { label: "Blog", href: "#" },
-  { label: "The Leap Community", href: "#" },
-];
+  { label: "The Leap Community", href: "#", visible: featureFlags.community },
+].filter((l) => l.visible !== false);
 
 const supportLinks = [
   { label: "Video Tutorials", href: "#" },
@@ -38,19 +39,19 @@ const social = [
   {
     label: "Instagram",
     href: "https://www.instagram.com/paybyleap/",
-    icon: figma.socialInstagram,
+    icon: sharedImages.socialInstagram,
   },
-  { label: "Facebook", href: "#", icon: figma.socialFacebook },
+  { label: "Facebook", href: "#", icon: sharedImages.socialFacebook },
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/company/paybyleap/",
-    icon: figma.socialLinkedin,
+    icon: sharedImages.socialLinkedin,
   },
-  { label: "YouTube", href: "#", icon: figma.socialYoutube },
+  { label: "YouTube", href: "#", icon: sharedImages.socialYoutube },
   {
     label: "X (Twitter)",
     href: "https://x.com/paybyleap",
-    icon: figma.socialX,
+    icon: sharedImages.socialX,
   },
 ];
 
@@ -116,7 +117,7 @@ export function SiteFooter({ heading = defaultHeading }: SiteFooterProps) {
             className="inline-flex h-16 w-full items-center justify-center gap-1 rounded-lg bg-white px-4 text-grey-100 md:w-[201px]"
           >
             <img loading="lazy" decoding="async"
-              src={figma.blackAppleLogo}
+              src={sharedImages.blackAppleLogo}
               alt=""
               className="size-10 object-contain"
             />
@@ -132,7 +133,7 @@ export function SiteFooter({ heading = defaultHeading }: SiteFooterProps) {
             className="inline-flex h-16 w-full items-center justify-center gap-2 rounded-lg bg-white px-4 text-grey-100 md:w-[201px]"
           >
             <img loading="lazy" decoding="async"
-              src={figma.footerGooglePlayWhite}
+              src={sharedImages.googlePlayIcon}
               alt=""
               className="h-[34px] w-[37px] object-cover"
             />
@@ -151,10 +152,12 @@ export function SiteFooter({ heading = defaultHeading }: SiteFooterProps) {
         <div className="mx-auto mt-16 max-w-[1300px] border-t border-white/20 min-[1440px]:mt-24" />
 
         {/* Link columns */}
-        <div className="mx-auto mt-12 grid max-w-[1100px] grid-cols-2 gap-10 gap-y-8 lg:grid-cols-4 min-[1440px]:mt-16 min-[1440px]:gap-6">
+        <div
+          className={`mx-auto mt-12 grid max-w-[1100px] grid-cols-2 gap-10 gap-y-8 min-[1440px]:mt-16 min-[1440px]:gap-6 ${featureFlags.support ? "lg:grid-cols-4" : "lg:grid-cols-3"}`}
+        >
           <LinkColumn title="QUICK LINKS" links={quickLinks} />
           <LinkColumn title="COMPANY" links={companyLinks} />
-          <LinkColumn title="SUPPORT" links={supportLinks} />
+          {featureFlags.support && <LinkColumn title="SUPPORT" links={supportLinks} />}
           <LinkColumn title="LEGAL" links={legalLinks} />
         </div>
 

@@ -1,4 +1,4 @@
-import { figma } from "@/data/images/Index";
+import { sharedImages } from "@/data/images/shared";
 import { LandingInset } from "@/components/landing-inset/Index";
 import { FeaturePill } from "@/components/ui/feature-pill/Index";
 
@@ -18,7 +18,7 @@ export function CurrencyBenefitsDark() {
 
       {/* ── Large logo watermark — decorative background ── */}
       <img loading="lazy" decoding="async"
-        src={figma.leapLogoLarge}
+        src={sharedImages.leapLogoLarge}
         alt=""
         aria-hidden
         className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-100"
@@ -46,7 +46,7 @@ export function CurrencyBenefitsDark() {
       {/* ── Phone with hand — centered, bleeds edge to edge ── */}
       <div className="relative z-10 mt-[-20px] flex justify-center min-[1440px]:mt-[-32px]">
         <img loading="lazy" decoding="async"
-          src={figma.handheld}
+          src={sharedImages.handheld}
           alt="PayByLeap currency exchange app in hand"
           className="w-full max-w-[850px] max-h-[796px] object-contain "
         />

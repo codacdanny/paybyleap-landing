@@ -1,5 +1,5 @@
 import { LandingInset } from "@/components/landing-inset/Index";
-import { figma } from "@/data/images/Index";
+import { sharedImages } from "@/data/images/shared";
 
 // Figma 4549:36321 is a 640x448 group: card boxes are percentages of that
 // box and everything inside them is in cqw (1cqw = 6.4px at full size), so
@@ -9,7 +9,7 @@ const conversionCards = [
     label: "From",
     caption: "Amount to swap",
     amount: "USD 00.00",
-    flag: figma.heroFlagUs,
+    flag: sharedImages.heroFlagUs,
     flagAlt: "United States flag",
     hasCursor: true,
     box: "left-[49.53%] top-0 h-[39.73%] bg-[#FFF4F4]",
@@ -22,7 +22,7 @@ const conversionCards = [
     label: "To",
     caption: "Amount to receive",
     amount: "EUR 00.00",
-    flag: figma.heroFlagEu,
+    flag: sharedImages.heroFlagEu,
     flagAlt: "European Union flag",
     hasCursor: false,
     box: "left-0 top-[61.83%] h-[38.17%] bg-[#FDF2D8]",
@@ -112,7 +112,7 @@ export function CurrencyHero() {
               <ConversionCard key={card.label} card={card} />
             ))}
             <img
-              src={figma.convertIcon}
+              src={sharedImages.convertIcon}
               alt=""
               aria-hidden
               className="absolute left-[42.89%] top-[45.87%] w-[7.34%]"

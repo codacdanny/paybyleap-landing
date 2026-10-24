@@ -1,4 +1,5 @@
-import { figma } from "@/data/images/Index";
+import { sharedImages } from "@/data/images/shared";
+import { companyImages } from "@/data/images/company";
 import { LandingInset } from "@/components/landing-inset/Index";
 import { useSectionReveal } from "../../reveal";
 
@@ -10,7 +11,7 @@ const cards = [
     titleWidth: "max-w-[271px]",
     desc: "Send money across borders quickly and reliably with minimal delays.",
     card: "bg-[#1F2065] text-white",
-    art: figma.companyBenefitGlobe,
+    art: companyImages.benefitGlobe,
     artClass: "left-[16.2%] top-[144px] w-[117%]",
   },
   {
@@ -18,7 +19,7 @@ const cards = [
     titleWidth: "max-w-[195px]",
     desc: "Mobile-friendly design ensures seamless access and ease of use on any device.",
     card: "border border-grey-10 bg-[#EDECED] text-grey-90",
-    art: figma.companyAppPhone,
+    art: companyImages.appPhone,
     artClass: "left-[15.9%] top-[184px] w-[68.1%]",
   },
   {
@@ -26,7 +27,7 @@ const cards = [
     titleWidth: "max-w-[219px]",
     desc: "Have all your currencies in one place, easy to carry out any transactions.",
     card: "bg-[#FBE6B0] text-grey-90",
-    art: figma.companyBenefitUnified,
+    art: companyImages.benefitUnified,
     artClass: "left-[3%] top-[194px] w-[93.7%]",
   },
   {
@@ -34,7 +35,7 @@ const cards = [
     titleWidth: "max-w-[219px]",
     desc: "Stay informed and in control with real-time tracking and notifications.",
     card: "bg-primary text-white",
-    art: figma.companyBenefitAccess,
+    art: companyImages.benefitAccess,
     artClass: "left-[4.1%] top-[147px] w-[91.8%]",
   },
 ];
@@ -98,7 +99,6 @@ export function ValuePropositionSection() {
         <div className="co-rise relative mt-16 rounded-[32px] border border-white bg-grey-80 p-6 md:p-10 xl:-ml-px xl:mt-[97px] xl:h-[974px] xl:w-[1124px] xl:rounded-[48px] xl:p-0">
           <div className="flex flex-col gap-8 xl:flex-row xl:gap-0 xl:pl-[65px] xl:pt-[82px]">
             <div className="co-rise xl:w-[171px]" style={{ ["--d" as string]: "150ms" }}>
-              <p className="text-[18px] font-semibold leading-6 text-secondary">FOUNDED</p>
               <p className="mt-6 text-[24px] leading-10 text-white">2026</p>
             </div>
             {statements.map((s, i) => (
@@ -132,7 +132,7 @@ export function ValuePropositionSection() {
               <img
                 loading="lazy"
                 decoding="async"
-                src={figma.companyWhyPhoto}
+                src={companyImages.whyPhoto}
                 alt="Two smiling PayByLeap users"
                 className="size-full object-cover object-right transition-transform duration-700 ease-out hover:scale-[1.04]"
               />
@@ -144,7 +144,7 @@ export function ValuePropositionSection() {
       <img
         loading="lazy"
         decoding="async"
-        src={figma.pageDivider}
+        src={sharedImages.pageDivider}
         alt=""
         aria-hidden
         className="co-fade pointer-events-none mt-16 aspect-[1440/133] mix-blend-color-dodge w-full xl:mx-auto xl:mt-[98px] xl:w-[1440px]"

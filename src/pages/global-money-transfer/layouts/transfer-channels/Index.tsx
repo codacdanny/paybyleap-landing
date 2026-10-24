@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { figma } from "@/data/images/Index";
+import { globalMoneyTransferImages } from "@/data/images/global-money-transfer";
 import { LandingInset } from "@/components/landing-inset/Index";
 import { FastTransferArt } from "./fast-transfer-art/Index";
 
@@ -33,7 +33,7 @@ const cards: TransferCardProps[] = [
     className: "bg-[#EDECED] text-grey-90 ring-1 ring-inset ring-grey-10",
     art: (
       <img
-        src={figma.moneyTransferCurrencyFlags}
+        src={globalMoneyTransferImages.currencyFlags}
         alt=""
         aria-hidden
         loading="lazy"

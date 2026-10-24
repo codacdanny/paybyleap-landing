@@ -1,5 +1,5 @@
 import { useRef, useState, useCallback, useEffect } from "react";
-import { figma } from "../../../../data/images/Index";
+import { sharedImages } from "../../../../data/images/shared";
 import { LandingInset } from "../../../../components/landing-inset/Index";
 
 const testimonials = [
@@ -148,7 +148,7 @@ function TestimonialCard({
       <img
         loading="lazy"
         decoding="async"
-        src={figma.testimonialQuoteMark}
+        src={sharedImages.testimonialQuoteMark}
         alt=""
         className={`pointer-events-none absolute ${
           isStack

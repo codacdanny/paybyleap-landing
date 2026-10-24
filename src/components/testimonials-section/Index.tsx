@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect, useCallback } from "react";
-import { figma } from "@/data/images/Index";
+import { sharedImages } from "@/data/images/shared";
 import { LandingInset } from "@/components/landing-inset/Index";
 
 const testimonials = [
@@ -58,7 +58,7 @@ function TestimonialCard({ t }: { t: (typeof testimonials)[number] }) {
         {t.quote}
       </p>
       <img loading="lazy" decoding="async"
-        src={figma.testimonialQuoteMark}
+        src={sharedImages.testimonialQuoteMark}
         alt=""
         className="pointer-events-none absolute -bottom-[34px] -right-[8px] w-[84px] md:-bottom-[50px] md:-right-[15px] md:w-[120px] min-[1440px]:w-[140px]"
       />

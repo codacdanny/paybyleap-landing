@@ -1,4 +1,4 @@
-import { figma } from "@/data/images/Index";
+import { companyImages } from "@/data/images/company";
 import { LandingInset } from "@/components/landing-inset/Index";
 import { useSectionReveal } from "../../reveal";
 
@@ -6,14 +6,14 @@ import { useSectionReveal } from "../../reveal";
 // within a 154px stage that sits on the hero's bottom edge, which crops them.
 // The 20% opacity and the 15deg turn are baked into the exports.
 const avatars = [
-  { src: figma.companyHeroNg, left: -653, top: 0, size: 208 },
-  { src: figma.companyHeroPerson1, left: -445.5, top: 19.5, size: 169 },
-  { src: figma.companyHeroPerson2, left: -263.5, top: 19.5, size: 169 },
-  { src: figma.companyHeroUs, left: -102, top: 0, size: 208 },
-  { src: figma.companyHeroCa, left: 84, top: 0, size: 208 },
-  { src: figma.companyHeroPerson3, left: 285.5, top: 26.5, size: 169 },
-  { src: figma.companyHeroUk, left: 450, top: 4, size: 208 },
-  { src: figma.companyHeroPerson3, left: 652.5, top: 30.5, size: 169 },
+  { src: companyImages.heroNg, left: -653, top: 0, size: 208 },
+  { src: companyImages.heroPerson1, left: -445.5, top: 19.5, size: 169 },
+  { src: companyImages.heroPerson2, left: -263.5, top: 19.5, size: 169 },
+  { src: companyImages.heroUs, left: -102, top: 0, size: 208 },
+  { src: companyImages.heroCa, left: 84, top: 0, size: 208 },
+  { src: companyImages.heroPerson3, left: 285.5, top: 26.5, size: 169 },
+  { src: companyImages.heroUk, left: 450, top: 4, size: 208 },
+  { src: companyImages.heroPerson3, left: 652.5, top: 30.5, size: 169 },
 ];
 
 export function CompanyHero() {
